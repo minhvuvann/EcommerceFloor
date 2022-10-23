@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ecommerce-floor:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="2GU6pDSQdkypql2cBCzNBBkHBwY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="vn.mellow.ecom.ecommercefloor.base" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Web\Student\TMDT\ecommerce-floor\src\main\java\vn\mellow\ecom\ecommercefloor\base\manager" />
+      <recent name="C:\Web\Student\TMDT\ecommerce-floor\src\main\java\vn\mellow\ecom\ecommercefloor\base\logs" />
+      <recent name="C:\Web\Student\TMDT\ecommerce-floor\src\main\java\vn\mellow\ecom\ecommercefloor" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Web\Student\TMDT\ecommerce-floor\api\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="vn.mellow.ecom.ecommercefloor.utils" />
+      <recent name="vn.mellow.ecom.ecommercefloor.base.filter" />
+      <recent name="vn.mellow.ecom.ecommercefloor.model" />
+      <recent name="vn.mellow.ecom.ecommercefloor.enums" />
+      <recent name="vn.mellow.ecom.ecommercefloor.base.model" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="" />
+      <created>1666430996720</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666430996720</updated>
+      <workItem from="1666430998118" duration="1039000" />
+      <workItem from="1666432169119" duration="41000" />
+      <workItem from="1666432612953" duration="1610000" />
+      <workItem from="1666434440975" duration="161000" />
+      <workItem from="1666435179996" duration="50000" />
+      <workItem from="1666435246960" duration="586000" />
+      <workItem from="1666435922294" duration="80000" />
+      <workItem from="1666436038429" duration="987000" />
+      <workItem from="1666440820524" duration="952000" />
+      <workItem from="1666446832438" duration="1213000" />
+      <workItem from="1666459198082" duration="652000" />
+      <workItem from="1666460361308" duration="4242000" />
+      <workItem from="1666464676168" duration="519000" />
+      <workItem from="1666465319630" duration="1121000" />
+      <workItem from="1666466480173" duration="1514000" />
+      <workItem from="1666488742345" duration="3334000" />
+      <workItem from="1666493847436" duration="1841000" />
+      <workItem from="1666531086434" duration="409000" />
+      <workItem from="1666531517822" duration="45000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
