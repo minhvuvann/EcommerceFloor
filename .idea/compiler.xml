@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ecommerce-floor" />
+        <module name="ecommerce-floor-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ecommerce-floor" target="1.8" />
+      <module name="ecommerce-floor" target="1.13" />
       <module name="ecommerce-floor-api" target="1.8" />
     </bytecodeTargetLevel>
   </component>
