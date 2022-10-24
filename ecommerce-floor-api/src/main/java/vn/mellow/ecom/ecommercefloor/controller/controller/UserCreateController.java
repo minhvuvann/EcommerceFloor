@@ -40,6 +40,7 @@ public class UserCreateController {
         user.setFullName(userInput.getFullName());
         user.setBirthday(userInput.getBirthday());
         user.setDescription(userInput.getDescription());
+        user.setAddress(userInput.getAddress());
         ServiceType serviceType = ServiceType.NORMALLY;
         if (null != userInput.getServiceType()) {
             serviceType = userInput.getServiceType();
@@ -48,7 +49,7 @@ public class UserCreateController {
         //set key password
         KeyPasswordInput keyPasswordInput = createUserInput.getPassword();
         KeyPassword keyPassword = new KeyPassword();
-        String token = KeyUtils.getToken();
+        String token = KeyUtils.getTOKEN();
         String password = KeyUtils.hashBCryptEncoder(keyPasswordInput.getPassword() + token);
         keyPassword.setPassword(password);
         keyPassword.setToken(token);

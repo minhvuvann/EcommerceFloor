@@ -3,6 +3,7 @@ package vn.mellow.ecom.ecommercefloor.model.input;
 import lombok.Data;
 import lombok.NonNull;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
+import vn.mellow.ecom.ecommercefloor.base.model.Address;
 import vn.mellow.ecom.ecommercefloor.enums.GenderType;
 import vn.mellow.ecom.ecommercefloor.enums.ServiceType;
 import vn.mellow.ecom.ecommercefloor.enums.UserStatus;
@@ -16,6 +17,7 @@ public class UserInput {
     private String email;
     private String telephone;
     private Date birthday;
+    private Address address;
     private GenderType gender;
     private String imageUrl;
     @NonNull
