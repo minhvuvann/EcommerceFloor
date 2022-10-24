@@ -27,4 +27,6 @@ public class User extends BaseModel {
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date cancelledAt;
 
+    public User() {
+    }
 }

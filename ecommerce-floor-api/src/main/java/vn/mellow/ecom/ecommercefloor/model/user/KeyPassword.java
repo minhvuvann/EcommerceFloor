@@ -12,6 +12,7 @@ public class KeyPassword extends BaseModel {
     private String userId;
     private String password;
     private String note;
+    private String token;
     private PasswordStatus passwordStatus;
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date cancelledAt;
