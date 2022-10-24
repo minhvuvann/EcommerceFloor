@@ -14,6 +14,9 @@ public class SocialConnect extends BaseModel {
     private ServiceType serviceType;
     private ServiceStatus serviceStatus;
     private String note;
+    private String email;
+    private String name;
+    private String imageUrl;
     private String description;
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date cancelledAt;

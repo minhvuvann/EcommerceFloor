@@ -4,12 +4,10 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import org.springframework.stereotype.Repository;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
-import vn.mellow.ecom.ecommercefloor.enums.PasswordStatus;
-import vn.mellow.ecom.ecommercefloor.enums.ServiceStatus;
-import vn.mellow.ecom.ecommercefloor.enums.ServiceType;
-import vn.mellow.ecom.ecommercefloor.enums.UserStatus;
+import vn.mellow.ecom.ecommercefloor.enums.*;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
 import vn.mellow.ecom.ecommercefloor.model.user.KeyPassword;
+import vn.mellow.ecom.ecommercefloor.model.user.Role;
 import vn.mellow.ecom.ecommercefloor.model.user.SocialConnect;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 
@@ -48,9 +46,19 @@ public class UserManager extends BaseManager {
         return socialCollection;
     }
 
-    public User createUser(User user, KeyPassword keyPassword, SocialConnect socialConnect) {
+    private MongoCollection<Role> roleCollection;
+
+    public MongoCollection<Role> getRoleCollection() {
+        if (null == roleCollection) {
+            roleCollection = getCollection(Role.class);
+        }
+        return roleCollection;
+    }
+
+    public User createUser(User user, KeyPassword keyPassword, SocialConnect socialConnect, Role role) {
         //create new user
-        user.setUserStatus(UserStatus.EFFECTIVE);
+
+
         user.setId(generateId());
         user.setCreatedAt(new Date());
         user.setUpdatedAt(null);
@@ -59,8 +67,13 @@ public class UserManager extends BaseManager {
         keyPassword.setCreatedAt(new Date());
         keyPassword.setId(generateId());
         keyPassword.setUserId(user.getId());
-        keyPassword.setPasswordStatus(PasswordStatus.NEW);
         getKeyPasswordCollection().insertOne(keyPassword);
+
+        //create role for user
+        role.setCreatedAt(new Date());
+        role.setUpdatedAt(null);
+        role.setUserId(user.getId());
+        getRoleCollection().insertOne(role);
         // check that the service user not normally
         if (null != socialConnect && !ServiceType.NORMALLY.equals(user.getServiceType())) {
             socialConnect.setId(generateId());

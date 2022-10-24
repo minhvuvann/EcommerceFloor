@@ -42,6 +42,8 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.11.4" />
           <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.1" />
           <element id="library" level="project" name="Maven: javax.activation:javax.activation-api:1.2.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:5.7.0" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.11" />
           <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-sync:4.1.1" />
           <element id="library" level="project" name="Maven: org.mongodb:bson:4.1.1" />
           <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-core:4.1.1" />

@@ -17,6 +17,7 @@ public class User extends BaseModel {
     private String fullName;
     private String email;
     private String telephone;
+    private String imageUrl;
     private Date birthday;
     private GenderType gender;
     @NonNull

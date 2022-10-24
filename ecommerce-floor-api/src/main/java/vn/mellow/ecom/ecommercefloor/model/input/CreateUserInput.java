@@ -6,6 +6,7 @@ import vn.mellow.ecom.ecommercefloor.model.user.User;
 
 @Data
 public class CreateUserInput {
-    private User user;
-    private KeyPassword password;
+    private UserInput user;
+    private KeyPasswordInput password;
+    private RoleInput role;
 }

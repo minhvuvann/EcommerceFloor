@@ -36,20 +36,20 @@ class EcommerceFloorApplicationTests {
 
     @Test
     public void testUser() {
-        CreateUserInput createUserInput = new CreateUserInput();
-        User user = new User();
-        user.setBirthday(new Date("11/02/2000"));
-        user.setByUser(byUser);
-        user.setEmail("nguyenvandat@gmail.com");
-        user.setDescription("Tài khoản khách hàng");
-        user.setFullName("Nguyễn Văn Đạt");
-        user.setGender(GenderType.MAN);
-        user.setServiceType(ServiceType.NORMALLY);
-        user.setTelephone("0988883131");
-        user.setUsername("datBen1102");
-        createUserInput.setUser(user);
-        KeyPassword password = new KeyPassword();
-        password.setPassword("nvdat11022000");
+//        CreateUserInput createUserInput = new CreateUserInput();
+//        User user = new User();
+//        user.setBirthday(new Date("11/02/2000"));
+//        user.setByUser(byUser);
+//        user.setEmail("nguyenvandat@gmail.com");
+//        user.setDescription("Tài khoản khách hàng");
+//        user.setFullName("Nguyễn Văn Đạt");
+//        user.setGender(GenderType.MAN);
+//        user.setServiceType(ServiceType.NORMALLY);
+//        user.setTelephone("0988883131");
+//        user.setUsername("datBen1102");
+//        createUserInput.setUser(user);
+//        KeyPassword password = new KeyPassword();
+//        password.setPassword("nvdat11022000");
     }
 
 }
