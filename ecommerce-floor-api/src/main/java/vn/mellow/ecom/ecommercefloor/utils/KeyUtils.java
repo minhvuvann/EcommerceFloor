@@ -4,13 +4,13 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class KeyUtils {
-    private static String TOKEN = "2604200119112001";
+    private static final String TOKEN = "2604200119112001";
 
     public static String hashBCryptEncoder(String key) {
         return new BCryptPasswordEncoder().encode(key);
     }
 
-    public static String getTOKEN() {
+    public static String getToken() {
 
         return DigestUtils.sha512Hex(TOKEN);
     }

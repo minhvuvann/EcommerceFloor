@@ -41,6 +41,7 @@ public class UserCreateController {
         user.setBirthday(userInput.getBirthday());
         user.setDescription(userInput.getDescription());
         user.setAddress(userInput.getAddress());
+        user.setImageUrl(userInput.getImageUrl());
         ServiceType serviceType = ServiceType.NORMALLY;
         if (null != userInput.getServiceType()) {
             serviceType = userInput.getServiceType();
@@ -49,7 +50,7 @@ public class UserCreateController {
         //set key password
         KeyPasswordInput keyPasswordInput = createUserInput.getPassword();
         KeyPassword keyPassword = new KeyPassword();
-        String token = KeyUtils.getTOKEN();
+        String token = KeyUtils.getToken();
         String password = KeyUtils.hashBCryptEncoder(keyPasswordInput.getPassword() + token);
         keyPassword.setPassword(password);
         keyPassword.setToken(token);
@@ -59,7 +60,7 @@ public class UserCreateController {
             passwordStatus = keyPasswordInput.getPasswordStatus();
 
         }
-        keyPasswordInput.setPasswordStatus(passwordStatus);
+        keyPassword.setPasswordStatus(passwordStatus);
 
         //set role for user
         RoleInput roleInput = createUserInput.getRole();

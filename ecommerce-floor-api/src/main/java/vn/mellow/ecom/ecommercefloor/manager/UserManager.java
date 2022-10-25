@@ -66,11 +66,13 @@ public class UserManager extends BaseManager {
         getUserCollection().insertOne(user);
         //create password for userCollection
         keyPassword.setCreatedAt(new Date());
+        keyPassword.setUpdatedAt(null);
         keyPassword.setId(generateId());
         keyPassword.setUserId(user.getId());
         getKeyPasswordCollection().insertOne(keyPassword);
 
         //create role for user
+        role.setId(generateId());
         role.setCreatedAt(new Date());
         role.setUpdatedAt(null);
         role.setUserId(user.getId());
@@ -126,9 +128,12 @@ public class UserManager extends BaseManager {
     public ResultList<User> filterUser(UserFilter filterData) {
         List<Bson> filter = getFilters(filterData);
         appendFilter(filterData.getFullName(), "fullName", filter);
-        appendFilter(filterData.getGender().toString(), "gender", filter);
-        appendFilter(filterData.getUserStatus().toString(), "userStatus", filter);
-        appendFilter(filterData.getServiceType().toString(), "serviceType", filter);
+        if (null != filterData.getGender())
+            appendFilter(filterData.getGender().toString(), "gender", filter);
+        if (null != filterData.getUserStatus())
+            appendFilter(filterData.getUserStatus().toString(), "userStatus", filter);
+        if (null != filterData.getServiceType())
+            appendFilter(filterData.getServiceType().toString(), "serviceType", filter);
         appendFilter(filterData.getUserId(), "_id", filter);
         return getResultList(getUserCollection(), filter, filterData.getOffset(), filterData.getMaxResult());
     }

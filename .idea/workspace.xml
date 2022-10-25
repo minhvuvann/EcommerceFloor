@@ -10,33 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/RoleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/KeyPasswordInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/RoleInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/UserInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ecommerce_floor__1__war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ecommerce_floor__1__war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ecommerce_floor_api_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ecommerce_floor_api_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ecommerce_floor_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ecommerce_floor_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/DimensionMeasurement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/DimensionUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/ProductVariant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/WeightUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/OrderCancelReason.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/order/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/order/OrderItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/ecommerce-floor-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/ecommerce-floor-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/RoleStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/RoleStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/UserStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/UserStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/CreateUserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/CreateUserInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/SocialConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/SocialConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/utils/KeyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/utils/KeyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/manager/UserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/manager/UserManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/input/UserInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/input/UserInput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/KeyUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/KeyUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -88,6 +79,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="vn.mellow.ecom.ecommercefloor.base.model" />
+      <recent name="vn.mellow.ecom.ecommercefloor.enums" />
       <recent name="vn.mellow.ecom.ecommercefloor.base" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -116,7 +109,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.KeyUtils">
+  <component name="RunManager" selected="Spring Boot.EcommerceFloorApplication">
     <configuration name="KeyUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="vn.mellow.ecom.ecommercefloor.utils.KeyUtils" />
       <module name="ecommerce-floor-api" />
@@ -155,8 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.KeyUtils" />
         <item itemvalue="Spring Boot.EcommerceFloorApplication" />
+        <item itemvalue="Application.KeyUtils" />
         <item itemvalue="JUnit.EcommerceFloorApplicationTests.testUser" />
       </list>
     </recent_temporary>
@@ -196,7 +189,9 @@
       <workItem from="1666584302842" duration="190000" />
       <workItem from="1666586175819" duration="10000" />
       <workItem from="1666600817575" duration="251000" />
-      <workItem from="1666601075251" duration="9039000" />
+      <workItem from="1666601075251" duration="15997000" />
+      <workItem from="1666660914389" duration="1417000" />
+      <workItem from="1666674332189" duration="309000" />
     </task>
     <servers />
   </component>
@@ -214,5 +209,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/Address.java</url>
+          <line>7</line>
+          <properties field="address1" class="vn.mellow.ecom.ecommercefloor.base.model.Address" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
