@@ -246,14 +246,20 @@ public enum CountryCode {
     ZM("ZM"),
     ZW("ZW"),
     ZZ("ZZ");
-    private final String graphqlName;
+    private final String description;
 
-    private CountryCode(String graphqlName) {
-        this.graphqlName = graphqlName;
+    private CountryCode(String description) {
+        this.description = description;
     }
 
+    public String getDescription() {
+        return this.description;
+    }
+
+    @Override
     public String toString() {
-        return this.graphqlName;
+        return this.name();
     }
+
 
 }

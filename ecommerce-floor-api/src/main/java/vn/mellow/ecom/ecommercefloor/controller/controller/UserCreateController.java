@@ -14,6 +14,8 @@ import vn.mellow.ecom.ecommercefloor.model.user.Role;
 import vn.mellow.ecom.ecommercefloor.model.user.SocialConnect;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 import vn.mellow.ecom.ecommercefloor.utils.KeyUtils;
+import vn.mellow.ecom.ecommercefloor.utils.StatusUtils;
+import vn.mellow.ecom.ecommercefloor.utils.TypeUtils;
 
 @Component
 public class UserCreateController {
@@ -97,11 +99,34 @@ public class UserCreateController {
         if (null == createUserInput.getUser()) {
             throw new ServiceException("invalid_data", "Chưa điền thông tin cho user", "user is null");
         }
-        if (null == createUserInput.getPassword() || null == createUserInput.getPassword().getPassword()) {
-            throw new ServiceException("invalid_data", "chưa tạo mật khẩu cho user", "password is null");
+        if (StatusUtils.isUserStatus(createUserInput.getUser().getUserStatus().toString())) {
+            throw new ServiceException("exists_status", "Trạng thái của user không tồn tại.( " + UserStatus.getListName() + " )", "Status user is not exists");
+        }
+        if (TypeUtils.isGenderType(createUserInput.getUser().getGender().toString())) {
+            throw new ServiceException("exists_type", "Loại giới tính không tồn tại.( " + GenderType.getListName() + " )", "gender type is not exists");
+        }
+        if (TypeUtils.isServiceType(createUserInput.getUser().getServiceType().toString())) {
+            throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
+        }
+        if (null == createUserInput.getPassword() || null == createUserInput.getPassword().getPassword()
+                || createUserInput.getPassword().getPassword().length() == 0
+                || "null".equalsIgnoreCase(createUserInput.getPassword().getPassword())) {
+            throw new ServiceException("invalid_data", "Chưa tạo mật khẩu cho user", "password is null");
+        }
+        if (StatusUtils.isPasswordStatus(createUserInput.getPassword().getPasswordStatus().toString())) {
+            throw new ServiceException("exists_status", "Trạng thái của password không tồn tại.( " + PasswordStatus.getListName() + " )", "Status password is not exists");
+
         }
         if (null == createUserInput.getRole() || null == createUserInput.getRole().getRoleType()) {
             throw new ServiceException("invalid_data", "Chưa phân quyền cho user", "role is null");
+        }
+        if (StatusUtils.isRoleStatus(createUserInput.getRole().getRoleStatus().toString())) {
+            throw new ServiceException("exists_status", "Trạng thái của role không tồn tại.( " + RoleStatus.getListName() + " )", "Status role is not exists");
+
+        }
+        if (TypeUtils.isRoleType(createUserInput.getRole().getRoleType().toString())) {
+            throw new ServiceException("exists_type", "Loại phân quyền không tồn tại. ( " + RoleType.getListName() + " )", "Role type is not exists");
+
         }
     }
 }

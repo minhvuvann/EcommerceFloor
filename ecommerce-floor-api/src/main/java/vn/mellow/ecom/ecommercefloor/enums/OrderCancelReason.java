@@ -5,36 +5,36 @@ package vn.mellow.ecom.ecommercefloor.enums;
  */
 public enum OrderCancelReason {
 
-    /**
-     * The customer wanted to cancel the order.
-     */
-    CUSTOMER("CUSTOMER"),
-    /**
-     * The order was fraudulent.
-     */
-    FRAUD("FRAUD"),
-    /**
-     * There was insufficient inventory.
-     */
-    ADMIN("ADMIN"),
-    /**
-     * Payment was declined.
-     */
-    DECLINED("DECLINED"),
-    /**
-     * The order was canceled for an unlisted reason.
-     */
-    OTHER("OTHER");
+    CUSTOMER("Khách hàng"),
 
-    private final String graphqlName;
+    FRAUD("Lừa đảo"),
 
-    private OrderCancelReason(String graphqlName) {
-        this.graphqlName = graphqlName;
+    ADMIN("Quản trị viên"),
+
+    OTHER("Khác");
+
+    private final String description;
+
+    private OrderCancelReason(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     @Override
     public String toString() {
-        return this.graphqlName;
+        return this.name();
     }
+
+    public static String getListName() {
+        String listName = "";
+        for (OrderCancelReason type : values()) {
+            listName += type.toString() + ", ";
+        }
+        return listName;
+    }
+
 
 }
