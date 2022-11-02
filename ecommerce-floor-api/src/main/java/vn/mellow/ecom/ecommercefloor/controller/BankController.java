@@ -56,7 +56,7 @@ public class BankController extends BaseController {
     }
 
     @ApiOperation(value = "Get qr code information bank store")
-    @PostMapping("qr-code-info/{bank-id}/acount-no/{account-no}/template/{template}")
+    @PostMapping("qr-code-info/{bank-id}/account-no/{account-no}/template/{template}")
     public URL getQrImage(@PathVariable("bank-id") String bankId, @PathVariable("account-no") String accountNo,
                           @PathVariable("template") String template, @RequestParam("amount") double amount,
                           @RequestParam("addInfo") String addInfo, @RequestParam("account-name") String accountName) throws ServiceException {
@@ -90,7 +90,7 @@ public class BankController extends BaseController {
                 accountName = this.accountName;
 
             }
-            if (amount >= 0) {
+            if (amount <= 0) {
                 throw new ServiceException("not_found", "Chưa nhập số tiền cần thanh toán", "amoun > 0 ");
 
             }

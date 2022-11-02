@@ -86,13 +86,13 @@ public class BaseManager {
         return activityLogCollection;
     }
 
-    protected List<ActivityLog> getActivityLog( String requestId) {
+    protected List<ActivityLog> getActivityLog(String requestId) {
         List<Bson> filter = new ArrayList<>();
         filter.add(Filters.eq("requestId", requestId));
         return getActivityLogCollection().find(Filters.and(filter)).sort(new BasicDBObject("createdAt", -1)).into(new ArrayList<>());
     }
 
-    protected ActivityLog addActivityLog( ActivityUser user, String description, String requestId, ActivityLogType type, Class requestEntity) {
+    protected ActivityLog addActivityLog(ActivityUser user, String description, String requestId, ActivityLogType type, Class requestEntity) {
         ActivityLog activityLog = new ActivityLog();
         activityLog.setCreatedAt(new Date());
         activityLog.setUser(user);
@@ -131,7 +131,7 @@ public class BaseManager {
         return idCounter + getRandomNumber();
     }
 
-    public String generateCode( Class entity) {
+    public String generateCode(Class entity) {
         String entityName = entity.getSimpleName();
         List<Bson> filter = new ArrayList<>();
         filter.add(Filters.eq("entityName", entityName));
@@ -157,11 +157,16 @@ public class BaseManager {
 
     protected ResultList getResultList(MongoCollection collection, List<Bson> filter, int offset, int maxResult) {
         Bson filters = Filters.and(filter);
-        long count = collection.countDocuments(filters);
+        long count = collection.countDocuments();
+        FindIterable itr = collection.find();
+        if (filter.size() > 0) {
+            itr = collection.find(filters);
+            count = collection.countDocuments(filters);
+        }
         ResultList resultList = new ResultList();
         resultList.setResultList(new ArrayList());
         if (count > 0) {
-            FindIterable itr = collection.find(filters);
+
             boolean hasFilterText = false;
             for (Bson bson : filter) {
                 String f = bson.toString();
