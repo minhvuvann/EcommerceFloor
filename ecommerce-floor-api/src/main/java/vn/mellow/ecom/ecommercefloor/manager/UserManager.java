@@ -134,7 +134,12 @@ public class UserManager extends BaseManager {
             appendFilter(filterData.getUserStatus().toString(), "userStatus", filter);
         if (null != filterData.getServiceType())
             appendFilter(filterData.getServiceType().toString(), "serviceType", filter);
-        appendFilter(filterData.getUserId(), "_id", filter);
+        if (null!=filterData.getEmail())
+            appendFilter(filterData.getEmail(),"email",filter);
+        if (null!=filterData.getTelephone())
+            appendFilter(filterData.getTelephone(),"telephone",filter);
+        if (null != filterData.getUserId())
+            appendFilter(filterData.getUserId(), "_id", filter);
         return getResultList(getUserCollection(), filter, filterData.getOffset(), filterData.getMaxResult());
     }
 }

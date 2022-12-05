@@ -9,13 +9,12 @@ import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
 import vn.mellow.ecom.ecommercefloor.model.input.KeyPasswordInput;
 import vn.mellow.ecom.ecommercefloor.model.input.RoleInput;
 import vn.mellow.ecom.ecommercefloor.model.input.UserInput;
-import vn.mellow.ecom.ecommercefloor.model.user.KeyPassword;
-import vn.mellow.ecom.ecommercefloor.model.user.Role;
-import vn.mellow.ecom.ecommercefloor.model.user.SocialConnect;
-import vn.mellow.ecom.ecommercefloor.model.user.User;
+import vn.mellow.ecom.ecommercefloor.model.user.*;
 import vn.mellow.ecom.ecommercefloor.utils.KeyUtils;
 import vn.mellow.ecom.ecommercefloor.utils.StatusUtils;
 import vn.mellow.ecom.ecommercefloor.utils.TypeUtils;
+
+import java.util.List;
 
 @Component
 public class UserCreateController {
@@ -53,7 +52,7 @@ public class UserCreateController {
         KeyPasswordInput keyPasswordInput = createUserInput.getPassword();
         KeyPassword keyPassword = new KeyPassword();
         String token = KeyUtils.getToken();
-        String password = KeyUtils.hashBCryptEncoder(keyPasswordInput.getPassword() + token);
+        String password = KeyUtils.SHA256(keyPasswordInput.getPassword() + token);
         keyPassword.setPassword(password);
         keyPassword.setToken(token);
         keyPassword.setNote(keyPasswordInput.getNote());
@@ -99,13 +98,28 @@ public class UserCreateController {
         if (null == createUserInput.getUser()) {
             throw new ServiceException("invalid_data", "Chưa điền thông tin cho user", "user is null");
         }
-        if (StatusUtils.isUserStatus(createUserInput.getUser().getUserStatus().toString())) {
+        if (null == createUserInput.getUser().getEmail()) {
+            throw new ServiceException("invalid_data", "Chưa điền thông tin email", "email is null");
+        }
+        UserFilter userFilter = new UserFilter();
+        if (null != createUserInput.getUser().getEmail()) {
+            userFilter.setEmail(createUserInput.getUser().getEmail());
+        }
+        List<User> userList = userManager.filterUser(userFilter).getResultList();
+        if (null != userList && userList.size() != 0) {
+            throw new ServiceException("exist_account", "Email của bạn đã được đăng ký.( " + createUserInput.getUser().getEmail() + " )", "Email user is exists");
+
+        }
+        if (null != createUserInput.getUser().getUserStatus() &&
+                StatusUtils.isUserStatus(createUserInput.getUser().getUserStatus().toString())) {
             throw new ServiceException("exists_status", "Trạng thái của user không tồn tại.( " + UserStatus.getListName() + " )", "Status user is not exists");
         }
-        if (TypeUtils.isGenderType(createUserInput.getUser().getGender().toString())) {
+        if (null != createUserInput.getUser().getGender() &&
+                TypeUtils.isGenderType(createUserInput.getUser().getGender().toString())) {
             throw new ServiceException("exists_type", "Loại giới tính không tồn tại.( " + GenderType.getListName() + " )", "gender type is not exists");
         }
-        if (TypeUtils.isServiceType(createUserInput.getUser().getServiceType().toString())) {
+        if (null == createUserInput.getUser().getServiceType() ||
+                TypeUtils.isServiceType(createUserInput.getUser().getServiceType().toString())) {
             throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
         }
         if (null == createUserInput.getPassword() || null == createUserInput.getPassword().getPassword()

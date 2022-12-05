@@ -2,7 +2,7 @@ package vn.mellow.ecom.ecommercefloor.enums;
 
 public enum RoleType {
     ADMIN("Quản trị viên"), STORE("Cửa hàng"),
-    PERSONAL("Cá nhân"), OTHER("Khác");
+    PERSONAL("Cá nhân"),PERSONAL_STORE("Cửa hàng và cá nhân"), OTHER("Khác");
     private final String description;
 
     private RoleType(String description) {

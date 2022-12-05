@@ -1,11 +1,11 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
-public enum ResponseStatus {
+public enum BasicStatus {
     success("Thành công"), failure("Thất bại"),
     error("Lỗi"), pending("Treo");
     private final String description;
 
-    private ResponseStatus(String description) {
+    private BasicStatus(String description) {
         this.description = description;
     }
 
@@ -20,7 +20,7 @@ public enum ResponseStatus {
 
     public static String getListName() {
         String listName = "";
-        for (ResponseStatus status : values()) {
+        for (BasicStatus status : values()) {
             listName += status.toString() + ", ";
         }
         return listName.substring(0, listName.length() - 2);

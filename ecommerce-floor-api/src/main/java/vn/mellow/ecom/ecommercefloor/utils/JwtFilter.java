@@ -1,7 +1,6 @@
-package net.longvan.training.spring.filter;
+package vn.mellow.ecom.ecommercefloor.utils;
 
-import net.longvan.training.spring.services.impl.UserServices;
-import net.longvan.training.spring.utility.JwtUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import vn.mellow.ecom.ecommercefloor.service.UserServices;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ import java.io.IOException;
 public class JwtFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JwtUtil jwtUtil;
+    private JwtUtils jwtUtil;
     @Autowired
     private UserServices service;
 

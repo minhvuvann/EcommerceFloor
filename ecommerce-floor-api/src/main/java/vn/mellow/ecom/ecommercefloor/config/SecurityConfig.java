@@ -1,7 +1,6 @@
-package net.longvan.training.spring.config;
+package vn.mellow.ecom.ecommercefloor.config;
 
-import net.longvan.training.spring.filter.JwtFilter;
-import net.longvan.training.spring.services.impl.UserServices;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +15,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import vn.mellow.ecom.ecommercefloor.service.UserServices;
+import vn.mellow.ecom.ecommercefloor.utils.JwtFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -46,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login","/file/**")
+        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**")
                 .permitAll().anyRequest().authenticated()
                 .and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

@@ -11,6 +11,8 @@ import vn.mellow.ecom.ecommercefloor.enums.UserStatus;
 public class UserFilter extends BaseFilter {
     private  String userId;
     private String fullName;
+    private String email;
+    private String telephone;
     private GenderType gender;
     private ServiceType serviceType;
     private UserStatus userStatus;

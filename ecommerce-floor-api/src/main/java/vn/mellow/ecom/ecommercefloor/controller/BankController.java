@@ -24,7 +24,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/bank/1.0.0/")
 public class BankController extends BaseController {
-    private final static Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(BankController.class);
     @Value("${BankClient.url}")
     private String bankService;
     @Value("${qr.url}")
