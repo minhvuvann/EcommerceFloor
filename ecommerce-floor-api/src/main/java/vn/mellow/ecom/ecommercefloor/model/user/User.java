@@ -7,6 +7,7 @@ import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
 import vn.mellow.ecom.ecommercefloor.base.model.Address;
 import vn.mellow.ecom.ecommercefloor.base.model.BaseModel;
 import vn.mellow.ecom.ecommercefloor.enums.GenderType;
+import vn.mellow.ecom.ecommercefloor.enums.ServiceStatus;
 import vn.mellow.ecom.ecommercefloor.enums.ServiceType;
 import vn.mellow.ecom.ecommercefloor.enums.UserStatus;
 
@@ -29,6 +30,7 @@ public class User extends BaseModel {
     private ActivityUser byUser;
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date cancelledAt;
+
 
     public User() {
     }

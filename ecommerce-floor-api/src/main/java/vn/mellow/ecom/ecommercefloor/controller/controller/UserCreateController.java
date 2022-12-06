@@ -26,7 +26,6 @@ public class UserCreateController {
     public User createUser(CreateUserInput createUserInput) throws ServiceException {
         //validateCreateUserInput
         validateCreateUserInput(createUserInput);
-        SocialConnect socialConnect = null;
         UserInput userInput = createUserInput.getUser();
         User user = new User();
         user.setByUser(userInput.getByUser());
@@ -45,7 +44,7 @@ public class UserCreateController {
         user.setEmail(userInput.getEmail());
         user.setFullName(userInput.getFullName());
         user.setBirthday(userInput.getBirthday());
-        user.setDescription(userInput.getDescription());
+        user.setDescription("Login " + user.getServiceType().getDescription());
         user.setAddress(userInput.getAddress());
         user.setImageUrl(userInput.getImageUrl());
         if (null == userInput.getImageUrl()) {
@@ -84,20 +83,9 @@ public class UserCreateController {
             roleStatus = roleInput.getRoleStatus();
         }
         role.setRoleStatus(roleStatus);
-        if (null != user.getServiceType() ) {
-            socialConnect = new SocialConnect();
-            socialConnect.setName(user.getFullName());
-            socialConnect.setEmail(user.getEmail());
-            socialConnect.setImageUrl(user.getImageUrl());
-            socialConnect.setServiceType(user.getServiceType());
-            socialConnect.setDescription("Login " + user.getServiceType().getDescription());
-            socialConnect.setNote("Tạo dịch vụ mạng xã hội kết nối");
 
 
-        }
-
-
-        return userManager.createUser(user, keyPassword, socialConnect, role);
+        return userManager.createUser(user, keyPassword, role);
     }
 
     private void validateCreateUserInput(CreateUserInput createUserInput) throws ServiceException {
@@ -126,19 +114,11 @@ public class UserCreateController {
         UserFilter userFilter = new UserFilter();
         if (null != createUserInput.getUser().getEmail()) {
             userFilter.setEmail(createUserInput.getUser().getEmail());
+            userFilter.setServiceType(createUserInput.getUser().getServiceType());
         }
         List<User> userList = userManager.filterUser(userFilter).getResultList();
-        boolean exists = false;
-        for (User user : userList) {
-            List<SocialConnect> socialConnectList = userManager.getAllSocialConnect(user.getId());
-            for (SocialConnect socialConnect : socialConnectList) {
-                if (socialConnect.getServiceType().equals(createUserInput.getUser().getServiceType())){
-                    exists = true;
-                    break;
-                }
-            }
-        }
-        if (exists) {
+
+        if (userList.size() != 0) {
             throw new ServiceException("exist_account", "Email của bạn đã được đăng ký.( " + createUserInput.getUser().getEmail() + " )", "Email user is exists");
 
         }

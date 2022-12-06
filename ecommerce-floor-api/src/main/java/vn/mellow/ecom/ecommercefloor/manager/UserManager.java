@@ -41,15 +41,6 @@ public class UserManager extends BaseManager {
         return keyPasswordCollection;
     }
 
-    private MongoCollection<SocialConnect> socialCollection;
-
-    public MongoCollection<SocialConnect> getSocialCollection() {
-        if (null == socialCollection) {
-            socialCollection = getCollection(SocialConnect.class);
-        }
-        return socialCollection;
-    }
-
     private MongoCollection<Role> roleCollection;
 
     public MongoCollection<Role> getRoleCollection() {
@@ -59,7 +50,7 @@ public class UserManager extends BaseManager {
         return roleCollection;
     }
 
-    public User createUser(User user, KeyPassword keyPassword, SocialConnect socialConnect, Role role) {
+    public User createUser(User user, KeyPassword keyPassword, Role role) {
         //create new user
         user.setId(generateId());
         user.setCreatedAt(new Date());
@@ -78,15 +69,6 @@ public class UserManager extends BaseManager {
         role.setUpdatedAt(null);
         role.setUserId(user.getId());
         getRoleCollection().insertOne(role);
-        // check that the service user not normally
-        if (null != socialConnect && !ServiceType.NORMALLY.equals(user.getServiceType())) {
-            socialConnect.setId(generateId());
-            socialConnect.setUserId(user.getId());
-            socialConnect.setCreatedAt(new Date());
-            socialConnect.setServiceStatus(ServiceStatus.IN_PROGRESS_CONNECT);
-            socialConnect.setUpdatedAt(null);
-            getSocialCollection().insertOne(socialConnect);
-        }
         ActivityUser activityUser = new ActivityUser();
         activityUser.setUserId(generateId());
         activityUser.setUserName("Nguyễn Thị Cẩm Tiên");
@@ -104,12 +86,6 @@ public class UserManager extends BaseManager {
         return getKeyPasswordCollection().find(Filters.and(filter)).into(new ArrayList<>());
     }
 
-    public List<SocialConnect> getAllSocialConnect(String userId) {
-        List<Bson> filter = new ArrayList<>();
-        filter.add(Filters.eq("userId", userId));
-        return getSocialCollection().find(Filters.and(filter)).into(new ArrayList<>());
-    }
-
     public List<Role> getAllRole(String userId) {
         List<Bson> filter = new ArrayList<>();
         filter.add(Filters.eq("userId", userId));
@@ -125,11 +101,9 @@ public class UserManager extends BaseManager {
         User user = getUser(userId);
         List<KeyPassword> keyPasswords = getAllKeyPassword(userId);
         List<Role> roles = getAllRole(userId);
-        List<SocialConnect> socialConnects = getAllSocialConnect(userId);
         userProfile.setUser(user);
         userProfile.setKeyPassword(keyPasswords);
         userProfile.setRole(roles);
-        userProfile.setSocialConnect(socialConnects);
         return userProfile;
 
     }

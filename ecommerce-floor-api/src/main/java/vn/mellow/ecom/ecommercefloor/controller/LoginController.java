@@ -9,7 +9,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
-import sun.security.util.Password;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.model.ResponseBody;
@@ -24,7 +23,6 @@ import vn.mellow.ecom.ecommercefloor.model.input.KeyPasswordInput;
 import vn.mellow.ecom.ecommercefloor.model.input.RoleInput;
 import vn.mellow.ecom.ecommercefloor.model.input.UserInput;
 import vn.mellow.ecom.ecommercefloor.model.user.Role;
-import vn.mellow.ecom.ecommercefloor.model.user.SocialConnect;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 import vn.mellow.ecom.ecommercefloor.model.user.UserFilter;
 import vn.mellow.ecom.ecommercefloor.utils.JwtUtils;
@@ -52,10 +50,11 @@ public class LoginController extends BaseController {
             throw new ServiceException("invalid_data", "Chưa nhập thông tin Email", "Email is null");
 
         }
-        if (null == password) {
-            throw new ServiceException("invalid_data", "Chưa nhập mật khẩu", "Password is null");
+        if (ServiceType.NORMALLY.equals(serviceType))
+            if (null == password) {
+                throw new ServiceException("invalid_data", "Chưa nhập mật khẩu", "Password is null");
 
-        }
+            }
         if (!admin)
             if (null == serviceType ||
                     !TypeUtils.isServiceType(serviceType.toString())) {
@@ -125,12 +124,9 @@ public class LoginController extends BaseController {
             List<User> users = userManager.filterUser(userFilter).getResultList();
             User user = null;
             for (User u : users) {
-                List<SocialConnect> socialConnectList = userManager.getAllSocialConnect(user.getId());
-                for (SocialConnect socialConnect : socialConnectList) {
-                    if (socialConnect.getServiceType().equals(serviceType)) {
-                        user = null;
-                        break;
-                    }
+                if (user.getServiceType().equals(serviceType)) {
+                    user = u;
+                    break;
                 }
             }
             if (ServiceType.NORMALLY.equals(serviceType)) {
@@ -182,7 +178,7 @@ public class LoginController extends BaseController {
                     userInput.setFullName(fullName);
 
                     KeyPasswordInput keyPasswordInput = new KeyPasswordInput();
-                    keyPasswordInput.setPassword(password);
+                    keyPasswordInput.setPassword(String.valueOf(System.currentTimeMillis()));
 
                     RoleInput role = new RoleInput();
                     role.setRoleType(RoleType.PERSONAL);
@@ -191,7 +187,7 @@ public class LoginController extends BaseController {
                     createUserInput.setPassword(keyPasswordInput);
                     createUserInput.setRole(role);
                     userCreateController.createUser(createUserInput);
-                }else {
+                } else {
                     return new ResponseBody(BasicStatus.success,
                             "Đăng nhập thành công", user);
 
