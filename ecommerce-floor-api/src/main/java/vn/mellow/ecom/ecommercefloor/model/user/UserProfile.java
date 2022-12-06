@@ -8,7 +8,6 @@ import java.util.List;
 public class UserProfile {
     private User user;
     private List<KeyPassword> keyPassword;
-    private List<SocialConnect> socialConnect;
     private List<Role> role;
 
 }
