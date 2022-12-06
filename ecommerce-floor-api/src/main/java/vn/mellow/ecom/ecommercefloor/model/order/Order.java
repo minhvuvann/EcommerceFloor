@@ -54,7 +54,6 @@ public class Order {
     private String shippingServiceId;
     private String shopId;
     private String carrierId;
-    private boolean pending;
 
     public Order() {
     }

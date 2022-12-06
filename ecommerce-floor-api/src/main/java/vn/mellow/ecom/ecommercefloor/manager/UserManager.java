@@ -6,6 +6,7 @@ import com.mongodb.client.model.Filters;
 import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
+import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
 import vn.mellow.ecom.ecommercefloor.enums.*;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
@@ -86,6 +87,14 @@ public class UserManager extends BaseManager {
             socialConnect.setUpdatedAt(null);
             getSocialCollection().insertOne(socialConnect);
         }
+        ActivityUser activityUser = new ActivityUser();
+        activityUser.setUserId(generateId());
+        activityUser.setUserName("Nguyễn Thị Cẩm Tiên");
+        activityUser.setEmail("nguyenthicamtien@gmail.com");
+        activityUser.setPhone("0909499599");
+        addActivityLog(
+                activityUser, "Tạo đơn Order Fulfillment",user.getId(), ActivityLogType.CREATE, User.class);
+
         return user;
     }
 

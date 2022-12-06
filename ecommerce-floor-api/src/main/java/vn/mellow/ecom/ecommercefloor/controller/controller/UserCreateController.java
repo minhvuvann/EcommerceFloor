@@ -1,5 +1,6 @@
 package vn.mellow.ecom.ecommercefloor.controller.controller;
 
+import com.github.javafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
@@ -11,6 +12,7 @@ import vn.mellow.ecom.ecommercefloor.model.input.RoleInput;
 import vn.mellow.ecom.ecommercefloor.model.input.UserInput;
 import vn.mellow.ecom.ecommercefloor.model.user.*;
 import vn.mellow.ecom.ecommercefloor.utils.KeyUtils;
+import vn.mellow.ecom.ecommercefloor.utils.RemoveAccentUtils;
 import vn.mellow.ecom.ecommercefloor.utils.StatusUtils;
 import vn.mellow.ecom.ecommercefloor.utils.TypeUtils;
 
@@ -29,6 +31,9 @@ public class UserCreateController {
         User user = new User();
         user.setByUser(userInput.getByUser());
         user.setUsername(userInput.getUsername());
+        if (null == userInput.getUsername()) {
+            user.setUsername(RemoveAccentUtils.generateUserName(userInput.getFullName()));
+        }
         user.setTelephone(userInput.getTelephone());
         UserStatus userStatus = UserStatus.ACTIVE;
         if (null != userInput.getUserStatus()) {
@@ -43,6 +48,11 @@ public class UserCreateController {
         user.setDescription(userInput.getDescription());
         user.setAddress(userInput.getAddress());
         user.setImageUrl(userInput.getImageUrl());
+        if (null == userInput.getImageUrl()) {
+
+            user.setImageUrl("https://ui-avatars.com/api/?name=" +
+                    userInput.getFullName() == null ? user.getUsername() : userInput.getFullName());
+        }
         ServiceType serviceType = ServiceType.NORMALLY;
         if (null != userInput.getServiceType()) {
             serviceType = userInput.getServiceType();
@@ -74,14 +84,13 @@ public class UserCreateController {
             roleStatus = roleInput.getRoleStatus();
         }
         role.setRoleStatus(roleStatus);
-        if (null != user.getServiceType() && !ServiceType.NORMALLY.equals(user.getServiceType())) {
+        if (null != user.getServiceType() ) {
             socialConnect = new SocialConnect();
             socialConnect.setName(user.getFullName());
             socialConnect.setEmail(user.getEmail());
             socialConnect.setImageUrl(user.getImageUrl());
             socialConnect.setServiceType(user.getServiceType());
-            String socialName = ServiceType.GOOGLE.equals(user.getServiceType()) ? "Google" : "Facebook";
-            socialConnect.setDescription("Login " + socialName);
+            socialConnect.setDescription("Login " + user.getServiceType().getDescription());
             socialConnect.setNote("Tạo dịch vụ mạng xã hội kết nối");
 
 
@@ -101,15 +110,7 @@ public class UserCreateController {
         if (null == createUserInput.getUser().getEmail()) {
             throw new ServiceException("invalid_data", "Chưa điền thông tin email", "email is null");
         }
-        UserFilter userFilter = new UserFilter();
-        if (null != createUserInput.getUser().getEmail()) {
-            userFilter.setEmail(createUserInput.getUser().getEmail());
-        }
-        List<User> userList = userManager.filterUser(userFilter).getResultList();
-        if (null != userList && userList.size() != 0) {
-            throw new ServiceException("exist_account", "Email của bạn đã được đăng ký.( " + createUserInput.getUser().getEmail() + " )", "Email user is exists");
 
-        }
         if (null != createUserInput.getUser().getUserStatus() &&
                 !StatusUtils.isUserStatus(createUserInput.getUser().getUserStatus().toString())) {
             throw new ServiceException("exists_status", "Trạng thái của user không tồn tại.( " + UserStatus.getListName() + " )", "Status user is not exists");
@@ -119,15 +120,34 @@ public class UserCreateController {
             throw new ServiceException("exists_type", "Loại giới tính không tồn tại.( " + GenderType.getListName() + " )", "gender type is not exists");
         }
         if (null == createUserInput.getUser().getServiceType() ||
-               ! TypeUtils.isServiceType(createUserInput.getUser().getServiceType().toString())) {
+                !TypeUtils.isServiceType(createUserInput.getUser().getServiceType().toString())) {
             throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
+        }
+        UserFilter userFilter = new UserFilter();
+        if (null != createUserInput.getUser().getEmail()) {
+            userFilter.setEmail(createUserInput.getUser().getEmail());
+        }
+        List<User> userList = userManager.filterUser(userFilter).getResultList();
+        boolean exists = false;
+        for (User user : userList) {
+            List<SocialConnect> socialConnectList = userManager.getAllSocialConnect(user.getId());
+            for (SocialConnect socialConnect : socialConnectList) {
+                if (socialConnect.getServiceType().equals(createUserInput.getUser().getServiceType())){
+                    exists = true;
+                    break;
+                }
+            }
+        }
+        if (exists) {
+            throw new ServiceException("exist_account", "Email của bạn đã được đăng ký.( " + createUserInput.getUser().getEmail() + " )", "Email user is exists");
+
         }
         if (null == createUserInput.getPassword() || null == createUserInput.getPassword().getPassword()
                 || createUserInput.getPassword().getPassword().length() == 0
                 || "null".equalsIgnoreCase(createUserInput.getPassword().getPassword())) {
             throw new ServiceException("invalid_data", "Chưa tạo mật khẩu cho user", "password is null");
         }
-        if (null==createUserInput.getPassword().getPasswordStatus()&&
+        if (null == createUserInput.getPassword().getPasswordStatus() &&
                 !StatusUtils.isPasswordStatus(createUserInput.getPassword().getPasswordStatus().toString())) {
             throw new ServiceException("exists_status", "Trạng thái của password không tồn tại.( " + PasswordStatus.getListName() + " )", "Status password is not exists");
 
@@ -136,7 +156,7 @@ public class UserCreateController {
             throw new ServiceException("invalid_data", "Chưa phân quyền cho user", "role is null");
         }
         if (null != createUserInput.getRole().getRoleStatus()
-                &&!StatusUtils.isRoleStatus(createUserInput.getRole().getRoleStatus().toString())) {
+                && !StatusUtils.isRoleStatus(createUserInput.getRole().getRoleStatus().toString())) {
             throw new ServiceException("exists_status", "Trạng thái của role không tồn tại.( " + RoleStatus.getListName() + " )", "Status role is not exists");
 
         }
