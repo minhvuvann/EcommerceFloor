@@ -31,14 +31,5 @@ public class KeyUtils {
         return new BCryptPasswordEncoder().matches(key, encode);
     }
 
-    public static void main(String[] args) {
-        System.out.println(hashBCryptEncoder("123456"));
-        System.out.println(hashBase64Encoder("123456"));
-        System.out.println(decodeBase64Encoder(hashBase64Encoder("123456")));
-        System.out.println(SHA256("123456"));
-        System.out.println(SHA256("123456"));
-
-
-    }
 
 }

@@ -72,11 +72,17 @@ public class LoginController extends BaseController {
                         "Đăng nhập thất bại. Không tìm thấy thông tin tài khoản", "Account is not admin");
             }
             String decodePassword = KeyUtils.decodeBase64Encoder(password) + KeyUtils.getToken();
-            Authentication auth = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(email, KeyUtils.SHA256(decodePassword)));
+            Authentication auth =null;
+            try {
+               auth = authenticationManager.authenticate(
+                        new UsernamePasswordAuthenticationToken(email, KeyUtils.SHA256(decodePassword)));
+            } catch (Exception e) {
+                return new ResponseBody(BasicStatus.failure, e.getMessage(), e.getLocalizedMessage());
+
+            }
             if (auth != null && auth.isAuthenticated()) {
                 return new ResponseBody(BasicStatus.success,
-                        "Đăng nhập thành công", "Account is admin");
+                        "Đăng nhập thành công", jwtUtils.generateToken(email));
 
             } else {
                 return new ResponseBody(BasicStatus.failure,
@@ -111,19 +117,25 @@ public class LoginController extends BaseController {
             }
             if (null == roleType) {
                 return new ResponseBody(BasicStatus.failure,
-                        "Đăng nhập thất bại. Không tìm thấy thông tin tài khoản", "Account is not admin");
+                        "Đăng nhập thất bại. Không tìm thấy thông tin tài khoản", "Account is not personal");
             }
             String decodePassword = KeyUtils.decodeBase64Encoder(password) + KeyUtils.getToken();
 
-            Authentication auth = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(email, KeyUtils.SHA256(decodePassword)));
+            Authentication auth =null;
+            try {
+                auth = authenticationManager.authenticate(
+                        new UsernamePasswordAuthenticationToken(email, KeyUtils.SHA256(decodePassword)));
+            } catch (Exception e) {
+                return new ResponseBody(BasicStatus.failure, e.getMessage(), e.getLocalizedMessage());
+
+            }
             if (auth != null && auth.isAuthenticated()) {
                 return new ResponseBody(BasicStatus.success,
-                        "Đăng nhập thành công", "Account is admin");
+                        "Đăng nhập thành công", jwtUtils.generateToken(email));
 
             } else {
                 return new ResponseBody(BasicStatus.failure,
-                        "Đăng nhập thất bại. Không tìm thấy thông tin tài khoản", "Account is not admin");
+                        "Đăng nhập thất bại. Không tìm thấy thông tin tài khoản", "Account is not personal");
 
             }
         } catch (ServiceException e) {

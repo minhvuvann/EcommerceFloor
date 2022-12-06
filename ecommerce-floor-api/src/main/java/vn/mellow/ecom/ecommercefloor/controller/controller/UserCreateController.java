@@ -111,15 +111,15 @@ public class UserCreateController {
 
         }
         if (null != createUserInput.getUser().getUserStatus() &&
-                StatusUtils.isUserStatus(createUserInput.getUser().getUserStatus().toString())) {
+                !StatusUtils.isUserStatus(createUserInput.getUser().getUserStatus().toString())) {
             throw new ServiceException("exists_status", "Trạng thái của user không tồn tại.( " + UserStatus.getListName() + " )", "Status user is not exists");
         }
         if (null != createUserInput.getUser().getGender() &&
-                TypeUtils.isGenderType(createUserInput.getUser().getGender().toString())) {
+                !TypeUtils.isGenderType(createUserInput.getUser().getGender().toString())) {
             throw new ServiceException("exists_type", "Loại giới tính không tồn tại.( " + GenderType.getListName() + " )", "gender type is not exists");
         }
         if (null == createUserInput.getUser().getServiceType() ||
-                TypeUtils.isServiceType(createUserInput.getUser().getServiceType().toString())) {
+               ! TypeUtils.isServiceType(createUserInput.getUser().getServiceType().toString())) {
             throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
         }
         if (null == createUserInput.getPassword() || null == createUserInput.getPassword().getPassword()
@@ -127,18 +127,20 @@ public class UserCreateController {
                 || "null".equalsIgnoreCase(createUserInput.getPassword().getPassword())) {
             throw new ServiceException("invalid_data", "Chưa tạo mật khẩu cho user", "password is null");
         }
-        if (StatusUtils.isPasswordStatus(createUserInput.getPassword().getPasswordStatus().toString())) {
+        if (null==createUserInput.getPassword().getPasswordStatus()&&
+                !StatusUtils.isPasswordStatus(createUserInput.getPassword().getPasswordStatus().toString())) {
             throw new ServiceException("exists_status", "Trạng thái của password không tồn tại.( " + PasswordStatus.getListName() + " )", "Status password is not exists");
 
         }
         if (null == createUserInput.getRole() || null == createUserInput.getRole().getRoleType()) {
             throw new ServiceException("invalid_data", "Chưa phân quyền cho user", "role is null");
         }
-        if (StatusUtils.isRoleStatus(createUserInput.getRole().getRoleStatus().toString())) {
+        if (null != createUserInput.getRole().getRoleStatus()
+                &&!StatusUtils.isRoleStatus(createUserInput.getRole().getRoleStatus().toString())) {
             throw new ServiceException("exists_status", "Trạng thái của role không tồn tại.( " + RoleStatus.getListName() + " )", "Status role is not exists");
 
         }
-        if (TypeUtils.isRoleType(createUserInput.getRole().getRoleType().toString())) {
+        if (!TypeUtils.isRoleType(createUserInput.getRole().getRoleType().toString())) {
             throw new ServiceException("exists_type", "Loại phân quyền không tồn tại. ( " + RoleType.getListName() + " )", "Role type is not exists");
 
         }
