@@ -122,20 +122,20 @@ public class LoginController extends BaseController {
             UserFilter userFilter = new UserFilter();
             userFilter.setEmail(email);
             List<User> users = userManager.filterUser(userFilter).getResultList();
-            User user = null;
-            for (User u : users) {
+            User userUpdate = null;
+            for (User user : users) {
                 if (user.getServiceType().equals(serviceType)) {
-                    user = u;
+                    userUpdate = user;
                     break;
                 }
             }
             if (ServiceType.NORMALLY.equals(serviceType)) {
-                if (null == user) {
+                if (null == userUpdate) {
                     return new ResponseBody(BasicStatus.failure,
                             "Đăng nhập thất bại. Không tìm thấy thông tin tài khoản", "Account is not personal");
                 }
                 RoleType roleType = null;
-                List<Role> roleList = userManager.getAllRole(user.getId());
+                List<Role> roleList = userManager.getAllRole(userUpdate.getId());
                 for (Role role : roleList) {
                     if (RoleStatus.ACTIVE.equals(role.getRoleStatus()))
                         if (role.getRoleType().equals(RoleType.PERSONAL) ||
@@ -170,7 +170,7 @@ public class LoginController extends BaseController {
                 }
 
             } else {
-                if (user == null) {
+                if (userUpdate == null) {
                     CreateUserInput createUserInput = new CreateUserInput();
                     UserInput userInput = new UserInput();
                     userInput.setImageUrl(imageUrl);
@@ -189,7 +189,7 @@ public class LoginController extends BaseController {
                     userCreateController.createUser(createUserInput);
                 } else {
                     return new ResponseBody(BasicStatus.success,
-                            "Đăng nhập thành công", user);
+                            "Đăng nhập thành công", userUpdate);
 
                 }
 

@@ -44,7 +44,6 @@ public class UserCreateController {
         user.setEmail(userInput.getEmail());
         user.setFullName(userInput.getFullName());
         user.setBirthday(userInput.getBirthday());
-        user.setDescription("Login " + user.getServiceType().getDescription());
         user.setAddress(userInput.getAddress());
         user.setImageUrl(userInput.getImageUrl());
         if (null == userInput.getImageUrl()) {
@@ -57,6 +56,7 @@ public class UserCreateController {
             serviceType = userInput.getServiceType();
         }
         user.setServiceType(serviceType);
+        user.setDescription("Login " + user.getServiceType().getDescription());
         //set key password
         KeyPasswordInput keyPasswordInput = createUserInput.getPassword();
         KeyPassword keyPassword = new KeyPassword();
