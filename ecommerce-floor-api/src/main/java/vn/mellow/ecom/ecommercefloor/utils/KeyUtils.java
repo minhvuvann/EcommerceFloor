@@ -6,6 +6,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class KeyUtils {
+
     private static final String TOKEN = "2604200119112001";
 
     public static String hashBCryptEncoder(String key) {
@@ -16,6 +17,7 @@ public class KeyUtils {
 
         return DigestUtils.sha512Hex(TOKEN);
     }
+    //MTIzNDU2 = 123456
     public static String hashBase64Encoder(String key)  {
        return new String(Base64.encodeBase64String(key.getBytes()));
     }

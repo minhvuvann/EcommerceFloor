@@ -47,9 +47,8 @@ public class UserCreateController {
         user.setAddress(userInput.getAddress());
         user.setImageUrl(userInput.getImageUrl());
         if (null == userInput.getImageUrl()) {
-
-            user.setImageUrl("https://ui-avatars.com/api/?name=" +
-                    userInput.getFullName() == null ? user.getUsername() : userInput.getFullName());
+            String imageUrl = userInput.getFullName() == null ? user.getUsername() : userInput.getFullName();
+            user.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl);
         }
         ServiceType serviceType = ServiceType.NORMALLY;
         if (null != userInput.getServiceType()) {
