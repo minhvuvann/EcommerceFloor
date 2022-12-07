@@ -8,11 +8,11 @@ public class Address {
     private String address1;
     private String address2;
     private String province;
-    private String provinceCode;
+    private int provinceCode;
     private String district;
-    private String districtCode;
+    private int districtCode;
     private String ward;
-    private String wardCode;
+    private int wardCode;
     private String city;
     private String company;
     private String country;

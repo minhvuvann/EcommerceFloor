@@ -139,7 +139,7 @@ public class LoginController extends BaseController {
                 for (Role role : roleList) {
                     if (RoleStatus.ACTIVE.equals(role.getRoleStatus()))
                         if (role.getRoleType().equals(RoleType.PERSONAL) ||
-                                roleType.equals(RoleType.STORE) || roleType.equals(RoleType.PERSONAL_STORE)) {
+                                role.equals(RoleType.STORE) || role.equals(RoleType.PERSONAL_STORE)) {
                             roleType = role.getRoleType();
                             break;
                         }

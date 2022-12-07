@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.model.bank.ResultBank;
+import vn.mellow.ecom.ecommercefloor.model.shipment.convert.ResultPack;
 
 import java.lang.reflect.Type;
 import java.util.Arrays;
@@ -44,6 +45,10 @@ public class BaseClient {
     protected <T> ResultBank<T> getResponseBankList(String path, Class<T> classOfT) throws ClientException {
         String content = HttpsUtils.get(this.getServiceFullPath(path));
         return this.fromBankList(content, classOfT);
+    }
+    protected <T> ResultPack<T> getResponsePackList(String header,String path, Class<T> classOfT) throws ClientException {
+        String content = HttpsUtils.get(this.getServiceFullPath(path),header);
+        return this.fromPackList(content, classOfT);
     }
 
     protected <T> List<T> getList(String path, Class<T> classOfT, String token) throws ClientException {
@@ -113,6 +118,11 @@ public class BaseClient {
     protected <T> ResultBank<T> fromBankList(String content, Class<T> classOfT) {
         Gson gson = getGson();
         Type typeOfT = TypeToken.getParameterized(ResultBank.class, new Type[]{classOfT}).getType();
+        return gson.fromJson(content, typeOfT);
+    }
+    protected <T> ResultPack<T> fromPackList(String content, Class<T> classOfT) {
+        Gson gson = getGson();
+        Type typeOfT = TypeToken.getParameterized(ResultPack.class, new Type[]{classOfT}).getType();
         return gson.fromJson(content, typeOfT);
     }
 
