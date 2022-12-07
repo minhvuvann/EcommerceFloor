@@ -14,6 +14,7 @@ public class ShippingService extends BaseModel {
     private ActiveStatus status;
     private String carrierId;
     private MoneyV2 shippingRate;
-    private String serviceCode;
+    private String serviceId;
+    private String serviceCodeId;
 
 }

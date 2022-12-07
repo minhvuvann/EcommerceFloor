@@ -47,7 +47,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**")
+//        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**","/shipment/**","/bank/**")
+        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**","/shipment/**","/bank/**",
+                        "https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/**")
+
                 .permitAll().anyRequest().authenticated()
                 .and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

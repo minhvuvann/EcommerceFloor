@@ -83,7 +83,7 @@ public class HttpsUtils {
                 conn = (HttpURLConnection) url.openConnection();
             }
             if (null != token && token.length() > 0) {
-                conn.setRequestProperty("X-Ecomos-Access-Token", token);
+                conn.setRequestProperty("Token", token);
             }
             conn.setConnectTimeout(120000);
             conn.setReadTimeout(120000);

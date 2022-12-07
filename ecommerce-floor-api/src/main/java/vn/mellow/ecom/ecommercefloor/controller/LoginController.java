@@ -164,6 +164,7 @@ public class LoginController extends BaseController {
 
                 }
                 if (auth != null && auth.isAuthenticated()) {
+
                     return new ResponseBody(BasicStatus.success,
                             "Đăng nhập thành công", jwtUtils.generateToken(email));
 

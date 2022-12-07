@@ -50,11 +50,11 @@ public class ShipmentManager extends BaseManager {
 
     public Carrier getCarrierType(CarrierType type) {
 
-        List<Carrier> carriers = getCarrierCollection().find(Filters.eq("type", type.toString())).into(new ArrayList<>());
-        if (null != carriers && carriers.size() != 0) {
-            return carriers.get(0);
+       Carrier carrier = getCarrierCollection().find(Filters.eq("type", type.toString())).first();
+        if (null != carrier) {
+            return carrier;
         }
-        return new Carrier();
+        return null;
     }
 
     public ShippingService createShippingService(ShippingService shippingService) {
@@ -62,6 +62,9 @@ public class ShipmentManager extends BaseManager {
         shippingService.setId(generateId());
         getShippingServiceCollection().insertOne(shippingService);
         return shippingService;
+    }
+    public List<ShippingService> getShippingServices(String carrierId) {
+        return getShippingServiceCollection().find(Filters.eq("carrierId", carrierId)).into(new ArrayList<>());
     }
 
 }

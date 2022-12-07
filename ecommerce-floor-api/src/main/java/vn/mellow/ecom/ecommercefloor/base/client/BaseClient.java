@@ -46,8 +46,8 @@ public class BaseClient {
         String content = HttpsUtils.get(this.getServiceFullPath(path));
         return this.fromBankList(content, classOfT);
     }
-    protected <T> ResultPack<T> getResponsePackList(String header,String path, Class<T> classOfT) throws ClientException {
-        String content = HttpsUtils.get(this.getServiceFullPath(path),header);
+    protected <T> ResultPack<T> getResponsePackList(String path, Class<T> classOfT,String token) throws ClientException {
+        String content = HttpsUtils.get(this.getServiceFullPath(path),token);
         return this.fromPackList(content, classOfT);
     }
 

@@ -11,8 +11,9 @@ public class GHNClient extends BaseClient {
     }
 
     public ResultPack<ServicePack> getInfoServicePack(String token, String shopId, int fromDistrict, int toDistrict) throws ClientException {
-        return getResponsePackList(token,
-                "/available-services?shop_id="+shopId+"&from_district="+fromDistrict+"&to_district="+toDistrict,ServicePack.class);
+        return getResponsePackList(
+                "available-services?shop_id=" + shopId + "&from_district=" + fromDistrict + "&to_district=" + toDistrict
+                , ServicePack.class, token);
 
     }
 }
