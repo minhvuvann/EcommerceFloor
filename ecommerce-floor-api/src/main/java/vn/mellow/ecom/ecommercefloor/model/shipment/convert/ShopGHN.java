@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class ShopGHN {
-    private String shop_id;
+    private int shop_id;
 }

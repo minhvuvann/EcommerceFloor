@@ -1,6 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.controller;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
+import vn.mellow.ecom.ecommercefloor.base.model.ShopGHNInput;
 import vn.mellow.ecom.ecommercefloor.client.GHNClient;
 import vn.mellow.ecom.ecommercefloor.enums.ActiveStatus;
 import vn.mellow.ecom.ecommercefloor.manager.UserManager;
@@ -64,8 +66,8 @@ public class ShopController {
         //validate shop
         validateShopInput(userId, shopInput);
         Shop shop = new Shop();
-        ShopGHN shopGHN = createShopShipmentGHN(shopInput);
-        String shopId = shopGHN.getShop_id();
+
+        int shopId = createShopShipmentGHN(shopInput);
         shop.setShopId(shopId);
         shop.setImageUrl(shopInput.getImageUrl());
         shop.setStatus(ActiveStatus.ACTIVE);
@@ -75,17 +77,24 @@ public class ShopController {
         return userManager.createShop(userId, shop);
     }
 
-    private ShopGHN createShopShipmentGHN(CreateShopInput shopInput) throws ServiceException {
-        ShopGHN shopGHN = null;
+    private Integer createShopShipmentGHN(CreateShopInput shopInput) throws ServiceException {
+        Integer shopId = null;
         try {
-            shopGHN = getGHNClient().createShop(token, shopInput.getDistrict_id(),
-                    shopInput.getWardCode(), shopInput.getName(), shopInput.getPhone(), shopInput.getAddress()).getData().get(0);
+            ShopGHNInput shopGHNInput = new ShopGHNInput();
+            shopGHNInput.setDistrict_id(shopInput.getDistrict_id());
+            shopGHNInput.setWard_code(shopInput.getWardCode());
+            shopGHNInput.setAddress(shopInput.getAddress());
+            shopGHNInput.setPhone(shopInput.getPhone());
+            shopGHNInput.setName(shopInput.getName());
+            String current = getGHNClient().createShop(token, shopGHNInput).getData().toString();
+            System.out.println(current);
+            shopId = Integer.valueOf(current.substring(10, current.length() - 3));
 
 
         } catch (ClientException e) {
             throw new ServiceException(e.getErrorCode(), e.getErrorMessage(), e.getErrorDetail());
         }
-        return shopGHN;
+        return shopId;
     }
 
 

@@ -6,7 +6,7 @@ import vn.mellow.ecom.ecommercefloor.enums.ActiveStatus;
 
 @Data
 public class Shop {
-    private String shopId;
+    private int shopId;
     private String name;
     private String imageUrl;
     private String description;

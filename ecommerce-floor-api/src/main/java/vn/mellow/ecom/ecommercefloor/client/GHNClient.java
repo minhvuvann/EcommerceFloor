@@ -2,6 +2,7 @@ package vn.mellow.ecom.ecommercefloor.client;
 
 import vn.mellow.ecom.ecommercefloor.base.client.BaseClient;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
+import vn.mellow.ecom.ecommercefloor.base.model.ShopGHNInput;
 import vn.mellow.ecom.ecommercefloor.model.shipment.convert.*;
 
 public class GHNClient extends BaseClient {
@@ -28,11 +29,8 @@ public class GHNClient extends BaseClient {
         return getResponsePackList("master-data/ward?district_id=" + district_id, WardGHN.class, token);
     }
 
-    public ResultGHN<ShopGHN> createShop(String token, int district_id,
-                                         String ward_code, String name, String phone, String address) throws ClientException {
-        return getResponsePackList("v2/shop/register?district_id=" + district_id +
-                "&ward_code=" + ward_code + "&name=" + name + "&phone=" + phone +
-                "&address=" + address, ShopGHN.class, token);
+    public ResultShopGHN createShop(String token, ShopGHNInput shopGHNInput) throws ClientException {
+        return post("v2/shop/register" ,shopGHNInput, ResultShopGHN.class, token);
     }
 
 }

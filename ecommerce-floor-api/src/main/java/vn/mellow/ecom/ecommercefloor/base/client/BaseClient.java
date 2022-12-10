@@ -6,6 +6,7 @@ import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.model.bank.ResultBank;
 import vn.mellow.ecom.ecommercefloor.model.shipment.convert.ResultGHN;
+import vn.mellow.ecom.ecommercefloor.model.shipment.convert.ResultShopGHN;
 
 import java.lang.reflect.Type;
 import java.util.Arrays;
@@ -56,14 +57,9 @@ public class BaseClient {
         return fromJsonArray(content, classOfT);
     }
 
-    protected <T> T post(String path, Object postData, Class<T> classOfT, String partnerId) throws ClientException {
-        String body = null;
-        if (null != postData) body = toJson(postData);
-        String content = HttpsUtils.post(getServiceFullPath(path), body, partnerId);
-        return fromJson(content, classOfT);
-    }
 
-    protected <T> T post(String path, Object postData, Class<T> classOfT, String partnerId, String token) throws ClientException {
+
+    protected <T> T post(String path, Object postData, Class<T> classOfT,  String token) throws ClientException {
         String body = null;
         if (null != postData) body = toJson(postData);
         String content = HttpsUtils.post(getServiceFullPath(path), body, token);

@@ -22,7 +22,6 @@ public class User extends BaseModel {
     private String imageUrl;
     private Date birthday;
     private Address address;
-    private String shopId;
     private GenderType gender;
     @NonNull
     private ServiceType serviceType;
