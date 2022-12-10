@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 //        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**","/shipment/**","/bank/**")
         http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**","/shipment/**","/bank/**",
-                        "https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/**")
+                        "https://online-gateway.ghn.vn/shiip/public-api/**")
 
                 .permitAll().anyRequest().authenticated()
                 .and().exceptionHandling().and().sessionManagement()

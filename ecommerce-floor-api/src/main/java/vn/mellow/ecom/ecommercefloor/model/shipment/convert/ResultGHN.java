@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.util.List;
 @Data
-public class ResultPack <T> {
+public class ResultGHN<T> {
     private int code;
     private String message;
     private List<T> data;

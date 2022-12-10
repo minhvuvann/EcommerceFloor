@@ -66,7 +66,7 @@ class EcommerceFloorApplicationTests {
             result = userController.createUser(createUserInput);
 
         } catch (ServiceException e) {
-
+            e.printStackTrace();
         }
     }
 

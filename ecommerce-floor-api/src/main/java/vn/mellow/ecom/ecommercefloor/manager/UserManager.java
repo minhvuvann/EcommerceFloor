@@ -3,19 +3,22 @@ package vn.mellow.ecom.ecommercefloor.manager;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.FindOneAndUpdateOptions;
+import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
 import vn.mellow.ecom.ecommercefloor.enums.*;
-import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
+import vn.mellow.ecom.ecommercefloor.model.shop.Shop;
 import vn.mellow.ecom.ecommercefloor.model.user.*;
-import vn.mellow.ecom.ecommercefloor.utils.DateUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.mongodb.client.model.ReturnDocument.AFTER;
 
 @Repository
 public class UserManager extends BaseManager {
@@ -75,7 +78,7 @@ public class UserManager extends BaseManager {
         activityUser.setEmail("nguyenthicamtien@gmail.com");
         activityUser.setPhone("0909499599");
         addActivityLog(
-                activityUser, "Tạo đơn Order Fulfillment",user.getId(), ActivityLogType.CREATE, User.class);
+                activityUser, "Tạo tài khoản ", user.getId(), ActivityLogType.CREATE, User.class);
 
         return user;
     }
@@ -108,6 +111,18 @@ public class UserManager extends BaseManager {
 
     }
 
+    public User createShop(String userId, Shop shop) {
+        Document updateDocument = new Document();
+        updateDocument.put("updatedAt", new Date());
+        updateDocument.put("shop", shop);
+        Document newDocument = new Document();
+        newDocument.append("$set", updateDocument);
+        FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+        List<Bson> filters = new ArrayList<>();
+        filters.add(Filters.eq("_id", userId));
+        return getUserCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+    }
+
     public ResultList<User> filterUser(UserFilter filterData) {
         List<Bson> filter = getFilters(filterData);
         appendFilter(filterData.getFullName(), "fullName", filter);
@@ -117,10 +132,10 @@ public class UserManager extends BaseManager {
             appendFilter(filterData.getUserStatus().toString(), "userStatus", filter);
         if (null != filterData.getServiceType())
             appendFilter(filterData.getServiceType().toString(), "serviceType", filter);
-        if (null!=filterData.getEmail())
-            appendFilter(filterData.getEmail(),"email",filter);
-        if (null!=filterData.getTelephone())
-            appendFilter(filterData.getTelephone(),"telephone",filter);
+        if (null != filterData.getEmail())
+            appendFilter(filterData.getEmail(), "email", filter);
+        if (null != filterData.getTelephone())
+            appendFilter(filterData.getTelephone(), "telephone", filter);
         if (null != filterData.getUserId())
             appendFilter(filterData.getUserId(), "_id", filter);
         return getResultList(getUserCollection(), filter, filterData.getOffset(), filterData.getMaxResult());
