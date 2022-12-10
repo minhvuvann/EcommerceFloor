@@ -59,7 +59,7 @@ public class ShopController {
     }
 
     @ApiOperation("create shop from user")
-    @RequestMapping("/create")
+    @PostMapping("/create")
     public User createShop(@RequestParam("user-id") String userId, @RequestBody CreateShopInput shopInput) throws ServiceException {
         //validate shop
         validateShopInput(userId, shopInput);
