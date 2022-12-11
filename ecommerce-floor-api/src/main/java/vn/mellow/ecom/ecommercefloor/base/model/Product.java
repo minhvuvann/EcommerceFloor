@@ -2,20 +2,21 @@ package vn.mellow.ecom.ecommercefloor.base.model;
 
 import lombok.Data;
 import org.springframework.lang.NonNull;
+import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
+import vn.mellow.ecom.ecommercefloor.enums.IndustrialType;
 
 import java.awt.*;
 import java.util.List;
 
 @Data
-public class Product {
+public class Product extends BaseModel {
+    private String name;
+    private String shopId;
+    private IndustrialType industrialType;
+    private String industrialTypeName;
     private String description;
-    private Image featuredImage;
-    private String handle;
-    private String id;
-    private List<Image> images;
-    private String onlineStoreUrl;
-    private String productType;
-    private List<String> tags;
+    private String featuredImageUrl;
+    private List<String> imageUrls;
     private String title;
 
 }

@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
@@ -156,7 +157,7 @@ public class GHNController extends BaseController {
                             wardGHNs = getGHNClient().getWardGHNs(token, geoDistrict.getGhn_id());
 
                     } catch (ClientException e) {
-                       throw new ServiceException(e.getErrorCode(),e.getErrorMessage(),e.getErrorDetail());
+                     e.printStackTrace();
                     }
                     if (wardGHNs != null && wardGHNs.getData() != null && 0 != wardGHNs.getData().size()) {
                         for (WardGHN ward : wardGHNs.getData()) {
@@ -182,6 +183,18 @@ public class GHNController extends BaseController {
 
 
     }
+    @ExceptionHandler(ServiceException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public final Object handleAllServiceException(ServiceException e) {
+        LOGGER.error("ServiceException error.", e);
+        return error(e.getErrorCode(), e.getErrorMessage(), e.getErrorDetail());
+    }
 
+    @ExceptionHandler(RuntimeException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public final Object handleAllExceptions(RuntimeException e) {
+        LOGGER.error("Internal server error.", e);
+        return error("internal_server_error", "Có lỗi trong quá trình xử lý", e.getMessage());
+    }
 
 }

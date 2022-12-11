@@ -49,6 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 //        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**","/shipment/**","/bank/**")
         http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**","/shipment/**","/bank/**",
+                        "https://api.vietqr.io",
                         "https://online-gateway.ghn.vn/shiip/public-api/**")
 
                 .permitAll().anyRequest().authenticated()

@@ -7,6 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import vn.mellow.ecom.ecommercefloor.EcommerceFloorApplication;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
+import vn.mellow.ecom.ecommercefloor.base.model.Address;
 import vn.mellow.ecom.ecommercefloor.controller.UserController;
 import vn.mellow.ecom.ecommercefloor.enums.GenderType;
 import vn.mellow.ecom.ecommercefloor.enums.PasswordStatus;
@@ -27,13 +28,13 @@ import java.util.Date;
 @SpringBootTest(
         classes = EcommerceFloorApplication.class)
 @AutoConfigureMockMvc
-class EcommerceFloorApplicationTests {
+class EcommerceFloorTest {
     @Autowired
     private UserController userController;
 
     private ActivityUser byUser;
 
-    public EcommerceFloorApplicationTests() {
+    public EcommerceFloorTest() {
         this.byUser = new ActivityUser();
         byUser.setUserId("adminVVM");
         byUser.setUserName("adminTest001");
@@ -53,13 +54,17 @@ class EcommerceFloorApplicationTests {
         user.setGender(GenderType.MAN);
         user.setServiceType(ServiceType.NORMALLY);
         user.setTelephone("0988883131");
+
+        Address address = new Address();
+        address.setAddress1("Dĩ An,Bình Dương");
+
         createUserInput.setUser(user);
         KeyPasswordInput password = new KeyPasswordInput();
         password.setPasswordStatus(PasswordStatus.NEW);
         password.setPassword("123456");
         createUserInput.setPassword(password);
         RoleInput roleInput = new RoleInput();
-        roleInput.setRoleType(RoleType.ADMIN);
+        roleInput.setRoleType(RoleType.PERSONAL);
         createUserInput.setRole(roleInput);
         User result = null;
         try {

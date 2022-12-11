@@ -140,4 +140,19 @@ public class UserManager extends BaseManager {
             appendFilter(filterData.getUserId(), "_id", filter);
         return getResultList(getUserCollection(), filter, filterData.getOffset(), filterData.getMaxResult());
     }
+
+    public Role updateRole(String userId, RoleType type, ActivityUser activityUser) {
+        Document document = new Document();
+        document.put("updatedAt", new Date());
+        document.put("type", type.toString());
+        Document newDocument = new Document();
+        newDocument.append("$set", document);
+        FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+        List<Bson> filters = new ArrayList<>();
+        filters.add(Filters.eq("userId", userId));
+        Role user = getRoleCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+        addActivityLog(activityUser,
+                "Cập nhật phân quyền " + type.getDescription() + " cho tài khoản :" + userId, userId, ActivityLogType.UPDATE_INFO, Role.class);
+        return user;
+    }
 }
