@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import vn.mellow.ecom.ecommercefloor.EcommerceFloorApplication;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
-import vn.mellow.ecom.ecommercefloor.base.model.Address;
+import vn.mellow.ecom.ecommercefloor.model.geo.Address;
 import vn.mellow.ecom.ecommercefloor.controller.UserController;
 import vn.mellow.ecom.ecommercefloor.enums.GenderType;
 import vn.mellow.ecom.ecommercefloor.enums.PasswordStatus;
@@ -17,11 +17,8 @@ import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
 import vn.mellow.ecom.ecommercefloor.model.input.KeyPasswordInput;
 import vn.mellow.ecom.ecommercefloor.model.input.RoleInput;
 import vn.mellow.ecom.ecommercefloor.model.input.UserInput;
-import vn.mellow.ecom.ecommercefloor.model.user.KeyPassword;
-import vn.mellow.ecom.ecommercefloor.model.user.Role;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 
-import javax.security.auth.login.CredentialException;
 import java.util.Date;
 
 @RunWith(SpringRunner.class)

@@ -1,7 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.model.shop;
 
 import lombok.Data;
-import vn.mellow.ecom.ecommercefloor.base.model.Address;
+import vn.mellow.ecom.ecommercefloor.model.geo.Address;
 import vn.mellow.ecom.ecommercefloor.enums.ActiveStatus;
 
 @Data

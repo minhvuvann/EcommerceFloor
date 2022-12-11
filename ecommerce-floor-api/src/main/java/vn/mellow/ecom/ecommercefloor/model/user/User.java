@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NonNull;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
-import vn.mellow.ecom.ecommercefloor.base.model.Address;
+import vn.mellow.ecom.ecommercefloor.model.geo.Address;
 import vn.mellow.ecom.ecommercefloor.base.model.BaseModel;
 import vn.mellow.ecom.ecommercefloor.enums.GenderType;
 import vn.mellow.ecom.ecommercefloor.enums.ServiceType;

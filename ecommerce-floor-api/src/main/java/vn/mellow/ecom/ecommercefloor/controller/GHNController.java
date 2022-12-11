@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
-import vn.mellow.ecom.ecommercefloor.base.model.Geo;
+import vn.mellow.ecom.ecommercefloor.model.geo.Geo;
 import vn.mellow.ecom.ecommercefloor.client.GHNClient;
 import vn.mellow.ecom.ecommercefloor.enums.ActiveStatus;
 import vn.mellow.ecom.ecommercefloor.enums.CarrierType;

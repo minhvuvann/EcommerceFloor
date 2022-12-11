@@ -4,13 +4,11 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import org.bson.conversions.Bson;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
-import vn.mellow.ecom.ecommercefloor.base.model.Product;
-import vn.mellow.ecom.ecommercefloor.base.model.ProductVariant;
+import vn.mellow.ecom.ecommercefloor.model.product.Product;
+import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductDetail;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductFilter;
 

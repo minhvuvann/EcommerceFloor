@@ -7,7 +7,6 @@ public enum OrderStatus {
     PROCESSING("Đang xử lý"),
     DELIVERY_ONLY("Đang giao hàng"),
     DELIVERED("Đã giao hàng"),
-    COMPLETED("Đã hoàn thành"),
     CANCELLED("Đã hủy");
 
 

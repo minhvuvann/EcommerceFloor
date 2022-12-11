@@ -1,4 +1,4 @@
-package vn.mellow.ecom.ecommercefloor.base.model;
+package vn.mellow.ecom.ecommercefloor.model.size;
 
 public enum DimensionUnit {
     MM,

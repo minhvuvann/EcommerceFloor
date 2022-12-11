@@ -1,7 +1,6 @@
 package vn.mellow.ecom.ecommercefloor.controller;
 
 import io.swagger.annotations.ApiOperation;
-import io.swagger.models.auth.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
-import vn.mellow.ecom.ecommercefloor.base.model.ShopGHNInput;
+import vn.mellow.ecom.ecommercefloor.model.input.ShopGHNInput;
 import vn.mellow.ecom.ecommercefloor.client.GHNClient;
 import vn.mellow.ecom.ecommercefloor.enums.ActiveStatus;
 import vn.mellow.ecom.ecommercefloor.enums.RoleType;

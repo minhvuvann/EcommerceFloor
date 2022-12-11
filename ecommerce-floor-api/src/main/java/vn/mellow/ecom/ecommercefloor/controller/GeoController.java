@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
-import vn.mellow.ecom.ecommercefloor.base.model.Geo;
+import vn.mellow.ecom.ecommercefloor.model.geo.Geo;
 import vn.mellow.ecom.ecommercefloor.enums.GeoType;
 import vn.mellow.ecom.ecommercefloor.manager.GeoManager;
 import java.util.List;

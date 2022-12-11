@@ -1,10 +1,14 @@
-package vn.mellow.ecom.ecommercefloor.base.model;
+package vn.mellow.ecom.ecommercefloor.model.product;
 
 import lombok.Data;
+import vn.mellow.ecom.ecommercefloor.base.model.BaseModel;
+import vn.mellow.ecom.ecommercefloor.model.size.DimensionMeasurement;
+import vn.mellow.ecom.ecommercefloor.base.model.MoneyV2;
 import vn.mellow.ecom.ecommercefloor.enums.ColorProduct;
+import vn.mellow.ecom.ecommercefloor.model.input.WeightUnit;
 
 @Data
-public class ProductVariant extends BaseModel{
+public class ProductVariant extends BaseModel {
     private String  imageUrl;
     private MoneyV2 price;
     private String productId;

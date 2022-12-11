@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.lang.NonNull;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
-import vn.mellow.ecom.ecommercefloor.base.model.Address;
+import vn.mellow.ecom.ecommercefloor.model.geo.Address;
 import vn.mellow.ecom.ecommercefloor.base.model.MoneyV2;
 import vn.mellow.ecom.ecommercefloor.enums.CurrencyCode;
 import vn.mellow.ecom.ecommercefloor.enums.OrderCancelReason;
@@ -20,10 +20,6 @@ public class Order {
             shape = JsonFormat.Shape.NUMBER
     )
     private Date canceledAt;
-    @JsonFormat(
-            shape = JsonFormat.Shape.NUMBER
-    )
-    private Date approvedAt;
     private MoneyV2 discountTotalPrice;
     private CurrencyCode currencyCode;
     private int orderNumber;
@@ -41,18 +37,19 @@ public class Order {
     private MoneyV2 totalTax;
     private MoneyV2 cod;
     @NonNull
+    private String userId;
     private String nameCustomer;
     private String emailCustomer;
+    private String phoneCustomer;
     private Address shippingAddress;
     @NonNull
     private String orderId;
     @NonNull
-    private OrderType orderType;
-    private OrderStatus orderStatus;
+    private OrderType type;
+    private OrderStatus status;
     private String note;
     private ActivityUser createBy;
     private String shippingServiceId;
-    private String shopId;
     private String carrierId;
 
     public Order() {

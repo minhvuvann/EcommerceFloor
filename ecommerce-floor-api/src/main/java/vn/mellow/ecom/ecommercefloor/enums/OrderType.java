@@ -4,7 +4,7 @@ package vn.mellow.ecom.ecommercefloor.enums;
 import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
 
 public enum OrderType {
-    BUY("Mua"), RETURN("Trả lại"), SELL("Bán");
+     RETURN("Trả lại"), SELL("Bán");
     private final String description;
 
     private OrderType(String description) {

@@ -1,4 +1,4 @@
-package vn.mellow.ecom.ecommercefloor.base.model;
+package vn.mellow.ecom.ecommercefloor.model.geo;
 
 import lombok.Data;
 import vn.mellow.ecom.ecommercefloor.enums.CountryCode;

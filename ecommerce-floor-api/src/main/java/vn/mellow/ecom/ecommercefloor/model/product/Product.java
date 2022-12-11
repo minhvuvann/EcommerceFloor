@@ -1,8 +1,9 @@
-package vn.mellow.ecom.ecommercefloor.base.model;
+package vn.mellow.ecom.ecommercefloor.model.product;
 
 import lombok.Data;
 import org.springframework.lang.NonNull;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
+import vn.mellow.ecom.ecommercefloor.base.model.BaseModel;
 import vn.mellow.ecom.ecommercefloor.enums.IndustrialType;
 
 import java.awt.*;

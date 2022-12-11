@@ -3,16 +3,16 @@ package vn.mellow.ecom.ecommercefloor.model.order;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.lang.NonNull;
+import vn.mellow.ecom.ecommercefloor.base.model.BaseModel;
 import vn.mellow.ecom.ecommercefloor.base.model.MoneyV2;
-import vn.mellow.ecom.ecommercefloor.base.model.ProductVariant;
+import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
 import vn.mellow.ecom.ecommercefloor.enums.OrderStatus;
 
 import java.util.Date;
-import java.util.List;
 
 @Data
-public class OrderItem {
-    private Long currentQuantity;
+public class OrderItem extends BaseModel {
+    private String shopId;
     private MoneyV2 discountedTotalPrice;
     private MoneyV2 originalTotalPrice;
     private Long quantity;

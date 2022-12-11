@@ -2,7 +2,7 @@ package vn.mellow.ecom.ecommercefloor.client;
 
 import vn.mellow.ecom.ecommercefloor.base.client.BaseClient;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
-import vn.mellow.ecom.ecommercefloor.base.model.ShopGHNInput;
+import vn.mellow.ecom.ecommercefloor.model.input.ShopGHNInput;
 import vn.mellow.ecom.ecommercefloor.model.shipment.convert.*;
 
 public class GHNClient extends BaseClient {

@@ -2,8 +2,8 @@ package vn.mellow.ecom.ecommercefloor.model.input;
 
 
 import lombok.Data;
-import vn.mellow.ecom.ecommercefloor.base.model.Product;
-import vn.mellow.ecom.ecommercefloor.base.model.ProductVariant;
+import vn.mellow.ecom.ecommercefloor.model.product.Product;
+import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
 
 import java.util.List;
 @Data
