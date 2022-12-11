@@ -5,11 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.intercept.RunAsUserToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
@@ -29,7 +27,6 @@ import vn.mellow.ecom.ecommercefloor.model.user.User;
 import vn.mellow.ecom.ecommercefloor.model.user.UserFilter;
 import vn.mellow.ecom.ecommercefloor.utils.JwtUtils;
 import vn.mellow.ecom.ecommercefloor.utils.KeyUtils;
-import vn.mellow.ecom.ecommercefloor.utils.TypeUtils;
 
 import java.util.Base64;
 import java.util.List;
@@ -61,7 +58,7 @@ public class LoginController extends BaseController {
             }
         if (!admin)
             if (null == serviceType ||
-                    !TypeUtils.isServiceType(serviceType.toString())) {
+                    !ServiceType.isExist(serviceType.toString())) {
                 throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
             }
     }
@@ -212,7 +209,7 @@ public class LoginController extends BaseController {
     @GetMapping("/info")
     public User getUser(@RequestParam("code-token") String token, @RequestParam("service-type") ServiceType serviceType) throws ServiceException {
         if (null == serviceType ||
-                !TypeUtils.isServiceType(serviceType.toString())) {
+                !ServiceType.isExist(serviceType.toString())) {
             throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
         }
         String[] chunks = token.split("\\.");

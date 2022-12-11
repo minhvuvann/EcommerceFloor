@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum ColorProduct {
     WHITE("Màu trắng"),BLUE("Màu xanh da trời"),GREEN("Màu xanh lá cây"),
     YELLOW("Màu vàng"),PURPLE("Màu tím"),ORANGE("Màu da cam"),
@@ -29,4 +31,8 @@ public enum ColorProduct {
         return listName.substring(0, listName.length() - 2);
 
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 }

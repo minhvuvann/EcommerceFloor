@@ -48,7 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
 //        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**","/shipment/**","/bank/**")
-        http.csrf().disable().authorizeRequests().antMatchers("/user/**","/login/**","/shipment/**","/bank/**",
+        http.csrf().disable().authorizeRequests().antMatchers("/user/**",
+                        "/login/**","/shipment/**","/bank/**","/product/**","/geo/**",
                         "https://api.vietqr.io",
                         "https://online-gateway.ghn.vn/shiip/public-api/**")
 

@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 import java.util.Locale;
 
 public enum ServiceType {
@@ -31,4 +33,8 @@ public enum ServiceType {
         }
         return listName.substring(0, listName.length() - 2);
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 }

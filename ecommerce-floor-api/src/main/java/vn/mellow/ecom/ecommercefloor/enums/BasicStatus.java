@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum BasicStatus {
     success("Thành công"), failure("Thất bại"),
     error("Lỗi"), pending("Treo");
@@ -26,5 +28,9 @@ public enum BasicStatus {
         return listName.substring(0, listName.length() - 2);
 
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 
 }

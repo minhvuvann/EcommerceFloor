@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 /**
  * Represents the reason for the order's cancellation.
  */
@@ -34,6 +36,9 @@ public enum OrderCancelReason {
             listName += type.toString() + ", ";
         }
         return listName;
+    }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
     }
 
 

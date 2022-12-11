@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum ServiceStatus {
     IN_PROGRESS_CONNECT("Đang kết nối"), CANCELLED("Đã hủy");
     private final String description;
@@ -26,4 +28,8 @@ public enum ServiceStatus {
         }
         return listName.substring(0, listName.length() - 2);
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 }

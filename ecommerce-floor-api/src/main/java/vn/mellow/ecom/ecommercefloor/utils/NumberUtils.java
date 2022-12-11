@@ -10,9 +10,4 @@ public class NumberUtils {
         return true;
     }
 
-    public static void main(String[] args) {
-        System.out.println(NumberUtils.isNumeric("0"));
-        System.out.println(NumberUtils.isNumeric("1"));
-        System.out.println(NumberUtils.isNumeric("2202b51"));
-    }
 }

@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum PasswordStatus {
     NEW("Mới nhất"), OLD("Đã thay đổi"), CANCELLED("Đã hủy");
     private final String description;
@@ -24,6 +26,9 @@ public enum PasswordStatus {
         }
         return listName.substring(0, listName.length() - 2);
 
+    }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
     }
 
 

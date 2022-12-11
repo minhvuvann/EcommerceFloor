@@ -98,6 +98,9 @@ public class UserManager extends BaseManager {
     public User getUser(String userId) {
         return getUserCollection().find(Filters.eq("_id", userId)).first();
     }
+    public User getUserShop(String shopId) {
+        return getUserCollection().find(Filters.eq("shop.shopId", shopId)).first();
+    }
 
     public UserProfile getUserProfile(String userId) {
         UserProfile userProfile = new UserProfile();

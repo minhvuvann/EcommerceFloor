@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum RoleType {
     ADMIN("Quản trị viên"), STORE("Cửa hàng"),
     PERSONAL("Cá nhân"),PERSONAL_STORE("Cửa hàng và cá nhân"), OTHER("Khác");
@@ -26,4 +28,8 @@ public enum RoleType {
         return listName.substring(0, listName.length() - 2);
 
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 }

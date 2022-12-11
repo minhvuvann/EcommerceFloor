@@ -1,6 +1,8 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum OrderType {
     BUY("Mua"), RETURN("Trả lại"), SELL("Bán");
     private final String description;
@@ -26,4 +28,8 @@ public enum OrderType {
         return listName.substring(0, listName.length() - 2);
 
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 }

@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum CarrierType {
     GHN("Giao hàng nhanh"), GHTK("Giao hàng tiết kiệm");
     private final String description;
@@ -24,4 +26,8 @@ public enum CarrierType {
         }
         return listName;
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 }

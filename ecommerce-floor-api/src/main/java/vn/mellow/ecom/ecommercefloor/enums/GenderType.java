@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum GenderType {
     MAN("Nam"), WOMEN("Nữ"), OTHER("Khác");
     private final String description;
@@ -24,6 +26,10 @@ public enum GenderType {
         }
         return listName;
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 
 }
 

@@ -1,20 +1,38 @@
 package vn.mellow.ecom.ecommercefloor.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
+import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
+import vn.mellow.ecom.ecommercefloor.base.model.DimensionUnit;
+import vn.mellow.ecom.ecommercefloor.base.model.Product;
 import vn.mellow.ecom.ecommercefloor.base.model.ProductVariant;
+import vn.mellow.ecom.ecommercefloor.base.model.WeightUnit;
+import vn.mellow.ecom.ecommercefloor.manager.ProductManager;
+import vn.mellow.ecom.ecommercefloor.manager.UserManager;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateProductInput;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductDetail;
+import vn.mellow.ecom.ecommercefloor.model.product.ProductFilter;
+import vn.mellow.ecom.ecommercefloor.model.user.User;
+import vn.mellow.ecom.ecommercefloor.utils.GeneralIdUtils;
 
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/product/1.0.0/")
 public class ProductController extends BaseController {
+    private final static Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
+    @Autowired
+    private ProductManager productManager;
+    @Autowired
+    private UserManager userManager;
 
     private void validateProductVariantInput(CreateProductInput productInput) throws ServiceException {
         if (null == productInput) {
@@ -41,23 +59,31 @@ public class ProductController extends BaseController {
         if (null == productInput.getProduct().getShopId()) {
             throw new ServiceException("not_found", "Vui lòng truyền mã shop của sản phẩm", "Product shop Id is empty");
         }
+        User user = userManager.getUserShop(productInput.getProduct().getShopId());
+        if (null == user) {
+            throw new ServiceException("not_found", "Không tìm thấy thông tin shop", "User shop is not found");
+        }
         if (null == productInput.getProductVariants()
                 || productInput.getProductVariants().isEmpty()
                 || productInput.getProductVariants().size() == 0) {
             throw new ServiceException("not_found", "Vui lòng truyền thông tin các biến thể của sản phầm", "Product variant list is empty");
         }
+        validateVariants(productInput.getProductVariants());
     }
 
     private void validateVariants(List<ProductVariant> productVariantList) throws ServiceException {
         for (ProductVariant variant : productVariantList) {
             if (null == variant)
                 throw new ServiceException("not_found", "Vui lòng truyền thông tin biến thể của sản phầm", "Product variant is empty");
-            if (null==variant.getColor()){
+            if (null == variant.getColor()) {
                 throw new ServiceException("not_found", "Vui lòng chọn màu của sản phầm", "Product variant color is empty");
             }
             if (variant.getWeight() <= 0) {
                 throw new ServiceException("invalid_data", " Vui lòng nhập khối lượng.", "ProductVariant.weight is null or <= 0");
 
+            }
+            if (variant.getImageUrl()==null) {
+                throw new ServiceException("invalid_data", "Vui lòng nhập hình ảnh của biến thể sản phẩm.", "ProductVariant.imageUrl is null");
             }
             if (null == variant.getDimension()) {
                 throw new ServiceException("invalid_data", " Vui lòng nhập thông tin  kích thước.", "ProductVariant.Dimension is null");
@@ -76,10 +102,62 @@ public class ProductController extends BaseController {
             }
         }
     }
+    @ApiOperation(value = "create a new product")
+    @PostMapping("/create")
+    public ProductDetail createProductVariant(CreateProductInput productInput) throws ServiceException {
+        //validate product input
+        validateProductVariantInput(productInput);
+        Product product = productInput.getProduct();
+        product.setId(GeneralIdUtils.generateId());
+        product.setCreatedAt(new Date());
+        List<ProductVariant> productVariant = productInput.getProductVariants();
+        for (ProductVariant variant : productVariant) {
+            variant.setProductId(product.getId());
+            variant.setProductName(product.getName());
+            variant.setCreatedAt(new Date());
+            variant.setWeightUnit(WeightUnit.GRAMS);
+            variant.getDimension().setDimensionUnit(DimensionUnit.CM);
+        }
 
-    public ProductDetail createProductVariant(CreateProductInput productInput) {
-        ProductDetail productDetail = new ProductDetail();
-        return productDetail;
+
+        return productManager.createProduct(product, productVariant);
+    }
+    @ApiOperation(value = "get product by product id")
+    @GetMapping("/product/{productId}")
+    public Product getProduct(@PathVariable String productId) throws ServiceException {
+        Product data = productManager.getProduct(productId);
+        if (null == data) {
+            throw new ServiceException("not_found", "Không tìm thấy thông tin sản phẩm", "Not found data product by id: " + productId);
+        }
+        return data;
+    }
+
+    @ApiOperation(value = "get product detail by product id")
+    @GetMapping("/product/{productId}/detail")
+    public ProductDetail getProductDetail(@PathVariable String productId) throws ServiceException {
+        return productManager.getProductDetail(productId);
+    }
+
+    @ApiOperation(value = "find product")
+    @PostMapping("/product/filter")
+    public ResultList<Product> searchProduct(
+            @RequestBody ProductFilter productFilter) {
+        return productManager.filterProduct(productFilter);
+    }
+
+
+    @ExceptionHandler(ServiceException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public final Object handleAllServiceException(ServiceException e) {
+        LOGGER.error("ServiceException error.", e);
+        return error(e.getErrorCode(), e.getErrorMessage(), e.getErrorDetail());
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public final Object handleAllExceptions(RuntimeException e) {
+        LOGGER.error("Internal server error.", e);
+        return error("internal_server_error", "Có lỗi trong quá trình xử lý", e.getMessage());
     }
 
 }

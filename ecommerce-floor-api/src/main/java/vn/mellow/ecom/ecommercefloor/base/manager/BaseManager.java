@@ -113,6 +113,10 @@ public class BaseManager {
         }
     }
 
+    protected void betweenFilter(double priceFrom, double priceTo, List<Bson> filter) {
+        filter.add(Filters.and(Filters.gte("price", priceFrom), Filters.lte("price", priceTo)));
+    }
+
     long idCounter = System.currentTimeMillis();
 
     private String getRandomNumber() {

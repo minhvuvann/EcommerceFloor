@@ -10,140 +10,121 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/GeoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ColorProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/IndustrialType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/ProductManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/CreateCartInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/CreateOrderInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/CreateProductInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/product/ProductDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ecommerce_floor_api_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ecommerce_floor_api_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_classgraph_classgraph_4_8_83.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_bean_validators_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_boot_starter_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_data_rest_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_oas_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_webflux_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_webmvc_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_annotations_2_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_models_2_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_41.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_41.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_18_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_3_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_6_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_6_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_4_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_4_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_sync_4_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_4_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_3_0_3_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_2_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_2_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_4_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_springsecurity5_3_0_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_12_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_12_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_27.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/utils/BaseEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/product/ProductFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/utils/GeneralIdUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/ecommerce-floor-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/ecommerce-floor-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/ProductVariant.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/model/ProductVariant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/manager/BaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/manager/BaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/GHNController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/GHNController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ActiveStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ActiveStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ActivityLogType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ActivityLogType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/BasicStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/BasicStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/CarrierType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/CarrierType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ColorProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ColorProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/CurrencyCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/CurrencyCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/GenderType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/GenderType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/GeoType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/GeoType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/IndustrialType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/IndustrialType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/OrderCancelReason.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/OrderCancelReason.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/OrderType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/OrderType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/PasswordStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/PasswordStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/RoleStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/RoleStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/RoleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/RoleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ServiceStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ServiceStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ServiceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ServiceType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/UserStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/UserStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/GeoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/GeoManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/ProductManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/ProductManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/product/ProductDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/product/ProductDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/utils/NumberUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/utils/NumberUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/utils/StatusUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/utils/TypeUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/EcommerceFloorApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/SpringConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/SpringFoxConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/client/HttpsUtils$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/client/HttpsUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/client/TrustSSLUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/exception/ClientException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/exception/ServiceException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/filter/ResultList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/DimensionMeasurement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/DimensionUnit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/Geo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/MoneyV2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/ProductVariant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/ResponseBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/ShopGHNInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/base/model/WeightUnit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/client/GHNClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/GHNController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/ShopController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/controller/UserProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/CountryCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/CurrencyCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/GenderType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/GeoType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/OrderCancelReason.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/OrderStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/OrderType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/PasswordStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/RoleStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/RoleType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/ServiceStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/ServiceType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/enums/UserStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/manager/GeoManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/manager/ShipmentManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/manager/UserManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/bank/ResultBank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/input/CreateShopInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/input/CreateUserInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/input/KeyPasswordInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/input/RoleInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/input/UserInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/order/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/order/OrderItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shipment/ShippingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shipment/convert/DistrictGHN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shipment/convert/ProvinceGHN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shipment/convert/ResultGHN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shipment/convert/ResultShopGHN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shipment/convert/ServicePack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shipment/convert/ShopGHN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shipment/convert/WardGHN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/shop/Shop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/user/KeyPassword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/user/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/user/UserFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/user/UserProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/service/UserServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/DateUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/FulltextIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/JwtFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/JwtUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/KeyUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/NumberUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/RemoveAccentUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/StatusUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/utils/TypeUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/test-classes/EcommerceFloorTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +182,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -225,11 +206,11 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="vn.mellow.ecom.ecommercefloor.enums.utils" />
       <recent name="vn.mellow.ecom.ecommercefloor.utils" />
       <recent name="vn.mellow.ecom.ecommercefloor.config" />
       <recent name="vn.mellow.ecom.ecommercefloor.base.filter" />
       <recent name="vn.mellow.ecom.ecommercefloor.model" />
-      <recent name="vn.mellow.ecom.ecommercefloor.enums" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -240,6 +221,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.EcommerceFloorApplication">
+    <configuration name="GeneralIdUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.mellow.ecom.ecommercefloor.utils.GeneralIdUtils" />
+      <module name="ecommerce-floor-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.mellow.ecom.ecommercefloor.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EcommerceFloorTest.testUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce-floor-api" />
       <option name="PACKAGE_NAME" value="" />
@@ -266,11 +260,15 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.EcommerceFloorApplication" />
+        <item itemvalue="Application.GeneralIdUtils" />
         <item itemvalue="JUnit.EcommerceFloorTest.testUser" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="" />
@@ -337,7 +335,7 @@
       <workItem from="1670631505489" duration="15090000" />
       <workItem from="1670681025546" duration="320000" />
       <workItem from="1670687784194" duration="733000" />
-      <workItem from="1670715155454" duration="10708000" />
+      <workItem from="1670715155454" duration="19495000" />
     </task>
     <servers />
   </component>
@@ -377,13 +375,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/manager/BaseManager.java</url>
-          <line>157</line>
+          <line>161</line>
           <properties class="vn.mellow.ecom.ecommercefloor.base.manager.BaseManager" method="getResultList" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/UserManager.java</url>
-          <line>125</line>
+          <line>128</line>
           <properties class="vn.mellow.ecom.ecommercefloor.manager.UserManager" method="filterUser" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>

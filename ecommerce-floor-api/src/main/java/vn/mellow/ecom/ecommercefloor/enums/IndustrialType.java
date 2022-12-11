@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum IndustrialType {
     FASHION("Thời trang"),ELECTRON("Điện tử"),
     BEAUTY("Sắc đẹp"), HEALTH("Sức khoẻ"),CAR("Ô tô"),
@@ -26,4 +28,8 @@ public enum IndustrialType {
         }
         return listName;
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 }

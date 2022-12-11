@@ -1,5 +1,7 @@
 package vn.mellow.ecom.ecommercefloor.enums;
 
+import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
+
 public enum CurrencyCode {
     VND("Việt Nam đồng"), USD("Đô la Mỹ"),
     EUR("Đồng Euro"), GBP("Bảng Anh");
@@ -26,4 +28,8 @@ public enum CurrencyCode {
         }
         return listName;
     }
+    public static boolean isExist(Object current) {
+        return BaseEnum.isExist(values(), current);
+    }
+
 }
