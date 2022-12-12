@@ -9,7 +9,7 @@ public class ProductFilter extends BaseFilter {
     private String name;
     private Double priceTo;
     private Double priceFrom;
-    private String id;
+    private String productId;
     private String shopId;
     private IndustrialType industrialType;
 }

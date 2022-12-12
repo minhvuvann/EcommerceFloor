@@ -113,8 +113,9 @@ public class BaseManager {
         }
     }
 
-    protected void betweenFilter(double priceFrom, double priceTo, List<Bson> filter) {
-        filter.add(Filters.and(Filters.gte("price", priceFrom), Filters.lte("price", priceTo)));
+    protected void betweenFilter(String fieldName, double from, double to, List<Bson> filter) {
+        filter.add(Filters.and(Filters.lte(fieldName, to),
+                Filters.gte(fieldName, from)));
     }
 
     long idCounter = System.currentTimeMillis();

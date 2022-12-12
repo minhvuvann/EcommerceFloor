@@ -49,7 +49,8 @@ public class ProductManager extends BaseManager {
     }
 
     public List<ProductVariant> getProductVariants(String productId) {
-        return getProductVariantCollection().find(Filters.eq("_id", productId)).into(new ArrayList<>());
+        return getProductVariantCollection().
+                find(Filters.eq("productId", productId)).into(new ArrayList<>());
     }
 
     public ProductDetail getProductDetail(String productId) {
@@ -76,13 +77,17 @@ public class ProductManager extends BaseManager {
         List<Bson> filter = getFilters(productFilter);
         if (null != productFilter.getPriceFrom() &&
                 null != productFilter.getPriceTo()) {
-            betweenFilter(productFilter.getPriceFrom(), productFilter.getPriceTo(), filter);
+            betweenFilter("mediumPrice.amount",productFilter.getPriceFrom(), productFilter.getPriceTo(), filter);
         }
-        appendFilter("name", productFilter.getName(),filter);
-        appendFilter("shopId", productFilter.getShopId(),filter);
-        appendFilter("industrialType", productFilter.getIndustrialType().toString(),filter);
-        appendFilter("_id", productFilter.getId(),filter);
+        if (null != productFilter.getName())
+            appendFilter("name", productFilter.getName(), filter);
+        if (null != productFilter.getShopId())
+            appendFilter("shopId", productFilter.getShopId(), filter);
+        if (null != productFilter.getIndustrialType())
+            appendFilter("industrialType", productFilter.getIndustrialType().toString(), filter);
+        if (null != productFilter.getProductId())
+            appendFilter("_id", productFilter.getProductId(), filter);
 
-        return getResultList(getProductCollection(),filter,productFilter.getOffset(),productFilter.getMaxResult());
+        return getResultList(getProductCollection(), filter, productFilter.getOffset(), productFilter.getMaxResult());
     }
 }

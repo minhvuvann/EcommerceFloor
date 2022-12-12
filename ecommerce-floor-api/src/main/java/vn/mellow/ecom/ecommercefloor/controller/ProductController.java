@@ -20,6 +20,7 @@ import vn.mellow.ecom.ecommercefloor.model.product.ProductDetail;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductFilter;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 import vn.mellow.ecom.ecommercefloor.utils.GeneralIdUtils;
+import vn.mellow.ecom.ecommercefloor.utils.MoneyCalculateUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -94,12 +95,12 @@ public class ProductController extends BaseController {
 
             }
             if (variant.getDimension().getWidth() <= 0
-            ||variant.getDimension().getWidth() >200) {
+                    || variant.getDimension().getWidth() > 200) {
                 throw new ServiceException("invalid_data", " Vui lòng nhập chiều rộng trong thông tin  kích thước > 0 và < 200 cm.", "ProductVariant.Dimension.weight is null or < 0");
 
             }
             if (variant.getDimension().getHeight() <= 0
-            ||variant.getDimension().getHeight() > 200) {
+                    || variant.getDimension().getHeight() > 200) {
                 throw new ServiceException("invalid_data", " Vui lòng nhập chiều cao trong thông tin  kích thước > 0 và < 200 cm.", "ProductVariant.Dimension.height is null or < 0");
 
             }
@@ -114,14 +115,20 @@ public class ProductController extends BaseController {
         Product product = productInput.getProduct();
         product.setId(GeneralIdUtils.generateId());
         product.setCreatedAt(new Date());
+        double medium = 0;
         List<ProductVariant> productVariant = productInput.getProductVariants();
         for (ProductVariant variant : productVariant) {
+            variant.setId(GeneralIdUtils.generateId());
             variant.setProductId(product.getId());
             variant.setProductName(product.getName());
             variant.setCreatedAt(new Date());
             variant.setWeightUnit(WeightUnit.GRAMS);
             variant.getDimension().setDimensionUnit(DimensionUnit.CM);
+            medium += variant.getPrice().getAmount();
         }
+        medium = medium / productVariant.size();
+
+        product.setMediumPrice(MoneyCalculateUtils.getMoney(medium));
 
 
         return productManager.createProduct(product, productVariant);

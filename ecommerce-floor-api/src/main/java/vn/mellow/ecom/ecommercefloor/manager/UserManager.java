@@ -103,7 +103,7 @@ public class UserManager extends BaseManager {
         return getUserCollection().find(Filters.eq("_id", userId)).first();
     }
 
-    public User getUserShop(String shopId) {
+    public User getUserShop(int shopId) {
         return getUserCollection().find(Filters.eq("shop.shopId", shopId)).first();
     }
 
