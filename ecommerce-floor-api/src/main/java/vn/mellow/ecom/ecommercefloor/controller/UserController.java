@@ -14,11 +14,14 @@ import vn.mellow.ecom.ecommercefloor.controller.controller.UserCreateController;
 import vn.mellow.ecom.ecommercefloor.controller.controller.UserProfileController;
 import vn.mellow.ecom.ecommercefloor.enums.UserStatus;
 import vn.mellow.ecom.ecommercefloor.manager.UserManager;
+import vn.mellow.ecom.ecommercefloor.model.geo.Address;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
+import vn.mellow.ecom.ecommercefloor.model.input.UpdateInfoUserInput;
 import vn.mellow.ecom.ecommercefloor.model.input.UpdateStatusInput;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 import vn.mellow.ecom.ecommercefloor.model.user.UserFilter;
 import vn.mellow.ecom.ecommercefloor.model.user.UserProfile;
+import vn.mellow.ecom.ecommercefloor.utils.KeyUtils;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -60,10 +63,37 @@ public class UserController extends BaseController {
     public UserProfile getUserProfile(@PathVariable String userId) throws ServiceException {
         return userProfileController.getUserProfile(userId);
     }
+
     @ApiOperation(value = "update user status by user Id")
     @PutMapping("/user/{userId}/status")
-    public User updateUserStatus(@PathVariable String userId, @RequestBody UpdateStatusInput statusBody) throws ServiceException{
+    public User updateUserStatus(@PathVariable String userId, @RequestBody UpdateStatusInput statusBody) throws ServiceException {
         return userManager.updateUserStatus(userId, statusBody);
+    }
+
+    @ApiOperation(value = "update info user by user Id")
+    @PutMapping("/user/{userId}/info-basic")
+    public User updateUserInfo(@PathVariable String userId, @RequestBody UpdateInfoUserInput statusBody) throws ServiceException {
+        getUser(userId);
+        return userManager.updateInfoUser(userId, statusBody);
+    }
+
+    @ApiOperation(value = "update address user by user Id")
+    @PutMapping("/user/{userId}/info-address")
+    public User updateUserAddress(@PathVariable String userId, @RequestBody Address address) throws ServiceException {
+        getUser(userId);
+        return userManager.updateAddress(userId, address);
+    }
+
+
+    @ApiOperation(value = "update user password by user Id")
+    @PutMapping("/user/{userId}/info-password")
+    public User updatePassword(@PathVariable String userId, @RequestParam("pwd") String password) throws ServiceException {
+        User user = getUser(userId);
+        String token = KeyUtils.getToken();
+        password = KeyUtils.SHA256(password + token);
+        userManager.updatePassword(userId, password);
+
+        return user;
     }
 
 

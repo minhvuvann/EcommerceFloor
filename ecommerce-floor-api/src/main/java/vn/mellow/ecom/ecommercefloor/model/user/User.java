@@ -20,6 +20,7 @@ public class User extends BaseModel {
     private String email;
     private String telephone;
     private String imageUrl;
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date birthday;
     private Address address;
     private GenderType gender;

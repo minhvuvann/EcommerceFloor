@@ -10,17 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/SenMailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/input/UpdateInfoUserInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/manager/BaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/base/manager/BaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/ProductManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/ProductManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/product/ProductFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/product/ProductFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/GHNController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/GHNController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/manager/UserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/manager/UserManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/test-classes/EcommerceFloorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/test-classes/EcommerceFloorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ecommerce-floor-api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -89,11 +84,11 @@
       <recent name="vn.mellow.ecom.ecommercefloor.base" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ecommerce-floor-api" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ecommerce-floor-api/src/main/resources" />
       <recent name="C:\Web\Student\TMDT\ecommerce-floor\src\main\java\vn\mellow\ecom\ecommercefloor\base\manager" />
       <recent name="C:\Web\Student\TMDT\ecommerce-floor\src\main\java\vn\mellow\ecom\ecommercefloor\base\logs" />
-      <recent name="C:\Web\Student\TMDT\ecommerce-floor\src\main\java\vn\mellow\ecom\ecommercefloor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Web\Student\TMDT\ecommerce-floor\api\src\main" />
@@ -242,7 +237,7 @@
       <workItem from="1670631505489" duration="15090000" />
       <workItem from="1670681025546" duration="320000" />
       <workItem from="1670687784194" duration="733000" />
-      <workItem from="1670715155454" duration="46364000" />
+      <workItem from="1670715155454" duration="49704000" />
     </task>
     <servers />
   </component>
@@ -288,13 +283,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/UserManager.java</url>
-          <line>177</line>
+          <line>240</line>
           <properties class="vn.mellow.ecom.ecommercefloor.manager.UserManager" method="filterUser" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/UserController.java</url>
-          <line>71</line>
+          <line>101</line>
           <properties class="vn.mellow.ecom.ecommercefloor.controller.UserController" method="searchUser">
             <option name="EMULATED" value="true" />
           </properties>

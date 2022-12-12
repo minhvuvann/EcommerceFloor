@@ -13,6 +13,8 @@ import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
 import vn.mellow.ecom.ecommercefloor.enums.*;
+import vn.mellow.ecom.ecommercefloor.model.geo.Address;
+import vn.mellow.ecom.ecommercefloor.model.input.UpdateInfoUserInput;
 import vn.mellow.ecom.ecommercefloor.model.input.UpdateStatusInput;
 import vn.mellow.ecom.ecommercefloor.model.order.Order;
 import vn.mellow.ecom.ecommercefloor.model.shop.Shop;
@@ -128,6 +130,67 @@ public class UserManager extends BaseManager {
         FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
         List<Bson> filters = new ArrayList<>();
         filters.add(Filters.eq("_id", userId));
+        return getUserCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+    }
+
+    public User updateInfoUser(String userId, UpdateInfoUserInput updateInfoUser) throws ServiceException {
+        Document updateDocument = new Document();
+        if (updateInfoUser==null){
+            throw  new ServiceException("not_found","Vui lòng nhập thông tin cần cập nhật của tài khoản","update info is invalid_data");
+        }
+        updateDocument.put("updatedAt", new Date());
+        if (updateInfoUser.getUsername() != null)
+            updateDocument.put("username", updateInfoUser.getUsername());
+        if (updateInfoUser.getBirthday() != null){
+            updateDocument.put("birthday", updateInfoUser.getBirthday());
+        }
+        if (updateInfoUser.getImageUrl() != null){
+            updateDocument.put("imageUrl", updateInfoUser.getImageUrl());
+        }
+        if (updateInfoUser.getEmail()!= null){
+            updateDocument.put("email", updateInfoUser.getEmail());
+        }
+        if (updateInfoUser.getTelephone()!= null){
+            updateDocument.put("telephone", updateInfoUser.getTelephone());
+        }
+        if (updateInfoUser.getFullName() != null)
+        {
+            updateDocument.put("fullName", updateInfoUser.getFullName());
+        }
+        Document newDocument = new Document();
+        newDocument.append("$set", updateDocument);
+        FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+        List<Bson> filters = new ArrayList<>();
+        filters.add(Filters.eq("_id", userId));
+
+        return getUserCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+
+
+    }
+    public KeyPassword updatePassword(String userId, String password) throws ServiceException {
+        Document document = new Document();
+        document.put("updatedAt", new Date());
+        document.put("password", password);
+        Document newDocument = new Document();
+        newDocument.append("$set", document);
+        FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+        List<Bson> filters = new ArrayList<>();
+        filters.add(Filters.eq("passwordStatus", PasswordStatus.NEW.toString()));
+        filters.add(Filters.eq("userId", userId));
+       return getKeyPasswordCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+    }
+    public User updateAddress(String userId, Address address){
+        Document updateDocument = new Document();
+        updateDocument.put("updatedAt", new Date());
+        if (address!= null)
+            updateDocument.put("address",address);
+
+        Document newDocument = new Document();
+        newDocument.append("$set", updateDocument);
+        FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+        List<Bson> filters = new ArrayList<>();
+        filters.add(Filters.eq("_id", userId));
+
         return getUserCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
     }
 
