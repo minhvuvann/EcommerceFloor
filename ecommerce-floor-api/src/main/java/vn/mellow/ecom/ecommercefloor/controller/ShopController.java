@@ -74,7 +74,12 @@ public class ShopController extends BaseController {
         Shop shop = new Shop();
         int shopId = createShopShipmentGHN(shopInput);
         shop.setShopId(shopId);
+        if (null == shopInput.getImageUrl()) {
+            String imageUrl = shopInput.getName() == null ? user.getUsername() : shopInput.getName();
+            shopInput.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl);
+        }
         shop.setImageUrl(shopInput.getImageUrl());
+
         shop.setStatus(ActiveStatus.ACTIVE);
         shop.setName(shopInput.getName());
         shop.setDescription(shopInput.getDescription());
@@ -92,9 +97,7 @@ public class ShopController extends BaseController {
             shopGHNInput.setPhone(shopInput.getPhone());
             shopGHNInput.setName(shopInput.getName());
             String current = getGHNClient().createShop(token, shopGHNInput).getData().toString();
-            System.out.println(current);
             shopId = Integer.valueOf(current.substring(10, current.length() - 3));
-
 
         } catch (ClientException e) {
             throw new ServiceException(e.getErrorCode(), e.getErrorMessage(), e.getErrorDetail());

@@ -7,10 +7,14 @@ import com.mongodb.client.model.FindOneAndUpdateOptions;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
+import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
 import vn.mellow.ecom.ecommercefloor.enums.*;
+import vn.mellow.ecom.ecommercefloor.model.input.UpdateStatusInput;
+import vn.mellow.ecom.ecommercefloor.model.order.Order;
 import vn.mellow.ecom.ecommercefloor.model.shop.Shop;
 import vn.mellow.ecom.ecommercefloor.model.user.*;
 
@@ -124,6 +128,48 @@ public class UserManager extends BaseManager {
         List<Bson> filters = new ArrayList<>();
         filters.add(Filters.eq("_id", userId));
         return getUserCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+    }
+    public User updateUserStatus(String userId, UpdateStatusInput statusBody) throws ServiceException {
+        User user = getUser(userId);
+
+        //validate status
+        validateUpdateStatus(statusBody, user);
+        if (null != user) {
+            // update order status
+            Document document = new Document();
+            document.put("updatedAt", new Date());
+            document.put("status", statusBody.getStatus().toString());
+            Document newDocument = new Document();
+            newDocument.append("$set", document);
+
+            List<Bson> bsonList = new ArrayList<>();
+            bsonList.add(Filters.eq("_id", userId));
+            FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+            user = getUserCollection().findOneAndUpdate(Filters.and(bsonList), newDocument, options);
+            // add activity
+            String description = "Cập nhật trạng thái" +
+                    ": " + statusBody.getStatus();
+            if (StringUtils.hasText(statusBody.getNote())) {
+                description += ". " + statusBody.getNote();
+            }
+            // add log update status
+            addActivityLog(statusBody.getByUser(), description, userId, ActivityLogType.UPDATE_STATUS,User.class);
+
+            return user;
+        }
+        return null;
+    }
+
+    private void validateUpdateStatus(UpdateStatusInput statusBody, User order) throws ServiceException {
+        if (null == statusBody) {
+            throw new ServiceException("invalid_data", "Thông tin không hợp lệ", "update Status Body is required");
+        }
+        if (!UserStatus.isExist(statusBody.getStatus())) {
+            throw new ServiceException("status_error", "Trang thái tài khoản không tồn tại", "status not exist");
+        }
+        if (UserStatus.CANCELLED.equals(order.getUserStatus())) {
+            throw new ServiceException("status_updated", "Yêu cầu trạng thái công việc đã bị hủy", "Status is cancelled, can't update status");
+        }
     }
 
     public ResultList<User> filterUser(UserFilter filterData) {

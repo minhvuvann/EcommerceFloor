@@ -12,8 +12,10 @@ import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.controller.controller.UserCreateController;
 import vn.mellow.ecom.ecommercefloor.controller.controller.UserProfileController;
+import vn.mellow.ecom.ecommercefloor.enums.UserStatus;
 import vn.mellow.ecom.ecommercefloor.manager.UserManager;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
+import vn.mellow.ecom.ecommercefloor.model.input.UpdateStatusInput;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 import vn.mellow.ecom.ecommercefloor.model.user.UserFilter;
 import vn.mellow.ecom.ecommercefloor.model.user.UserProfile;
@@ -47,7 +49,7 @@ public class UserController extends BaseController {
     @GetMapping("/user/{userId}")
     public User getUser(@PathVariable String userId) throws ServiceException {
         User data = userManager.getUser(userId);
-        if (null == data) {
+        if (null == data || !data.getUserStatus().equals(UserStatus.ACTIVE)) {
             throw new ServiceException("not_found", "Không tìm thấy thông tin user", "Not found data user by id: " + userId);
         }
         return data;
@@ -58,6 +60,12 @@ public class UserController extends BaseController {
     public UserProfile getUserProfile(@PathVariable String userId) throws ServiceException {
         return userProfileController.getUserProfile(userId);
     }
+    @ApiOperation(value = "update user status by user Id")
+    @PutMapping("/user/{userId}/status")
+    public User updateUserStatus(@PathVariable String userId, @RequestBody UpdateStatusInput statusBody) throws ServiceException{
+        return userManager.updateUserStatus(userId, statusBody);
+    }
+
 
     @ApiOperation(value = "find user")
     @PostMapping("/user/filter")

@@ -4,7 +4,6 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
-import java.util.Random;
 public class SendMailUtils {
     public static String pwdMail ="qiswwsjutmgbraru";
 
@@ -29,7 +28,7 @@ public class SendMailUtils {
         return resSession;
     }
 
-    public void sendMailTo(Session sessMail, String emailFrom, String nameFrom, String emailTo, String subjectEMail, String messMail) {
+    public static void sendMailTo(Session sessMail, String emailFrom, String nameFrom, String emailTo, String subjectEMail, String messMail) {
         try {
             Message mess = new MimeMessage(sessMail);
             mess.setFrom(new InternetAddress(emailFrom, nameFrom));
@@ -41,4 +40,5 @@ public class SendMailUtils {
             e.printStackTrace();
         }
     }
+
 }
