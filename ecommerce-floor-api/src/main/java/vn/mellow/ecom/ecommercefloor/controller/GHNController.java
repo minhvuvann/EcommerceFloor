@@ -1,6 +1,9 @@
 package vn.mellow.ecom.ecommercefloor.controller;
 
+import com.google.gson.internal.LinkedTreeMap;
+import com.mongodb.client.MongoCollection;
 import io.swagger.annotations.ApiOperation;
+import net.bytebuddy.dynamic.scaffold.MethodGraph;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
+import vn.mellow.ecom.ecommercefloor.base.model.MoneyV2;
 import vn.mellow.ecom.ecommercefloor.model.geo.Geo;
 import vn.mellow.ecom.ecommercefloor.client.GHNClient;
 import vn.mellow.ecom.ecommercefloor.enums.ActiveStatus;
@@ -17,9 +21,11 @@ import vn.mellow.ecom.ecommercefloor.enums.CarrierType;
 import vn.mellow.ecom.ecommercefloor.enums.GeoType;
 import vn.mellow.ecom.ecommercefloor.manager.GeoManager;
 import vn.mellow.ecom.ecommercefloor.manager.ShipmentManager;
+import vn.mellow.ecom.ecommercefloor.model.input.FeeShippingGHNInput;
 import vn.mellow.ecom.ecommercefloor.model.shipment.Carrier;
 import vn.mellow.ecom.ecommercefloor.model.shipment.ShippingService;
 import vn.mellow.ecom.ecommercefloor.model.shipment.convert.*;
+import vn.mellow.ecom.ecommercefloor.utils.MoneyCalculateUtils;
 import vn.mellow.ecom.ecommercefloor.utils.NumberUtils;
 
 import java.util.ArrayList;
@@ -107,11 +113,24 @@ public class GHNController extends BaseController {
     }
 
 
-//    @ApiOperation(value = "create records geo")
-//    @PostMapping("shipment/address/create")
-//    public List<Geo> getFeeShippingService() throws ServiceException {
-//
-//    }
+    @ApiOperation(value = "get fee shipping service")
+    @PostMapping("shipment/shipping-fee")
+    public MoneyV2 getFeeShippingService(@RequestParam("shop-id") String shopId, @RequestBody FeeShippingGHNInput input) throws ServiceException {
+
+        Double feeShipping = 0.0;
+        LinkedTreeMap<Object, Object> claims = null;
+        try {
+            claims = (LinkedTreeMap) getGHNClient().getFeeShippingService(token, shopId, input).getData();
+
+        } catch (ClientException e) {
+            throw new ServiceException(e.getErrorCode(), e.getMessage(), e.getErrorDetail());
+        }
+        feeShipping =(Double) claims.get("total");
+
+        return MoneyCalculateUtils.getMoney(feeShipping);
+
+    }
+
     @ApiOperation(value = "create records geo")
     @PostMapping("shipment/address/create")
     public List<Geo> createGeoGHNs() throws ServiceException {
@@ -166,7 +185,7 @@ public class GHNController extends BaseController {
                         wardGHNs = getGHNClient().getWardGHNs(token, geoDistrict.getGhn_id());
 
                     } catch (ClientException e) {
-                        System.out.println( geoDistrict.getGhn_id());
+                        System.out.println(geoDistrict.getGhn_id());
                         continue;
                     }
                     if (null != wardGHNs &&

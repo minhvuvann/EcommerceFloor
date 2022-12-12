@@ -86,7 +86,7 @@ public class HttpsUtils {
                 conn = (HttpURLConnection) url.openConnection();
             }
             if (null != requestId && requestId.length() > 0) {
-                ((HttpURLConnection)conn).setRequestProperty("shopId", requestId);
+                conn.setRequestProperty("shopId", requestId);
             }
             if (null != token && token.length() > 0) {
                 conn.setRequestProperty("Token", token);

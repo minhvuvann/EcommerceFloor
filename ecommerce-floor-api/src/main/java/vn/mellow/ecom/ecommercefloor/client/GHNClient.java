@@ -30,11 +30,11 @@ public class GHNClient extends BaseClient {
         return getResponsePackList("master-data/ward?district_id=" + district_id, WardGHN.class, token);
     }
 
-    public ResultShopGHN createShop(String token, ShopGHNInput shopGHNInput) throws ClientException {
-        return post("v2/shop/register" ,shopGHNInput, ResultShopGHN.class, token);
+    public ResultObjectGHN createShop(String token, ShopGHNInput shopGHNInput) throws ClientException {
+        return post("v2/shop/register", shopGHNInput, ResultObjectGHN.class, token);
     }
 
-    public ResultFeeShipping getFeeShippingService(String token, String shopId, FeeShippingGHNInput feeShippingGHNInput) throws ClientException {
-        return post("v2/shipping-order/fee" ,feeShippingGHNInput, ResultFeeShipping.class, token,shopId);
+    public ResultObjectGHN getFeeShippingService(String token, String shopId, FeeShippingGHNInput feeShippingGHNInput) throws ClientException {
+        return post("v2/shipping-order/fee", feeShippingGHNInput, ResultObjectGHN.class, token, shopId);
     }
 }
