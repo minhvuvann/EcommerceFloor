@@ -37,38 +37,41 @@ public class HttpsUtils {
     }
 
     public static String get(String url) throws ClientException {
-        return pushRequest(url, null, "GET", null);
+        return pushRequest(url, null, "GET",null, null);
     }
 
     public static String post(String url, String body) throws ClientException {
-        return pushRequest(url, body, "POST", null);
+        return pushRequest(url, body, "POST",null, null);
     }
 
     public static String put(String url, String body) throws ClientException {
-        return pushRequest(url, body, "PUT", null);
+        return pushRequest(url, body, "PUT",null, null);
     }
 
     public static String get(String url, String token) throws ClientException {
-        return pushRequest(url, null, "GET", token);
+        return pushRequest(url, null, "GET",null, token);
     }
 
     public static String post(String url, String body, String token) throws ClientException {
-        return pushRequest(url, body, "POST",  token);
+        return pushRequest(url, body, "POST",null,  token);
+    }
+    public static String post(String url, String body, String token,String requestId) throws ClientException {
+        return pushRequest(url, body, "POST",requestId,  token);
     }
 
     public static String put(String url, String body, String token) throws ClientException {
-        return pushRequest(url, body, "PUT",  token);
+        return pushRequest(url, body, "PUT",null,  token);
     }
 
     public static String delete(String url, String token) throws ClientException {
-        return pushRequest(url, null, "DELETE",  token);
+        return pushRequest(url, null, "DELETE",null,  token);
     }
 
     public static String delete(String url) throws ClientException {
-        return pushRequest(url, null, "DELETE",  null);
+        return pushRequest(url, null, "DELETE",null,  null);
     }
 
-    private static String pushRequest(String urlRest, String body, String method, String token) throws ClientException {
+    private static String pushRequest(String urlRest, String body, String method,String requestId, String token) throws ClientException {
         HttpURLConnection conn = null;
         InputStream inputStream = null;
         BufferedReader inBuffer = null;
@@ -81,6 +84,9 @@ public class HttpsUtils {
             } else {
                 url = new URL(urlRest);
                 conn = (HttpURLConnection) url.openConnection();
+            }
+            if (null != requestId && requestId.length() > 0) {
+                ((HttpURLConnection)conn).setRequestProperty("shopId", requestId);
             }
             if (null != token && token.length() > 0) {
                 conn.setRequestProperty("Token", token);

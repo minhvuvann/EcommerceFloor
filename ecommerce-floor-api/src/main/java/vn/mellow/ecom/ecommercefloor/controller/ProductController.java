@@ -78,30 +78,34 @@ public class ProductController extends BaseController {
             if (null == variant.getColor()) {
                 throw new ServiceException("not_found", "Vui lòng chọn màu của sản phầm", "Product variant color is empty");
             }
-            if (variant.getWeight() <= 0) {
-                throw new ServiceException("invalid_data", " Vui lòng nhập khối lượng.", "ProductVariant.weight is null or <= 0");
+            if (variant.getWeight() <= 0 || variant.getWeight() > 1600000) {
+                throw new ServiceException("invalid_data", " Vui lòng nhập khối lượng trong khoảng 0 < và < 1.600.000 gram.", "ProductVariant.weight is null or <= 0");
 
             }
-            if (variant.getImageUrl()==null) {
+            if (variant.getImageUrl() == null) {
                 throw new ServiceException("invalid_data", "Vui lòng nhập hình ảnh của biến thể sản phẩm.", "ProductVariant.imageUrl is null");
             }
             if (null == variant.getDimension()) {
                 throw new ServiceException("invalid_data", " Vui lòng nhập thông tin  kích thước.", "ProductVariant.Dimension is null");
             }
-            if (variant.getDimension().getLength() <= 0) {
-                throw new ServiceException("invalid_data", " Vui lòng nhập chiều dài trong thông tin  kích thước > 0.", "ProductVariant.Dimension.lenght is null or < 0");
+            if (variant.getDimension().getLength() <= 0 ||
+                    variant.getDimension().getLength() > 200) {
+                throw new ServiceException("invalid_data", " Vui lòng nhập chiều dài trong thông tin  kích thước > 0 và < 200 cm.", "ProductVariant.Dimension.lenght is null or < 0");
 
             }
-            if (variant.getDimension().getWidth() <= 0) {
-                throw new ServiceException("invalid_data", " Vui lòng nhập chiều rộng trong thông tin  kích thước > 0.", "ProductVariant.Dimension.weight is null or < 0");
+            if (variant.getDimension().getWidth() <= 0
+            ||variant.getDimension().getWidth() >200) {
+                throw new ServiceException("invalid_data", " Vui lòng nhập chiều rộng trong thông tin  kích thước > 0 và < 200 cm.", "ProductVariant.Dimension.weight is null or < 0");
 
             }
-            if (variant.getDimension().getHeight() <= 0) {
-                throw new ServiceException("invalid_data", " Vui lòng nhập chiều cao trong thông tin  kích thước > 0.", "ProductVariant.Dimension.height is null or < 0");
+            if (variant.getDimension().getHeight() <= 0
+            ||variant.getDimension().getHeight() > 200) {
+                throw new ServiceException("invalid_data", " Vui lòng nhập chiều cao trong thông tin  kích thước > 0 và < 200 cm.", "ProductVariant.Dimension.height is null or < 0");
 
             }
         }
     }
+
     @ApiOperation(value = "create a new product")
     @PostMapping("/create")
     public ProductDetail createProductVariant(CreateProductInput productInput) throws ServiceException {
@@ -122,6 +126,7 @@ public class ProductController extends BaseController {
 
         return productManager.createProduct(product, productVariant);
     }
+
     @ApiOperation(value = "get product by product id")
     @GetMapping("/product/{productId}")
     public Product getProduct(@PathVariable String productId) throws ServiceException {

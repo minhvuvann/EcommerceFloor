@@ -106,6 +106,12 @@ public class GHNController extends BaseController {
 
     }
 
+
+//    @ApiOperation(value = "create records geo")
+//    @PostMapping("shipment/address/create")
+//    public List<Geo> getFeeShippingService() throws ServiceException {
+//
+//    }
     @ApiOperation(value = "create records geo")
     @PostMapping("shipment/address/create")
     public List<Geo> createGeoGHNs() throws ServiceException {

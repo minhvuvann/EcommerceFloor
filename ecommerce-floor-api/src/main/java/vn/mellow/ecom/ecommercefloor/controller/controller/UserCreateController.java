@@ -45,7 +45,7 @@ public class UserCreateController {
         user.setImageUrl(userInput.getImageUrl());
         if (null == userInput.getImageUrl()) {
             String imageUrl = userInput.getFullName() == null ? user.getUsername() : userInput.getFullName();
-            user.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl);
+            user.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl.replaceAll(" ",""));
         }
         ServiceType serviceType = ServiceType.NORMALLY;
         if (null != userInput.getServiceType()) {

@@ -76,7 +76,7 @@ public class ShopController extends BaseController {
         shop.setShopId(shopId);
         if (null == shopInput.getImageUrl()) {
             String imageUrl = shopInput.getName() == null ? user.getUsername() : shopInput.getName();
-            shopInput.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl);
+            shopInput.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl.replaceAll(" ",""));
         }
         shop.setImageUrl(shopInput.getImageUrl());
 

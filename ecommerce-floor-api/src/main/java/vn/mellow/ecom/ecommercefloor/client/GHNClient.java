@@ -2,6 +2,7 @@ package vn.mellow.ecom.ecommercefloor.client;
 
 import vn.mellow.ecom.ecommercefloor.base.client.BaseClient;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
+import vn.mellow.ecom.ecommercefloor.model.input.FeeShippingGHNInput;
 import vn.mellow.ecom.ecommercefloor.model.input.ShopGHNInput;
 import vn.mellow.ecom.ecommercefloor.model.shipment.convert.*;
 
@@ -33,4 +34,7 @@ public class GHNClient extends BaseClient {
         return post("v2/shop/register" ,shopGHNInput, ResultShopGHN.class, token);
     }
 
+    public ResultFeeShipping getFeeShippingService(String token, String shopId, FeeShippingGHNInput feeShippingGHNInput) throws ClientException {
+        return post("v2/shipping-order/fee" ,feeShippingGHNInput, ResultFeeShipping.class, token,shopId);
+    }
 }

@@ -65,6 +65,12 @@ public class BaseClient {
         String content = HttpsUtils.post(getServiceFullPath(path), body, token);
         return fromJson(content, classOfT);
     }
+    protected <T> T post(String path, Object postData, Class<T> classOfT,  String token,String requestId) throws ClientException {
+        String body = null;
+        if (null != postData) body = toJson(postData);
+        String content = HttpsUtils.post(getServiceFullPath(path), body, token);
+        return fromJson(content, classOfT);
+    }
 
     protected <T> List<T> postList(String path, Object postData, Class<T> classOfT) throws ClientException {
         String body = null;

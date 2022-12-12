@@ -102,6 +102,7 @@ public class UserManager extends BaseManager {
     public User getUser(String userId) {
         return getUserCollection().find(Filters.eq("_id", userId)).first();
     }
+
     public User getUserShop(String shopId) {
         return getUserCollection().find(Filters.eq("shop.shopId", shopId)).first();
     }
@@ -129,9 +130,11 @@ public class UserManager extends BaseManager {
         filters.add(Filters.eq("_id", userId));
         return getUserCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
     }
+
     public User updateUserStatus(String userId, UpdateStatusInput statusBody) throws ServiceException {
         User user = getUser(userId);
-
+        if (null == user)
+            throw new ServiceException("not_found", "Không tìm thấy thông tin tài khoản", "user not found");
         //validate status
         validateUpdateStatus(statusBody, user);
         if (null != user) {
@@ -153,21 +156,21 @@ public class UserManager extends BaseManager {
                 description += ". " + statusBody.getNote();
             }
             // add log update status
-            addActivityLog(statusBody.getByUser(), description, userId, ActivityLogType.UPDATE_STATUS,User.class);
+            addActivityLog(statusBody.getByUser(), description, userId, ActivityLogType.UPDATE_STATUS, User.class);
 
             return user;
         }
         return null;
     }
 
-    private void validateUpdateStatus(UpdateStatusInput statusBody, User order) throws ServiceException {
+    private void validateUpdateStatus(UpdateStatusInput statusBody, User user) throws ServiceException {
         if (null == statusBody) {
             throw new ServiceException("invalid_data", "Thông tin không hợp lệ", "update Status Body is required");
         }
         if (!UserStatus.isExist(statusBody.getStatus())) {
             throw new ServiceException("status_error", "Trang thái tài khoản không tồn tại", "status not exist");
         }
-        if (UserStatus.CANCELLED.equals(order.getUserStatus())) {
+        if (UserStatus.CANCELLED.equals(user.getUserStatus())) {
             throw new ServiceException("status_updated", "Yêu cầu trạng thái công việc đã bị hủy", "Status is cancelled, can't update status");
         }
     }
