@@ -43,11 +43,11 @@ class EcommerceFloorTest {
     public void testUser() {
         CreateUserInput createUserInput = new CreateUserInput();
         UserInput user = new UserInput();
-        user.setBirthday(new Date("11/02/2000"));
+        user.setBirthday(new Date("11/02/2001"));
         user.setByUser(byUser);
-        user.setEmail("nguyenvandat@gmail.com");
+        user.setEmail("nguyenvantu@gmail.com");
         user.setDescription("Tài khoản khách hàng");
-        user.setFullName("Nguyễn Văn Đạt");
+        user.setFullName("Nguyễn Văn Tú");
         user.setGender(GenderType.MAN);
         user.setServiceType(ServiceType.NORMALLY);
         user.setTelephone("0988883131");

@@ -38,6 +38,14 @@ public class GeoManager extends BaseManager {
       return getGeoCollection().find(Filters.eq("type", type.toString())).into(new ArrayList<>());
     }
 
+    public Geo getGeoGHN_ID(GeoType type, int ghn_id) {
+        List<Bson> filter = new ArrayList<>();
+        filter.add(Filters.eq("ghn_id", ghn_id));
+        filter.add(Filters.eq("type", type.toString()));
+        return getGeoCollection().find(Filters.and(filter)).first();
+
+    }
+
     public List<Geo> getGeoParent(GeoType type, int parent_id) {
         List<Bson> filter = new ArrayList<>();
         filter.add(Filters.eq("parent_id", parent_id));

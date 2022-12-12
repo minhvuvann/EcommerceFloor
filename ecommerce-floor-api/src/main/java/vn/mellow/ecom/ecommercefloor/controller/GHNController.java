@@ -60,7 +60,6 @@ public class GHNController extends BaseController {
     }
 
 
-
     @ApiOperation(value = "Get list shipping service")
     @GetMapping("shipment/shipping-services")
     public List<ShippingService> getShippingServices(
@@ -126,7 +125,9 @@ public class GHNController extends BaseController {
             geoProvince.setType(GeoType.PROVINCE);
             geoProvince.setName(province.getProvinceName());
             geoProvince.setCode(province.getCode());
-            geoProvince = geoManager.createGeo(geoProvince);
+            Geo geoProvinceData = geoManager.getGeoGHN_ID(GeoType.PROVINCE, province.getProvinceID());
+            if (null == geoProvinceData)
+                geoProvince = geoManager.createGeo(geoProvince);
             geos.add(geoProvince);
 
 
@@ -134,7 +135,7 @@ public class GHNController extends BaseController {
                 districtGHNs = getGHNClient().getDistrictGHNs(token, geoProvince.getGhn_id());
 
             } catch (ClientException e) {
-                throw new ServiceException(e.getErrorCode(),e.getErrorMessage(),e.getErrorDetail());
+                throw new ServiceException(e.getErrorCode(), e.getErrorMessage(), e.getErrorDetail());
 
 
             }
@@ -150,16 +151,21 @@ public class GHNController extends BaseController {
                     geoDistrict.setCode(district.getCode());
                     geoDistrict.setName(district.getDistrictName());
                     geoDistrict.setType(GeoType.DISTRICT);
-                    geoDistrict = geoManager.createGeo(geoDistrict);
+                    Geo geoDistrictData = geoManager.getGeoGHN_ID(GeoType.DISTRICT, district.getDistrictID());
+                    if (null == geoDistrictData)
+                        geoDistrict = geoManager.createGeo(geoDistrict);
                     geos.add(geoDistrict);
 
                     try {
-                            wardGHNs = getGHNClient().getWardGHNs(token, geoDistrict.getGhn_id());
+                        wardGHNs = getGHNClient().getWardGHNs(token, geoDistrict.getGhn_id());
 
                     } catch (ClientException e) {
-                     e.printStackTrace();
+                        System.out.println( geoDistrict.getGhn_id());
+                        continue;
                     }
-                    if (wardGHNs != null && wardGHNs.getData() != null && 0 != wardGHNs.getData().size()) {
+                    if (null != wardGHNs &&
+                            wardGHNs.getData() != null
+                            && 0 != wardGHNs.getData().size()) {
                         for (WardGHN ward : wardGHNs.getData()) {
                             Geo geoWard = new Geo();
                             geoWard.setGhn_id(ward.getWardCode());
@@ -167,7 +173,9 @@ public class GHNController extends BaseController {
                             geoWard.setName(ward.getWardName());
                             geoWard.setParent_id(district.getDistrictID());
                             geoWard.setType(GeoType.WARD);
-                            geoWard = geoManager.createGeo(geoWard);
+                            Geo geoWardData = geoManager.getGeoGHN_ID(GeoType.WARD, ward.getWardCode());
+                            if (null == geoWardData)
+                                geoWard = geoManager.createGeo(geoWard);
                             geos.add(geoWard);
 
                         }
@@ -183,6 +191,7 @@ public class GHNController extends BaseController {
 
 
     }
+
     @ExceptionHandler(ServiceException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public final Object handleAllServiceException(ServiceException e) {

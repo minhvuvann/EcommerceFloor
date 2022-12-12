@@ -132,7 +132,7 @@ public class UserCreateController {
             throw new ServiceException("invalid_data", "Chưa phân quyền cho user", "role is null");
         }
         if (null != createUserInput.getRole().getRoleStatus()
-                && RoleStatus.isExist(createUserInput.getRole().getRoleStatus())) {
+                && !RoleStatus.isExist(createUserInput.getRole().getRoleStatus())) {
             throw new ServiceException("exists_status", "Trạng thái của role không tồn tại.( " + RoleStatus.getListName() + " )", "Status role is not exists");
 
         }
