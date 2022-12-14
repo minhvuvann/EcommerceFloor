@@ -90,7 +90,7 @@ public class UserCreateController {
             if (UserStatus.ACTIVE.equals(userList.get(0).getUserStatus())) {
                 throw new ServiceException("exist_account", "Email của bạn đã được đăng ký.( " + createUserInput.getUser().getEmail() + " )", "Email user is exists");
             }
-            if (UserStatus.INACTIVE.equals(userList.get(0))) {
+            if (UserStatus.INACTIVE.equals(userList.get(0).getUserStatus())) {
                 userManager.updatePassword(userList.get(0).getId(), keyPassword.getPassword());
                 return userManager.getUser(userList.get(0).getId());
 
