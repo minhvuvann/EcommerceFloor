@@ -53,7 +53,7 @@ public class OrderManager extends BaseManager {
     }
 
     public Order getOrder(String orderId) {
-        Order item = getOrderCollection().find(Filters.eq("orderId", orderId)).first();
+        Order item = getOrderCollection().find(Filters.eq("_id", orderId)).first();
         if (null != item) {
             if (null == item.getType()) {
                 item.setType(OrderType.SELL);
@@ -148,7 +148,7 @@ public class OrderManager extends BaseManager {
             newDocument.append("$set", document);
 
             List<Bson> bsonList = new ArrayList<>();
-            bsonList.add(Filters.eq("orderId", orderId));
+            bsonList.add(Filters.eq("_id", orderId));
             FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
             order = getOrderCollection().findOneAndUpdate(Filters.and(bsonList), newDocument, options);
             //update session item in mongodb
@@ -189,7 +189,7 @@ public class OrderManager extends BaseManager {
         List<Bson> filter = getFilters(filterData);
         // add filter
         if (filterData.getOrderId() != null) {
-            appendFilter(filterData.getOrderId(), "orderId", filter);
+            appendFilter(filterData.getOrderId(), "_id", filter);
         }
         if (filterData.getStatus() != null) {
             appendFilter(filterData.getStatus(), "status", filter);

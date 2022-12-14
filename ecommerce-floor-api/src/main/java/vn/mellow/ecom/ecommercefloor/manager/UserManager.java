@@ -204,7 +204,7 @@ public class UserManager extends BaseManager {
             // update order status
             Document document = new Document();
             document.put("updatedAt", new Date());
-            document.put("status", statusBody.getStatus().toString());
+            document.put("userStatus", statusBody.getStatus().toString());
             Document newDocument = new Document();
             newDocument.append("$set", document);
 

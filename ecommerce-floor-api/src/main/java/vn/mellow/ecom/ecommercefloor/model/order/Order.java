@@ -43,8 +43,6 @@ public class Order {
     private String phoneCustomer;
     private Address shippingAddress;
     @NonNull
-    private String orderId;
-    @NonNull
     private OrderType type;
     private OrderStatus status;
     private String note;
