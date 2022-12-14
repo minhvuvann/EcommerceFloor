@@ -57,7 +57,7 @@ public class UserCreateController {
         KeyPasswordInput keyPasswordInput = createUserInput.getPassword();
         KeyPassword keyPassword = new KeyPassword();
         String token = KeyUtils.getToken();
-        String password = KeyUtils.SHA256(keyPasswordInput.getPassword() + token);
+        String password = KeyUtils.SHA256(KeyUtils.decodeBase64Encoder(keyPasswordInput.getPassword()) + token);
         keyPassword.setPassword(password);
         keyPassword.setToken(token);
         keyPassword.setNote(keyPasswordInput.getNote());
@@ -91,7 +91,7 @@ public class UserCreateController {
                 throw new ServiceException("exist_account", "Email của bạn đã được đăng ký.( " + createUserInput.getUser().getEmail() + " )", "Email user is exists");
             }
             if (UserStatus.INACTIVE.equals(userList.get(0).getUserStatus())) {
-                userManager.updatePassword(userList.get(0).getId(), keyPassword.getPassword());
+                userManager.updatePassword(userList.get(0).getId(), password);
                 return userManager.getUser(userList.get(0).getId());
 
             }
