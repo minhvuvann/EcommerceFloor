@@ -45,7 +45,7 @@ public class UserCreateController {
         user.setImageUrl(userInput.getImageUrl());
         if (null == userInput.getImageUrl()) {
             String imageUrl = userInput.getFullName() == null ? user.getUsername() : userInput.getFullName();
-            user.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl.replaceAll(" ",""));
+            user.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl.replaceAll(" ", ""));
         }
         ServiceType serviceType = ServiceType.NORMALLY;
         if (null != userInput.getServiceType()) {
@@ -79,8 +79,23 @@ public class UserCreateController {
             roleStatus = roleInput.getRoleStatus();
         }
         role.setRoleStatus(roleStatus);
+        UserFilter userFilter = new UserFilter();
+        if (null != createUserInput.getUser().getEmail()) {
+            userFilter.setEmail(createUserInput.getUser().getEmail());
+            userFilter.setServiceType(createUserInput.getUser().getServiceType());
+        }
+        List<User> userList = userManager.filterUser(userFilter).getResultList();
 
+        if (userList.size() != 0) {
+            if (UserStatus.ACTIVE.equals(userList.get(0).getUserStatus())) {
+                throw new ServiceException("exist_account", "Email của bạn đã được đăng ký.( " + createUserInput.getUser().getEmail() + " )", "Email user is exists");
+            }
+            if (UserStatus.INACTIVE.equals(userList.get(0))) {
+                userManager.updatePassword(userList.get(0).getId(), keyPassword.getPassword());
+                return userManager.getUser(userList.get(0).getId());
 
+            }
+        }
         return userManager.createUser(user, keyPassword, role);
     }
 
@@ -107,17 +122,8 @@ public class UserCreateController {
                 !ServiceType.isExist(createUserInput.getUser().getServiceType().toString())) {
             throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
         }
-        UserFilter userFilter = new UserFilter();
-        if (null != createUserInput.getUser().getEmail()) {
-            userFilter.setEmail(createUserInput.getUser().getEmail());
-            userFilter.setServiceType(createUserInput.getUser().getServiceType());
-        }
-        List<User> userList = userManager.filterUser(userFilter).getResultList();
 
-        if (userList.size() != 0) {
-            throw new ServiceException("exist_account", "Email của bạn đã được đăng ký.( " + createUserInput.getUser().getEmail() + " )", "Email user is exists");
 
-        }
         if (null == createUserInput.getPassword() || null == createUserInput.getPassword().getPassword()
                 || createUserInput.getPassword().getPassword().length() == 0
                 || "null".equalsIgnoreCase(createUserInput.getPassword().getPassword())) {
