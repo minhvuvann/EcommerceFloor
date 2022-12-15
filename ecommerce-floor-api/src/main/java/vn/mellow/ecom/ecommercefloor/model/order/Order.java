@@ -37,6 +37,8 @@ public class Order {
     private MoneyV2 totalTax;
     private MoneyV2 cod;
     @NonNull
+    private String shopId;
+    @NonNull
     private String userId;
     private String nameCustomer;
     private String emailCustomer;

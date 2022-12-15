@@ -14,6 +14,7 @@ import vn.mellow.ecom.ecommercefloor.controller.ShopController;
 import vn.mellow.ecom.ecommercefloor.enums.*;
 import vn.mellow.ecom.ecommercefloor.model.geo.Address;
 import vn.mellow.ecom.ecommercefloor.controller.UserController;
+import vn.mellow.ecom.ecommercefloor.model.industrial.IndustrialProduct;
 import vn.mellow.ecom.ecommercefloor.model.input.*;
 import vn.mellow.ecom.ecommercefloor.model.product.Product;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
@@ -44,8 +45,8 @@ class EcommerceFloorTest {
     private ProductController productController;
 
 
-
     private ActivityUser byUser;
+
 
     public EcommerceFloorTest() {
         this.byUser = new ActivityUser();
@@ -108,37 +109,59 @@ class EcommerceFloorTest {
     }
 
     @Test
+    public void testIndustrialProduct() {
+        for (IndustrialType type : IndustrialType.values()) {
+            IndustrialProduct deck = new IndustrialProduct();
+            deck.setName(type.getDescription());
+            deck.setDescription(type.getDescription());
+            try {
+                deck = productController.createIndustrialProduct(deck);
+            } catch (ServiceException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    @Test
     public void testProduct() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        }catch (ServiceException e) {
+            e.printStackTrace();
+        }
         CreateProductInput createProductInput = new CreateProductInput();
         Product productInput = new Product();
         productInput.setName("Máy chơi game");
         productInput.setShopId(562651);
-        productInput.setIndustrialType(IndustrialType.ELECTRON);
-        productInput.setIndustrialTypeName(IndustrialType.ELECTRON.getDescription());
+        productInput.setIndustrialId(industrialProducts.get(0).getId());
+        productInput.setIndustrialTypeName(industrialProducts.get(0).getName());
         productInput.setFeaturedImageUrl("https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiobien.vn%2Fproducts%2Fmay-choi-game-cam-tay-steam-deck&psig=AOvVaw3dpXd4B8MBiX928V4dPcJf&ust=1670957295727000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLiOjZLf9PsCFQAAAAAdAAAAABAE");
-productInput.setDescription("Như một vị bác học lỗi lạc đã từng nói: \" Học hành áp lực không tạo ra thiên tài, hãy cân bằng giữa việc học và giải trí. Đó mới là phương pháp thông minh \". Đừng để những đứa trẻ của chúng ta trở nên khô khan, máy móc khi xung quanh 24 giờ là sách vở, hãy biến các con thành thiên tài khi đan xem giữa chơi và học...\n" +
-        "\n" +
-        "Máy chơi game cầm tay M8 Plus thông minh thế hệ mới\n" +
-        "\n" +
-        "* Thông số kỹ thuật máy chơi game cầm tay M8 plus\n" +
-        "- Tên máy : Máy chơi game cầm tay M8\n" +
-        "- Phân phối : D9 Shop\n" +
-        "- Màn hình : 4.0 Inch, tinh xảo, sắc nét\n" +
-        "- Loa : Âm thanh to, sống động\n" +
-        "- Màu sắc : đỏ xanh, đỏ đen, xanh đen,..\n" +
-        "- Chất liệu : Nhựa ABS\n" +
-        "- Loại trò chơi : 1000 game khác nhau\n" +
-        "- Pin : Tích hợp pin sạc 1200 mah\n" +
-        "- Pin : có thể sạc lại, bạn có thể sử dụng để làm việc trong khoảng 3-4 giờ\n" +
-        "- Có hỗ trợ nhiều cổng kết nối, kết nối với màn hình lớn, tivi, laptop để cuộc vui tốt hơn\n" +
-        "\n" +
-        "* Tính năng sản phẩm :\n" +
-        "- Game nhập vai vô cùng hot, càng chơi càng thích\n" +
-        "- Hỗ trợ gần 1000 game khác nhau, game tư duy thông minh\n" +
-        "- Nhiều game thông minh, giúp trẻ phát triển tư duy, sáng tạo\n" +
-        "- Giảm bớt căng thẳng sau những ngày học hành vất vả\n" +
-        "- Có thể chơi 2 người trên màn hình lớn như tivi, laptop ...\n" +
-        "- Âm thanh, kết hợp với màn hình HD sắc nét giúp trẻ chơi không bị mỏi mắt");
+        productInput.setDescription("Như một vị bác học lỗi lạc đã từng nói: \" Học hành áp lực không tạo ra thiên tài, hãy cân bằng giữa việc học và giải trí. Đó mới là phương pháp thông minh \". Đừng để những đứa trẻ của chúng ta trở nên khô khan, máy móc khi xung quanh 24 giờ là sách vở, hãy biến các con thành thiên tài khi đan xem giữa chơi và học...\n" +
+                "\n" +
+                "Máy chơi game cầm tay M8 Plus thông minh thế hệ mới\n" +
+                "\n" +
+                "* Thông số kỹ thuật máy chơi game cầm tay M8 plus\n" +
+                "- Tên máy : Máy chơi game cầm tay M8\n" +
+                "- Phân phối : D9 Shop\n" +
+                "- Màn hình : 4.0 Inch, tinh xảo, sắc nét\n" +
+                "- Loa : Âm thanh to, sống động\n" +
+                "- Màu sắc : đỏ xanh, đỏ đen, xanh đen,..\n" +
+                "- Chất liệu : Nhựa ABS\n" +
+                "- Loại trò chơi : 1000 game khác nhau\n" +
+                "- Pin : Tích hợp pin sạc 1200 mah\n" +
+                "- Pin : có thể sạc lại, bạn có thể sử dụng để làm việc trong khoảng 3-4 giờ\n" +
+                "- Có hỗ trợ nhiều cổng kết nối, kết nối với màn hình lớn, tivi, laptop để cuộc vui tốt hơn\n" +
+                "\n" +
+                "* Tính năng sản phẩm :\n" +
+                "- Game nhập vai vô cùng hot, càng chơi càng thích\n" +
+                "- Hỗ trợ gần 1000 game khác nhau, game tư duy thông minh\n" +
+                "- Nhiều game thông minh, giúp trẻ phát triển tư duy, sáng tạo\n" +
+                "- Giảm bớt căng thẳng sau những ngày học hành vất vả\n" +
+                "- Có thể chơi 2 người trên màn hình lớn như tivi, laptop ...\n" +
+                "- Âm thanh, kết hợp với màn hình HD sắc nét giúp trẻ chơi không bị mỏi mắt");
         createProductInput.setProduct(productInput);
         List<ProductVariant> productVariantList = new ArrayList<>();
         ProductVariant variant_1 = new ProductVariant();

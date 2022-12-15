@@ -12,7 +12,7 @@ import java.util.List;
 public class Product extends BaseModel {
     private String name;
     private Integer shopId;
-    private IndustrialType industrialType;
+    private String industrialId;
     private String industrialTypeName;
     private String description;
     private String featuredImageUrl;

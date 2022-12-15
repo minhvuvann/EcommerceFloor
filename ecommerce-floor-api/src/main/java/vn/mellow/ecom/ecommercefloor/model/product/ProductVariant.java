@@ -21,4 +21,5 @@ public class ProductVariant extends BaseModel {
     private Double weight;
     private WeightUnit weightUnit;
     private DimensionMeasurement dimension;
+    private MoneyV2 discount;
 }

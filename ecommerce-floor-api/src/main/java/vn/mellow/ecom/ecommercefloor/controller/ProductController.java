@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
+import vn.mellow.ecom.ecommercefloor.model.industrial.IndustrialProduct;
 import vn.mellow.ecom.ecommercefloor.model.size.DimensionUnit;
 import vn.mellow.ecom.ecommercefloor.model.product.Product;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
@@ -49,8 +50,8 @@ public class ProductController extends BaseController {
             throw new ServiceException("not_found", "Vui lòng nhập hình ảnh mô tả của sản phẩm", "Product featured image url is empty");
 
         }
-        if (null == productInput.getProduct().getIndustrialType()) {
-            throw new ServiceException("not_found", "Vui lòng chọn ngành hàng của sản phẩm", "Product industrial type is empty");
+        if (null == productInput.getProduct().getIndustrialId()) {
+            throw new ServiceException("not_found", "Vui lòng chọn nghành hàng của sản phẩm", "Product industrial type is empty");
 
         }
         if (null == productInput.getProduct().getName()) {
@@ -78,6 +79,10 @@ public class ProductController extends BaseController {
                 throw new ServiceException("not_found", "Vui lòng truyền thông tin biến thể của sản phầm", "Product variant is empty");
             if (null == variant.getColor()) {
                 throw new ServiceException("not_found", "Vui lòng chọn màu của sản phầm", "Product variant color is empty");
+            }
+            if (null == variant.getPrice()
+                    || variant.getPrice().getAmount() <= 0) {
+                throw new ServiceException("not_found", "Vui lòng nhập giá của sản phầm", "Product variant price is empty");
             }
             if (variant.getWeight() <= 0 || variant.getWeight() > 1600000) {
                 throw new ServiceException("invalid_data", " Vui lòng nhập khối lượng trong khoảng 0 < và < 1.600.000 gram.", "ProductVariant.weight is null or <= 0");
@@ -108,8 +113,8 @@ public class ProductController extends BaseController {
     }
 
     @ApiOperation(value = "create a new product")
-    @PostMapping("/create")
-    public ProductDetail createProductVariant(CreateProductInput productInput) throws ServiceException {
+    @PostMapping("/product/create")
+    public ProductDetail createProductVariant(@RequestBody  CreateProductInput productInput) throws ServiceException {
         //validate product input
         validateProductVariantInput(productInput);
         Product product = productInput.getProduct();
@@ -149,6 +154,33 @@ public class ProductController extends BaseController {
     public ProductDetail getProductDetail(@PathVariable String productId) throws ServiceException {
         return productManager.getProductDetail(productId);
     }
+
+    @ApiOperation(value = "get list industrial")
+    @GetMapping("/product/industrials")
+    public List<IndustrialProduct> getListIndustrial() throws ServiceException {
+        return productManager.getIndustrialProducts();
+    }
+
+    @ApiOperation(value = "create industrial product")
+    @PostMapping("/product/industrial/create")
+    public IndustrialProduct createIndustrialProduct(
+            @RequestBody IndustrialProduct industrialProduct) throws ServiceException {
+        //validate industrialProduct
+        validateIndustrialProductInput(industrialProduct);
+        return productManager.createIndustrialProduct(industrialProduct);
+    }
+
+    private void validateIndustrialProductInput(IndustrialProduct industrialProduct) throws ServiceException {
+        if (null == industrialProduct) {
+            throw new ServiceException("invalid_data", "Vui lòng truyền thông tin nghành hàng", "Industrial product is null");
+        }
+        if (null == industrialProduct.getName()) {
+            throw new ServiceException("invalid_data", "Vui lòng truyền tên nghành hàng", "Industrial product name is null");
+
+        }
+
+    }
+
 
     @ApiOperation(value = "find product")
     @PostMapping("/product/filter")

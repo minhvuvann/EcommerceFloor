@@ -133,28 +133,32 @@ public class UserManager extends BaseManager {
         return getUserCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
     }
 
+    public Shop getInfoShop(int shopId) {
+        User user = getUserCollection().find(Filters.eq("shop.shopId", shopId)).first();
+        return user.getShop();
+    }
+
     public User updateInfoUser(String userId, UpdateInfoUserInput updateInfoUser) throws ServiceException {
         Document updateDocument = new Document();
-        if (updateInfoUser==null){
-            throw  new ServiceException("not_found","Vui lòng nhập thông tin cần cập nhật của tài khoản","update info is invalid_data");
+        if (updateInfoUser == null) {
+            throw new ServiceException("not_found", "Vui lòng nhập thông tin cần cập nhật của tài khoản", "update info is invalid_data");
         }
         updateDocument.put("updatedAt", new Date());
         if (updateInfoUser.getUsername() != null)
             updateDocument.put("username", updateInfoUser.getUsername());
-        if (updateInfoUser.getBirthday() != null){
+        if (updateInfoUser.getBirthday() != null) {
             updateDocument.put("birthday", updateInfoUser.getBirthday());
         }
-        if (updateInfoUser.getImageUrl() != null){
+        if (updateInfoUser.getImageUrl() != null) {
             updateDocument.put("imageUrl", updateInfoUser.getImageUrl());
         }
-        if (updateInfoUser.getEmail()!= null){
+        if (updateInfoUser.getEmail() != null) {
             updateDocument.put("email", updateInfoUser.getEmail());
         }
-        if (updateInfoUser.getTelephone()!= null){
+        if (updateInfoUser.getTelephone() != null) {
             updateDocument.put("telephone", updateInfoUser.getTelephone());
         }
-        if (updateInfoUser.getFullName() != null)
-        {
+        if (updateInfoUser.getFullName() != null) {
             updateDocument.put("fullName", updateInfoUser.getFullName());
         }
         Document newDocument = new Document();
@@ -167,6 +171,7 @@ public class UserManager extends BaseManager {
 
 
     }
+
     public KeyPassword updatePassword(String userId, String password) throws ServiceException {
         Document document = new Document();
         document.put("updatedAt", new Date());
@@ -177,13 +182,14 @@ public class UserManager extends BaseManager {
         List<Bson> filters = new ArrayList<>();
         filters.add(Filters.eq("passwordStatus", PasswordStatus.NEW.toString()));
         filters.add(Filters.eq("userId", userId));
-       return getKeyPasswordCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+        return getKeyPasswordCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
     }
-    public User updateAddress(String userId, Address address){
+
+    public User updateAddress(String userId, Address address) {
         Document updateDocument = new Document();
         updateDocument.put("updatedAt", new Date());
-        if (address!= null)
-            updateDocument.put("address",address);
+        if (address != null)
+            updateDocument.put("address", address);
 
         Document newDocument = new Document();
         newDocument.append("$set", updateDocument);

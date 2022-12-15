@@ -9,13 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
+import vn.mellow.ecom.ecommercefloor.controller.controller.CreateCartController;
 import vn.mellow.ecom.ecommercefloor.controller.controller.UserCreateController;
 import vn.mellow.ecom.ecommercefloor.enums.BasicStatus;
 import vn.mellow.ecom.ecommercefloor.manager.UserManager;
+import vn.mellow.ecom.ecommercefloor.model.cart.Cart;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 import vn.mellow.ecom.ecommercefloor.base.model.ResponseBody;
-import vn.mellow.ecom.ecommercefloor.model.user.UserProfile;
 import vn.mellow.ecom.ecommercefloor.utils.GeneralIdUtils;
 import vn.mellow.ecom.ecommercefloor.utils.SendMailUtils;
 
@@ -38,7 +39,8 @@ public class RegisterController extends BaseController {
     private String emailEcommerce;
     @Value("${mellow.password}")
     private String passwordEcommerce;
-
+    @Autowired
+    private CreateCartController createCartController;
 
     @ApiOperation(value = "create new  user")
     @PostMapping("/user")
@@ -56,11 +58,14 @@ public class RegisterController extends BaseController {
             //Send mail to store
 
             return new ResponseBody(BasicStatus.success, code, result);
-        }
-        else {
-            return new ResponseBody(BasicStatus.failure,"Đăng ký tài khoản không thành công","Register failed");
+        } else {
+            Cart cart = new Cart();
+            createCartController.createCart(cart, null);
+
+            return new ResponseBody(BasicStatus.failure, "Đăng ký tài khoản không thành công", "Register failed");
         }
     }
+
     @ExceptionHandler(ServiceException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public final Object handleAllServiceException(ServiceException e) {

@@ -7,12 +7,14 @@ import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
+import vn.mellow.ecom.ecommercefloor.model.industrial.IndustrialProduct;
 import vn.mellow.ecom.ecommercefloor.model.product.Product;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductDetail;
 import vn.mellow.ecom.ecommercefloor.model.product.ProductFilter;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -73,18 +75,40 @@ public class ProductManager extends BaseManager {
 
     }
 
+    private MongoCollection<IndustrialProduct> industrialProductMongoCollection;
+
+    public MongoCollection<IndustrialProduct> getIndustrialProductCollection() {
+        if (null == industrialProductMongoCollection) {
+            industrialProductMongoCollection = getCollection(IndustrialProduct.class);
+        }
+        return industrialProductMongoCollection;
+    }
+
+    public IndustrialProduct createIndustrialProduct(IndustrialProduct industrialProduct) {
+        industrialProduct.setCreatedAt(new Date());
+        industrialProduct.setId(generateId());
+        industrialProduct.setUpdatedAt(null);
+        getIndustrialProductCollection().insertOne(industrialProduct);
+        return industrialProduct;
+
+    }
+    public List<IndustrialProduct> getIndustrialProducts(){
+        return getIndustrialProductCollection().find().into(new ArrayList<>());
+    }
+
+
     public ResultList<Product> filterProduct(ProductFilter productFilter) {
         List<Bson> filter = getFilters(productFilter);
         if (null != productFilter.getPriceFrom() &&
                 null != productFilter.getPriceTo()) {
-            betweenFilter("mediumPrice.amount",productFilter.getPriceFrom(), productFilter.getPriceTo(), filter);
+            betweenFilter("mediumPrice.amount", productFilter.getPriceFrom(), productFilter.getPriceTo(), filter);
         }
         if (null != productFilter.getName())
             appendFilter("name", productFilter.getName(), filter);
         if (null != productFilter.getShopId())
             appendFilter("shopId", productFilter.getShopId(), filter);
-        if (null != productFilter.getIndustrialType())
-            appendFilter("industrialType", productFilter.getIndustrialType().toString(), filter);
+        if (null != productFilter.getIndustrialId())
+            appendFilter("industrialId", productFilter.getIndustrialId(), filter);
         if (null != productFilter.getProductId())
             appendFilter("_id", productFilter.getProductId(), filter);
 

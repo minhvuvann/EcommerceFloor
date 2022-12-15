@@ -11,5 +11,5 @@ public class ProductFilter extends BaseFilter {
     private Double priceFrom;
     private String productId;
     private String shopId;
-    private IndustrialType industrialType;
+    private String industrialId;
 }
