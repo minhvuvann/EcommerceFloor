@@ -56,6 +56,9 @@ public class CreateCartController {
             throw new ServiceException("not_found", "Vui lòng nhập thông tin mã giỏ hàng.", "cart id is not available");
 
         }
+        //update cart quantity
+        double price = cartItem.getProductVariant().getPrice().getAmount() * cartItem.getQuantity();
+        cartManager.updateCartQuantity(cartItem.getCartId(), cartItem.getQuantity(), price);
         return cartManager.createCartItem(cartItem);
     }
 }

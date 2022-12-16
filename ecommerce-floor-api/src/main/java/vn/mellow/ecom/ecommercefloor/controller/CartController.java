@@ -34,8 +34,6 @@ public class CartController extends BaseController {
     public CartItem createCartItem(@RequestBody CartItem cartItem) throws ServiceException {
         return createCartController.createCartItem(cartItem);
     }
-
-
     @ApiOperation(value = "get cart detail by cart id")
     @GetMapping("/cart/{cartId}/detail")
     public CartDetail getProductDetail(@PathVariable String cartId) throws ServiceException {

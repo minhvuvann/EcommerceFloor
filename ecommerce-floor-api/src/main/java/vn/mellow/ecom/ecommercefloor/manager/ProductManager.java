@@ -92,10 +92,15 @@ public class ProductManager extends BaseManager {
         return industrialProduct;
 
     }
-    public List<IndustrialProduct> getIndustrialProducts(){
+
+    public List<IndustrialProduct> getIndustrialProducts() {
         return getIndustrialProductCollection().find().into(new ArrayList<>());
     }
 
+    public IndustrialProduct getIndustrialProduct(String name) {
+        return getIndustrialProductCollection().find(Filters.eq("name", name)).first();
+
+    }
 
     public ResultList<Product> filterProduct(ProductFilter productFilter) {
         List<Bson> filter = getFilters(productFilter);

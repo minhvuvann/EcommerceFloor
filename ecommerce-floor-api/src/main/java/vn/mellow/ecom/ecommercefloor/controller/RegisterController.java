@@ -60,6 +60,7 @@ public class RegisterController extends BaseController {
             return new ResponseBody(BasicStatus.success, code, result);
         } else {
             Cart cart = new Cart();
+            cart.setUserId(result.getId());
             createCartController.createCart(cart, null);
 
             return new ResponseBody(BasicStatus.failure, "Đăng ký tài khoản không thành công", "Register failed");
