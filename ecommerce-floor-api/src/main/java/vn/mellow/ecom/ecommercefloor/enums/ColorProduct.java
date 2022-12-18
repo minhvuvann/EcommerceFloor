@@ -6,7 +6,7 @@ public enum ColorProduct {
     WHITE("Màu trắng"),BLUE("Màu xanh da trời"),GREEN("Màu xanh lá cây"),
     YELLOW("Màu vàng"),PURPLE("Màu tím"),ORANGE("Màu da cam"),
     PINK("Màu hồng"),GRAY("Màu xám"),RED("Màu đỏ"),BLACK("Màu đen"),
-    BROWN("Màu nâu");
+    BROWN("Màu nâu"),SILVER("Màu bạc");
 
     private final String description;
 

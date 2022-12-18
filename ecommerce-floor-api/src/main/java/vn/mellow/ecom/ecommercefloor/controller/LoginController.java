@@ -13,10 +13,7 @@ import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.model.ResponseBody;
 import vn.mellow.ecom.ecommercefloor.controller.controller.UserCreateController;
-import vn.mellow.ecom.ecommercefloor.enums.BasicStatus;
-import vn.mellow.ecom.ecommercefloor.enums.RoleStatus;
-import vn.mellow.ecom.ecommercefloor.enums.RoleType;
-import vn.mellow.ecom.ecommercefloor.enums.ServiceType;
+import vn.mellow.ecom.ecommercefloor.enums.*;
 import vn.mellow.ecom.ecommercefloor.manager.UserManager;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
 import vn.mellow.ecom.ecommercefloor.model.input.KeyPasswordInput;
@@ -134,6 +131,11 @@ public class LoginController extends BaseController {
                 if (null == userUpdate) {
                     return new ResponseBody(BasicStatus.failure,
                             "Đăng nhập thất bại. Không tìm thấy thông tin tài khoản", "Account is not personal");
+                }
+                if (UserStatus.INACTIVE.equals(userUpdate.getUserStatus())) {
+                    return new ResponseBody(BasicStatus.failure,
+                            "Đăng nhập thất bại. Không tìm thấy thông tin tài khoản", "Account is not personal");
+
                 }
                 RoleType roleType = null;
                 List<Role> roleList = userManager.getAllRole(userUpdate.getId());

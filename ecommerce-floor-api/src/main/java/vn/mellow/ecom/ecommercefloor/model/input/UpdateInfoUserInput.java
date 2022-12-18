@@ -2,6 +2,7 @@ package vn.mellow.ecom.ecommercefloor.model.input;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import vn.mellow.ecom.ecommercefloor.enums.GenderType;
 
 import java.util.Date;
 
@@ -14,6 +15,8 @@ public class UpdateInfoUserInput {
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
     private Date birthday;
     private String imageUrl;
+    private GenderType gender;
+
 
 
 }

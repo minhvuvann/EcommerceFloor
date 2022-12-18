@@ -149,6 +149,9 @@ public class UserManager extends BaseManager {
         if (updateInfoUser.getBirthday() != null) {
             updateDocument.put("birthday", updateInfoUser.getBirthday());
         }
+        if (updateInfoUser.getGender()!= null) {
+            updateDocument.put("gender", updateInfoUser.getGender());
+        }
         if (updateInfoUser.getImageUrl() != null) {
             updateDocument.put("imageUrl", updateInfoUser.getImageUrl());
         }
