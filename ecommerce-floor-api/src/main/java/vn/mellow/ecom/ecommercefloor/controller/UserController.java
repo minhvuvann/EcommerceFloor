@@ -90,7 +90,7 @@ public class UserController extends BaseController {
     public User updatePassword(@PathVariable String userId, @RequestParam("pwd") String password) throws ServiceException {
         User user = getUser(userId);
         String token = KeyUtils.getToken();
-        password = KeyUtils.SHA256(password + token);
+        password = KeyUtils.SHA256(KeyUtils.decodeBase64Encoder(password) + token);
         userManager.updatePassword(userId, password);
 
         return user;
