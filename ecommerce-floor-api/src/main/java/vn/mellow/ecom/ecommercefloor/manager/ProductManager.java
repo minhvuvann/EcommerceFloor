@@ -8,10 +8,7 @@ import org.springframework.stereotype.Repository;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
 import vn.mellow.ecom.ecommercefloor.model.industrial.IndustrialProduct;
-import vn.mellow.ecom.ecommercefloor.model.product.Product;
-import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
-import vn.mellow.ecom.ecommercefloor.model.product.ProductDetail;
-import vn.mellow.ecom.ecommercefloor.model.product.ProductFilter;
+import vn.mellow.ecom.ecommercefloor.model.product.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -75,6 +72,7 @@ public class ProductManager extends BaseManager {
 
     }
 
+    //nghành hàng
     private MongoCollection<IndustrialProduct> industrialProductMongoCollection;
 
     public MongoCollection<IndustrialProduct> getIndustrialProductCollection() {
@@ -102,12 +100,44 @@ public class ProductManager extends BaseManager {
 
     }
 
+    //Thương hiệu
+    private MongoCollection<Trademark> trademarkMongoCollection;
+
+    public MongoCollection<Trademark> getTrademarkCollection() {
+        if (null == trademarkMongoCollection) {
+            trademarkMongoCollection = getCollection(Trademark.class);
+        }
+        return trademarkMongoCollection;
+    }
+
+    public Trademark getTrademark(String trademarkId) {
+        return getTrademarkCollection().find(Filters.eq("_id", trademarkId)).first();
+    }
+    public Trademark getTrademarkByIndustrialId(String industrialId) {
+        return getTrademarkCollection().find(Filters.eq("industrialId", industrialId)).first();
+    }
+
+
+    public List<Trademark> getTradeMarks() {
+        return getTrademarkCollection().find().into(new ArrayList<>());
+    }
+
+    public Trademark createTrademark(Trademark trademark) {
+        trademark.setId(generateId());
+        trademark.setCreatedAt(new Date());
+        trademark.setUpdatedAt(null);
+        getTrademarkCollection().insertOne(trademark);
+        return trademark;
+    }
+
     public ResultList<Product> filterProduct(ProductFilter productFilter) {
         List<Bson> filter = getFilters(productFilter);
         if (null != productFilter.getPriceFrom() &&
                 null != productFilter.getPriceTo()) {
             betweenFilter("mediumPrice.amount", productFilter.getPriceFrom(), productFilter.getPriceTo(), filter);
         }
+        if (null != productFilter.getTradeMarkId())
+            appendFilter("tradeMarkId", productFilter.getTradeMarkId(), filter);
         if (null != productFilter.getName())
             appendFilter("name", productFilter.getName(), filter);
         if (null != productFilter.getShopId())

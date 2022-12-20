@@ -19,5 +19,7 @@ public class Product extends BaseModel {
     private List<String> imageUrls;
     private MoneyV2 mediumPrice;
     private String title;
+    //thương hiệu
+    private String tradeMarkId;
 
 }

@@ -12,4 +12,5 @@ public class ProductFilter extends BaseFilter {
     private String productId;
     private String shopId;
     private String industrialId;
+    private String tradeMarkId;
 }

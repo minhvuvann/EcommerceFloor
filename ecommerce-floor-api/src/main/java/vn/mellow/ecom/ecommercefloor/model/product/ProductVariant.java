@@ -2,6 +2,7 @@ package vn.mellow.ecom.ecommercefloor.model.product;
 
 import lombok.Data;
 import vn.mellow.ecom.ecommercefloor.base.model.BaseModel;
+import vn.mellow.ecom.ecommercefloor.enums.SizeType;
 import vn.mellow.ecom.ecommercefloor.model.size.DimensionMeasurement;
 import vn.mellow.ecom.ecommercefloor.base.model.MoneyV2;
 import vn.mellow.ecom.ecommercefloor.enums.ColorProduct;
@@ -18,6 +19,7 @@ public class ProductVariant extends BaseModel {
     private String sku;
     private String title;
     private ColorProduct color;
+    private SizeType size;
     private Double weight;
     private WeightUnit weightUnit;
     private DimensionMeasurement dimension;

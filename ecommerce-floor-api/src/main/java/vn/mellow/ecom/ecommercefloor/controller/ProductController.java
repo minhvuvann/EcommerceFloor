@@ -10,15 +10,12 @@ import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.model.industrial.IndustrialProduct;
+import vn.mellow.ecom.ecommercefloor.model.product.*;
 import vn.mellow.ecom.ecommercefloor.model.size.DimensionUnit;
-import vn.mellow.ecom.ecommercefloor.model.product.Product;
-import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
 import vn.mellow.ecom.ecommercefloor.model.input.WeightUnit;
 import vn.mellow.ecom.ecommercefloor.manager.ProductManager;
 import vn.mellow.ecom.ecommercefloor.manager.UserManager;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateProductInput;
-import vn.mellow.ecom.ecommercefloor.model.product.ProductDetail;
-import vn.mellow.ecom.ecommercefloor.model.product.ProductFilter;
 import vn.mellow.ecom.ecommercefloor.model.user.User;
 import vn.mellow.ecom.ecommercefloor.utils.GeneralIdUtils;
 import vn.mellow.ecom.ecommercefloor.utils.MoneyCalculateUtils;
@@ -53,6 +50,9 @@ public class ProductController extends BaseController {
         if (null == productInput.getProduct().getIndustrialId()) {
             throw new ServiceException("not_found", "Vui lòng chọn nghành hàng của sản phẩm", "Product industrial type is empty");
 
+        }
+        if (null==productInput.getProduct().getTradeMarkId()){
+            throw new ServiceException("not_found", "Vui lòng chọn thương hiệu của sản phẩm", "Trade mark is empty");
         }
         if (null == productInput.getProduct().getName()) {
             throw new ServiceException("not_found", "Vui lòng tên của sản phẩm", "Product name is empty");
@@ -178,9 +178,55 @@ public class ProductController extends BaseController {
             throw new ServiceException("invalid_data", "Vui lòng truyền tên nghành hàng", "Industrial product name is null");
 
         }
+        if(null==industrialProduct.getIconUrl()){
+            throw new ServiceException("invalid_data", "Vui lòng truyền icon nghành hàng", "Industrial product icon url is null");
+        }
 
     }
 
+    @ApiOperation(value = "create new trademark")
+    @PostMapping("/product/trademark/create")
+    public Trademark createTrademarkProduct(
+            @RequestBody Trademark trademark) throws ServiceException {
+        //validate industrialProduct
+        validateTrademarkProductInput(trademark);
+        return productManager.createTrademark(trademark);
+    }
+    @ApiOperation(value = "get list trademark products")
+    @GetMapping("/product/trademarks")
+    public List<Trademark> getListTrademark() throws ServiceException {
+        return productManager.getTradeMarks();
+    }
+    @ApiOperation(value = "get trademark by industrial id")
+    @GetMapping("/product/trademark/{industrialId}/industrial")
+    public Trademark getTrademarkByIndustrialId(@PathVariable String industrialId) throws ServiceException {
+        Trademark productTrademark = productManager.getTrademarkByIndustrialId(industrialId);
+        if (null ==productTrademark)
+            throw new ServiceException("not_found", "Không tìm thấy thông tin thương hiệu", "Not found data trademark by id: " + industrialId);
+        return productTrademark;
+    }
+    @ApiOperation(value = "get trademark by id")
+    @GetMapping("/product/trademark/{trademarkId}")
+    public Trademark getTrademark(@PathVariable String trademarkId) throws ServiceException {
+        Trademark productTrademark = productManager.getTrademark(trademarkId);
+        if (null ==productTrademark)
+            throw new ServiceException("not_found", "Không tìm thấy thông tin thương hiệu", "Not found data trademark by id: " + trademarkId);
+        return productTrademark;
+    }
+    private void validateTrademarkProductInput(Trademark trademark) throws ServiceException {
+        if (null==trademark){
+            throw new ServiceException("invalid_data", "Vui lòng truyền thông tin thương hiệu", "Trademark product is null");
+        }
+        if (null==trademark.getName()) {
+            throw new ServiceException("invalid_data", "Vui lòng truyền tên thương hiệu", "Trademark product name is null");
+        }
+        if (null==trademark.getIndustrialId()){
+            throw new ServiceException("invalid_data", "Vui lòng truyền mã nghành hàng của thương hiệu", "Trademark product industrial id is null");
+        }
+        if (null==trademark.getIconUrl()){
+            throw new ServiceException("invalid_data", "Vui lòng truyền icon của thương hiệu", "Trademark product icon url is null");
+        }
+    }
 
     @ApiOperation(value = "find product")
     @PostMapping("/product/filter")
