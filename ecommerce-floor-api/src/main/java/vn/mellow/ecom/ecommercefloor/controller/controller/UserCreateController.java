@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.enums.*;
+import vn.mellow.ecom.ecommercefloor.manager.ScoreManager;
 import vn.mellow.ecom.ecommercefloor.manager.UserManager;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
 import vn.mellow.ecom.ecommercefloor.model.input.KeyPasswordInput;
@@ -19,6 +20,9 @@ import java.util.List;
 public class UserCreateController {
     @Autowired
     private UserManager userManager;
+
+    @Autowired
+    private ScoreManager scoreManager;
 
     public User createUser(CreateUserInput createUserInput) throws ServiceException {
         //validateCreateUserInput
@@ -96,7 +100,14 @@ public class UserCreateController {
 
             }
         }
-        return userManager.createUser(user, keyPassword, role);
+        user = userManager.createUser(user, keyPassword, role);
+        // create score
+        Score score = new Score();
+        score.setUserId(user.getId());
+        score.setType(ScoreType.BUY);
+        score.setScore(0);
+        scoreManager.createScore(score);
+        return user;
     }
 
     private void validateCreateUserInput(CreateUserInput createUserInput) throws ServiceException {

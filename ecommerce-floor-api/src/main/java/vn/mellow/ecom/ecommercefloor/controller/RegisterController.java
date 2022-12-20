@@ -56,12 +56,12 @@ public class RegisterController extends BaseController {
             //Send mail to customer
             SendMailUtils.sendMailTo(session, emailEcommerce, storeName, result.getEmail(), subject, messSendMail);
             //Send mail to store
-
-            return new ResponseBody(BasicStatus.success, code, result);
-        } else {
             Cart cart = new Cart();
             cart.setUserId(result.getId());
             createCartController.createCart(cart, null);
+            return new ResponseBody(BasicStatus.success, code, result);
+        } else {
+
 
             return new ResponseBody(BasicStatus.failure, "Đăng ký tài khoản không thành công", "Register failed");
         }

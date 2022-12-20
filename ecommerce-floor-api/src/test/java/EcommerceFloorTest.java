@@ -240,7 +240,7 @@ class EcommerceFloorTest {
             CreateProductInput createProductInput1 = new CreateProductInput();
             Product productInput = new Product();
             productInput.setName("Apple Watch Series 7 45mm GPS Sport Band");
-            productInput.setShopId(587900);
+            productInput.setShopId(599518);
             productInput.setTradeMarkId("1671551420749648");
             productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
             productInput.setIndustrialTypeName("Điện tử");

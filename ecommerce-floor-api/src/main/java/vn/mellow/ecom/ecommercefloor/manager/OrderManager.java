@@ -6,6 +6,7 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.FindOneAndUpdateOptions;
 import org.bson.Document;
 import org.bson.conversions.Bson;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
@@ -21,6 +22,7 @@ import vn.mellow.ecom.ecommercefloor.model.order.Order;
 import vn.mellow.ecom.ecommercefloor.model.order.OrderDetail;
 import vn.mellow.ecom.ecommercefloor.model.order.OrderFilter;
 import vn.mellow.ecom.ecommercefloor.model.order.OrderItem;
+import vn.mellow.ecom.ecommercefloor.model.user.Score;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -31,6 +33,8 @@ import static com.mongodb.client.model.ReturnDocument.AFTER;
 
 @Repository
 public class OrderManager extends BaseManager {
+    @Autowired
+    private ScoreManager scoreManager;
 
     public OrderManager(MongoClient mongoClient) {
         super(mongoClient);
@@ -197,6 +201,9 @@ public class OrderManager extends BaseManager {
                     ": " + statusBody.getStatus();
             if (StringUtils.hasText(statusBody.getNote())) {
                 description += ". " + statusBody.getNote();
+            }
+            if (OrderStatus.DELIVERED.toString().equals(statusBody.getStatus())) {
+
             }
             // add log update status
             addActivityLog(statusBody.getByUser(), description, orderId, ActivityLogType.UPDATE_STATUS, Order.class);
