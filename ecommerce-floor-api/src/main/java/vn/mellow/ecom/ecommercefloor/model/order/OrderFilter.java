@@ -12,4 +12,7 @@ public class OrderFilter extends BaseFilter {
     private OrderType type;
     private String carrierId;
     private String userId;
+    private String shopId;
+    private String shippingServiceId;
+
 }

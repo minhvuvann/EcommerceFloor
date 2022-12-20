@@ -13,6 +13,7 @@ import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityLog;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
 import vn.mellow.ecom.ecommercefloor.enums.ActivityLogType;
+import vn.mellow.ecom.ecommercefloor.enums.OrderCancelReason;
 import vn.mellow.ecom.ecommercefloor.enums.OrderStatus;
 import vn.mellow.ecom.ecommercefloor.enums.OrderType;
 import vn.mellow.ecom.ecommercefloor.model.input.UpdateStatusInput;
@@ -24,6 +25,7 @@ import vn.mellow.ecom.ecommercefloor.model.order.OrderItem;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
 
 import static com.mongodb.client.model.ReturnDocument.AFTER;
 
@@ -50,6 +52,21 @@ public class OrderManager extends BaseManager {
             orderItemCollection = getCollection(OrderItem.class);
         }
         return orderItemCollection;
+    }
+
+    public Order createOrder(Order order, List<OrderItem> orderItems) {
+        order.setCreatedAt(new Date());
+        order.setId(generateId());
+        getOrderCollection().insertOne(order);
+        for (OrderItem orderItem : orderItems) {
+            orderItem.setId(generateId());
+            orderItem.setCreatedAt(orderItem.getCreatedAt());
+            orderItem.setOrderId(order.getId());
+            getOrderItemCollection().insertOne(orderItem);
+
+        }
+        return order;
+
     }
 
     public Order getOrder(String orderId) {
@@ -94,13 +111,15 @@ public class OrderManager extends BaseManager {
     }
 
 
-    public Order cancelOrder(String orderId, String note) throws ServiceException {
+    public Order cancelOrder(String orderId, OrderCancelReason cancelReason, String note) throws ServiceException {
         Order order = getOrder(orderId);
         if (null != order) {
             UpdateStatusInput statusInput = new UpdateStatusInput();
             statusInput.setNote(note);
             statusInput.setStatus(OrderStatus.CANCELLED.toString());
             updateOrderStatus(orderId, statusInput);
+            //update order reason cancel
+            updateOrderCancel(orderId,cancelReason);
             List<OrderItem> orderLineItems = getItems(orderId);
             for (OrderItem orderLineItem : orderLineItems) {
                 updateItemCancel(orderLineItem.getId());
@@ -120,6 +139,24 @@ public class OrderManager extends BaseManager {
         List<Bson> filters = new ArrayList<>();
         filters.add(Filters.eq("_id", itemId));
         getOrderItemCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+    }
+    public Order updateOrderCancel( String orderId, OrderCancelReason orderCancelReason) {
+        getLogger().log(Level.INFO, "Update order cancel by id:" + orderId);
+        Document document = new Document();
+        document.put("updatedAt", new Date());
+        document.put("canceledAt", new Date());
+        if (null != orderCancelReason) {
+            document.put("cancelReason", orderCancelReason.toString());
+        }
+        if (null != orderId) {
+            document.put("_id", orderId);
+        }
+        Document newDocument = new Document();
+        newDocument.append("$set", document);
+        FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+        List<Bson> filters = getFilters();
+        filters.add(Filters.eq("_id", orderId));
+        return getOrderCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
     }
 
     public Order updateOrderStatus(String orderId, UpdateStatusInput statusBody) throws ServiceException {
@@ -192,16 +229,22 @@ public class OrderManager extends BaseManager {
             appendFilter(filterData.getOrderId(), "_id", filter);
         }
         if (filterData.getStatus() != null) {
-            appendFilter(filterData.getStatus(), "status", filter);
+            appendFilter(filterData.getStatus().toString(), "status", filter);
         }
         if (filterData.getType() != null) {
-            appendFilter(filterData.getType(), "type", filter);
+            appendFilter(filterData.getType().toString(), "type", filter);
         }
         if (filterData.getCarrierId() != null) {
             appendFilter(filterData.getCarrierId(), "carrierId", filter);
         }
+        if (filterData.getShippingServiceId() != null) {
+            appendFilter(filterData.getShippingServiceId(), "shippingServiceId", filter);
+        }
         if (filterData.getUserId() != null) {
             appendFilter(filterData.getUserId(), "userId", filter);
+        }
+        if (filterData.getShopId() != null) {
+            appendFilter(filterData.getShopId(), "shopId", filter);
         }
         return getResultList(getOrderCollection(), filter, filterData.getOffset(), filterData.getMaxResult());
     }

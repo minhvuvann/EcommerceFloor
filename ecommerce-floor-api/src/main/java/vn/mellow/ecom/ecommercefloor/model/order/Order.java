@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.lang.NonNull;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
+import vn.mellow.ecom.ecommercefloor.base.model.BaseModel;
 import vn.mellow.ecom.ecommercefloor.model.geo.Address;
 import vn.mellow.ecom.ecommercefloor.base.model.MoneyV2;
 import vn.mellow.ecom.ecommercefloor.enums.CurrencyCode;
@@ -14,7 +15,7 @@ import vn.mellow.ecom.ecommercefloor.enums.OrderType;
 import java.util.Date;
 
 @Data
-public class Order {
+public class Order extends BaseModel {
     private OrderCancelReason cancelReason;
     @JsonFormat(
             shape = JsonFormat.Shape.NUMBER

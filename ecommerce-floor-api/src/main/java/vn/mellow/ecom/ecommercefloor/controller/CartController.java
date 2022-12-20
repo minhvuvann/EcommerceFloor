@@ -24,29 +24,34 @@ public class CartController extends BaseController {
     private CreateCartController createCartController;
     @Autowired
     private CartDetailController cartDetailController;
+
     @ApiOperation(value = "create a new cart")
     @PostMapping("/cart/create")
     public Cart createCart(@RequestBody CreateCartInput cartInput) throws ServiceException {
-        return createCartController.createCart(cartInput.getCart(),cartInput.getCartItemList());
+        return createCartController.createCart(cartInput.getCart(), cartInput.getCartItemList());
     }
+
     @ApiOperation(value = "create a new cart item")
     @PostMapping("/cart-item/create")
     public CartItem createCartItem(@RequestBody CartItem cartItem) throws ServiceException {
         return createCartController.createCartItem(cartItem);
     }
+
     @ApiOperation(value = "get cart detail by cart id")
     @GetMapping("/cart/{cartId}/detail")
     public CartDetail getProductDetail(@PathVariable String cartId) throws ServiceException {
         return cartDetailController.getCartDetail(cartId);
     }
+
     @ApiOperation(value = "deleted cart item by cart item id")
     @DeleteMapping("/cart-item/{cartItemId}/deleted")
     public CartDetail deletedCartItem(@PathVariable String cartItemId) throws ServiceException {
         return cartDetailController.deleteCartItem(cartItemId);
     }
+
     @ApiOperation(value = "update quantity cart item by cart item id")
     @PutMapping("/cart-item/{cartItemId}/update-quantity")
-    public CartDetail updateQuantityCartItem(@PathVariable String cartItemId,@RequestParam("quantity") long quantity) throws ServiceException {
+    public CartDetail updateQuantityCartItem(@PathVariable String cartItemId, @RequestParam("quantity") long quantity) throws ServiceException {
         return cartDetailController.updateQuantityCartItem(cartItemId, quantity);
     }
 
