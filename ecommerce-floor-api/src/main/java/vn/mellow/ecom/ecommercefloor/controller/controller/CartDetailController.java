@@ -62,8 +62,8 @@ public class CartDetailController {
         if (null != mapShopTos) {
             cartDetail.setItemToShops(mapShopTos);
         }
-        List<ActivityLog> activityLogs = cartManager.getActivityLogs(cart.getId());
-        cartDetail.setActivityLogs(activityLogs);
+//        List<ActivityLog> activityLogs = cartManager.getActivityLogs(cart.getId());
+//        cartDetail.setActivityLogs(activityLogs);
         cartDetail.setCart(cart);
         return cartDetail;
 
