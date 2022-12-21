@@ -82,6 +82,7 @@ public class ShopController extends BaseController {
 
         shop.setStatus(ActiveStatus.ACTIVE);
         shop.setName(shopInput.getName());
+        shop.setAddress(shopInput.getAddressShop());
         shop.setDescription(shopInput.getDescription());
 
         return userManager.createShop(userId, shop);

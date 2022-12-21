@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class BaseSpringConfiguration {
 
-    public static final String MONGO_DB_NAME = getPropertyName("mongodb.database", "ecommerce-floor");
+    public static final String MONGO_DB_NAME = getPropertyName("mongodb.database", "Inventory");
     public static final String MONGO_DB_URI = getPropertyName("mongodb.uri", "mongodb://localhost");
 
     public static Properties applicationProperties;
@@ -20,12 +20,12 @@ public class BaseSpringConfiguration {
     }
 
     public static Properties getProfileProperties() {
-        if (null == profileProperties) {
+        if(null==profileProperties){
             profileProperties = new Properties();
             profileProperties.putAll(getApplicationProperties());
             String activeProfile = getApplicationProperties().getProperty("spring.profiles.default");
-            if (null != activeProfile && activeProfile.length() > 0) {
-                Properties subProfileProperties = getProperties("application-" + activeProfile + ".properties");
+            if(null!=activeProfile&&activeProfile.length()>0){
+                Properties subProfileProperties = getProperties("application-"+activeProfile+".properties");
                 profileProperties.putAll(subProfileProperties);
             }
         }
