@@ -4257,6 +4257,7 @@ class EcommerceFloorTest {
         variant_1.setRequiresShipping(true);
         variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
         productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -4349,6 +4350,8 @@ class EcommerceFloorTest {
         variant_1.setPrice(MoneyCalculateUtils.getMoney(700));
         variant_1.setColor(ColorProduct.BLACK);
         productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -4454,6 +4457,8 @@ class EcommerceFloorTest {
         variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
         variant_1.setColor(ColorProduct.BLACK);
         productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -4542,6 +4547,8 @@ class EcommerceFloorTest {
         variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
         variant_1.setColor(ColorProduct.BLACK);
         productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -4635,7 +4642,9 @@ class EcommerceFloorTest {
         variant_1.setDimension(dimensionMeasurement);
         variant_1.setRequiresShipping(true);
         variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
-
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -4738,7 +4747,9 @@ class EcommerceFloorTest {
         variant_1.setDimension(dimensionMeasurement);
         variant_1.setRequiresShipping(true);
         variant_1.setPrice(MoneyCalculateUtils.getMoney(600));
-
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -4851,7 +4862,7 @@ class EcommerceFloorTest {
         variant_1.setPrice(MoneyCalculateUtils.getMoney(750));
         variant_1.setColor(ColorProduct.BLACK);
         productVariantList.add(variant_1);
-
+        createProductInput1.setProductVariants(productVariantList);
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -4937,6 +4948,7 @@ class EcommerceFloorTest {
         variant_1.setPrice(MoneyCalculateUtils.getMoney(850));
         variant_1.setColor(ColorProduct.BLACK);
         productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -5026,6 +5038,7 @@ class EcommerceFloorTest {
         variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
         variant_1.setColor(ColorProduct.BLACK);
         productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -5117,6 +5130,7 @@ class EcommerceFloorTest {
         variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
         variant_1.setColor(ColorProduct.BLACK);
         productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
         try {
             productController.createProductVariant(createProductInput1);
 
@@ -5124,4 +5138,6177 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
+    //anessa
+    @Test
+    public void testProduct_602339_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sáp dưỡng ẩm Vaseline Pure Petrolium Jelly 50ml");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/8c4d0f06751b214338531cec8c83edae");
+        images.add("https://cf.shopee.vn/file/7232e39b43a09ec0365443cb5fdc0269");
+        images.add("https://cf.shopee.vn/file/ebdef43fcd3c2c5287ad4a916aaeb42a");
+        images.add("https://cf.shopee.vn/file/b8d61b30c7074285c9fdd83a8c3b5113");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-spsp60j525kv6e");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sáp dưỡng ẩm Vaseline Pure Petrolium Jelly được xem là kem chống nẻ, kem dưỡng ẩm số 1 tại Mỹ, với lượng tiêu thụ lớn. Sản phẩm  được làm từ dầu khoáng tự nhiên, cô đặc lại dưới dạng sáp (jelly) mềm, tan ở nhiệt độ cơ thể, giúp cải thiện tình trạng bong tróc, khô nứt nẻ của da, tạo mối liên kết giữa các tế bào da khỏe mạnh và săn chắc, giúp da mềm mại, mịn màng.\n" +
+                "\n" +
+                "THÔNG TIN CHI TIẾT\n" +
+                "\n" +
+                "Công dụng:\n" +
+                "\n" +
+                "- Nhờ có khả năng dưỡng ẩm tuyệt vời, Vaseline sẽ là trợ thủ đắc lực giúp bạn giải quyết vùng da bị khô, bong tróc, nứt nẻ hoặc bị cháy nắng trong bất kỳ thời tiết nào.\n" +
+                "\n" +
+                "- Dưỡng môi ngày và đêm, giảm nứt khô môi do cơ thể thiếu nước hoặc tác động của thời tiết nóng, lạnh đồng thời cung cấp độ ẩm. \n" +
+                "\n" +
+                "- Loại bỏ da khô, chết lâu ngày, cải tạo da cho đôi môi sáng hơn, mềm mịn, không vết nứt.\n" +
+                "\n" +
+                "- Làm son lót nền, giúp cách li da môi với hóa chất chì của son môi màu lì trang điểm, đồng thời giúp son bám màu lâu hơn và môi mềm tự nhiên\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Đặc điểm riêng:\n" +
+                "\n" +
+                "- Vaseline cũng có tác dụng dưỡng móng, chỉ cần bôi một chút Vaseline sẽ giúp móng tay của chúng ta trông bóng, khoẻ hơn trông thấy. Ngoài ra, bạn cũng có thể thử dùng hỗn hợp kem đánh răng, Vaseline và nước cốt chanh khi cần tẩy màu móng cũ.\n" +
+                "\n" +
+                "- Ngoài ra sản phẩm còn có những tác dụng không ngờ tới như: dùng làm kem bôi khi tẩy lông, tẩy trang cho vùng mắt, rửa mặt, tẩy tế bào chết, dưỡng da, kem lót, hạn chế tóc khô và chẻ ngọn, tạo dáng cho lông mày, giữ mùi hương nước hoa\n" +
+                "\n" +
+                "- Thiết kế hũ nhỏ xinh dễ dàng mang theo khi đi làm, du lịch\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "\n" +
+                "- Dùng hàng ngày, thoa đều lên phần da cần dưỡng ẩm hoặc da khô / bong tróc.\n" +
+                "\n" +
+                "- Dùng được cho toàn thân và môi.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: India\n" +
+                "\n" +
+                "Nơi sản xuất: India\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "Bảo quản nơi khô ráo, thoáng mát\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Thương hiệu Vaseline ra đời từ năm 1870. Hiện nay thương hiệu Vaseline đang được quản lý bởi tập đoàn Unilever với các dòng sản phẩm: kem dưỡng da, nước hoa, chất làm sạch, chất khử mùi, sáp dưỡng ẩm... Bắt đầu nổi tiếng bằng sản phẩm sáp Vaseline do Robert Chesebrough tìm ra sau khi ông ghé thăm một mỏ dầu. Từ đó thương hiệu này đã làm một cuộc cách mạng và được sử dụng khắp mọi nơi trên toàn thế giới. Các sản phẩm chăm sóc da của thương hiệu Vaseline hiện có mặt ở 60 nước trên toàn thế giới và được bày bán ở hệ thống các siêu thị trên cả nước.\n" +
+                "\n" +
+                "Tại Việt Nam, bên cạnh VASELINE, Unilever còn nổi tiếng với những thương hiệu lớn như: St.Ives, Simple, Clear, Dove, Close-up, Omo, Surf và nhiều sản phẩm chất lượng cao khác,... Với hơn 500 công ty tại 90 quốc gia trên thế giới, Unilever luôn mang lại những sản phẩm tốt nhất cho người tiêu dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-spsp60j525kv6e");
+        variant_1.setWeight(50.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(750));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sáp Dưỡng Môi Hồng Xinh Vaseline Lip Therapy Rosy Lip 7g");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/34ddea973d10ad74298ca58246df041e");
+        images.add("https://cf.shopee.vn/file/6baa5259cc7e016fbbddb081e214e12d");
+        images.add("https://cf.shopee.vn/file/e8f604681c238e74c19dbdb47a431cdb");
+        images.add("https://cf.shopee.vn/file/81ec6108dbbc20de33f8d43e6fc3ad7c");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-hjeoj3w725kvc3");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sáp Dưỡng Môi Hồng Xinh Vaseline Lip với được chiết xuất từ mỡ khoáng tinh khiết 100% - tức là loại mỡ khoáng đã được thanh lọc nên rất an toàn cho mọi loại da, có thể sử dụng cho đôi môi nhạy cảm. Chỉ cần 1 lớp mỏng để qua đêm bạn đã có được đôi môi mềm mượt, căng mọng đầy bất ngờ.\n" +
+                "\n" +
+                "THÔNG TIN CHI TIẾT\n" +
+                "Công dụng chính:\n" +
+                "- Son dưỡng môi sẽ lập tức làm mềm và mượt môi khô nứt nẻ và để lại một màu hồng nhẹ trên môi. \n" +
+                "- Khóa ẩm giúp đôi môi môi mọng, khỏe, và giảm thiểu sự khó chịu.\n" +
+                "- Son có hương hoa hồng nhẹ.\n" +
+                "- Dùng như son lót, giúp cách li da môi với hóa chất son môi trang điểm, giúp son bám màu lâu hơn.\n" +
+                "\n" +
+                "*Điểm đặc biệt riêng:\n" +
+                "- Vaseline cũng có tác dụng dưỡng móng, chỉ cần bôi một chút Vaseline sẽ giúp móng tay của chúng ta trông bóng, khoẻ hơn trông thấy. Ngoài ra, bạn cũng có thể thử dùng hỗn hợp kem đánh răng, Vaseline và nước cốt chanh khi cần tẩy màu móng cũ.\n" +
+                "- Ngoài ra sản phẩm còn có những tác dụng dùng làm kem bôi khi tẩy lông, tẩy trang cho vùng mắt, rửa mặt, tẩy tế bào chết, dưỡng da, kem lót, hạn chế tóc khô và chẻ ngọn, tạo dáng cho lông mày, giữ mùi hương nước hoa,...\n" +
+                "- Thiết kế hũ nhỏ xinh dễ dàng mang theo khi đi làm, du lịch,...\n" +
+                "\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "- Dùng hàng ngày, thoa đều lên phần da cần dưỡng ẩm hoặc da khô / bong tróc.\n" +
+                "- Dùng được cho toàn thân và môi.\n" +
+                "\n" +
+                "Xuất xứ: Mỹ\n" +
+                "Nơi sản xuất: Hàn Quốc\n" +
+                "Ngày sản xuất: xem trên bao bì sản phẩm\n" +
+                "Hạn sử dụng: 03 năm kể từ ngày sản xuất\n" +
+                "Bảo quản nơi khô ráo, thoáng mát\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "Thương hiệu Vaseline ra đời từ năm 1870. Hiện nay thương hiệu Vaseline đang được quản lý bởi tập đoàn Unilever với các dòng sản phẩm: kem dưỡng da, nước hoa, chất làm sạch, chất khử mùi, sáp dưỡng ẩm... Bắt đầu nổi tiếng bằng sản phẩm sáp Vaseline do Robert Chesebrough tìm ra sau khi ông ghé thăm một mỏ dầu. Từ đó thương hiệu này đã làm một cuộc cách mạng và được sử dụng khắp mọi nơi trên toàn thế giới. Các sản phẩm chăm sóc da của thương hiệu Vaseline hiện có mặt ở 60 nước trên toàn thế giới và được bày bán ở hệ thống các siêu thị trên cả nước.\n" +
+                "Tại Việt Nam, bên cạnh VASELINE, Unilever còn nổi tiếng với những thương hiệu lớn như: St.Ives, Simple, Clear, Dove, Close-up, Omo, Surf và nhiều sản phẩm chất lượng cao khác,... Với hơn 500 công ty tại 90 quốc gia trên thế giới, Unilever luôn mang lại những sản phẩm tốt nhất cho người tiêu dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-hjeoj3w725kvc3");
+        variant_1.setWeight(7.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(550));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa tắm dưỡng da St.Ives 650ml");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/7f89513e18ab099bed44db67478036b2");
+        images.add("https://cf.shopee.vn/file/a4a4be07b54ee2e2ed231af0692087aa");
+        images.add("https://cf.shopee.vn/file/66cb3f19b3253d410e86715baa0bd5e2");
+        images.add("https://cf.shopee.vn/file/0b97d1b55b31153c155cd6218cdef1c0");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-gk1ueiwf25kv30");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sữa tắm dưỡng da St.Ives là dòng sản phẩm rất được ưa chuộng của thương hiệu chăm sóc da St.Ives nổi tiếng xuất xứ từ Mỹ, với công thức được chiết xuất từ các thành phần thiên nhiên, giúp làm sạch nhẹ nhàng đồng thời bổ sung dưỡng chất nuôi dưỡng làn da khỏe mạnh và sáng mịn rạng ngời.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "1. Sữa tắm dưỡng da St.Ives Yến Mạch và Bơ: \n" +
+                "\n" +
+                "công thức dưỡng ẩm 100% từ thiên nhiên (lúa mạch và bơ shea) giúp làn da được làm sạch và dưỡng ẩm tối ưu, trả lại vẻ sáng ngời tự nhiên. Hương thơm ngọt ngào từ Yến Mạch và Bơ đánh thức giác quan của bạn và lưu lại lâu trên da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "2. Sữa tắm dưỡng da St.Ives Muối Biển:\n" +
+                "\n" +
+                " thành phần tẩy tế bào chết 100% từ thiên nhiên (muối biển và khoáng thiên nhiên) giúp nhẹ nhàng tẩy tế bào chết cho cơ thể, đồng thời cung cấp các dưỡng chất và vitamin giúp lấy lại vẻ sáng mịn và mềm mại vốn có của làn da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "3. Sữa tắm dưỡng da St.Ives Cam Chanh:\n" +
+                "\n" +
+                " hạt tẩy tế bào chết 100% chiết xuất từ thiên nhiên (Chanh đào và Cam quýt) giúp nhẹ nhàng tẩy sạch khuyết điểm trên làn da, giúp làn da sáng mịn, đều màu. Hương thơm Cam Chanh giúp đánh thức các giác quan, mang lại hương thơm dễ chịu trên da. Sữa tắm giàu độ ẩm với các bọt kem làm sạch và nhiều mùi hương tự nhiên thỏa mãn các giác quan.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "4. Sữa tắm dưỡng da St.Ives Hoa Hồng & Lô Hội:\n" +
+                "\n" +
+                "Công thức làm sạch 100% từ cánh hoa hồng thiên nhiên mang đến cảm giác tươi mới cho làn da, trả lại vẻ mịn màng, rạng ngời, êm ái như những cánh hoa hồng. Hương thơm nhẹ nhàng đặc biệt từ hoa hồng và lô hội đánh thức mọi giác quan. \n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Hướng dẫn sử dụng:\n" +
+                "\n" +
+                "- Cho sản phẩm trực tiếp lên da ướt hoặc bông tắm để tạo bọt, mát xa nhẹ nhàng toàn thân rồi tắm lại với nước\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Hướng dẫn bảo quản:\n" +
+                "\n" +
+                "- Chỉ sử dụng ngoài da.\n" +
+                "\n" +
+                "- Để xa tầm tay trẻ em.\n" +
+                "\n" +
+                "- Không sử dụng sản phẩm đã hết hạn.\n" +
+                "\n" +
+                "- Không để sản phẩm trực tiếp dưới nắng.\n" +
+                "\n" +
+                "- Rửa ngay với nước nếu sản phẩm rơi vào mắt.\n" +
+                "\n" +
+                "- Ngưng sử dụng và hỏi ý kiến bác sĩ da liễu nếu da bị kích ứng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: Mỹ\n" +
+                "\n" +
+                "Nơi sản xuất: Mỹ\n" +
+                "\n" +
+                "NSX: Xem trên bao bì\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "St.Ives là thương hiệu trực thuộc tập đoàn Unilever của Mỹ, ra đời từ năm 1980 và nổi tiếng với những sản phẩm chăm sóc sức khỏe làn da hiệu quả từ các thành phần thiên nhiên như: Sữa rửa mặt tẩy tế bào chết, Sữa dưỡng thể trẻ hóa da, Kem chống nắng, Mặt nạ,… St.Ives cam kết mang lại cho bạn những trải nghiệm chăm sóc da hiệu quả và hợp túi tiền với tiêu chí sử dụng nguyên liệu tươi tốt, chiết xuất 100% từ thiên nhiên, không có hóa chất, được chị em phụ nữ khắp thế giới biết đến và tin dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-gk1ueiwf25kv30");
+        variant_1.setWeight(650.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1200));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Son dưỡng môi Vaseline Stick 4.8g");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/a6ac84ddbc9ad5d941bd4fac54e6a132");
+        images.add("https://cf.shopee.vn/file/9d66d36943b9ddcc5476a27b3682174e");
+        images.add("https://cf.shopee.vn/file/009f35a4ce23f26ccbd376bd2278b49c");
+        images.add("https://cf.shopee.vn/file/5f97f1ca9d657fb8a5d2109541c0a2c7");
+        images.add("https://cf.shopee.vn/file/bc97faa6c3efa10fae10ad07f7a6fabd");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-0dmhj4n625kv89");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Son dưỡng môi Vaseline là một sản phẩm lý tưởng dành riêng cho việc dưỡng môi. Sản phẩm có hương thơm trái cây tự nhiên, nhẹ nhàng, thành phần chính làm từ mỡ khoáng tinh khiết 100%, mật ong, các vitamin và hoàn toàn lành tính. Đôi môi của bạn sẽ luôn mềm mịn, đầy quyến rũ. Son dưỡng Vaseline có thể được dùng như son lót, trước khi trang điểm môi, giúp cách li da môi với hóa chất son môi, giúp son bám màu lâu và căng mọng một cách tự nhiên.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Son dưỡng môi Vaseline Stick có 4 loại được ưa chuộng:\n" +
+                "\n" +
+                "- Son dưỡng môi Vaseline Mềm Mịn với thành phần Petroleum jelly cùng Vitamin E giúp cung cấp cho môi của bạn độ ẩm cần thiết để luôn khỏe mạnh, căng bóng tự nhiên.\n" +
+                "\n" +
+                "- Son dưỡng môi Vaseline Hồng Xinh với thành phần Petroleum jelly cùng chiết xuất dầu hạnh nhân và dầu hoa hồng giúp đôi môi mềm mại, mượt mà, sáng hồng nhẹ nhàng và tươi trẻ.\n" +
+                "\n" +
+                "- Son dưỡng môi Vaseline Lô Hội với thành phần Petroleum jelly cùng chiết xuất nha đam/ lô hội giúp đôi môi luôn mượt mà và căng đầy sức sống.\n" +
+                "\n" +
+                "- Son dưỡng môi Vaseline Bơ Cacao với thành phần Petroleum jelly cùng chiết xuất Cacao và bơ hạt mỡ giúp đôi môi luôn mượt mà và căng đầy sức sống.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN CHI TIẾT\n" +
+                "\n" +
+                "Công dụng chính:\n" +
+                "\n" +
+                "- Son dưỡng môi sẽ lập tức làm mềm và mượt môi khô nứt nẻ và để lại một màu hồng nhẹ trên môi. \n" +
+                "\n" +
+                "- Khóa ẩm giúp đôi môi môi mọng, khỏe, và giảm thiểu sự khó chịu.\n" +
+                "\n" +
+                "- Dùng như son lót, giúp cách li da môi với hóa chất son môi trang điểm, giúp son bám màu lâu hơn.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Cách sử dụng:\n" +
+                "\n" +
+                "- Sử dụng cho môi khi thấy môi khô căng và nứt nẻ. Thích hợp sử dụng dưỡng môi hàng ngày.\n" +
+                "\n" +
+                "- Sử dụng dưỡng môi khi trang điểm. Dùng như son lót, giúp cách li da môi với hóa chất son môi trang điểm, giúp son bám màu lâu hơn.\n" +
+                "\n" +
+                "- Dùng dưỡng môi ngày và đêm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: Hàn Quốc\n" +
+                "\n" +
+                "Nơi sản xuất: Hàn Quốc\n" +
+                "\n" +
+                "Ngày sản xuất: xem trên bao bì sản phẩm\n" +
+                "\n" +
+                "Hạn sử dụng: 03 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "Bảo quản nơi khô ráo, thoáng mát\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Thương hiệu Vaseline ra đời từ năm 1870. Hiện nay thương hiệu Vaseline đang được quản lý bởi tập đoàn Unilever với các dòng sản phẩm: kem dưỡng da, nước hoa, chất làm sạch, chất khử mùi, sáp dưỡng ẩm... Bắt đầu nổi tiếng bằng sản phẩm sáp Vaseline do Robert Chesebrough tìm ra sau khi ông ghé thăm một mỏ dầu. Từ đó thương hiệu này đã làm một cuộc cách mạng và được sử dụng khắp mọi nơi trên toàn thế giới. Các sản phẩm chăm sóc da của thương hiệu Vaseline hiện có mặt ở 60 nước trên toàn thế giới và được bày bán ở hệ thống các siêu thị trên cả nước.\n" +
+                "\n" +
+                "Tại Việt Nam, bên cạnh VASELINE, Unilever còn nổi tiếng với những thương hiệu lớn như: St.Ives, Simple, Clear, Dove, Close-up, Omo, Surf và nhiều sản phẩm chất lượng cao khác,... Với hơn 500 công ty tại 90 quốc gia trên thế giới, Unilever luôn mang lại những sản phẩm tốt nhất cho người tiêu dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-0dmhj4n625kv89");
+        variant_1.setWeight(5.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(400));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa dưỡng thể St.Ives Yến Mạch và Bơ 621ml");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/c2a7605ccd67fe5d3895db20854b8ee3");
+        images.add("https://cf.shopee.vn/file/6113afdf420198b157715f520fa8d51c");
+        images.add("https://cf.shopee.vn/file/d73f0d1eeacba35ac2e60f30f7e086c9");
+        images.add("https://cf.shopee.vn/file/7acf49da1d4ca4cf03da6827b17f37bc");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-z9cijlvj25kvf6");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sữa dưỡng thể toàn thân trẻ hóa da St.Ives với 100% thành phần thiên nhiên kết hợp cùng công thức thẩm thấu nhanh và không nhờn, sản phẩm giúp tăng cường độ ẩm, phục hồi da tươi khỏe suốt cả ngày. Cùng hương thơm quyến rũ, sữa dưỡng thể ST. IVES Body Lotion giúp bạn trở lên ngọt ngào, quyến rũ và làm tan chảy cảm xúc của bất kì ai.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Sữa Dưỡng Thể ST.IVES Yến Mạch Và Bơ với công thức dưỡng ẩm 100% từ thiên nhiên ( yến mạch và bơ hạt mỡ)  thẩm thấu nhanh. Làn da được phục hồi, trả lại vẻ sáng ngời tự nhiên. Sử dụng mỗi ngày để duy trì nước trên bề mặt da cho da mềm mịn và sáng hơn.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Thành phần và công dụng:\n" +
+                "\n" +
+                "- Bột yến mạch: làm mềm da khô ráp, tẩy sạch bụi bẩn trên da\n" +
+                "\n" +
+                "- Bơ hạt mỡ (Shea Butter): chứa Vitamin A, E, F và các axit béo giúp cung cấp nước cho da khô\n" +
+                "\n" +
+                "- Dưỡng ẩm từ Glycerin\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Hướng dẫn sử dụng:\n" +
+                "\n" +
+                "- Thoa đều sản phẩm lên toàn thân mỗi tối và sáng.\n" +
+                "\n" +
+                "- Sử dụng mỗi ngày để duy trì độ ẩm cho da, nên dùng sản phẩm ngay sau khi tắm để đạt hiệu quả dưỡng da tối ưu.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: Mỹ\n" +
+                "\n" +
+                "Nơi sản xuất: Mỹ\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "Bảo quản nơi khô ráo, thoáng mát\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "St.Ives là thương hiệu trực thuộc tập đoàn Unilever của Mỹ, ra đời từ năm 1980 và nổi tiếng với những sản phẩm chăm sóc sức khỏe làn da hiệu quả từ các thành phần thiên nhiên như: Sữa rửa mặt tẩy tế bào chết, Sữa dưỡng thể trẻ hóa da, Kem chống nắng, Mặt nạ,… St.Ives cam kết mang lại cho bạn những trải nghiệm chăm sóc da hiệu quả và hợp túi tiền với tiêu chí sử dụng nguyên liệu tươi tốt, chiết xuất 100% từ thiên nhiên, không có hóa chất, được chị em phụ nữ khắp thế giới biết đến và tin dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-z9cijlvj25kvf6");
+        variant_1.setWeight(621.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1300));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa rửa mặt tẩy tế bào da chết St.Ives 170g (Tươi Mát Trái Mơ)");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/8a1bd8da830e0dae7e1bb71dd24aac2d");
+        images.add("https://cf.shopee.vn/file/58bd970751d38167ae056049f498595b");
+        images.add("https://cf.shopee.vn/file/9a02979bc4e1a354ef0b47728c63419e");
+        images.add("https://cf.shopee.vn/file/7489213dcbf9d1a682a002427853ae35");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-ulkt0k9h25kvd0");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Bao bì sản phẩm thay đổi theo lô nhập hàng.\n" +
+                "Sữa Rửa Mặt Tẩy Tế Bào Chết đến từ thương hiệu St.Ives giúp nhẹ nhàng loại bỏ lớp tế bào chết sần sùi, mang lại cho bạn làn da sáng mịn, mềm mại và rạng rỡ. Sữa rửa mặt được chiết xuất từ thành phần tự nhiên với các mùi hương dịu nhẹ, nhẹ nhàng làm sạch lỗ chân lông.\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM                                                                                                                                                                                    \n" +
+                "\n" +
+                "1. Sữa rửa mặt tẩy tế bào chết ngừa mụn St.Ives chiết xuất Trái Mơ: Nhẹ nhàng làm sạch bụi bẩn, lấy đi những tế bào chết là nguyên nhân làm bít lỗ chân lông gây ra mụn và các vấn đề về da. Giúp tẩy da chết, làm sạch sâu mà không gây kích ứng da, cho bạn làn da tươi mới, mịn màng và tràn đầy sức sống, ngăn ngừa sản sinh mụn.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "2. Sữa rửa mặt tẩy tế bào chết tươi mát St.Ives chiết xuất Trái Mơ: Giúp làn da sáng mịn, ngăn ngừa sản sinh mụn. Sau khi sử dụng bạn sẽ cảm nhận được làn da mềm mại và tươi mát.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "3. Sữa rửa mặt tẩy tế bào chết St.Ives Cafe và Dừa: Bổ sung độ ẩm và làm mềm da, tăng cường dưỡng chất cho da thêm sáng khỏe, hạn chế mẫn cảm, sưng đỏ do mụn gây ra, giúp da khỏe mạnh, mịn màng, trắng sáng rạng rỡ hơn, sạch mụn.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "4. Sữa rửa mặt tẩy tế bào chết ngừa mụn St.Ives Trà Xanh: Nhẹ nhàng làm sạch mụn đầu đen và làm dịu da ửng đỏ, tổn thương do mụn. Thanh lọc da, làm giảm kích ứng và mẩn đỏ do mụn gây ra, giúp da khỏe mạnh, mịn màng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "5. Sữa rửa mặt tẩy tế bào chết Bơ và Mật Ong St.Ives Soft Skin Avocado & Honey Scrub 170g là giải pháp tuyệt vời giúp làm sạch da một cách nhẹ nhàng nhất, nhưng cũng đồng thời loại bỏ tạp chất và bả nhờn trên da sau một ngày dài, mang đến cho bạn cảm giác nhẹ nhàng, tươi mới.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "6. Sữa rửa mặt tẩy tế bào chết ngừa mụn St.Ives chiết xuất Hoa Hồng & Lô Hội: Nhẹ nhàng lấy đi lớp tế bào chết cứng đầu, mang lại cho bạn làn da mịn màng, sáng xinh như những cánh hoa hồng. Sản phẩm có chứa 100% bột óc chó tự nhiên cùng bộ cánh hoa hồng nghiền mịn, tất cả thành phần được làm từ thiên nhiên an toàn cho mọi làn da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thành phần:\n" +
+                "\n" +
+                "- 100% chiết xuất từ thành phần tự nhiên, nuôi dưỡng làn da. \n" +
+                "\n" +
+                "- Chứa salicylic acid giúp ngăn ngừa mụn và làm thu nhỏ lỗ chân lông\n" +
+                "\n" +
+                "- Giúp tẩy da chết, làm sạch sâu mà không gây kích ứng da\n" +
+                "\n" +
+                "- Không chứa paraben (chất bảo quản gây nguy cơ ung thư)\n" +
+                "\n" +
+                "- Không chứa sulfate\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HƯỚNG DẪN SỬ DỤNG\n" +
+                "\n" +
+                "Bước 1. Bóp một lượng vừa đủ Sữa rửa mặt tẩy tế bào da chết St.Ives lên đầu ngón tay của bạn và mát xa lên vùng da ẩm ướt.\n" +
+                "\n" +
+                "Bước 2. Trải theo chuyển động tròn nhỏ, tạo áp lực nhẹ nhàng để đánh thức sự lưu thông tự nhiên của làn da của bạn.\n" +
+                "\n" +
+                "Bước 3. Thoa đều khắp khuôn mặt, ngay sát chân tóc và hai bên mũi.\n" +
+                "\n" +
+                "Bước 4. Khi bạn đã hoàn tất, rửa sạch và lau khô bằng khăn sạch.\n" +
+                "\n" +
+                "Bước 5. Sử dụng 3 đến 4 lần một tuần (tùy thuộc vào làn da) để có kết quả như mong đợi.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: Mỹ\n" +
+                "\n" +
+                "Nơi sản xuất: Mỹ\n" +
+                "\n" +
+                "Hạn sử dụng: 36 tháng kể từ ngày sản xuất\n" +
+                "\n" +
+                "Bảo quản nơi khô ráo, thoáng mát\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "St.Ives là thương hiệu trực thuộc tập đoàn Unilever của Mỹ, ra đời từ năm 1980 và nổi tiếng với những sản phẩm chăm sóc sức khỏe làn da hiệu quả từ các thành phần thiên nhiên như: Sữa rửa mặt tẩy tế bào chết, Sữa dưỡng thể trẻ hóa da, Kem chống nắng, Mặt nạ,… St.Ives cam kết mang lại cho bạn những trải nghiệm chăm sóc da hiệu quả và hợp túi tiền với tiêu chí sử dụng nguyên liệu tươi tốt, chiết xuất 100% từ thiên nhiên, không có hóa chất, được chị em phụ nữ khắp thế giới biết đến và tin dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-ulkt0k9h25kvd0");
+        variant_1.setWeight(170.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa dưỡng thể St.Ives Yến Mạch và Bơ/ Vitamin E và Bơ/ Collagen 621ml");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/583194d52f1e4cb4d9b46e0d2a5f9b66");
+        images.add("https://cf.shopee.vn/file/82df64bdfc9dc9db438744ef8818a71e");
+        images.add("https://cf.shopee.vn/file/2df88c4165debf28595c2be9f428b4ca");
+        images.add("https://cf.shopee.vn/file/c2a7605ccd67fe5d3895db20854b8ee3");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-b54ifgmi25kva5");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sữa dưỡng thể toàn thân trẻ hóa da St.Ives với 100% thành phần thiên nhiên kết hợp cùng công thức thẩm thấu nhanh và không nhờn, sản phẩm giúp tăng cường độ ẩm, phục hồi da tươi khỏe suốt cả ngày. Cùng hương thơm quyến rũ, sữa dưỡng thể ST. IVES Body Lotion giúp bạn trở lên ngọt ngào, quyến rũ và làm tan chảy cảm xúc của bất kì ai.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "1. Sữa dưỡng thể St.Ives Yến Mạch & Bơ với công thức dưỡng ẩm 100% từ thiên nhiên ( yến mạch và bơ hạt mỡ)  thẩm thấu nhanh. Làn da được phục hồi, trả lại vẻ sáng ngời tự nhiên. Sử dụng mỗi ngày để duy trì nước trên bề mặt da cho da mềm mịn và sáng hơn.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Thành phần và công dụng:\n" +
+                "\n" +
+                "- Bột yến mạch: làm mềm da khô ráp, tẩy sạch bụi bẩn trên da.\n" +
+                "\n" +
+                "- Bơ hạt mỡ (Shea Butter): chứa Vitamin A, E, F và các axit béo giúp cung cấp nước cho da khô.\n" +
+                "\n" +
+                "- Dưỡng ẩm từ Glycerin.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "2. Sữa dưỡng thể St.Ives Vitamin E & Bơ với 100% thành phần thiên nhiên (vintamin E chống lão hóa) công thức thẩm thấu nhanh và không nhờn tăng cường vitamin E chống lão hóa, ngăn ngừa khô da, cải thiện làn da tươi khỏe trông thấy.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Thành phần và công dụng:\n" +
+                "\n" +
+                "- Quả bơ xanh nổi tiếng với khả năng cung cấp độ ẩm.\n" +
+                "\n" +
+                "- Vitamin E giúp dưỡng ẩm và chống lão hóa\n" +
+                "\n" +
+                "- Thành phần dưỡng ẩm từ thiên nhiên (glycerin)\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "3. Sữa dưỡng thể St.Ives Trẻ Hóa Da Collagen với công thức dưỡng ẩm 100% từ thiên nhiên (Collagen, proteins và glycerin) thẩm thấu nhanh vào da, giúp tái sinh làn da, da lấy lại độ đàn hồi, căng tràn đầy sức sống chỉ trong 7 ngày.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Thành phần và công dụng:\n" +
+                "\n" +
+                "- Collagen và các sợi đàn hồi  protein\n" +
+                "\n" +
+                "- Bơ hạt mỡ (Shea Butter)\n" +
+                "\n" +
+                "- Dưỡng ẩm từ Glycerin giúp tái tạo độ đàn hồi cho da, cho làn da trẻ trung, khỏe mịn\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HƯỚNG DẪN SỬ DỤNG:\n" +
+                "\n" +
+                "- Thoa đều sản phẩm lên toàn thân mỗi tối và sáng.\n" +
+                "\n" +
+                "- Sử dụng mỗi ngày để duy trì độ ẩm cho da, nên dùng sản phẩm ngay sau khi tắm để đạt hiệu quả dưỡng da tối ưu.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: Mỹ\n" +
+                "\n" +
+                "Nơi sản xuất: Mỹ\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "Bảo quản nơi khô ráo, thoáng mát\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "St.Ives là thương hiệu trực thuộc tập đoàn Unilever của Mỹ, ra đời từ năm 1980 và nổi tiếng với những sản phẩm chăm sóc sức khỏe làn da hiệu quả từ các thành phần thiên nhiên như: Sữa rửa mặt tẩy tế bào chết, Sữa dưỡng thể trẻ hóa da, Kem chống nắng, Mặt nạ,… St.Ives cam kết mang lại cho bạn những trải nghiệm chăm sóc da hiệu quả và hợp túi tiền với tiêu chí sử dụng nguyên liệu tươi tốt, chiết xuất 100% từ thiên nhiên, không có hóa chất, được chị em phụ nữ khắp thế giới biết đến và tin dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-b54ifgmi25kva5");
+        variant_1.setWeight(621.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1400));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa tắm Monsavon chiết xuất sữa và hoa vani 1000ml");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/2e43b840d95c90ae148db432437c41e2");
+        images.add("https://cf.shopee.vn/file/0d39cd671db710245278da40d0951ebf");
+        images.add("https://cf.shopee.vn/file/069748d6364b8b15d40ddb792db8cbc8");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-xmi0jko335kv55");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sữa tắm Monsavon chiết xuất sữa và hoa vani nâng niu làn da đến mềm mịn tuyệt vời với công thức giữ ẩm vượt trội cùng tinh chất sữa. Hương hoa quyến rũ từ Pháp giúp trôi đi bao căng thẳng , mang đến sự thư giãn cho cơ thể bạn sau một ngày dài làm việc mệt mỏi.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Công dụng:\n" +
+                "\n" +
+                "- Sản phẩm tạo bọt nhẹ nhàng, lấy đi bụi bẩn đồng thời bổ sung dưỡng chất và độ ẩm để làn da bạn luôn mịn màng, đặc biệt không bị nhờn rít sau khi sử dụng.\n" +
+                "\n" +
+                "- Hương thơm dịu nhẹ, đem đến những phút giây thư giãn đồng thời lưu hương lâu trên da giúp phái đẹp quyến rũ, gợi cảm hơn.\n" +
+                "\n" +
+                "- Thiết kế dạng chai có vòi chắc chắn, tiện lợi giúp bạn dễ dàng sử dụng trong thời gian dài.\n" +
+                "\n" +
+                "- Với tinh chất sữa và chiết xuất hoa va ni tự nhiên, Monsavon ngọt ngào đánh thức mọi giác quan, mang lại làn da mềm mại, mịn màng với hương thơm từ sữa và vani.\n" +
+                "\n" +
+                "- Không chứa paraben (chất bảo quản gây nguy cơ ung thư) Không chứa chất tạo màu.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Hướng dẫn sử dụng:\n" +
+                "\n" +
+                "Làm ướt cơ thể và cho một lượng sữa tắm vào lòng bàn tay hoặc bông tắm để tạo bọt. Mát xa da nhẹ nhàng và tắm sạch lại với nước. Sử dụng hàng ngày.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Ấn Độ\n" +
+                "\n" +
+                "Hạn sử dụng: 2 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "Bảo quản nơi khô ráo, thoáng mát\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Monsavon là thương hiệu mỹ phẩm của Pháp có từ năm 1925, nay thuộc công ty đa quốc gia Unilever. Sữa tắm Monsavon được hàng triệu phụ nữ Pháp và châu Âu yêu dùng bởi mùi hương đặc biệt quyến rũ. Với slogan “Thức tỉnh mọi giác quan\", sữa tắm Monsavon được sản xuất theo một quy trình khoa học nhất và đạt chuẩn về chất lượng đủ để chị em thể hiện sự quyến rũ, gợi cảm của phụ nữ theo một cách làm đẹp thật đơn giản, ít tốn kém và cực an toàn cho làn da.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-xmi0jko335kv55");
+        variant_1.setWeight(1000.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1500));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Combo 3 Xà bông tắm Camay Naturel (125gx3)");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/53d1e53fda091d604979bbaa209aa89e");
+        images.add("https://cf.shopee.vn/file/91bb86536a6d0336d064fb4a58e2ad46");
+        images.add("https://cf.shopee.vn/file/a2d30f0fecf28bbe4a7ba54973a1da71");
+        images.add("https://cf.shopee.vn/file/e32ed5e13c71965c69629e0bb7a869fe");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/6356cd91d2dbf85bc71086e5e204d6f8");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\\n\" +\n" +
+                "                \"Kem dưỡng dạng gel sữa dành cho da mụn với tác động kép Vichy Normaderm Phytosolution Double-Correction Daily Care 50ml có thành phần hoạt tính hoàn toàn từ thiên nhiên, an toàn cho mọi loại da kể cả da nhạy cảm. Kết cấu kem mỏng nhẹ, thẩm thấu nhanh vào da, tác động trực tiếp vào nguyên nhân gây nên mụn trứng cá, làm giảm mụn, mụn trứng cá và  các đốm nâu sau mụn. Sản phẩm cũng cung cấp nước, độ ẩm, tái tạo củng cố hàng rào bảo vệ da, cải thiện sắc tố da mang đến làn da sáng mịn, đều màu. Lần đầu tiên, bạn sẽ tìm thấy một dòng kem hỗ trợ giảm mụn không hề nặng nề cho da, giúp việc loại bỏ mụn dễ dàng hơn bao giờ hết.\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Loại sản phẩm\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Kem dưỡng dạng keo dành cho da mụn\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Loại da phù hợp\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Mọi loại da, nhất là da mụn, da nhạy cảm.\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Độ an toàn\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Thành phần hoàn toàn từ thiên nhiên \\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Không parapen, không alcohol\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Được kiểm nghiệm da liễu\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Không gây kích ứng, không gây mụn\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Độ PH [5,5]\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- An toàn cho da nhạy cảm.\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Thành phần:\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- 60% Nước khoáng Vichy: Củng cố khả năng phòng vệ tự nhiên của lớp hàng rào bảo vệ da, tăng cường sức đề kháng và các đặc tính chống oxy hóa tự nhiên\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Natural Hyaluronic Acid (Chiết xuất lúa mì): Giữ ẩm cho da, giảm tình trạng mất nước qua da\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Bifidus Probiotic (chiết xuất từ men vi sinh) : Củng cố và tái cấu trúc hàng rào bảo vệ da và tình trạng khô da\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"-  Natural Salicylic Acid (Winter Green Leaf): Giảm sừng nang lông tuyến bã\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Phyco Saccharide (Chiết xuất từ tảo): Ức chế sự tích tụ Lipid ở nang lông, giảm sản xuất bã nhờn, nguyên nhân hình thành mụn\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Vitamin Cg (dẫn xuất từ Vitamin C): Giảm mụn, đốm nâu sau mụn trứng cá\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Công dụng\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Tác động chuyên biệt với mụn và các vấn đề về da:\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Giảm mụn, ngăn mụn tái phát\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Giảm thâm hiệu quả\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Tác động đối với tổng thể làn da:\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Cải thiện đáng kể tình trạng da và sắc da, cho da sáng mịn đều màu\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Dưỡng ẩm 24h, giúp da trở nên trong suốt bóng mượt\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Thu nhỏ lỗ chân lông\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Tái tạo và củng cố hàng rào bảo vệ da\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Hiệu quả:\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Sau 8 tuần sử dụng:\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Giảm mụn cám 37%\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Giảm mụn 42%\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Giảm đốm thâm sâu mụn trứng cá 62%\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Thu nhỏ lỗ chân lông 8%\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Da sáng mịn đều màu hơn 26%\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Hướng dẫn sử dụng\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Sử dụng sáng và tối, sau bước làm sạch da mặt \\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Lấy một lượng sản phẩm vừa đủ cỡ hạt đậu, chấm đều lên 5 điểm: trán, mũi, cằm và 2 bên má rồi nhẹ nhàng massage theo hình tròn, hướng lên trên (tránh thoa lên vùng mắt)\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"- Có thể sử dung làm lớp nền trang điểm   \\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"THÔNG TIN THƯƠNG HIỆU\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Xuất xứ thương hiệu: Pháp\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Nơi sản xuất: Pháp\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Hạn sử dụng: 3 năm kể từ ngày sản xuất \\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Ngày sản xuất: In trên bao bì\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"Thành phần: Xem chi tiết trên bao bì\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"\\n\" +\n" +
+                "                \"#Vichy #skincare #serum");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/6356cd91d2dbf85bc71086e5e204d6f8");
+        variant_1.setWeight(375.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602339_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Combo 2 chai Sữa tắm dưỡng da St.Ives Yến mạch và Bơ 473ml");
+        productInput.setShopId(602339);
+        productInput.setTradeMarkId("1671551420756533");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/9ae8b42f96be97bb7028098f5c2815dd");
+        images.add("https://cf.shopee.vn/file/84977258dede3882ffdf04ddf2a90271");
+        images.add("https://cf.shopee.vn/file/4777e7902c4b12a49568deb24f14fae5");
+        images.add("https://cf.shopee.vn/file/361cd9a8acaa0cc981386fb50d538bee");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-x64lcszn25kve8");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "BỘ SẢN PHẨM BAO GỒM\n" +
+                "02 x Sữa tắm dưỡng da St.Ives Yến mạch và Bơ 473ml \n" +
+                "\n" +
+                "THÔNG TIN CHI TIẾT\n" +
+                "Sữa tắm dưỡng da St.Ives là dòng sản phẩm rất được ưa chuộng của thương hiệu chăm sóc da St.Ives nổi tiếng xuất xứ từ Mỹ, với công thức được chiết xuất từ các thành phần thiên nhiên, giúp làm sạch nhẹ nhàng đồng thời bổ sung dưỡng chất nuôi dưỡng làn da khỏe mạnh và sáng mịn rạng ngời.\n" +
+                "\n" +
+                "Sữa tắm dưỡng da St.Ives Yến Mạch và Bơ với công thức dưỡng ẩm 100% từ thiên nhiên (lúa mạch và bơ shea) giúp làn da được làm sạch và dưỡng ẩm tối ưu, trả lại vẻ sáng ngời tự nhiên. Hương thơm ngọt ngào từ Yến Mạch và Bơ đánh thức giác quan của bạn và lưu lại lâu trên da.\n" +
+                "\n" +
+                "*Công dụng:\n" +
+                "- Bột yến mạch: làm mềm da khô ráp, tẩy sạch bụi bẩn trên da\n" +
+                "- Bơ hạt mỡ (Shea Butter): chứa Vitamin A, E, F và các axit béo giúp cung cấp nước cho da khô\n" +
+                "- Dưỡng ẩm và giúp da mịn màng từ tinh dầu của quả mơ\n" +
+                "- Dưỡng ẩm từ Glycerin \n" +
+                "\n" +
+                "*Hướng dẫn sử dụng:\n" +
+                "- Cho sản phẩm trực tiếp lên da ướt hoặc bông tắm để tạo bọt, mát xa nhẹ nhàng toàn thân rồi tắm lại với nước\n" +
+                "\n" +
+                "*Hướng dẫn bảo quản:\n" +
+                "- Chỉ sử dụng ngoài da.\n" +
+                "- Để xa tầm tay trẻ em.\n" +
+                "- Không sử dụng sản phẩm đã hết hạn.\n" +
+                "- Không để sản phẩm trực tiếp dưới nắng.\n" +
+                "- Rửa ngay với nước nếu sản phẩm rơi vào mắt.\n" +
+                "- Ngưng sử dụng và hỏi ý kiến bác sĩ da liễu nếu da bị kích ứng.\n" +
+                "\n" +
+                "Xuất xứ: Mỹ\n" +
+                "Nơi sản xuất: Mỹ\n" +
+                "NSX: Xem trên bao bì\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "St.Ives là thương hiệu trực thuộc tập đoàn Unilever của Mỹ, ra đời từ năm 1980 và nổi tiếng với những sản phẩm chăm sóc sức khỏe làn da hiệu quả từ các thành phần thiên nhiên như: Sữa rửa mặt tẩy tế bào chết, Sữa dưỡng thể trẻ hóa da, Kem chống nắng, Mặt nạ,… St.Ives cam kết mang lại cho bạn những trải nghiệm chăm sóc da hiệu quả và hợp túi tiền với tiêu chí sử dụng nguyên liệu tươi tốt, chiết xuất 100% từ thiên nhiên, không có hóa chất, được chị em phụ nữ khắp thế giới biết đến và tin dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-x64lcszn25kve8");
+        variant_1.setWeight(946.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1450));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //VICHY
+    @Test
+    public void testProduct_602338_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem dưỡng dạng gel sữa dành cho da mụn với tác động kép Vichy 50ml");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/34bd68dd6f2491b9fcf33ea9b4cb9ba2");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-i0rqp9z5vbivf0");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-qv7m1695vbiv57");
+        images.add("https://cf.shopee.vn/file/9da4590526313f1c327868b7c8056158");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-yg9m1r8wo3kvaf");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Kem dưỡng dạng gel sữa dành cho da mụn với tác động kép Vichy Normaderm Phytosolution Double-Correction Daily Care 50ml có thành phần hoạt tính hoàn toàn từ thiên nhiên, an toàn cho mọi loại da kể cả da nhạy cảm. Kết cấu kem mỏng nhẹ, thẩm thấu nhanh vào da, tác động trực tiếp vào nguyên nhân gây nên mụn trứng cá, làm giảm mụn, mụn trứng cá và  các đốm nâu sau mụn. Sản phẩm cũng cung cấp nước, độ ẩm, tái tạo củng cố hàng rào bảo vệ da, cải thiện sắc tố da mang đến làn da sáng mịn, đều màu. Lần đầu tiên, bạn sẽ tìm thấy một dòng kem hỗ trợ giảm mụn không hề nặng nề cho da, giúp việc loại bỏ mụn dễ dàng hơn bao giờ hết.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại sản phẩm\n" +
+                "\n" +
+                "- Kem dưỡng dạng keo dành cho da mụn\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại da phù hợp\n" +
+                "\n" +
+                "- Mọi loại da, nhất là da mụn, da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Độ an toàn\n" +
+                "\n" +
+                "- Thành phần hoàn toàn từ thiên nhiên \n" +
+                "\n" +
+                "- Không parapen, không alcohol\n" +
+                "\n" +
+                "- Được kiểm nghiệm da liễu\n" +
+                "\n" +
+                "- Không gây kích ứng, không gây mụn\n" +
+                "\n" +
+                "- Độ PH [5,5]\n" +
+                "\n" +
+                "- An toàn cho da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thành phần:\n" +
+                "\n" +
+                "- 60% Nước khoáng Vichy: Củng cố khả năng phòng vệ tự nhiên của lớp hàng rào bảo vệ da, tăng cường sức đề kháng và các đặc tính chống oxy hóa tự nhiên\n" +
+                "\n" +
+                "- Natural Hyaluronic Acid (Chiết xuất lúa mì): Giữ ẩm cho da, giảm tình trạng mất nước qua da\n" +
+                "\n" +
+                "- Bifidus Probiotic (chiết xuất từ men vi sinh) : Củng cố và tái cấu trúc hàng rào bảo vệ da và tình trạng khô da\n" +
+                "\n" +
+                "-  Natural Salicylic Acid (Winter Green Leaf): Giảm sừng nang lông tuyến bã\n" +
+                "\n" +
+                "- Phyco Saccharide (Chiết xuất từ tảo): Ức chế sự tích tụ Lipid ở nang lông, giảm sản xuất bã nhờn, nguyên nhân hình thành mụn\n" +
+                "\n" +
+                "- Vitamin Cg (dẫn xuất từ Vitamin C): Giảm mụn, đốm nâu sau mụn trứng cá\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng\n" +
+                "\n" +
+                "Tác động chuyên biệt với mụn và các vấn đề về da:\n" +
+                "\n" +
+                "- Giảm mụn, ngăn mụn tái phát\n" +
+                "\n" +
+                "- Giảm thâm hiệu quả\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Tác động đối với tổng thể làn da:\n" +
+                "\n" +
+                "- Cải thiện đáng kể tình trạng da và sắc da, cho da sáng mịn đều màu\n" +
+                "\n" +
+                "- Dưỡng ẩm 24h, giúp da trở nên trong suốt bóng mượt\n" +
+                "\n" +
+                "- Thu nhỏ lỗ chân lông\n" +
+                "\n" +
+                "- Tái tạo và củng cố hàng rào bảo vệ da\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hiệu quả:\n" +
+                "\n" +
+                "Sau 8 tuần sử dụng:\n" +
+                "\n" +
+                "- Giảm mụn cám 37%\n" +
+                "\n" +
+                "- Giảm mụn 42%\n" +
+                "\n" +
+                "- Giảm đốm thâm sâu mụn trứng cá 62%\n" +
+                "\n" +
+                "- Thu nhỏ lỗ chân lông 8%\n" +
+                "\n" +
+                "- Da sáng mịn đều màu hơn 26%\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "\n" +
+                "- Sử dụng sáng và tối, sau bước làm sạch da mặt \n" +
+                "\n" +
+                "- Lấy một lượng sản phẩm vừa đủ cỡ hạt đậu, chấm đều lên 5 điểm: trán, mũi, cằm và 2 bên má rồi nhẹ nhàng massage theo hình tròn, hướng lên trên (tránh thoa lên vùng mắt)\n" +
+                "\n" +
+                "- Có thể sử dung làm lớp nền trang điểm   \n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất \n" +
+                "\n" +
+                "Ngày sản xuất: In trên bao bì\n" +
+                "\n" +
+                "Thành phần: Xem chi tiết trên bao bì\n" +
+                "\n" +
+                "#Vichy #skincare #serum");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-yg9m1r8wo3kvaf");
+        variant_1.setWeight(50.0);
+
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(750));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602338_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem Chống Nắng UVA+UVB Chống Bụi Mịn Vichy Spf50+CapitalSoleilMattifying 3in150ml");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/3dd9fabcfa51e0c07f5f73d34dfaf0d6");
+        images.add("https://cf.shopee.vn/file/aa3bb44f887b954868601a2db3d6e141");
+        images.add("https://cf.shopee.vn/file/1ce89e601be1889e574639eb85bd83e5");
+        images.add("https://cf.shopee.vn/file/23e08d45fbf4833cfc30fb33cc88fdf4");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-dfjtz9nyo3kv3f");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "VÌ SAO BẠN SẼ THÍCH?\n" +
+                "Tia UV là một trong những nguyên nhân chính gây ra các dấu hiệu lão hóa sớm trên da và làm suy giảm khả năng đề kháng của da. Tia UV, đặc biệt là tia UVA có bước sóng dài, hiện diện trong bất kỳ thời tiết nào. Vì vậy kem chống nắng chính là bước bảo vệ da cực kỳ cần thiết và quan trọng trong quy trình dưỡng da hằng ngày.\n" +
+                "\n" +
+                "Ngoài công nghệ màng lọc Mexoryl độc quyền giúp bảo vệ da tối ưu trước tia UVA và UVB, kem chống nắng Capital Soleil Mattifying 3 trong 1 với thành phần chính từ đất sét xanh, men vi sinh và nước khoáng núi lửa Vichy cùng công nghệ thấm hút dầu MỚI giúp kiểm soát dầu hiệu quả\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM:\n" +
+                "Thành Phần:\n" +
+                "\n" +
+                "- Đất sét xanh: giúp thấm hút và kiểm soát dầu nhờn trên da ngay lập tức, cho lớp nền mịn lỳ cả ngày dài\n" +
+                "\n" +
+                "- Men vi sinh Probiotic Bifidus và nước khoáng núi lửa Vichy: giúp củng cố, tái cấu trúc và nuôi dưỡng hàng rào bảo vệ da\n" +
+                "\n" +
+                "- Công nghệ thấm hút dầu MỚI: Chỉ hút dầu nhờn trên da, không hút nước, đảm bảo độ ẩm tự nhiên trên da\n" +
+                "\n" +
+                "- Đã được kiểm nghiệm da liễu an toàn cho da, kể cả da nhạy cảm\n" +
+                "\n" +
+                "- Kết cấu thấm nhanh vào da ko để lại cảm giác nhờn rít\n" +
+                "\n" +
+                "- Không paraben, không chất bảo quản\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng:\n" +
+                "\n" +
+                "- Hiệu quả đã được kiểm nghiệm da liễu\n" +
+                "\n" +
+                "- Chống tia uva và uvb tối ưu\n" +
+                "\n" +
+                "- Thanh lọc da, giảm 21% bụi mịn tiếp xúc trên da sau khi rửa mặt\n" +
+                "\n" +
+                "- Giảm 23% bóng dầu, da thoáng mịn trong suốt 12h\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại Da: Da Dầu, Da Mụn\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn bảo quản\n" +
+                "\n" +
+                "- Sử dụng buổi sáng, lấy 1 lượng bằng 2 hạt bắp chấm lên 5 điểm: trán, mũi, 2 má và cằm đồng thời thoa vùng cổ\n" +
+                "\n" +
+                "- Sử dụng sản phẩm sau bước dưỡng da, và 20 phút trước khi tiếp xúc với ánh nắng\n" +
+                "\n" +
+                "- Nếu đi bơi đi biển, hoạt động nhiều thì nên thoa lại sản phẩm sau mỗi 2h\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ NSX\n" +
+                "\n" +
+                "NSX: In trên bao bì\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp\n" +
+                "\n" +
+                "Hướng dẫn bảo quản: Nơi thoáng mát, tránh ánh nắng trực tiếp");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-dfjtz9nyo3kv3f");
+        variant_1.setWeight(150.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(950));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+
+    public void testProduct_602338_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Dưỡng chất giàu khoáng chất giúp da sáng mịn và căng mượt Vichy Mineral 89 30ml");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22110-31m125ba2mjvcd");
+        images.add("https://cf.shopee.vn/file/aa3bb44f887b954868601a2db3d6e141");
+        images.add("https://cf.shopee.vn/file/a09474b567004a17f00dd6e340ec4da1");
+        images.add("https://cf.shopee.vn/file/fdb9d37f751fe7d2575faee4a0770bbe");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-z2cux8sqs3kv88");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "VÌ SAO BẠN SẼ THÍCH?\n" +
+                "\n" +
+                "Dưỡng chất khoáng cô đặc giúp phục hồi và bảo vệ da Vichy Mineral 89 30ml chứa đến 89% nước khoáng Vichy cô đặc với 15 khoáng chất quý báu kết hợp hoàn hảo cùng 0.5% Hyaluronic acid từ lòng núi lửa giúp củng cố hàng rào bảo vệ da, tái tạo và phục hồi, cho da mịn màng, căng mượt và tràn đầy sức sống.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Sản phẩm phù hợp với những làn da nhạy cảm nhất, phục hồi chuyên sâu: hỗ trợ quá trình miễn dịch của da, phục hồi sau cái liệu trình thẩm mỹ không xâm lấn.Sau một tuần sử dụng, da dần lấy độ căng mịn, rạng rỡ, lỗ chân lông thu nhỏ lại, các dấu hiệu lão hóa cũng được cải thiện.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Loại sản phẩm:\n" +
+                "\n" +
+                "- Tinh chất khoáng cô đặc giúp phục hồi và bảo vệ da Vichy Mineral 89 chứa 89% nước khoáng cô đặc cùng 0.5% Hyaluronic Acid\n" +
+                "\n" +
+                "- Giải pháp phục hồi cho làn da bị tổn hại do các yếu tố môi trường\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại da phù hợp:\n" +
+                "\n" +
+                "- Da yếu sau các liệu trình thẩm mỹ xâm lấn\n" +
+                "\n" +
+                "- Da bị mẫn đỏ, bong tróc, bỏng rát, châm chích, ngứa\n" +
+                "\n" +
+                "- Da khô do thiếu nước, cần được cấp ẩm\n" +
+                "\n" +
+                "- Da nhạy cảm\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Độ an toàn:\n" +
+                "\n" +
+                "- Không paraben, không hương liệu, không alcohol\n" +
+                "\n" +
+                "- An toàn cho da nhạy cảm, được kiểm nghiệm bỏi 179 bác sĩ da liễu và 1630 phụ nữ trên toàn thế giới\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thành phần:\n" +
+                "\n" +
+                "- 89% nước khoáng cô đặc chứa 15 khoáng chất quý từ nguồn khoáng núi lửa Vichy\n" +
+                "\n" +
+                "- 0.5% Hyaluronic acid từ lòng núi lửa\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng:\n" +
+                "\n" +
+                "- Phục hồi da đang bị mẫn đỏ, nhạy cảm, viêm da tiếp xúc\n" +
+                "\n" +
+                "- Bảo vệ da trước và phục hồi da sau khi thực hiện các thủ thuật thẩm mỹ không xâm lấn (Peel da, lăn kim, phi kim, laser)\n" +
+                "\n" +
+                "- Củng cố hàng rào bảo vệ da, tái tạo và phục hồi, cho da mịn màng, căng mượt và tràn đầy sức sống\n" +
+                "\n" +
+                "- Thu nhỏ lỗ chân lông, cải thiện các dấu hiệu lão hóa\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "\n" +
+                "- Sử dụng sáng và tối, sau bước làm sạch và làm dịu da cùng nước khoáng Vichy.\n" +
+                "\n" +
+                "- Lấy một lượng sản phẩm vừa đủ cỡ hạt đậu, chấm đều lên 5 điểm: trán, mũi, cằm và 2 bên má rồi nhẹ nhàng massage theo hình tròn, hướng lên trên.\n" +
+                "\n" +
+                "- Có thể kết hợp sử dụng thêm các dưỡng chất cùng dòng nếu muốn. \n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ NSX\n" +
+                "\n" +
+                "NSX: In trên bao bì\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp\n" +
+                "\n" +
+                "Hướng dẫn bảo quản: Nơi thoáng mát, tránh ánh nắng trực tiếp");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-z2cux8sqs3kv88");
+        variant_1.setWeight(30.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(650));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602338_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Bộ kem chống nắng có màu ngăn sạm da, giảm thâm nám VICHY Capital Soleil Anti-Daskspot");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/fc25730eee602ed3fe6410d9f0ab019a");
+        images.add("https://cf.shopee.vn/file/aa3bb44f887b954868601a2db3d6e141");
+        images.add("https://cf.shopee.vn/file/39a21c86a4664f4a7f89ff4153c05369");
+        images.add("https://cf.shopee.vn/file/0a76319fb2eab221bf937afdfe9a6506");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-k04v2e63s3kv8c");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "VÌ SAO BẠN SẼ THÍCH?\n" +
+                "\n" +
+                "Bộ sản phẩm gồm:\n" +
+                "\n" +
+                "- 01 x Kem chống nắng ngăn sạm da, giảm thâm nám Vichy capital Soleil Anti Darkspot SPF 50+ Chống Tia UVA + UVB 50ml\n" +
+                "\n" +
+                "- 01 x Dưỡng chất Mineral 89 15ml\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thông tin chi tiết:\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "1. Kem chống nắng ngăn sạm da, giảm thâm nám Vichy capital Soleil Anti Darkspot 50ml là kem chống nắng đa tác dụng (3 trong 1): chống nắng + trang điểm làm đều màu da, giảm bóng dầu + dưỡng trắng da, giảm thâm nám. Sản phẩm áp dụng công nghệ tiên tiến với 3 màng lọc, giúp chống nắng, ngăn lão hóa, ngừa ung thư và bảo vệ da tối ưu nhất trước các tia cực tím (UVA, UVB). Nếu bạn vừa muốn làn da được bảo vệ tối ưu, vừa muốn thêm chức năng làm sáng da và che phủ tự nhiên thì đây chính là lựa chọn lý tưởng dành cho bạn. Sản phẩm phù hợp với mọi loại da, đặc biệt là da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HDSD:\n" +
+                "\n" +
+                "- Sử dụng buổi sáng, lấy 1 lượng bằng 2 hạt bắp chấm lên 5 điểm: trán, mũi, 2 má và cằm đồng thời thoa vùng cổ.\n" +
+                "\n" +
+                "- Thoa từ trong ra ngoài và từ trên xuống dưới. Sử dụng sau bước kem dưỡng da.\n" +
+                "\n" +
+                "- Nếu hoạt động đi bơi đi biển, hoạt động nhiều thì nên thoa lại sau mỗi 2 tiếng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "2. Khoáng chất cô đặc phục hồi và bảo vệ da Vichy Mineral 89 Fortifying And Pluming Daily Booster chứa đến 89% nước khoáng Vichy cô đặc với 15 khoáng chất quý báu kết hợp hoàn hảo cùng Hyaluronic Acid từ lòng núi lửa giúp củng cố hàng rào bảo vệ da, tái tạo và phục hồi, cho da mịn màng, căng mượt và tràn đầy sức sống.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HDSD:\n" +
+                "\n" +
+                "- Rửa mặt sạch\n" +
+                "\n" +
+                "- Lấy một lượng vừa đủ (khoảng bằng hạt đậu) chấm đều lên mặt\n" +
+                "\n" +
+                "- Massage nhẹ nhàng để sản phẩm thẩm thấu vào da\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ NSX\n" +
+                "\n" +
+                "NSX: In trên bao bì\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp\n" +
+                "\n" +
+                "Hướng dẫn bảo quản: Nơi thoáng mát, tránh ánh nắng trực tiếp\n" +
+                "\n" +
+                "Lưu ý: Bao bì sản phẩm có thể thay đổi theo từng đợt nhập");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-k04v2e63s3kv8c");
+        variant_1.setWeight(65.0);
+
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1050));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602338_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Bộ kem chống nắng chống ô nhiễm, bụi mịn, căng mượt da Vichy Capital Soleil Mattifying");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22110-w761gt6u2mjvbe");
+        images.add("https://cf.shopee.vn/file/aa3bb44f887b954868601a2db3d6e141");
+        images.add("https://cf.shopee.vn/file/3dd9fabcfa51e0c07f5f73d34dfaf0d6");
+        images.add("https://cf.shopee.vn/file/0a76319fb2eab221bf937afdfe9a6506");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-fbkvelf7s3kvd5");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "VÌ SAO BẠN SẼ THÍCH?\n" +
+                "\n" +
+                "Bộ kem chống nắng chống ô nhiễm, bụi mịn và căng mượt da Vichy Capital Soleil Mattifying\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "BỘ SẢN PHẨM BAO GỒM:\n" +
+                "\n" +
+                "01 x Kem chống nắng chống ô nhiễm và bụi mịn VICHY Capital Soleil Mattifying 50ml\n" +
+                "\n" +
+                "01 x Serum dưỡng chất giàu khoáng chất giúp da sáng mượt và căng mịn Vichy Mineral 89 15ml\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thông tin chi tiết\n" +
+                "\n" +
+                "1. Kem chống nắng chống ô nhiễm và bụi mịn Vichy Capital Soleil Mattifying\n" +
+                "\n" +
+                "Kết cấu dạng kem, áp dụng công nghệ tiên tiến giúp chống nắng, ngăn lão hóa. Sản phẩm chống nắng hiệu quả cùng khả năng thấm cực nhanh, khô ráo tức thì đem lại cảm giác thoải mái khi sử dụng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng:\n" +
+                "\n" +
+                "- Bảo vệ da khỏi những tác động của tia UV và các tác động từ môi trường ô nhiễm\n" +
+                "\n" +
+                "- Mang lại cảm giác khô thoáng, không nhờn rít trên da.\n" +
+                "\n" +
+                "- Sử dụng công nghệ tiên tiến giúp ngăn ngừa các dấu hiệu lão hoá trên da.\n" +
+                "\n" +
+                "- Có khả năng thay thế lớp lót trong trang điểm và kem che khuyết điểm\n" +
+                "\n" +
+                "- Giảm bóng dầu cho da, tệp với màu da sau khi sản phẩm thẩm thấu hoàn toàn vào da.\n" +
+                "\n" +
+                "- CHỐNG TIA UVA và UVB TỐI ƯU\n" +
+                "\n" +
+                "- THANH LỌC DA, GIẢM 21% BỤI MỊN TIẾP XÚC TRÊN DA SAU KHI RỬA MẶT*\n" +
+                "\n" +
+                "- GIẢM 23% BÓNG DẦU, DA THOÁNG MỊN TRONG SUỐT 12H\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại da phù hợp:\n" +
+                "\n" +
+                "- Dùng được cho mọi loại da, đặc biệt là da dầu mụn, da nhạy cảm\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Cách dùng:\n" +
+                "\n" +
+                "- Sử dụng buổi sáng, lấy 1 lượng bằng 2 hạt bắp chấm lên 5 điểm: trán, mũi, 2 má và cằm đồng thời thoa vùng cổ\n" +
+                "\n" +
+                "- Sử dụng sản phẩm sau bước dưỡng da, và 20 phút trước khi tiếp xúc với ánh nắng\n" +
+                "\n" +
+                "- Nếu đi bơi đi biển, hoạt động nhiều thì nên thoa lại sản phẩm sau mỗi 2h\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "2. Serum dưỡng chất giàu khoáng chất giúp da sáng mượt và căng mịn Vichy Mineral 89 15ml\n" +
+                "\n" +
+                "Chứa đến 89% khoáng Vichy cô đặc với 15 khoáng chất quý báu kết hợp hoàn hảo cùng Hyaluronic acid từ lòng núi lửa giúp củng cố hàng rào bảo vệ da, tái tạo và phục hồi, cho da mịn màng, căng mượt và tràn đầy sức sống. \n" +
+                "\n" +
+                "Sản phẩm không gây kích ứng, dịu nhẹ cho làn da khi sử dụng, đặc biệt là những làn da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại da phù hợp:\n" +
+                "\n" +
+                "- Mọi loại da, dùng được cho cả da nhạy cảm\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Cách dùng\n" +
+                "\n" +
+                "- Sử dụng sáng và tối, sau bước làm sạch và làm dịu da cùng nước khoáng Vichy.\n" +
+                "\n" +
+                "- Lấy một lượng sản phẩm vừa đủ chấm đều lên 5 điểm: trán, mũi, cằm và 2 bên má. Nhẹ nhàng massage theo hình tròn.\n" +
+                "\n" +
+                "- Có thể kết hợp sử dụng thêm các dưỡng chất cùng dòng nếu muốn.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ NSX\n" +
+                "\n" +
+                "NSX: In trên bao bì\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp\n" +
+                "\n" +
+                "Hướng dẫn bảo quản: Nơi thoáng mát, tránh ánh nắng trực tiếp\n" +
+                "\n" +
+                "Lưu ý: Bao bì sản phẩm có thể thay đổi theo từng đợt nhập");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-fbkvelf7s3kvd5");
+        variant_1.setWeight(65.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1050));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602338_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem chống nắng SPF 50 UVA+UVB Vichy Capital Soleil Mattifying Dry Touch Face Fluid 50ml");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/2a07c5ee28a6d133c4f1293c19b1cdc2");
+        images.add("https://cf.shopee.vn/file/aa3bb44f887b954868601a2db3d6e141");
+        images.add("https://cf.shopee.vn/file/050202ba46153c56c7440b678f1b79c4");
+        images.add("https://cf.shopee.vn/file/ea1940b7a74b28f385a4a1250f48d37a");
+        images.add("https://cf.shopee.vn/file/5519e72fffe1b40a188247a4bc91a133");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-gdrs6enuo3kv43");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "\n" +
+                "VÌ SAO BẠN SẼ THÍCH?\n" +
+                "\n" +
+                "Kem chống nắng không màu không gây nhờn rít Vichy Capital Soleil Dry Touch Face Fluid SPF50 UVB+UVA 50ml giúp bảo vệ da trước tác hại của tia UVB và tia UVA. Dạng kem không màu, không gây bết dính hay nhờn rít, thông thoáng lỗ chân lông mà vẫn cung cấp đủ độ ẩm cho da sau khi thoa.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại sản phẩm\n" +
+                "\n" +
+                "- Kem chống nắng không màu không gây nhờn rít SPF50 chống tia UVA &amp; UVB.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại da phù hợp\n" +
+                "\n" +
+                "- Phù hợp với mọi loại da, kể cả da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Độ an toàn\n" +
+                "\n" +
+                "- 100% dễ chịu.\n" +
+                "\n" +
+                "- Không Paraben.\n" +
+                "\n" +
+                "- Không kích ứng da*.\n" +
+                "\n" +
+                "- An toàn với da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thành phần\n" +
+                "\n" +
+                "- Màng lọc Mexoryl SX - XL® độc quyền giúp bảo vệ da trước tác hại của tia UVB (gây bỏng rát), và tia UVA (cả 2 tia ngắn và dài gây biến đổi chất lượng da và lão hóa sớm).\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng\n" +
+                "\n" +
+                "- Bảo vệ da toàn diện với chỉ số SPF50, chống tia UVA (cả 2 tia ngắn và dài gây biến đổi chất lượng da và lão hóa sớm) + UVB (gây bỏng rát) toàn diện ngăn sạm da, lão hóa sớm và ung thư da.\n" +
+                "\n" +
+                "- Dạng kem không màu thẩm thấu vào da, không gây bết dính hay nhờn rít, không để lại vệt trắng trên da, không gây bít tắt lỗ chân lông.\n" +
+                "\n" +
+                "- Da vẫn có cảm giác dưỡng ẩm sau khi thoa.\n" +
+                "\n" +
+                "- Lâu trôi khi sử dụng dưới nước.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "\n" +
+                "- Sử dụng buổi sáng như kem lót nền trang điểm, sau bước dưỡng da. \n" +
+                "\n" +
+                "- Lấy 1 lượng bằng 2 hạt bắp chấm lên 5 điểm: Trán, mũi, 2 má &amp; cằm đồng thời thoa vùng cổ. Thoa từ trong ra ngoài và từ trên xuống dưới.\n" +
+                "\n" +
+                "- Nếu hoạt động đi bơi đi biển, hoạt động nhiều thì nên thoa lại sau mỗi 2 tiếng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi chuyên gia da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "NSX: In trên bao bì\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-gdrs6enuo3kv43");
+        variant_1.setWeight(50.0);
+
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(950));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602338_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Tinh Chất Giúp Cải Thiện&Ngăn Ngừa Thâm Nám Đốm Nâu Vichy Liftactiv B3 Dark Spots");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22110-ehuxaa3k2mjv0b");
+        images.add("https://cf.shopee.vn/file/aa3bb44f887b954868601a2db3d6e141");
+        images.add("https://cf.shopee.vn/file/d71ab760f7cfccc96c3caef4855dd804");
+        images.add("https://cf.shopee.vn/file/ceee67ad5c4499720ea719a921423454");
+        images.add("https://cf.shopee.vn/file/5fe1fa0e4e9a192ebef2f6aecbbcddac");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-6fpjbe5zo3kve6");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "\n" +
+                "VÌ SAO BẠN SẼ THÍCH?\n" +
+                "\n" +
+                "\n" +
+                "Serum Vichy Liftactiv B3 Dark Spots 30ml với sự kết hợp giữa 13% phức hợp thành phần hoạt tính cao: Niacinamide [B3], thành phần peel da và AHA cho làn da tươi sáng đều màu sau 8 tuần sử dụng. Đây chính là giải pháp giúp da bạn cải thiện và ngăn ngừa đốm nâu, thâm nám toàn diện.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Loại sản phẩm: Serum dưỡng sáng, hỗ trợ giảm mụn, cải thiện và ngăn ngừa đốm nâu thâm nám\n" +
+                "\n" +
+                "Loại da phù hợp: Mọi loại da, ngay cả làn da nhạy cảm\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Độ an toàn:\n" +
+                "\n" +
+                "- An toàn và phù hợp cho da nhạy cảm \n" +
+                "\n" +
+                "- Không kích ứng, không chất tẩy trắng, không silicon\n" +
+                "\n" +
+                "- An toàn &amp; cao cấp với thiết kế vòi đặc biệt\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thành phần: \n" +
+                "\n" +
+                "13% phức hợp gồm Niacinamide [B3], Glycolid Acid và Peeling Actives.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng:\n" +
+                "\n" +
+                "- Cải thiện và ngăn ngừa đốm nâu, thâm nám toàn diện\n" +
+                "\n" +
+                "- Giúp da tươi sáng đều màu sau 8 tuần sử dụng\n" +
+                "\n" +
+                "- Giảm mật độ và kích thước đốm nâu, thâm nám\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "\n" +
+                "1. Cho sản phẩm ra tay, vỗ nhẹ khắp mặt giúp sản phẩm thẩm thấu triệt để\n" +
+                "\n" +
+                "2. Sử dụng kết hợp kem dưỡng cùng dòng giúp tăng hiệu quả làm sáng da\n" +
+                "\n" +
+                "3. Lưu ý sử dụng 2 lần, sáng và tối; sử dụng kết hợp kem chống nắng vào buổi sáng\n" +
+                "\n" +
+                "Bảo quản nơi thoáng mát\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ NSX\n" +
+                "\n" +
+                "NSX: In trên bao bì\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp\n" +
+                "\n" +
+                "Hướng dẫn bảo quản: Nơi thoáng mát, tránh ánh nắng trực tiếp");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-6fpjbe5zo3kve6");
+        variant_1.setWeight(50.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(750));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602338_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem dưỡng ẩm và cung cấp nước dạng gel Vichy Aqualia Thermal Cream-Gel 50ml");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/dd19c29cf1488370ae2a4f1ddab92931");
+        images.add("https://cf.shopee.vn/file/ae088e40b0cabdd2cd02201094f639b6");
+        images.add("https://cf.shopee.vn/file/57b7011eee99cbec975c7c9c54ca070b");
+        images.add("https://cf.shopee.vn/file/c42d425747c59a32ae4bc1c5d58e907e");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-xjlafwbwo3kvd4");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "VÌ SAO BẠN SẼ THÍCH?\n" +
+                "\n" +
+                "Gel dưỡng ẩm giúp da dịu mát cho da thường, da hỗn hợp &amp; da nhạy cảm Vichy Aqualia Thermal Rehydrating Gel Cream 50ml sở hữu thế hệ dưỡng ẩm mới với cơ chế Isotonic bù nước, bù khoáng cùng 97% thành phần thiên nhiên (Khoáng núi lửa Vichy, Solium PCA, Đường Mannose, HA) giúp cấp nước sâu cho làn da ẩm mượt suốt 48h bất chấp mọi điều kiện thời tiết. Công thức mới với thành phần tự nhiên hơn, hiệu quả hơn và an toàn hơn cho làn da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại sản phẩm\n" +
+                "\n" +
+                "- Gel dưỡng ẩm giúp da dịu mát cho da thường, da hỗn hợp &amp; da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Loại da phù hợp\n" +
+                "\n" +
+                "- Da thường, da hỗn hợp &amp; da nhạy cảm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Độ an toàn\n" +
+                "\n" +
+                "- Không paraben.\n" +
+                "\n" +
+                "- Không gây dị ứng*.\n" +
+                "\n" +
+                "- Không gây nhân mụn trứng cá.\n" +
+                "\n" +
+                "- Thành phần tự nhiên dịu nhẹ cho da.\n" +
+                "\n" +
+                "- An toàn cho cả da nhạy cảm, dễ đỏ / kích ứng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thành phần\n" +
+                "\n" +
+                "- Cơ chế Isotonic bù nước, bù khoáng:\n" +
+                "\n" +
+                "+ Lấy cảm hứng từ Cơ chế Isotonic bù khoáng và nước cho vận động viên.\n" +
+                "\n" +
+                "+ Là cơ chế sử dụng [NƯỚC + KHOÁNG + ĐƯỜNG] theo tỷ lệ tương tự như tỷ lệ trong môi trường sinh lý của tế bào.\n" +
+                "\n" +
+                "- 97% thành phần thiên nhiên:\n" +
+                "\n" +
+                "+ [Nước] HYALURONIC ACID: giữ ẩm giúp da trông căng mịn hơn.\n" +
+                "\n" +
+                "+ [Khoáng] SODIUM PCA: giữ nước và khóa ẩm trên bề mặt da.\n" +
+                "\n" +
+                "+ [Khoáng] VICHY THERMAL WATER: chứa 15 khoáng chất làm dịu, củng cố và tăng cường sức khỏe làn da.\n" +
+                "\n" +
+                "+ [Đường] MANOSE: nguồn gốc từ bột gỗ tự nhiên, cung cấp độ ẩm và giảm tình trạng mất nước trên da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng\n" +
+                "\n" +
+                "- Cấp nước sâu cho làn da ẩm mượt suốt 48h.\n" +
+                "\n" +
+                "- Kết cấu sản phẩm dạng gel mỏng nhẹ, cho cảm giác mát, dễ chịu trên da, không có cảm giác nhờn dầu.\n" +
+                "\n" +
+                "- Hương thơm dịu nhẹ, dễ chịu.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hiệu quả\n" +
+                "\n" +
+                "- Ngay lập tức\n" +
+                "\n" +
+                "+ Da trông tươi tắn 94%\n" +
+                "\n" +
+                "+ Da trông mềm mại hơn 91%\n" +
+                "\n" +
+                "- 1 tháng\n" +
+                "\n" +
+                "+ Da trông ẩm mượt 91%\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "\n" +
+                "- Sử dụng buổi sáng, sau bước thoa tinh chất.\n" +
+                "\n" +
+                "- Lấy lượng kem bằng hạt bắp chấm lên 5 điểm: trán, mũi, cằm và hai bên má rồi thoa từ trong ra ngoài và từ trên xuống dưới.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi chuyên gia da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "NSX: In trên bao bì sản phẩm\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-xjlafwbwo3kvd4");
+        variant_1.setWeight(50.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(750));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602338_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Bộ sản phẩm serum khoáng phục hồi chuyên sâu Vichy Mineral 89");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22110-j9dace1s2mjvf5");
+        images.add("https://cf.shopee.vn/file/aa3bb44f887b954868601a2db3d6e141");
+        images.add("https://cf.shopee.vn/file/a32b16bb5257c2a4ba34011a52419857");
+        images.add("https://cf.shopee.vn/file/cbfb396714935f0b0d9c4cd53de93bc3");
+        images.add("https://cf.shopee.vn/file/3ba1821a06453bf61b8e33eefd77f08a");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-hqy4rvi4s3kv77");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "VÌ SAO BẠN SẼ THÍCH?\n" +
+                "\n" +
+                "Bộ sản phẩm bao gồm:\n" +
+                "\n" +
+                "- 01 x Xịt khoáng dưỡng da Vichy Mineralizing Thermal Water 50ml\n" +
+                "\n" +
+                "- 01 x Kem Chống Nắng Dành Cho Da Dầu Mụn, Giảm Các Dấu Hiệu Lão Hóa Và Kiềm Soát Bóng Dầu Vichy Spf50+ Capital Soleil Mattifying 3-in-1 3ml(3g)\n" +
+                "\n" +
+                "- 01 x Dưỡng Chất (Serum) Khoáng núi lửa cô đặc Vichy Mineral 89 15ml\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thông tin chi tiết:\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "1.  Xịt Khoáng Dưỡng Da Vichy Mineralizing Thermal Water 50ml được làm giàu tự nhiên với 15 khoáng chất quý hiếm nước khoáng Vichy Thermal Spa đã được công nhận bởi tác dụng làm dịu, củng cố và làm đẹp da tuyệt vời của nó, được kiểm chứng bởi 34 thí nghệm trên hơn 600 người thuộc mọi loại da, thậm chí với làn da nhạy cảm nhất và dưới sự giám sát của chuyên gia da liễu.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HDSD:\n" +
+                "\n" +
+                "- Xịt khắp mặt\n" +
+                "\n" +
+                "- Vỗ nhẹ\n" +
+                "\n" +
+                "- Thấm khô, có thể sử dụng nhiều lần trong ngày\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "2. Kem Chống Nắng Dành Cho Da Dầu Mụn, Giảm Các Dấu Hiệu Lão Hóa Và Kiềm Soát Bóng Dầu Vichy Spf50+ Capital Soleil Mattifying 3-in-1 là kem chống nắng dành cho da dầu giúp kiểm soát bóng nhờn và bảo vệ da trước tác hại từ ánh nắng &amp; ô nhiễm, ngăn chặn các tác nhân gây lão hóa sớm. Sản phẩm có công thức chống thấm nước thích hợp dùng hàng ngày và cả những hoạt động ngoài trời, để bạn luôn tự tin tỏa sáng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng:\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Kết cấu dạng kem gel, thẩm thấu tức thì, mang lại cảm giác khô thoáng, không để lại vệt trắng.\n" +
+                "\n" +
+                "- Kiểm soát bã nhờn &amp; mồ hôi giúp mang đến một cảm giác “sạch” cho làn da đến 9h.\n" +
+                "\n" +
+                "- Bảo vệ da trước những tác hại từ ánh nắng &amp; ô nhiễm: lão hóa sớm, đốm nâu, kích ứng ánh nắng.\n" +
+                "\n" +
+                "- Độ chống nắng cao nhất SPF 50+ bảo vệ da tối ưu dưới ánh nắng.\n" +
+                "\n" +
+                "- Chống nắng phổ rộng với nhiều màng lọc tia UV bảo vệ da trước ngay cả tia UVA dài.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "\n" +
+                "- Thoa kem trước khi tiếp xúc với ánh nắng 20 phút.\n" +
+                "\n" +
+                "- Lấy một lượng sản phẩm vừa đủ và chấm 5 điểm trên mặt (trán, mũi, cằm và hai bên má) sau đó thoa sản phẩm theo chiều từ trong ra ngoài và trên xuống dưới.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "3. Vichy Mineral 89 15ml chứa đến 89% khoáng Vichy cô đặc với 15 khoáng chất quý báu kết hợp hoàn hảo cùng Hyaluronic acid từ lòng núi lửa giúp củng cố hàng rào bảo vệ da, tái tạo và phục hồi, cho da mịn màng, căng mượt và tràn đầy sức sống. Sau một tuần sử dụng, da dần lấy độ căng mịn, rạng rỡ, lỗ chân lông thu nhỏ lại, các dấu hiệu lão hóa cũng được cải thiện.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "\n" +
+                "- Sử dụng sáng và tối, sau bước làm sạch và làm dịu da cùng nước khoáng Vichy.\n" +
+                "\n" +
+                "- Lấy một lượng sản phẩm vừa đủ cỡ hạt đậu, chấm đều lên 5 điểm: trán, mũi, cằm và 2 bên má rồi nhẹ nhàng massage theo hình tròn, hướng lên trên.\n" +
+                "\n" +
+                "- Có thể kết hợp sử dụng thêm các dưỡng chất cùng dòng nếu muốn. \n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ NSX\n" +
+                "\n" +
+                "NSX: In trên bao bì\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp\n" +
+                "\n" +
+                "Hướng dẫn bảo quản: Nơi thoáng mát, tránh ánh nắng trực tiếp\n" +
+                "\n" +
+                "Lưu ý: Bao bì sản phẩm có thể thay đổi theo từng đợt nhập");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-hqy4rvi4s3kv77");
+        variant_1.setWeight(68.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1150));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602338_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Dưỡng chất làm sáng da ban đêm Vichy Liftactiv Specialist Glyco-C");
+        productInput.setShopId(602338);
+        productInput.setTradeMarkId("1671551420755502");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/6eaf61e2c70c94cc82b0502c4ea11c95");
+        images.add("https://cf.shopee.vn/file/aa3bb44f887b954868601a2db3d6e141");
+        images.add("https://cf.shopee.vn/file/cb4a4fab154d657583295e1337214669");
+        images.add("https://cf.shopee.vn/file/e3762c65f7a32a5d9fb2a0b7539f2835");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-t96boa5yo3kvc3");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Dưỡng chất làm sáng da ban đêm Vichy Liftactiv Specialist GlycoC 2ml x10\n" +
+                "\n" +
+                "Với nguyên chất phức hợp 5 thành phần chống o.xy hóa rất mạnh mẽ, hiệu quả da trẻ trung tươi trẻ sau 10 ngày. Công thức chứa 15% Vitamin C nguyên chất giúp ngăn ngừa và cải thiện các dấu hiệu lão hóa trên da cho làn da sáng màu & mịn màng. Sử dụng sản phẩm khi làn da: xỉn màu, thiếu sức sống và nhiều vết thâm nám dưới tác động có hại của môi trường & căng thẳng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thành Phần Chính:\n" +
+                "\n" +
+                "- 10% PHỨC HỢP GLYCOLIC ACID (4% Glycolic Acid, 1% Citric Acid, 5% HEPE): Loại bỏ tế bào c.hết, làm sáng da và đều màu da, làm mờ đốm nâu và giảm thâm nám.\n" +
+                "\n" +
+                "- Vitamin Cg: Cải thiện và ngăn ngừa các đốm thâm nám.\n" +
+                "\n" +
+                "- Hyaluronic Acid: Giữ nước và cải thiện độ ẩm của da làm da căng mọng hơn.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Công dụng:\n" +
+                "\n" +
+                "- Cải thiện đốm thâm, cân bằng tone da, mang lại kết cấu đồng đều nhờ thành phần 10% phức hợp Glycolic Acid và Vitamin CG\n" +
+                "\n" +
+                "- Củng cố hệ thống phòng vệ tự nhiên của làn da nhờ thành phần Hyaluronic Acid và Nước khoáng núi lữa Vichy\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "\n" +
+                "- Nhỏ 4 - 5 giọt vào lòng bàn tay sạch, khô. \n" +
+                "\n" +
+                "- Vỗ nhẹ bằng đầu ngón tay khắp mặt. Tránh vùng da quanh mắt. \n" +
+                "\n" +
+                "- Sử dụng 1-2 lần mỗi ngày.\n" +
+                "\n" +
+                "- Nên sử dụng thêm sản phẩm chống nắng với chỉ số chống nắng SPF15 trở lên trước khi ra ngoài trời. Để cho kết quả tốt nhất, sử dụng sau dưỡng chất khoáng cô đặc Mineral 89 & trước sản phẩm Liftactiv serum ngăn ngừa lão hóa.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Lưu ý: Màu của sản phẩm có thể thay đổi theo thời gian. Tránh để sản phẩm tiếp xúc trực tiếp với ánh nắng mặt trời.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Độ an toàn:\n" +
+                "\n" +
+                "- Không chứa hương liệu, không paraben\n" +
+                "\n" +
+                "- Không gây kích ứng da\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Vichy là thương hiệu nổi tiếng của Pháp được thành lập vào năm 1931 tại thành phố cùng tên Vichy bởi bác sĩ da liễu Haller và nhà kinh doanh Guerin. Với nhiều năm kinh nghiệm, viện nghiên cứu Vichy đã sáng tạo ra nhiều phương thức mới và hiệu quả để chăm sóc sức khỏe làn da. Tất cả sản phẩm Vichy được kiểm nghiệm một cách toàn diện và khắt khe dưới sự giám sát của chuyên gia da liễu về độ an toàn và dịu nhẹ cho da, đặc biệt đối với làn da nhạy cảm. Ngoài ra, các sản phẩm của Vichy đã được chứng minh không gây dị ứng, không gây mụn, chứa nước khoáng Vichy giàu khoáng chất có tác dụng củng cố và tăng cường tái tạo da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HSD: 3 năm kể từ NSX\n" +
+                "\n" +
+                "NSX: In trên bao bì\n" +
+                "\n" +
+                "Xuất xứ thương hiệu: Pháp\n" +
+                "\n" +
+                "Nơi sản xuất: Pháp\n" +
+                "\n" +
+                "Hướng dẫn bảo quản: Nơi thoáng mát, tránh ánh nắng trực tiếp\n" +
+                "\n" +
+                "Chú ý: Bao bì thay đổi tùy theo từng đợt nhập hàng");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-t96boa5yo3kvc3");
+        variant_1.setWeight(20.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(650));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //ansaa
+    @Test
+    public void testProduct_602336_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa chống nắng dịu nhẹ cho da nhạy cảm Anessa Perfect UV Sunscreen Mild Milk 60ml");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/f5f700ed95b6e570d12d0a151ac339eb");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22120-zn93bgddk3kv65");
+        images.add("https://cf.shopee.vn/file/0844aecb437ab6c0a24d6175b14589b5");
+        images.add("https://cf.shopee.vn/file/53e3907cebbd2f08a1cd8e0ed135d616");
+        images.add("https://cf.shopee.vn/file/173459730be947ffd5c6b3f354a79339");
+        images.add("https://cf.shopee.vn/file/02a56558f69f577c7825fc2726ce5619");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/f5f700ed95b6e570d12d0a151ac339eb");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sữa chống nắng dịu nhẹ cho da nhạy cảm và trẻ em với kết cấu mỏng nhẹ, kiềm dầu, mịn mượt & nâng tông (phù hợp mọi loại da, đặc biệt là da nhạy cảm thường đến thiên dầu)\n" +
+                "\n" +
+                " Thành phần và công dụng:\n" +
+                "\n" +
+                " • Kết cấu dạng sữa dịu nhẹ & ráo mịn phù hợp cho cả da nhạy cảm và da trẻ em từ 1 tuổi.\n" +
+                "\n" +
+                "  • Chỉ số chống nắng cao SPF 50+, PA++++ giúp bảo vệ da tối ưu khỏi tác hại của tia UV.\n" +
+                "\n" +
+                "  • Bảo vệ da khỏi tổn thương do tia UV & Bụi Mịn trong không khí.\n" +
+                "\n" +
+                "  • Công nghệ SmoothPROTECT giúp chống UV hoàn hảo từ mọi góc độ cùng kết cấu mịn mượt như lụa.\n" +
+                "\n" +
+                "  • Công nghệ Aqua Booster EX & Very Water Resistant giúp chống trôi do MA SÁT, NƯỚC, MỒ HÔi & chống trôi trong nước đến 80'.\n" +
+                "\n" +
+                "  • Hạt Cleansing Powder giúp trung hòa và chống lại tác hại của bụi mịn trong không khí.\n" +
+                "\n" +
+                "  • 50% thành phần dưỡng da được nâng cấp với Chiết xuất Mẫu đơn, Trà Xanh Kyoto Uji, Super Hyaluronic Acid, Collagen) giúp dưỡng da, tăng độ đàn hồi, chống oxi hoá.\n" +
+                "\n" +
+                "  • Thành phần 5 không (Cồn-Màu-Mùi-Paraben-Dầu khoáng) an toàn cho làn da nhạy cảm nhất.\n" +
+                "\n" +
+                "  • Dùng cho mặt và toàn thân. Phù hợp mọi loại da. Thích hợp sử dụng hàng ngày và trong các hoạt động ngoài trời. \n" +
+                "\n" +
+                "  • Có thể dùng làm lớp lót trang điểm và dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "\n" +
+                " Loại da phù hợp: Phù hợp với mọi loại da, đặc biệt là da nhạy cảm thiên DẦU, DA DẦU MỤN, da đang điều trị và trẻ em từ 1 tuôỉ\n" +
+                "\n" +
+                " Hướng dẫn sử dụng:\n" +
+                "\n" +
+                " • Lắc thật kỹ trước khi sử dụng. \n" +
+                "\n" +
+                " • Dùng sau bước dưỡng da buổi sáng, lấy một lượng vừa đủ ra tay và dàn đều lên toàn bộ khuôn mặt và vùng da cần được bảo vệ. Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn lau.\n" +
+                "\n" +
+                " • Lượng sử dụng: 2mg/1cm2 da\n" +
+                "\n" +
+                " • Thích hợp sử dụng hàng ngày và trong các hoạt động ngoài trời.\n" +
+                "\n" +
+                " • Có thể dùng làm lớp lót trang điểm bảo vệ da.\n" +
+                "\n" +
+                " • Thích hợp sử dụng cho mặt & toàn thân.\n" +
+                "\n" +
+                " • Dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "\n" +
+                " Thông tin dị ứng (nếu có)\n" +
+                "\n" +
+                " • Tránh tiếp xúc với mắt. Nếu có, rửa ngay bằng nước lạnh hoặc nước ấm • Không sử dụng cho vùng da bị tổn thương như trầy xước, sưng tấy và chàm • Ngưng sử dụng khi có biểu hiện kích ứng và tham khảo ý kiến bác sĩ da liễu.\n" +
+                "\n" +
+                " Hướng dẫn bảo quản:\n" +
+                "\n" +
+                " • Bảo quản tránh ánh sáng trực tiếp, nơi có nhiệt độ cao hoặc ẩm ướt. Để xa tầm tay trẻ em\n" +
+                "\n" +
+                " Ngày sản xuất: Xem trên bao bì sản phẩm\n" +
+                "\n" +
+                " Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                " Xuất xứ thương hiệu: Nhật Bản\n" +
+                "\n" +
+                " Nơi sản xuất: Nhật Bản\n" +
+                "\n" +
+                " Thông tin thương hiệu: ANESSA trực thuộc Tập đoàn Shiseido - tập đoàn mỹ phẩm lớn nhất Nhật Bản với lịch sử phát triển hàng thế kỉ. Shiseido bắt đầu nghiên cứu về UV từ 1915 và ra mắt thương hiệu chống nắng ANESSA vào 1992. ANESSA thừa hưởng hơn 100 năm nghiên cứu và phát triển sản phẩm chống UV. Tới năm 2022, ANESSA là thương hiệu chống nắng số 1 Nhật Bản suốt 21 năm liên tiếp.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/f5f700ed95b6e570d12d0a151ac339eb");
+        variant_1.setWeight(60.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa chống nắng bảo vệ hoàn hảo Anessa Perfect UV Sunscreen Skincare Milk 60ml");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22120-8uz9qu6ck3kvc7");
+        images.add("https://cf.shopee.vn/file/52f524ea884f2c11a0cdf0aab9e4081d");
+        images.add("https://cf.shopee.vn/file/1e3ea9c5c63df6759f23f6841ebf6932");
+        images.add("https://cf.shopee.vn/file/0d2c7ea900f4a62f334c28cbaca81258");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/fc7d182f29d8a5eda35c90ef8aff663d");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sữa chống nắng dưỡng da kiềm dầu bảo vệ hoàn hảo giúp chống UV & bụi mịn hoàn hảo dưới mọi điều kiện sinh hoạt, kể cả thời tiết khắc nghiệt nhất (phù hợp với làn da thiên dầu)\n" +
+                "\n" +
+                " Thành phần và Công dụng:\n" +
+                "\n" +
+                " • Công nghệ AUTO BOOSTER độc quyền giúp lớp màng chống UV trở nên bền vững hơn khi gặp NHIỆT ĐỘ CAO-ĐỘ ẨM-MỒ HÔI-NƯỚC & CHỐNG TRÔI DO MA SÁT. \n" +
+                "\n" +
+                "  • Chỉ số chống nắng cao với SPF 50+, PA++++ giúp bảo vệ làn da khỏi tác hại của tia UV.\n" +
+                "\n" +
+                " • Công nghệ Very Water Resistant giúp chống trôi trong nước đến 80'.\n" +
+                "\n" +
+                " • Chống bụi mịn PM2.5 và chống dính cát\n" +
+                "\n" +
+                " • 50% thành phần dưỡng da gồm: Super HA, Collagen, Glycerin (giúp giữ ẩm nâng cơ), Rễ Hoa Hồng Vàng (chống giãn mao mạch), Chiết Xuất Trà Xanh Uji Kyoto (chống oxy hóa), Rễ Cam Thảo (giảm viêm, ngừa mụn) giúp chống lão hóa sớm do UV & dưỡng da mịn mượt.\n" +
+                "\n" +
+                " • Kết cấu sữa mỏng nhẹ, kiềm dầu vượt trội nhưng vẫn duy trì độ ẩm và dưỡng da ráo mịn cả ngày.\n" +
+                "\n" +
+                " • Có thể dùng làm kem lót trang điểm và dễ dàng làm sạch với sữa rửa mặt. \n" +
+                "\n" +
+                " • Dùng cho mặt & toàn thân. Thích hợp sử dụng hàng ngày và trong các hoạt động ngoài trời.\n" +
+                "\n" +
+                " • Hương hoa và trái cây nhẹ nhàng, dễ chịu có thể làm dịu mùi mồ hôi với công nghệ cảm biến mùi hương\n" +
+                "\n" +
+                " • Đã được kiểm định bởi chuyên gia da liễu.\n" +
+                "\n" +
+                " Loại da phù hợp: • Phù hợp với làn da thiên DẦU.\n" +
+                "\n" +
+                " Hướng dẫn sử dụng:\n" +
+                "\n" +
+                " • Lắc thật kỹ trước khi sử dụng. \n" +
+                "\n" +
+                " • Dùng sau bước dưỡng da buổi sáng, lấy một lượng vừa đủ ra tay và dàn đều lên toàn bộ khuôn mặt và vùng da cần được bảo vệ. Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn lau.\n" +
+                "\n" +
+                " • Lượng sử dụng: 2mg/1cm2 da\n" +
+                "\n" +
+                " • Thích hợp sử dụng hàng ngày và trong các hoạt động ngoài trời.\n" +
+                "\n" +
+                " • Có thể dùng làm lớp lót trang điểm bảo vệ da.\n" +
+                "\n" +
+                " • Thích hợp sử dụng cho mặt & toàn thân.\n" +
+                "\n" +
+                " • Dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "\n" +
+                " Thông tin dị ứng (nếu có)\n" +
+                "\n" +
+                " • Tránh tiếp xúc với mắt. Nếu có, rửa ngay bằng nước lạnh hoặc nước ấm • Không sử dụng cho vùng da bị tổn thương như trầy xước, sưng tấy và chàm • Ngưng sử dụng khi có biểu hiện kích ứng và tham khảo ý kiến bác sĩ da liễu.\n" +
+                "\n" +
+                " Hướng dẫn bảo quản:\n" +
+                "\n" +
+                " • Bảo quản tránh ánh sáng trực tiếp, nơi có nhiệt độ cao hoặc ẩm ướt. Để xa tầm tay trẻ em\n" +
+                "\n" +
+                " Ngày sản xuất: Xem trên bao bì sản phẩm\n" +
+                "\n" +
+                " Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                " Xuất xứ thương hiệu: Nhật Bản\n" +
+                "\n" +
+                " Nơi sản xuất: Nhật Bản\n" +
+                "\n" +
+                " Thông tin thương hiệu: ANESSA trực thuộc Tập đoàn Shiseido - tập đoàn mỹ phẩm lớn nhất Nhật Bản với lịch sử phát triển hàng thế kỉ. Shiseido bắt đầu nghiên cứu về UV từ 1915 và ra mắt thương hiệu chống nắng ANESSA vào 1992. ANESSA thừa hưởng hơn 100 năm nghiên cứu và phát triển sản phẩm chống UV. Tới năm 2022, ANESSA là thương hiệu chống nắng số 1 Nhật Bản suốt 21 năm liên tiếp.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/fc7d182f29d8a5eda35c90ef8aff663d");
+        variant_1.setWeight(60.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Bộ 2 Sữa chống nắng dưỡng da kiềm dầu bảo vệ hoàn hảo Anessa Perfect UV Sunscreen Skincare Milk SPF50+ PA++++ 60mlx2");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/97f9c5b62e9d8c9e81a4a153b8baac59");
+        images.add("https://cf.shopee.vn/file/b14cc417a99591fce926ec3887f4ae39");
+        images.add("https://cf.shopee.vn/file/20e2ba9b48622ca91da5777b8213b5a7");
+        images.add("https://cf.shopee.vn/file/d50266972721ac6d51cba7662e035a46");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-y8j2xjcfk3kv74");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Bộ sản phẩm gồm:\n" +
+                "02 Sữa chống nắng dưỡng da kiềm dầu bảo vệ hoàn hảo Anessa Perfect UV Sunscreen Skincare Milk SPF50+ PA++++ 60ml\n" +
+                "Sữa chống nắng dưỡng da kiềm dầu bảo vệ hoàn hảo giúp chống UV & bụi mịn hoàn hảo dưới mọi điều kiện sinh hoạt, kể cả thời tiết khắc nghiệt nhất (phù hợp với làn da thiên dầu)\n" +
+                "Thành phần và Công dụng:\n" +
+                "• Công nghệ AUTO BOOSTER độc quyền giúp lớp màng chống UV trở nên bền vững hơn khi gặp NHIỆT ĐỘ CAO-ĐỘ ẨM-MỒ HÔI-NƯỚC & CHỐNG TRÔI DO MA SÁT.\n" +
+                " • Chỉ số chống nắng cao với SPF 50+, PA++++ giúp bảo vệ làn da khỏi tác hại của tia UV.  \n" +
+                "• Công nghệ Very Water Resistant giúp chống trôi trong nước đến 80'.\n" +
+                "• Chống bụi mịn PM2.5 và chống dính cát\n" +
+                "• 50% thành phần dưỡng da gồm: Super HA, Collagen, Glycerin (giúp giữ ẩm nâng cơ), Rễ Hoa Hồng Vàng (chống giãn mao mạch), Chiết Xuất Trà Xanh Uji Kyoto (chống oxy hóa), Rễ Cam Thảo (giảm viêm, ngừa mụn) giúp chống lão hóa sớm do UV & dưỡng da mịn mượt.\n" +
+                "• Kết cấu sữa mỏng nhẹ, kiềm dầu vượt trội nhưng vẫn duy trì độ ẩm và dưỡng da ráo mịn cả ngày.\n" +
+                "• Có thể dùng làm kem lót trang điểm và dễ dàng làm sạch với sữa rửa mặt. \n" +
+                "• Dùng cho mặt & toàn thân. Thích hợp sử dụng hàng ngày và trong các hoạt động ngoài trời.\n" +
+                "• Hương hoa và trái cây nhẹ nhàng, dễ chịu có thể làm dịu mùi mồ hôi với công nghệ cảm biến mùi hương\n" +
+                "• Đã được kiểm định bởi chuyên gia da liễu.\n" +
+                "Loại da phù hợp: • Phù hợp với làn da thiên DẦU.\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "• Lắc thật kỹ trước khi sử dụng. \n" +
+                "• Dùng sau bước dưỡng da buổi sáng, lấy một lượng vừa đủ ra tay và dàn đều lên toàn bộ khuôn mặt và vùng da cần được bảo vệ. Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn lau.\n" +
+                "• Lượng sử dụng: 2mg/1cm2 da\n" +
+                "• Thích hợp sử dụng hàng ngày và trong các hoạt động ngoài trời.\n" +
+                "• Có thể dùng làm lớp lót trang điểm bảo vệ da.\n" +
+                "•  Thích hợp sử dụng cho mặt & toàn thân.\n" +
+                "• Dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "Thông tin dị ứng (nếu có)\n" +
+                "• Tránh tiếp xúc với mắt. Nếu có, rửa ngay bằng nước lạnh hoặc nước ấm • Không sử dụng cho vùng da bị tổn thương như trầy xước, sưng tấy và chàm • Ngưng sử dụng khi có biểu hiện kích ứng và tham khảo ý kiến bác sĩ da liễu.\n" +
+                "Hướng dẫn bảo quản:\n" +
+                "• Bảo quản tránh ánh sáng trực tiếp, nơi có nhiệt độ cao hoặc ẩm ướt. Để xa tầm tay trẻ em\n" +
+                "Ngày sản xuất: Xem trên bao bì sản phẩm\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "Xuất xứ thương hiệu: Nhật Bản\n" +
+                "Nơi sản xuất: Nhật Bản\n" +
+                "Thông tin thương hiệu: ANESSA trực thuộc Tập đoàn Shiseido - tập đoàn mỹ phẩm lớn nhất Nhật Bản với lịch sử phát triển hàng thế kỉ. Shiseido bắt đầu nghiên cứu về UV từ 1915 và ra mắt thương hiệu chống nắng ANESSA vào 1992. ANESSA thừa hưởng hơn 100 năm nghiên cứu và phát triển sản phẩm chống UV. Tới năm 2022, ANESSA là thương hiệu chống nắng số 1 Nhật Bản suốt 21 năm liên tiếp.\n" +
+                "Lưu ý: Bao bì thay đổi tùy đợt nhập hàng");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-y8j2xjcfk3kv74");
+        variant_1.setWeight(120.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1500));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem Chống Nắng Shiseido Anessa Perfect UV Sunscreen Skincare Milk SPF50+/PA+++ 60ml");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22120-gy9kejhsiykve2");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22120-2adtudhsiykv53");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22120-ecukojhsiykvc9");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22120-icewqchsiykv74");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-3myteehsiykvd4");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Kem chống nắng anessa Perfect UV Sunscreen Skincare Milk SPF50+/PA++++ 60ml\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Dung tích: 60ml\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "NSX: In trên bao bì sản phẩm\n" +
+                "Xuất xứ thương hiệu: Nhật Bản\n" +
+                "Nơi sản xuất: Nhật Bản\n" +
+                "\n" +
+                "\uD835\uDC0B\uD835\uDC22\uD835\uDC29\uD835\uDC2C\uD835\uDC2D\uD835\uDC22\uD835\uDC1C\uD835\uDC24 \uD835\uDC0E\uD835\uDC1F\uD835\uDC1F\uD835\uDC22\uD835\uDC1C\uD835\uDC1A\uD835\uDC25 \uD835\uDC12\uD835\uDC2D\uD835\uDC28\uD835\uDC2B\uD835\uDC1E xin giới thiệu sản phẩm Kem chống nắng anessa Perfect UV Sunscreen Skincare Milk SPF50+/PA++++\n" +
+                " - phiên bản nâng cấp mới nhất đến từ thương hiệu chống nắng Anessa đứng số 1 Nhật Bản 20 năm liền, ứng dụng những công nghệ tiên tiến nhất về chống nắng giúp mang đến cho làn da bạn sự chăm sóc tối ưu để đẩy lùi những dấu hiệu lão hóa bởi UV, giúp bạn hoàn toàn có thể tự tin về một làn da sáng khỏe rạng rỡ.\n" +
+                "\n" +
+                "\n" +
+                "ƯU THẾ NỔI BẬT: Kem chống nắng anessa Perfect UV Sunscreen Skincare Milk SPF50+/PA++++\n" +
+                "\n" +
+                "✔️Bộ ba công nghệ độc quyền giúp lớp màng chống UV trở nên mạnh mẽ hơn khi gặp NƯỚC - MỒ HÔI - NHIỆT ĐỘ CAO:\n" +
+                "\n" +
+                "✔️Công nghệ Thermo Booster: các phân tử chống nắng hình thành liên kết chặt chẽ hơn khi gặp nhiệt độ cao (do ánh mặt trời, thời tiết nắng nóng).\n" +
+                "\n" +
+                "✔️Công nghệ Aqua Booster EX giúp giúp lớp màng chống UV trở nên mạnh mẽ hơn khi gặp NƯỚC - MỒ HÔI và giúp chống trôi do ma sát.\n" +
+                "\n" +
+                "✔️Công nghệ Very Water-Resistant cho khả năng chống trôi trong nước tối đa, lên đến 80 phút liên tục dưới nước.\n" +
+                "\n" +
+                "\uD83C\uDF1ECông thức Kem chống nắng anessa Perfect UV Sunscreen Skincare Milk SPF50+/PA++++\n" +
+                "chứa 50% thành phần dưỡng da giúp ngăn ngừa lão hóa do tia UV hiệu quả:\n" +
+                "\n" +
+                "✔️Kem chống nắng anessa cấp ẩm và tăng độ đàn hồi với Super Hyaluronic Acid, Collagen, Glycerin.\n" +
+                "\n" +
+                "✔️Chống oxi hóa với chiết xuất Trà Xanh Uji Kyoto và hoa Nhung Tuyết.\n" +
+                "\n" +
+                "✔️Chống giãn mao mạch với chiết xuất hoa vàng Rosaceae/Tormentilla.\n" +
+                "\n" +
+                "✔️Kết cấu sữa mỏng nhẹ, thấm nhanh mà không gây nhờn rít hay bóng dầu, mang đến làn da mịn mượt và khô ráo nhẹ tênh. \n" +
+                "\n" +
+                "✔️Có thể dùng làm lớp lót trang điểm.\n" +
+                "\n" +
+                "✔️Dễ dàng làm sạch với sữa rửa mặt / xà phòng.\n" +
+                "\n" +
+                "✔️Hương thơm nhẹ nhàng, thanh mát từ Cam Quýt.\n" +
+                "\n" +
+                "✔️Không chất tạo màu\n" +
+                "\n" +
+                "\n" +
+                "HƯỚNG DẪN SỬ DỤNG:\n" +
+                "\n" +
+                "Lắc đều trước khi sử dụng kem chống nắng anessa\n" +
+                "Dùng sau bước dưỡng da, thoa đều khắp vùng da cần bảo vệ.\n" +
+                "Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn.\n" +
+                "Dễ dàng làm sạch với sữa rửa mặt.\n" +
+                " \n" +
+                "*** Bao bì sản phẩm có thể thay đổi tùy từng đợt nhập hàng\n" +
+                "\n" +
+                "#kem #chong #nang #anessa #kemchongnang #kemchongnanganessa");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-3myteehsiykvd4");
+        variant_1.setWeight(60.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("KEM CHỐNG NẮNG ANESSA MẪU MỚI NHẤT 2022 60ML skinker");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-qfqzyqrcgxive1");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-s7x78vrcgxiv43");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-0m0yjzrcgxiv22");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-w0exr2rcgxiv4a");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-w0exr2rcgxiv4a");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "THÔNG TIN SẢN PHẨM: ...\n" +
+                "\n" +
+                " Công dụng - Kết cấu dạng sữa mỏng nhẹ, khô ráo, dễ dàng thẩm thấu qua da, không gây nhờn rít. - Chỉ số chống nắng cao với SPF 50+, PA++++, bảo vệ da tối ưu.\n" +
+                " - Công nghệ chống nắng 360° ngăn chặn tác hại của tia UV trên mọi bề mặt da và mọi góc độ. - Công nghệ độc quyền Aqua Booster, ngăn trôi trong nước & mồ hôi rất cao, lên đến 80 phút trong hồ bơi.\n" +
+                "-Công nghệ “chống ma sát” độc đáo lần đầu tiên có trong sữa chống nắng, càng ma sát, lớp chống nắng mịn mượt sẽ không bị bong ra và gia tăng khả năng chống nắng, bảo vệ da hơn. \n" +
+                "- ngăn cát dính vào da. - 50% chiết xuất dưỡng da (chiết xuất hoa hồng, collagen, lô hội và super Hyaluronic Acid) giúp da mịn mượt, gia tăng độ đàn hồi, ngăn oxi hoá và kiểm soát bóng dầu.\n" +
+                " - Công thức với mùi hương thanh mát từ Cam, Quýt dễ chịu. - Có thể dùng làm lớp lót trang điểm và dễ dàng làm sạch với sữa rửa mặt. 　　　\n" +
+                " Độ an toàn - Không chất tạo màu. \n" +
+                "- Được kiểm định bởi chuyên gia da liễu.\n" +
+                "Hướng dẫn sử dụng : \n" +
+                " - Lắc đều trước khi sử dụng.\n" +
+                " - Dùng sau bước dưỡng da, thoa đều khắp vùng da cần bảo vệ. - Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn. - Dễ dàng làm sạch với sữa rửa mặt. \n" +
+                "Lưu ý - Tránh tiếp xúc với mắt.     \n" +
+                " Nếu có, rửa ngay bằng nước lạnh hoặc nước ấm. \n" +
+                "- Bảo quản tránh ánh sáng trực tiếp, nơi có nhiệt độ cao hoặc ẩm ướt. \n" +
+                "- Để xa tầm tay trẻ em. \n" +
+                "- Không sử dụng cho vùng da bị tổn thương.\n" +
+                " - Ngưng dùng ngay khi có biểu hiện kích ứng và tham khảo ý kiến bác sĩ da liễu:\n" +
+                "#anessa\n" +
+                "#kemchongnanganessa\n" +
+                "#kcnanessa\n" +
+                "#anessachongnang\n" +
+                "#kemchongnangnhatban\n" +
+                "#kemchongnanganessanhatban\n" +
+                "#anessa60ml\n" +
+                "#kemanessa\n" +
+                "#anessa");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-w0exr2rcgxiv4a");
+        variant_1.setWeight(60.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(950));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Gel Chống Nắng Anessa Dưỡng Sáng Nâng Tông & Hiệu Chỉnh Sắc Da Brightening UV SPF50+ PA++++ 90g");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/83533f21be5ae4ee41f35df9b6c2d9d8");
+        images.add("https://cf.shopee.vn/file/a1ec2f0a772c0360e951ef06b1b2b027");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/1410b6fcc7997b8d2d51bc07299a6787");
+        productInput.setDescription("\n" +
+                "MÔ TẢ SẢN PHẨM\n" +
+                "Gel Chống Nắng Anessa Dưỡng Sáng Nâng Tông & Hiệu Chỉnh Sắc Da Brightening UV SPF50+ PA++++ 90g\n" +
+                "\n" +
+                "Gel Chống Nắng Anessa Dưỡng Sáng Nâng Tông & Hiệu Chỉnh Sắc Da Brightening UV SPF50+ PA++++ 90g với kết cấu gel ẩm mượt, mát mịn giúp duy trì độ ẩm cho làn da, ngăn ngừa các dấu hiệu lão hóa da do tia UV, bảo vệ da trước tác hại của bụi mịn (phù hợp làn da thiên khô, xỉn màu)\n" +
+                "\n" +
+                "Thành Phần Chính và Công Dụng:\n" +
+                "\n" +
+                "- Chống nắng mạnh mẽ với SPF50+ PA++++ & công nghệ Water Resistant giúp chống trôi trong nước đến 40'.\n" +
+                "\n" +
+                "- Chống bụi mịn PM2.5.\n" +
+                "\n" +
+                "- m-Tranexamic Acid giúp ngăn ngừa đốm nâu, thâm nám và tình trạng thô ráp, xỉn màu do tác động của tia UV.\n" +
+                "\n" +
+                "- Glycyrrhizic Acid giúp phục hồi da tổn thương do UV, dưỡng da mịn mượt.\n" +
+                "\n" +
+                "- 50% thành phần dưỡng da gồm: Super HA, Collagen, Glycerin (giúp giữ ẩm nâng cơ), Hoa Hồng Vàng (chống giãn mao mạch), Chiết Xuất Trà Xanh Uji Kyoto (chống oxy hóa) giúp chống lão hóa sớm do UV.\n" +
+                "\n" +
+                "- Kết cấu gel mỏng nhẹ, mát mịn duy trì độ ẩm đến 8 giờ.\n" +
+                "\n" +
+                "- Sản phẩm có sắc hồng tím oải hương giúp nâng tông và hiệu chỉnh sắc da, làn da sẽ trở nên đều màu, rạng rỡ và sáng mịn. trị mụn\n" +
+                "\n" +
+                "- Có thể dùng làm lớp lót trang điểm và dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "\n" +
+                "- Hương hoa và trái cây nhẹ nhàng, dễ chịu có thể làm dịu mùi mồ hôi với công nghệ cảm biến mùi hương.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng Dẫn Sử Dụng:\n" +
+                "\n" +
+                "- Thoa trực tiếp lên vùng da cần bảo vệ.\n" +
+                "\n" +
+                "- Dùng cho mặt. Thích hợp sử dụng hàng ngày.\n" +
+                "\n" +
+                "- Có thể thoa lai sau mỗi 4 giờ khi tiếp xúc với nước như bơi lội.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm từ ngày sản xuất\n" +
+                "\n" +
+                "Xuất xứ Nhật Bản\n" +
+                "\n" +
+                "#anessa        #gelchốngnắng #nângtông\n" +
+                "Để bật chế độ hỗ trợ đọc màn hình, nhấn Ctrl+Alt+Z Để tìm hiểu thêm về các phím tắt, nhấn Ctrl+dấu gạch chéo\n" +
+                " \n" +
+                " \n" +
+                " \t\t\n" +
+                "MÔ TẢ SẢN PHẨM\n" +
+                "Gel Chống Nắng Anessa Dưỡng Sáng Nâng Tông & Hiệu Chỉnh Sắc Da Brightening UV SPF50+ PA++++ 90g\n" +
+                "\n" +
+                "Gel Chống Nắng Anessa Dưỡng Sáng Nâng Tông & Hiệu Chỉnh Sắc Da Brightening UV SPF50+ PA++++ 90g với kết cấu gel ẩm mượt, mát mịn giúp duy trì độ ẩm cho làn da, ngăn ngừa các dấu hiệu lão hóa da do tia UV, bảo vệ da trước tác hại của bụi mịn (phù hợp làn da thiên khô, xỉn màu)\n" +
+                "\n" +
+                "Thành Phần Chính và Công Dụng:\n" +
+                "\n" +
+                "- Chống nắng mạnh mẽ với SPF50+ PA++++ & công nghệ Water Resistant giúp chống trôi trong nước đến 40'.\n" +
+                "\n" +
+                "- Chống bụi mịn PM2.5.\n" +
+                "\n" +
+                "- m-Tranexamic Acid giúp ngăn ngừa đốm nâu, thâm nám và tình trạng thô ráp, xỉn màu do tác động của tia UV.\n" +
+                "\n" +
+                "- Glycyrrhizic Acid giúp phục hồi da tổn thương do UV, dưỡng da mịn mượt.\n" +
+                "\n" +
+                "- 50% thành phần dưỡng da gồm: Super HA, Collagen, Glycerin (giúp giữ ẩm nâng cơ), Hoa Hồng Vàng (chống giãn mao mạch), Chiết Xuất Trà Xanh Uji Kyoto (chống oxy hóa) giúp chống lão hóa sớm do UV.\n" +
+                "\n" +
+                "- Kết cấu gel mỏng nhẹ, mát mịn duy trì độ ẩm đến 8 giờ.\n" +
+                "\n" +
+                "- Sản phẩm có sắc hồng tím oải hương giúp nâng tông và hiệu chỉnh sắc da, làn da sẽ trở nên đều màu, rạng rỡ và sáng mịn. trị mụn\n" +
+                "\n" +
+                "- Có thể dùng làm lớp lót trang điểm và dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "\n" +
+                "- Hương hoa và trái cây nhẹ nhàng, dễ chịu có thể làm dịu mùi mồ hôi với công nghệ cảm biến mùi hương.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng Dẫn Sử Dụng:\n" +
+                "\n" +
+                "- Thoa trực tiếp lên vùng da cần bảo vệ.\n" +
+                "\n" +
+                "- Dùng cho mặt. Thích hợp sử dụng hàng ngày.\n" +
+                "\n" +
+                "- Có thể thoa lai sau mỗi 4 giờ khi tiếp xúc với nước như bơi lội.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm từ ngày sản xuất\n" +
+                "\n" +
+                "Xuất xứ Nhật Bản\n" +
+                "\n" +
+                "#anessa        #gelchốngnắng #nângtông\n" +
+                "Bật chế độ hỗ trợ trình đọc màn hình\n" +
+                "2 cộng tác viên đã tham gia vào tài liệu.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/1410b6fcc7997b8d2d51bc07299a6787");
+        variant_1.setWeight(90.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("combo Sữa Chống Nắng Anessa Cho Da Nhạy Cảm Và Trẻ Em (SPF50 PA+++ 60ml + SPF35 PA+++ 90g)");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/593d04f2b850ddbff85969df6a28634f");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22090-s7p55tvaxxhvc5");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22090-e0v076laxxhvde");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Combo Sữa Chống Nắng Anessa Cho Da Nhạy Cảm Và Trẻ Em (SPF50 PA+++ 60ml + SPF35 PA+++ 90g)\n" +
+                "\n" +
+                "Combo Sữa Chống Nắng Anessa Cho Da Nhạy Cảm Và Trẻ Em (SPF50 PA+++ 60ml + SPF35 PA+++ 90g) là bộ sản phẩm chống nắng với chỉ số SPF lần lượt SPF50 PA+++ và SPF35 PA+++ có khả năng chống nắng cho da nhạy cảm và trẻ em.\n" +
+                "\n" +
+                "Thông tin chi tiết:\n" +
+                "1. Sữa Chống Nắng Anessa Cho Da Nhạy Cảm Perfect UV Mild Milk SPF50+/PA++++\n" +
+                "Sữa Chống Nắng Anessa Cho Da Nhạy Cảm Perfect UV Mild Milk SPF50+/PA++++ là sản phẩm giúp bảo vệ làn da bạn, đặc biệt là da nhạy cảm và trẻ em dưới ánh nắng mặt trời mà không làm khô rát làn da. Sản phẩm với chiết xuất thiên nhiên còn giúp dưỡng ẩm cho da, giúp da luôn căng mịn và đàn hồi.\n" +
+                "\n" +
+                "Thành phần chính và công dụng:\n" +
+                "- Sữa Chống Nắng Anessa Cho Da Nhạy Cảm Perfect UV Mild Milk SPF50+/PA++++ dưỡng da và bảo vệ da tối đa với thành phần 5 Không cho da nhạy cảm: Không màu, không mùi, không cồn, không dầu khoáng và không paraben.\n" +
+                "\n" +
+                "- Công nghệ Smooth Protect: một công thức cấp độ nano trải đều trên da của bạn và bảo vệ đa hướng, giúp làn da nhạy cảm của bạn thoải mái dễ chịu hơn khi sử dụng.\n" +
+                "\n" +
+                "- Công nghệ Aqua Booster Ex: Lớp màng chống UV hoạt động mạnh mẽ hơn khi gặp nước, mồ hôi và ma sát - những tác nhân chính gây trôi chống nắng.\n" +
+                "\n" +
+                "- Beauty Up Effect: nó giúp làn da trần của bạn trông tươi sáng và phủ sương khi tiếp xúc với ánh nắng mặt trời.\n" +
+                "\n" +
+                "Đối tượng sử dụng:\n" +
+                "Sữa Chống Nắng Anessa Cho Da Nhạy Cảm Perfect UV Mild Milk SPF50+/PA++++ có thể sử dụng cho mặt và cả cơ thể, phù hợp mọi loại da.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "- Lắc đều trước khi sử dụng.\n" +
+                "- Dùng sau bước dưỡng da, thoa đều khắp vùng da cần bảo vệ.\n" +
+                "- Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn.\n" +
+                "- Dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "2. Gel Chống Nắng Anessa Moisture UV Sunscreen Mild Dịu Nhẹ Cho Da Nhạy Cảm & Trẻ Em SPF35 PA+++ 90g\n" +
+                "Gel Chống Nắng Anessa Moisture UV Sunscreen Mild Dịu Nhẹ Cho Da Nhạy Cảm & Trẻ Em SPF35 PA+++ 90g là sản phẩm giúp bảo vệ làn da bạn, đặc biệt là da nhạy cảm và trẻ em dưới ánh nắng mặt trời mà không làm khô rát làn da. Sản phẩm với chiết xuất thiên nhiên còn giúp dưỡng ẩm cho da, giúp da luôn căng mịn và đàn hồi.\n" +
+                "\n" +
+                "Thành phần chính và công dụng:\n" +
+                "- Gel Chống Nắng Anessa Moisture UV Sunscreen Mild Dịu Nhẹ Cho Da Nhạy Cảm & Trẻ Em SPF35 PA+++ 90g với kết cấu dạng gel dịu nhẹ và ẩm mượt, phù hợp cho cả da nhạy cảm và da trẻ em từ 1 tuổi.\n" +
+                "\n" +
+                "- Chỉ số chống nắng SPF35 với PA+++: an toàn cho làn da, phù hợp trong môi trường không tiếp xúc trực tiếp với ánh nắng mặt trời thường xuyên.\n" +
+                "\n" +
+                "- Thành phần 5 Không cho da nhạy cảm: Không màu, không mùi, không cồn, không dầu khoáng và không paraben.\n" +
+                "\n" +
+                "- Chống trôi trong nước tới 40 phút.\n" +
+                "\n" +
+                "- Cleansing Powder trong công thức trung hòa và chống lại tác hại của các hạt siêu vi, bụi mịn trong không khí.\n" +
+                "\n" +
+                "- 50% thành phần dưỡng da được nâng cấp với Chiết xuất Mẫu đơn giúp da mịn mượt.\n" +
+                "\n" +
+                "- Chống lại tia UVA/ UVB - nguyên nhân gây lão hóa da và bình thành các sắc tố Melanin\n" +
+                "\n" +
+                "- Sản phẩm lý tưởng dành cho các hoạt động ngoài trời như đi biển, chơi thể thao hoặc bơi lội.\n" +
+                "\n" +
+                "- Chứa nhiều dưỡng chất dưỡng ẩm chuyên sâu: Super Hyaluronic Acid, Collagen, chiết xuất hoa tuyết nhung, nha đam, trà xanh, hoa anh đào.\n" +
+                "\n" +
+                "Đối tượng sử dụng:\n" +
+                "Gel Chống Nắng Anessa Moisture UV Sunscreen Mild Dịu Nhẹ Cho Da Nhạy Cảm & Trẻ Em SPF35 PA+++ 90g phù hợp sử dụng cho da nhạy cảm.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "- Sử dụng sau bước dưỡng da, thoa đều khắp vùng da cần bảo vệ.\n" +
+                "\n" +
+                "- Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn.\n" +
+                "\n" +
+                "- Dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "\n" +
+                "Xuất xứ thương hiệu:\n" +
+                "Nhật Bản\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm từ ngày sản xuất");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22090-e0v076laxxhvde");
+        variant_1.setWeight(150.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1400));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem chống nắng Anessa MARVEL Bản giới hạn");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/a894735fe38d0eca4d06f283da165919");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/7eb8f357fc37ca9bb1718ac66b00b70e");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "shop về thêm bản giới hạn 2022 cho kem chống nắng anessa với 3 phiên bản khác nhau\n" +
+                "ữa chống nắng dưỡng da kiềm dầu bảo vệ hoàn hảo giúp chống UV & bụi mịn hoàn hảo dưới mọi điều kiện sinh hoạt, kể cả thời tiết khắc nghiệt nhất (phù hợp với làn da thiên dầu)\n" +
+                " Thành phần và Công dụng:\n" +
+                " • Công nghệ AUTO BOOSTER độc quyền giúp lớp màng chống UV trở nên bền vững hơn khi gặp NHIỆT ĐỘ CAO-ĐỘ ẨM-MỒ HÔI-NƯỚC & CHỐNG TRÔI DO MA SÁT. \n" +
+                "  • Chỉ số chống nắng cao với SPF 50+, PA++++ giúp bảo vệ làn da khỏi tác hại của tia UV.\n" +
+                " • Công nghệ Very Water Resistant giúp chống trôi trong nước đến 80'.\n" +
+                " • Chống bụi mịn PM2.5 và chống dính cát\n" +
+                " • 50% thành phần dưỡng da gồm: Super HA, Collagen, Glycerin (giúp giữ ẩm nâng cơ), Rễ Hoa Hồng Vàng (chống giãn mao mạch), Chiết Xuất Trà Xanh Uji Kyoto (chống oxy hóa), Rễ Cam Thảo (giảm viêm, ngừa mụn) giúp chống lão hóa sớm do UV & dưỡng da mịn mượt.\n" +
+                " • Kết cấu sữa mỏng nhẹ, kiềm dầu vượt trội nhưng vẫn duy trì độ ẩm và dưỡng da ráo mịn cả ngày.\n" +
+                " • Có thể dùng làm kem lót trang điểm và dễ dàng làm sạch với sữa rửa mặt. \n" +
+                " • Dùng cho mặt & toàn thân. Thích hợp sử dụng hàng ngày và trong các hoạt động ngoài trời.\n" +
+                " • Hương hoa và trái cây nhẹ nhàng, dễ chịu có thể làm dịu mùi mồ hôi với công nghệ cảm biến mùi hương\n" +
+                " • Đã được kiểm định bởi chuyên gia da liễu.\n" +
+                " Loại da phù hợp: • Phù hợp với làn da thiên DẦU.\n" +
+                "\n");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/7eb8f357fc37ca9bb1718ac66b00b70e");
+        variant_1.setWeight(90.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1100));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem Chống Nắng Shisheido Anessa 60ml nhật bản");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/6b99268c6694e27565052be18a02397c");
+        images.add("https://cf.shopee.vn/file/4a055fcb16ce350fef0f335001f668df");
+        images.add("https://cf.shopee.vn/file/dec0ee21831a88726dbc89a38f9ac8f0");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-96zmiqd99xkv93");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "(Quý chị em vui lòng Check thông tin sản ANESSA CHÍNH HÃNG qua phần mềm ICHECK trên APP STORE & MÃ VẠCH sản phẩm trên bao bì ),\n" +
+                "THÔNG TIN SẢN PHẨM :...\n" +
+                "Công dụng - Kết cấu dạng sữa mỏng nhẹ, khô ráo, dễ dàng thẩm thấu qua da, không gây nhờn rít. - Chỉ số chống nắng cao với SPF 50+, PA++++, bảo vệ da tối ưu. ...\n" +
+                "- Công nghệ chống nắng 360° ngăn chặn tác hại của tia UV trên mọi bề mặt da và mọi góc độ. - Công nghệ độc quyền Aqua Booster, hỗ trợ giảm  trôi trong nước & mồ hôi rất cao, lên đến 80 phút trong hồ bơi. \n" +
+                "- Công nghệ “hỗ trợ giảm ma sát” độc đáo lần đầu tiên có trong sữa chống nắng, càng ma sát, lớp chống nắng mịn mượt sẽ không bị bong ra bảo vệ da hơn. Tác dụng :\n" +
+                "- hỗ trợ giảm cát dính vào da. - 50% chiết xuất dưỡng da (chiết xuất hoa hồng, collagen, lô hội và super Hyaluronic Acid) giúp da mịn mượt, gia tăng độ đàn hồi.\n" +
+                " - Công thức với mùi hương thanh mát từ Cam, Quýt dễ chịu. - Có thể dùng làm lớp lót trang điểm và dễ dàng làm sạch với sữa rửa mặt. 　　　 \n" +
+                "Độ an toàn - Không chất tạo màu. - Được kiểm định bởi chuyên gia da liễu. \n" +
+                "Đối tượng sử dụng - Thích hợp với mọi loại da. \n" +
+                "Hướng dẫn sử dụng - Lắc đều trước khi sử dụng. \n" +
+                "- Dùng sau bước dưỡng da, thoa đều khắp vùng da cần bảo vệ. \n" +
+                "- Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn.\n" +
+                "- Dễ dàng làm sạch với sữa rửa mặt. \n" +
+                "#anessa, #anessa-chong-nang, #kem-chong-nang-anessa\n" +
+                "#kem-chong-nang, #kcn-anessa\n" +
+                "#anessa-chong-nang-nhat-ban\n" +
+                "#kem-chong-nang-nhat-ban\n" +
+                "#kem_chống_nắng_anessa\n" +
+                "#anessa_kem_chống_nắng\n" +
+                "#anessa\n" +
+                "#anessa_chống_nắng\n" +
+                "#kem_chống_nắng_nhật_bản\n" +
+                "#kem_anessa\n" +
+                "#kem_chống_nắng\n" +
+                "#kcn_anessa\n" +
+                "#kem_chống_nắng_anessa_nhật_bản\n" +
+                "#chống_nắng_anessa\n" +
+                "#anessa_chống_nắng\n" +
+                "#anesa_kem_chống_nắng_nhật\n" +
+                "#anessa\n" +
+                "#kemchongnanganessa\n" +
+                "#kcnanessa\n" +
+                "#anessachongnang\n" +
+                "#kemchongnangnhatban\n" +
+                "#kemchongnanganessanhatban\n" +
+                "#anessa60ml\n" +
+                "#kemanessa\n" +
+                "#anessa");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-96zmiqd99xkv93");
+        variant_1.setWeight(60.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602336_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Bộ sản phẩm kem chống nắng Anessa bảo vệ cho cả gia đình");
+        productInput.setShopId(602336);
+        productInput.setTradeMarkId("1671551420754916");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/b14cc417a99591fce926ec3887f4ae39");
+        images.add("https://cf.shopee.vn/file/ee60d03c04385b7741210aa3aca54ebd");
+        images.add("https://cf.shopee.vn/file/099b271ea91b4ab32dd4696fd982a383");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-w9h6yncjk3kv92");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Bộ sản phẩm gồm:\n" +
+                "1. Sữa chống nắng dưỡng da kiềm dầu bảo vệ hoàn hảo Anessa Perfect UV Sunscreen Skincare Milk SPF50+ PA++++  60ml\n" +
+                "• Công nghệ AUTO BOOSTER độc quyền giúp lớp màng chống UV trở nên bền vững hơn khi gặp NHIỆT ĐỘ CAO-ĐỘ ẨM-MỒ HÔI-NƯỚC & CHỐNG TRÔI DO MA SÁT. \n" +
+                " • Chỉ số chống nắng cao với SPF 50+, PA++++ giúp bảo vệ làn da khỏi tác hại của tia UV.\n" +
+                "• Công nghệ Very Water Resistant giúp chống trôi trong nước đến 80'.\n" +
+                "• Chống bụi mịn PM2.5 và chống dính cát\n" +
+                "• 50% thành phần dưỡng da gồm: Super HA, Collagen, Glycerin (giúp giữ ẩm nâng cơ), Rễ Hoa Hồng Vàng (chống giãn mao mạch), Chiết Xuất Trà Xanh Uji Kyoto (chống oxy hóa), Rễ Cam Thảo (giảm viêm, ngừa mụn) giúp chống lão hóa sớm do UV & dưỡng da mịn mượt.\n" +
+                "• Kết cấu sữa mỏng nhẹ, kiềm dầu vượt trội nhưng vẫn duy trì độ ẩm và dưỡng da ráo mịn cả ngày.\n" +
+                "• Hương hoa và trái cây nhẹ nhàng, dễ chịu có thể làm dịu mùi mồ hôi với công nghệ cảm biến mùi hương\n" +
+                "• Phù hợp với làn da thiên DẦU.\n" +
+                "2. Sữa chống nắng dịu nhẹ cho da nhạy cảm và trẻ em Anessa MIld MIlk SPF50+ PA++++ 60ml \n" +
+                "Sữa chống nắng dịu nhẹ cho da nhạy cảm và trẻ em với kết cấu mỏng nhẹ, kiềm dầu, mịn mượt & nâng tông (phù hợp mọi loại da, đặc biệt là da nhạy cảm thường đến thiên dầu)\n" +
+                "• Kết cấu dạng sữa dịu nhẹ & ráo mịn phù hợp cho cả da nhạy cảm và da trẻ em từ 1 tuổi.\n" +
+                " • Chỉ số chống nắng cao SPF 50+, PA++++ giúp bảo vệ da tối ưu khỏi tác hại của tia UV.\n" +
+                " • Bảo vệ da khỏi tổn thương do tia UV & Bụi Mịn trong không khí.\n" +
+                " • Công nghệ SmoothPROTECT giúp chống UV hoàn hảo từ mọi góc độ cùng kết cấu mịn mượt như lụa.\n" +
+                " • Công nghệ Aqua Booster EX & Very Water Resistant giúp chống trôi do MA SÁT, NƯỚC, MỒ HÔi & chống trôi trong nước đến 80'.\n" +
+                " • Hạt Cleansing Powder giúp trung hòa và chống lại tác hại của bụi mịn trong không khí.\n" +
+                " • 50% thành phần dưỡng da được nâng cấp với Chiết xuất Mẫu đơn, Trà Xanh Kyoto Uji, Super Hyaluronic Acid, Collagen) giúp dưỡng da, tăng độ đàn hồi, chống oxi hoá.\n" +
+                " • Thành phần 5 không (Cồn-Màu-Mùi-Paraben-Dầu khoáng) an toàn cho làn da nhạy cảm nhất.\n" +
+                "Loại da phù hợp: Phù hợp với mọi loại da, đặc biệt là da nhạy cảm thiên DẦU, DA DẦU MỤN, da đang điều trị và trẻ em từ 1 tuôỉ\n" +
+                "3. Xịt chống nắng dưỡng da đa năng bảo vệ hoàn hảo  Anessa Perfect UV Sunscreen Skincare Spray SPF50+ PA++++ 60g\n" +
+                " • Công nghệ AUTO BOOSTER độc quyền giúp lớp màng chống UV trở nên bền vững khi tiếp xúc ĐỘ ẨM-MỒ HÔI-NƯỚC & CHỐNG TRÔI DO MA SÁT. \n" +
+                " • Chỉ số chống nắng cao với SPF 50+, PA++++ giúp bảo vệ làn da khỏi tác hại của tia UV.\n" +
+                " • Công nghệ Very Water Resistant giúp chống trôi trong nước đến 80'.\n" +
+                " • Chống bụi mịn PM2.5 và chống dính cát.\n" +
+                " • 50% thành phần dưỡng da gồm: Super HA, Collagen, Glycerin (giúp giữ ẩm nâng cơ), Rễ Hoa Hồng Vàng (chống giãn mao mạch), Chiết Xuất Trà Xanh Uji Kyoto (chống oxy hóa), Rễ Cam Thảo (giảm viêm, ngừa mụn) giúp chống lão hóa sớm do UV & dưỡng da mịn mượt.\n" +
+                " • Kết cấu dạng xịt mỏng nhẹ, khô ráo, thẩm thấu nhanh, không bết dính cùng hiệu quả kiềm dầu tối ưu giúp làn da sáng rạng rỡ cả ngày. Tiện lợi có thể sử dụng trước & sau khi makeup, xịt lên tóc và dễ dàng thoa lại trong ngày. \n" +
+                " • Phù hợp với mọi loại da, sử dụng được cho da và tóc.\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "• Lắc thật kỹ trước khi sử dụng. \n" +
+                "• Dùng sau bước dưỡng da buổi sáng, lấy một lượng vừa đủ ra tay và dàn đều lên toàn bộ khuôn mặt và vùng da cần được bảo vệ. Để đạt hiệu quả cao nhất, nên thoa lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn lau.\n" +
+                " • Đối với xịt chống nắng: xịt đều lên vùng da cần được bảo vệ. Để đạt hiệu quả cao nhất, nên xịt lại sau khi tiếp xúc nhiều với nước hoặc lau bằng khăn. \n" +
+                "• Lượng sử dụng: 2mg/1cm2 da\n" +
+                "• Thích hợp sử dụng hàng ngày và trong các hoạt động ngoài trời.\n" +
+                "• Có thể dùng làm lớp lót trang điểm bảo vệ da.\n" +
+                "• Thích hợp sử dụng cho mặt & toàn thân.\n" +
+                "• Dễ dàng làm sạch với sữa rửa mặt.\n" +
+                "Thông tin dị ứng (nếu có)\n" +
+                "• Tránh tiếp xúc với mắt. Nếu có, rửa ngay bằng nước lạnh hoặc nước ấm • Không sử dụng cho vùng da bị tổn thương như trầy xước, sưng tấy và chàm • Ngưng sử dụng khi có biểu hiện kích ứng và tham khảo ý kiến bác sĩ da liễu.\n" +
+                "Hướng dẫn bảo quản:\n" +
+                "• Bảo quản tránh ánh sáng trực tiếp, nơi có nhiệt độ cao hoặc ẩm ướt. Để xa tầm tay trẻ em\n" +
+                "Ngày sản xuất: Xem trên bao bì sản phẩm\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất\n" +
+                "Xuất xứ thương hiệu: Nhật Bản\n" +
+                "Nơi sản xuất: Nhật Bản\n" +
+                "Thông tin thương hiệu: ANESSA trực thuộc Tập đoàn Shiseido - tập đoàn mỹ phẩm lớn nhất Nhật Bản với lịch sử phát triển hàng thế kỉ. Shiseido bắt đầu nghiên cứu về UV từ 1915 và ra mắt thương hiệu chống nắng ANESSA vào 1992. ANESSA thừa hưởng hơn 100 năm nghiên cứu và phát triển sản phẩm chống UV. Tới năm 2022, ANESSA là thương hiệu chống nắng số 1 Nhật Bản suốt 21 năm liên tiếp.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-w9h6yncjk3kv92");
+        variant_1.setWeight(120.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1600));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //shop Unicharm - Gian hàng Chính hãng
+    @Test
+    public void testProduct_602344_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Bộ 3 hộp Bông trang điểm (bông tẩy trang) Silcot 82 miếng/hộp");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/9eba107a9bc5eea09d5aa8d3f9f3f0a2");
+        images.add("https://cf.shopee.vn/file/edeaff8c771377448faac3cfe5d1ec5f");
+        images.add("https://cf.shopee.vn/file/d3ca1ac2477c73deab28e7982ef70a45");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/f75dc87f00be1b67290a4a1804ebbf7b");
+        productInput.setDescription("** Bộ 3 hộp Bông trang điểm Silcot (82 miếng/hộp) là sản phẩm chăm sóc da cao cấp bán chạy số 1 Nhật Bản trong hơn 10 năm liền. Được làm từ 100% sợi bông tự nhiên, bông trang điểm mềm xốp, êm ái và vô cùng dịu nhẹ với da. Sợi bông thấm được dàn đều cùng thiết kế dạng túi thông minh, hoàn toàn không để lại xơ bông trên da, đồng thời giúp tiết kiệm nước dưỡng da tối ưu nhờ kết cấu sợi bông đặc biệt, giúp bạn có được lớp trang điểm tự nhiên hơn, hoặc tẩy trang dễ dàng và nhanh chóng hơn. Bông trang điểm Silcot thích hợp dùng trong quy trình chăm sóc da cơ bản\n" +
+                "\n" +
+                "ĐẶC ĐIỂM NỔI BẬT:\n" +
+                "\n" +
+                "Công nghệ hiện đại: Bông tẩy trang Unicharm Silcot được sản xuất theo công nghệ tiên tiến, được các chuyên gia kiểm soát nghiêm ngặt về chất lượng thành phẩm đầu vào và đầu ra. Sản phẩm đảm bảo tuyệt đối an toàn cho làn da người sử dụng, đồng thời rất thân thiện với môi trường\n" +
+                "\n" +
+                "Đóng hộp tiện lợi: Bông tẩy trang được đóng hộp giấy khá đẹp mắt và tiện dụng, bạn có thể cất gọn và bảo quản dễ dàng khi chưa sử dụng hết. Sản phẩm là sự lựa chọn hoàn hảo cho các bạn gái để hỗ trợ trang điểm.\n" +
+                "\n" +
+                "CÔNG DỤNG:\n" +
+                "\n" +
+                "- Giúp tẩy trang và làm sạch mọi bụi bẩn trên da\n" +
+                "\n" +
+                "- Nhẹ nhàng tẩy sạch toàn bộ làn da kể cả vùng da nhạy cảm quanh mắt và môi.\n" +
+                "\n" +
+                "- Giúp lấy đi lớp trang điểm 1 cách dễ dàng nhưng vẫn giữ lại độ ẩm cần thiết cho da mà không gây kích ứng hay tổn hại da.\n" +
+                "\n" +
+                "\n" +
+                "HƯỚNG DẪN SỬ DỤNG VÀ BẢO QUẢN:\n" +
+                "\n" +
+                "- Thấm miếng bông với nước hoa hồng, dung dịch dưỡng da hoặc nước tẩy trang.\n" +
+                "\n" +
+                "- Nhẹ nhàng vỗ nhẹ lên toàn bộ khuôn mặt.\n" +
+                "\n" +
+                "- Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp và nhiệt độ cao.\n" +
+                "\n" +
+                "- Để xa tầm tay trẻ em.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU:\n" +
+                "\n" +
+                "Bông trang điểm Silcot được sản xuất bởi Unicharm Nhật Bản, nhập khẩu trực tiếp và phân phối bởi Diana Unicharm Việt Nam. Là sản phẩm bán chạy số 1 tại thị trường Nhật Bản trong hơn 10 năm liên tiếp (theo số liệu của công ty nghiên cứu thị trường Intage), bông trang điểm Silcot đã đồng hành cùng phương pháp chăm sóc da thông thái của phụ nữ Nhật trong suốt những năm qua, và hiện nay, Silcot đã chính thức có mặt tại thị trường Việt Nam.\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: Nhật Bản.\n" +
+                "\n" +
+                "Ngày sản xuất: xem trên bao bì.\n" +
+                "\n" +
+                "HSD: 4 năm kể từ NSX.\n" +
+                "\n" +
+                "** bao bì thay đổi theo từng đợt nhập hàng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/f75dc87f00be1b67290a4a1804ebbf7b");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(910));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Khẩu trang Unicharm 3D Mask Super Fit siêu thoáng khí hộp 100 miếng");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/c52a13172ec39032cb15f660f5f14eef");
+        images.add("https://cf.shopee.vn/file/59c99d9dfc1801324db61362fccb738a");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22090-5buc74ejoxhv8a");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/073d7b796d2f06fd80281126b2e53040");
+        productInput.setDescription("\"( Màng Lọc AIR-FIT )Với thiết kế thông minh, độc đáo cùng nhiều tính năng vượt trội, khẩu trang ngăn khói bụi Unicharm 3D Mask Superfit là sản phẩm cần có trong mỗi gia đình. Sản phẩm sở hữu thiết kế 3D ôm vừa vặn đường cong khuôn mặt, mang lại cảm giác thoải mái, dễ chịu và không gây bí thở. Đặc biệt, cấu trúc lọc đa lớp mật độ cao giúp sản phẩm ngăn chặn khói bụi, phấn hoa trong không khí, bảo vệ sức khỏe người sử dụng. Hãy để khẩu trang ngăn khói bụi Unicharm 3D Mask Superfit chăm sóc sức khỏe cho mọi thành viên trong gia đình bạn.\n" +
+                "\n" +
+                "*Xuất xứ : Nhật Bản\n" +
+                "*Hạn sử dụng : 4 Năm kể từ NSX\n" +
+                "*Số lượng : 100 miếng/ hộp.\n" +
+                "\n" +
+                "ĐẶC ĐIỂM NỔI BẬT\n" +
+                "Thiết kế 3D thông minh\n" +
+                "Thiết kế 3D thông minh cho phép sản phẩm ôm vừa vặn đường cong khuôn mặt, cho cảm giác thoải mái, dễ chịu, không gây bí thở mà vẫn đảm bảo giữ nhiệt và độ ẩm cho mũi và họng vào mùa đông.\n" +
+                "\n" +
+                "Cấu trúc lọc đa lớp: Cấu trúc lọc đa lớp tiên tiến giúp sản phẩm ngăn khói bụi, phấn hoa trong không khí, bảo vệ sức khỏe người sử dụng.\n" +
+                "\n" +
+                "Quai đeo co giãn: Quai đeo với chất liệu co giãn và mềm mại, không gây cảm giác đau hay khó chịu trong quá trình sử dụng.\n" +
+                "\n" +
+                "Thoải mái giao tiếp, không lem son môi: Với cấu trúc đặc thù, khẩu trang Unicharm 3D Mask cho bạn thoải mái giao tiếp, đồng thời giúp phái đẹp giữ son môi không bị phai lem vào khẩu trang.\n" +
+                "\n" +
+                "Màu sắc tinh tế: Khác với các loại khẩu trang khác trên thị trường, khẩu trang Unicharm 3D Mask chỉ có duy nhất 1 màu trắng, giúp dễ dàng nhận biết được độ bám bẩn để thay cái mới, đảm bảo vệ sinh cho người sử dụng.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "Công ty Cổ phần Diana Unicharm là một Công ty hàng đầu trong ngành hàng sản xuất các sản phẩm chăm sóc phụ nữ và trẻ em tại Việt Nam (chuyên sản xuất các mặt hàng từ giấy và bột giấy như băng vệ sinh, tã giấy cho trẻ em, khăn giấy ăn với các thương hiệu nổi tiếng như Diana, Bobby, Caryn, Libera…). Sử dụng thế mạnh là thành viên của tập đoàn hàng đầu thế giới Unicharm Nhật Bản, công ty Diana Unicharm luôn đi đầu áp dụng những công nghệ mới nhất trong lĩnh vực sản xuất các sản phẩm chăm sóc vệ sinh cá nhân để sáng tạo ra những sản phẩm có chất lượng cao nhất và phù hợp nhất, góp phần nâng cao chất lượng cuộc sống của người tiêu dùng Việt Nam. Khẩu trang Unicharm 3D Mask là sản phẩm nổi bật trong việc chăm sóc sức khỏe tối ưu cho người dùng.\n" +
+                "\n" +
+                "bao bì thay đổi từng đợt nhập hàng\".");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/073d7b796d2f06fd80281126b2e53040");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(780));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Bộ 3 hộp Bông trang điểm (bông tẩy trang) cao cấp Silcot Premium 66 miếng/hộp");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/28e66da08f66eb69821e6156338c4f05");
+        images.add("https://cf.shopee.vn/file/96a5db1e21df9205190b30516a124329");
+        images.add("https://cf.shopee.vn/file/24d0161b4c1ba99341c9552b59a17218");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/8facd61c27dc1033e615bd1f63983cf1");
+        productInput.setDescription("**Bộ 3 hộp Bông trang điểm cao cấp Silcot Premium (66 miếng/hộp) là sản phẩm chăm sóc da cao cấp bán chạy số 1 Nhật Bản trong hơn 10 năm liền. Được làm từ 100% sợi bông tự nhiên, bông trang điểm mềm xốp, êm ái và vô cùng dịu nhẹ với da. Sợi bông thấm được dàn đều cùng thiết kế dạng túi thông minh, hoàn toàn không để lại xơ bông trên da, đồng thời giúp tiết kiệm nước dưỡng da tối ưu nhờ kết cấu sợi bông đặc biệt, giúp bạn có được lớp trang điểm tự nhiên hơn, hoặc tẩy trang dễ dàng và nhanh chóng hơn. Bông trang điểm Silcot thích hợp dùng trong quy trình chăm sóc da chuyên sâu với các loại nước dưỡng. \n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "ĐẶC ĐIỂM NỔI BẬT:\n" +
+                "\n" +
+                "Công nghệ hiện đại: Bông tẩy trang Unicharm Silcot được sản xuất theo công nghệ tiên tiến, được các chuyên gia kiểm soát nghiêm ngặt về chất lượng thành phẩm đầu vào và đầu ra. Sản phẩm đảm bảo tuyệt đối an toàn cho làn da người sử dụng, đồng thời rất thân thiện với môi trường.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Đóng hộp tiện lợi: Bông tẩy trang được đóng hộp giấy khá đẹp mắt và tiện dụng, bạn có thể cất gọn và bảo quản dễ dàng khi chưa sử dụng hết. Sản phẩm là sự lựa chọn hoàn hảo cho các bạn gái để hỗ trợ trang điểm.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "CÔNG DỤNG:\n" +
+                "\n" +
+                "- Giúp tẩy trang và làm sạch mọi bụi bẩn trên da\n" +
+                "\n" +
+                "- Nhẹ nhàng tẩy sạch toàn bộ làn da kể cả vùng da nhạy cảm quanh mắt và môi.\n" +
+                "\n" +
+                "- Giúp lấy đi lớp trang điểm 1 cách dễ dàng nhưng vẫn giữ lại độ ẩm cần thiết cho da mà không gây kích ứng hay tổn hại da.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "HƯỚNG DẪN SỬ DỤNG:\n" +
+                "\n" +
+                "- Khi dưỡng da: Tẩm nước hoa hồng lên miếng bông rồi sử dụng.\n" +
+                "\n" +
+                "- Khi tẩy trang (có 2 cách tẩy trang):\n" +
+                "\n" +
+                "+ Dùng dung dịch tẩy trang massage mặt, sau đó sử dụng bông tẩy trang lau sạch\n" +
+                "\n" +
+                "+ Thấm dung dịch tẩy trang lên bông, sau đó dùng bông lau những vùng da cần tẩy trang\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU:\n" +
+                "\n" +
+                "Bông trang điểm Silcot được sản xuất bởi Unicharm Nhật Bản, nhập khẩu trực tiếp và phân phối bởi Diana Unicharm Việt Nam. Là sản phẩm bán chạy số 1 tại thị trường Nhật Bản trong hơn 10 năm liên tiếp (theo số liệu của công ty nghiên cứu thị trường Intage), bông trang điểm Silcot đã đồng hành cùng phương pháp chăm sóc da thông thái của phụ nữ Nhật trong suốt những năm qua, và hiện nay, Silcot đã chính thức có mặt tại thị trường Việt Nam.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "***Chi tiết bao bì sản phẩm có thể thay đổi tùy đợt nhập hàng\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Xuất xứ: Nhật Bản.\n" +
+                "\n" +
+                "Ngày sản xuất: xem trên bao bì.\n" +
+                "\n" +
+                "Hạn sử dụng: 4 năm kể từ ngày sản xuất..");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/8facd61c27dc1033e615bd1f63983cf1");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(880));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Băng vệ sinh Diana Sensi siêu mỏng cánh 20 miếng/gói");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/dbad6aec5ce5b4e61a11d409db7d7815");
+        images.add("https://cf.shopee.vn/file/f54c00edf70e2554e04497ae50d324ed");
+        images.add("https://cf.shopee.vn/file/bd0fdeec0931b9959f5d46b09a2915df");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/3398cafb86bfb15fe9b607900a2e7070");
+        productInput.setDescription("Băng Vệ Sinh Diana Sensi Siêu Mỏng Cánh 20 được trang bị bề mặt lụa mới siêu mềm và hệ thống thấm hút độc đáo giúp thấm hút cực nhanh, chống thấm ngược tuyệt đối. Sản phẩm có đường dẫn thấm ngăn tràn và chống co dúm, cho bạn gái thêm năng động, tự tin hơn trong những ngày \"đèn đỏ\".\n" +
+                "Diana Sensi Siêu Mỏng Cánh là băng vệ sinh dùng ban ngày giúp bạn nữ luôn tự tin trong những ngày đèn đỏ.\n" +
+                "\n" +
+                "Tính năng của sản phẩm\n" +
+                "Công nghệ độc đáo với sự trang bị của tấm thấm hút mới, thấm hút tuyệt đối những chất dịch đặc giúp cho làn da của bạn luôn khô ráo, không ướt dính.\n" +
+                "Bề mặt vi sợi mềm mại hơn, đem đến cảm giác nhẹ dịu cho làn da, đảm bảo không gây mẫn cảm hay kích ứng da.\n" +
+                "Lõi thấm kép Duo Compact mới giúp miếng băng mỏng hơn mà vẫn đảm bảo khả năng thấm hút tức thì.\n" +
+                "Kiểu dáng thời trang độc đáo vừa văn ôm sát cơ thể giúp bạn thoải mái vận động.\n" +
+                "Loại da phù hợp: Sản phẩm thích hợp với mọi loại da.\n" +
+                "\n" +
+                "Hạn sử dụng: 4 năm kể từ ngày sản xuất.\n" +
+                "Xuất xứ: Việt Nam\n" +
+                "bao bì thay đổi theo từng đợt nhập hàng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/8facd61c27dc1033e615bd1f63983cf1");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Bộ 6 băng vệ sinh Diana Hàng ngày Sensi Compact gói 20 miếng");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/6dba9fe03a4ef3a8e85595d067001b7a");
+        images.add("https://cf.shopee.vn/file/e1ff371d363d1713e2639442ed4adcfc");
+        images.add("https://cf.shopee.vn/file/83464da92b22f9b76c86ea81b9f1aa3d");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/cf789f12e7f67e4fc32811ece4d11972");
+        productInput.setDescription("\"MÔ TẢ SẢN PHẨM\n" +
+                "\n" +
+                "Băng vệ sinh Diana SENSI Hàng ngày Compact (gói 20 miếng) là sản phẩm băng vệ sinh mới và duy nhất trên thị trường với thiết kế COMPACT FOLDING - MIẾNG GẬP SIÊU GỌN, BỎ TÚI VỪA VẶN, kích thước gập chỉ bằng ½ miếng BVS Hàng ngày thông thường, mỏng nhẹ như không nhưng vẫn giữ nguyên độ dài 155m để đáp ứng nhu cầu cầu giữ sạch sẽ mọi lúc mọi nơi của con gái. \n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM \n" +
+                "\n" +
+                "•        Xuất xứ: Việt Nam\n" +
+                "\n" +
+                "•        Nơi sản xuất: Việt Nam \n" +
+                "\n" +
+                "•        Gói 20/40 miếng nhỏ gọn\n" +
+                "\n" +
+                "•        Chiều dài: 155mm\n" +
+                "\n" +
+                "•        Hạn sử dụng: 5 năm kể từ ngày sản xuất \n" +
+                "\n" +
+                "ĐẶC ĐIỂM NỔI BẬT\n" +
+                "\n" +
+                "•        Thiết kế Compact Folding mới lạ, miếng gập siêu gọn chỉ bằng hai ngón tay, dễ dàng mang theo mọi nơi mọi lúc.\n" +
+                "\n" +
+                "•        Siêu mỏng nhẹ, vừa vặn cho mọi hoạt động hàng ngày.\n" +
+                "\n" +
+                "•        Bề mặt siêu êm với hệ đa lỗ siêu khô thoáng cho da\n" +
+                "\n" +
+                "•        Rãnh dập độc đáo mang lại cảm giác tươi mới mỗi ngày\n" +
+                "\n" +
+                "•        Dùng hàng ngày \n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU \n" +
+                "\n" +
+                "Diana là thương hiệu của Công ty chuyên sản xuất các sản phẩm chăm sóc phụ nữ và trẻ em tại Việt Nam từ nguyên liệu giấy, bột giấy, như băng vệ sinh, tã giấy, khăn giấy lụa,... Với thế mạnh là thành viên của tập đoàn hàng đầu thế giới Unicharm Nhật Bản cùng dây chuyền sản xuất hiện đại bậc nhất, Diana luôn đi đầu áp dụng những công nghệ mới nhất trong lĩnh vực sản xuất các sản phẩm chăm sóc vệ sinh cá nhân để sáng tạo ra những sản phẩm có chất lượng cao phù hợp với nhu cầu của người tiêu dùng Việt Nam.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Lưu ý: BAO BÌ THAY ĐỒI THEO ĐỢT SẢN XUẤT (bao bì cũ và mới được update trên hình ảnh sản phẩm, khuyến mãi miếng tặng kèm sẽ tùy vào mỗi đợt nhập hàng)\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "*Update theo bao bì mới nhất.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/cf789f12e7f67e4fc32811ece4d11972");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(810));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Bộ 6 gói khẩu trang 3DMask Virus Block size M + Tặng kèm 1 gói khẩu trang nẹp mũi Max block 5 miếng size M");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/3a06258668ef9ed77d3ae688bab74a63");
+        images.add("https://cf.shopee.vn/file/134cdbe47146a6915e7155add111d391");
+        images.add("https://cf.shopee.vn/file/bd98617204fae4229bf71cc67625e9c7");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/ba779c6192d24dded123d9063fce05d3");
+        productInput.setDescription("Với thiết kế thông minh, độc đáo cùng nhiều tính năng vượt trội, khẩu trang ngăn khói bụi Unicharm 3D Mask High Block là sản phẩm cần có trong mỗi gia đình. Sản phẩm sở hữu thiết kế 3D ôm vừa vặn đường cong khuôn mặt, mang lại cảm giác thoải mái, dễ chịu và không gây bí thở. Đặc biệt, cấu trúc lọc đa lớp mật độ cao giúp sản phẩm ngăn chặn khói bụi, phấn hoa trong không khí, bảo vệ sức khỏe người sử dụng. Hãy để khẩu trang ngăn khói bụi Unicharm 3D Mask Virus Block chăm sóc sức khỏe cho mọi thành viên trong gia đình bạn.\n" +
+                "\n" +
+                "*Xuất xứ : Nhật Bản.\n" +
+                "*Hạn sử dụng : 4 năm kể từ ngày sản xuất.\n" +
+                "*Số lượng : 5 cái.\n" +
+                "\n" +
+                "ĐẶC ĐIỂM NỔI BẬT\n" +
+                "Hiệu quả ngăn chặn 99% virus phát tán trong không khí\n" +
+                "Khẩu trang 3D Mask Virus Block với cấu trúc lọc đa lớp giúp ngăn khói bụi, phấn hoa và 99% virus phát tán trong không khí.\n" +
+                "\n" +
+                "Thiết kế 3D thông minh\n" +
+                "Thiết kế 3D thông minh cho phép sản phẩm ôm vừa vặn đường cong khuôn mặt, cho cảm giác thoải mái, dễ chịu, không gây bí thở mà vẫn đảm bảo giữ nhiệt và độ ẩm cho mũi và họng vào mùa đông.\n" +
+                "\n" +
+                "Cấu trúc lọc đa lớp\n" +
+                "Cấu trúc lọc đa lớp tiên tiến giúp sản phẩm ngăn khói bụi, phấn hoa trong không khí, bảo vệ sức khỏe người sử dụng.\n" +
+                "\n" +
+                "Quai đeo co giãn\n" +
+                "Quai đeo với chất liệu co giãn và mềm mại, không gây cảm giác đau hay khó chịu trong quá trình sử dụng.\n" +
+                "\n" +
+                "Thoải mái giao tiếp, không lem son môi\n" +
+                "Với cấu trúc đặc thù, khẩu trang Unicharm 3D Mask cho bạn thoải mái giao tiếp, đồng thời giúp phái đẹp giữ son môi không bị phai lem vào khẩu trang.\n" +
+                "\n" +
+                "Màu sắc tinh tế \n" +
+                "Khác với các loại khẩu trang khác trên thị trường, khẩu trang Unicharm 3D Mask chỉ có duy nhất 1 màu trắng, giúp dễ dàng nhận biết được độ bám bẩn để thay cái mới, đảm bảo vệ sinh cho người sử dụng.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "Công ty Cổ phần Diana Unicharm là một Công ty hàng đầu trong ngành hàng sản xuất các sản phẩm chăm sóc phụ nữ và trẻ em tại Việt Nam (chuyên sản xuất các mặt hàng từ giấy và bột giấy như băng vệ sinh, tã giấy cho trẻ em, khăn giấy ăn với các thương hiệu nổi tiếng như Diana, Bobby, Caryn, Libera…). \n" +
+                "Sử dụng thế mạnh là thành viên của tập đoàn hàng đầu thế giới Unicharm Nhật Bản, công ty Diana Unicharm luôn đi đầu áp dụng những công nghệ mới nhất trong lĩnh vực sản xuất các sản phẩm chăm sóc vệ sinh cá nhân để sáng tạo ra những sản phẩm có chất lượng cao nhất và phù hợp nhất, góp phần nâng cao chất lượng cuộc sống của người tiêu dùng Việt Nam. Khẩu trang Unicharm 3D Mask là sản phẩm nổi bật trong việc chăm sóc sức khỏe tối ưu cho người dùng.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/ba779c6192d24dded123d9063fce05d3");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(820));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Tấm đệm lót Caryn loại Siêu Thấm 10 miếng");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/2b25523dac167f8cfb4dc2ba6c0cb24a");
+        images.add(" https://cf.shopee.vn/file/f41f3617693cc3b5ccbbc5f7bb752327");
+        images.add("https://cf.shopee.vn/file/d164f84a6e2471ba9d2b05390e0eea82");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/c3c1be77096c7d54c06c371d9276a8f1");
+        productInput.setDescription("Tấm đệm lót siêu thấm Caryn 10 miếng hoặc gói 20 miếng\n" +
+                "\n" +
+                "Tấm Đệm Lót Siêu Thấm Caryn (10 Miếng) được dùng kèm tã dán, thích hợp cho người dùng đã mặc tã có nhu cầu tăng cường bảo vệ chống trào, giúp giữ vệ sinh giường nằm và xe lăn, là lựa chọn tốt nhất cho người dùng hạn chế khả năng đi lại.\n" +
+                "\n" +
+                "CÔNG DỤNG:\n" +
+                "+ Với cấu trúc 3 lớp thoáng khí, sản phẩm mang lại cảm giác thoải mái cho người dùng mà vẫn yên tâm không lo trào ngoài.\n" +
+                "\n" +
+                "+ Thiết kế mở rộng 4 chiều giúp người dùng thoải mái xoay trở, chống trào lưng hiệu quả.\n" +
+                "+ Công thức Nano bạc kháng khuẩn ngăn mùi đến từ Nhật Bản giúp hạn chế sự phát triển của vi khuẩn và khử mùi hôi hiệu quả.\n" +
+                "+ Màng đáy PE ngăn tuyệt đối chất lỏng ra ngoài, giữ giường bệnh, xe lăn,... luôn sạch sẽ.\n" +
+                "+ Dải keo dính cố định giúp định vị miếng lót, chống xê dịch trong quá trình sử dụng.\n" +
+                "\n" +
+                "\n" +
+                "HƯỚNG DẪN SỬ DỤNG:\n" +
+                "+ Trải phẳng miệng đệm lót\n" +
+                "+ Bóc miếng giấy che dải keo dính ở mặt đáy, rồi cố định các góc vào mặt phẳng để chống xê dịch.\n" +
+                "+ Để người dùng nằm / ngồi lên giữa tấm đệm lót. Điều chỉnh cho phù hợp với người dùng.\n" +
+                "\n" +
+                "Lưu ý:\n" +
+                "- Dùng để trải giường bệnh hoặc xe lăn\n" +
+                "- Thay đệm lót theo khoảng thời gian đều đặn và ngay sau khi tiêu bẩn\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU:\n" +
+                "Đi đầu trong ngành hàng chăm sóc người lớn tuổi, Unicharm ra mắt sản phẩm tã giấy dành riêng cho người lớn Unicharm Caryn với nhiều ưu điểm nổi bật. Sở hữu cấu trúc rãnh thấm tăng cường cùng lõi bông siêu thấm hút, tã giấy Unicharm Caryn thấm hút chất lỏng tối đa và chống tràn tối ưu, giữ cho bề mặt da luôn khô khoáng, dễ chịu. Hơn thế, thiết kế của Caryn đảm bảo tã luôn chắc chắn ngay cả khi ngưởi sử dụng xoay trở, vận động, hạn chết tối đa tình trạng chất lỏng trào ra ngoài. Tã giấy người lớn Unicharm Caryn là sản phẩm chăm sóc sức khỏe lí tưởng cho người thân của bạn.\n" +
+                "\n" +
+                "Xuất xứ: Nhật Bản\n" +
+                "\n" +
+                "HSD: 4 năm từ ngày sản xuất.");
+
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/c3c1be77096c7d54c06c371d9276a8f1");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(830));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Khăn ướt Caryn gói 100");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/a1b4897a869130d60ab2b8c92a28d977 ");
+        images.add("https://cf.shopee.vn/file/d164f84a6e2471ba9d2b05390e0eea82");
+        images.add("https://cf.shopee.vn/file/d164f84a6e2471ba9d2b05390e0eea82");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/a1b4897a869130d60ab2b8c92a28d977");
+        productInput.setDescription("Khăn ướt Caryn 100 miếng/gói, Giấy ướt người lớn kháng khuẩn ngăn mùi công thức Nhật Bản\n" +
+                "\n" +
+                "Khăn ướt Caryn với công thức kháng khuẩn – ngăn mùi, ứng dụng công nghệ Nano Silver với các hạt phân tử Nano Bạc giúp tăng cường khả năng làm sạch khuẩn, chăm sóc cho làn da luôn sạch sẽ và khỏe mạnh.\n" +
+                "\n" +
+                "Thành phần không chứa parabel, an toàn dịu nhẹ cho làn da\n" +
+                "\n" +
+                "Được sản xuất trong môi trường vô trùng\n" +
+                "\n" +
+                "Nhờ hạt Polyme và hợp chất Cyclodextrins có hiệu quả khử mùi với Amoniac ( Với loại 15cc, 50cc)\n" +
+                "\n" +
+                "Theo kết quả kiểm nghiệm của cục Tiêu chuẩn đo lường chất lượng tháng 12/2017, trong cùng 1 môi trường thí nghiệm, với cùng 1 loại chất lỏng mô phỏng, băng thấm tiểu thấm được 2ml chất lỏng trong 1s trong khi BVS hàng ngày thông thường chỉ thấm được 0.6ml\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thương hiệu: Caryn\n" +
+                "\n" +
+                "Xuất xứ: Nhật Bản\n" +
+                "\n" +
+                "Chất liệu: Sản phẩm được làm từ spunlace dày, mềm và mịn,nước tinh khiết, không paraben, không alcohol\n" +
+                "\n" +
+                "Quy cách đóng gói: Gói 100 miếng\n" +
+                "\n" +
+                "Số lượng : 6 gói\n" +
+                "\n" +
+                "HSD: 3 năm từ ngày sản xuất.");
+
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/a1b4897a869130d60ab2b8c92a28d977");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(780));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Băng đêm dạng quần Diana size M-L 2 chiếc/ gói");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/67cd6d2351560eb60b7bb57a56f2f8b2");
+        images.add("https://cf.shopee.vn/file/878f07fabccd73bfc59cbd2df1e6c70d");
+        images.add("https://cf.shopee.vn/file/67cd6d2351560eb60b7bb57a56f2f8b2");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/334852ad262192fac4cd23cf00f49dd7");
+        productInput.setDescription("Băng vệ sinh quần Diana chống tràn 360 size M/L, Băng vệ sinh Diana ban đêm dạng quần gói 2 miếng. \n" +
+                "\n" +
+                "Băng vệ sinh quần Diana chống tràn 360 size M/L với đột phá “2 trong 1”: Sử dụng Thiết kế quần lót nhỏ gọn vừa vặn với cơ thể kết hợp cùng Cấu trúc băng ban đêm bảo vệ an toàn khiến các nàng mặc thoải mái trong mọi tư thế ngủ, xóa tan nỗi lo tràn băng. \n" +
+                "\n" +
+                "Thông tin sản phẩm Băng vệ sinh Diana ban đêm dạng quần gói 2 miếng\n" +
+                "- Thương hiệu: Diana\n" +
+                "- Công ty chịu trách nhiệm sản xuất: Công ty cổ phần Diana Unicharm\n" +
+                "  Địa chỉ công ty cổ phần Diana Unicharm: Khu Công nghiệp Vĩnh Tuy, đường Lĩnh Nam, phường Vĩnh Hưng, quận Hoàng Mai, Hà Nội.\n" +
+                "- Xuất xứ: Việt Nam. Sản xuất theo dây chuyền công nghệ Nhật Bản\n" +
+                "- Hạn sử dụng: 4 năm kể từ ngày sản xuất\n" +
+                "- Số lượng: 2 chiếc/gói\n" +
+                "- Size: M-L vòng hông 85cm-105cm \n" +
+                "\n" +
+                "Đặc điểm nổi bật của băng vệ sinh Diana chống tràn 360\n" +
+                "- Diana Sensi ban đêm với thiết kế quần lót nhỏ gọn vừa vặn với cơ thể cùng Cấu trúc băng đêm bảo vệ an toàn mà vẫn thoải mái trong mọi tư thế ngủ.\n" +
+                "- Diana ban đêm sử dụng một thao tác mặc vào, một thao tác thay ra thật dễ dàng.\n" +
+                "- Vách chống tràn tự động nâng lên ôm khít cơ thể giúp băng vệ sinh Diana dạng quần ban đêm chống tràn trong mọi tư thế.\n" +
+                "- Hệ rãnh thông minh thiết kế dẫn chất lỏng xuống lõi thấm nhanh chóng.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "Diana là thương hiệu của công ty chuyên sản xuất các sản phẩm chăm sóc phụ nữ và trẻ em tại Việt Nam từ nguyên liệu giấy, bột giấy, như băng vệ sinh, tã giấy, khăn giấy lụa,... Với thế mạnh là thành viên của tập đoàn hàng đầu thế giới Unicharm Nhật Bản cùng dây chuyền sản xuất hiện đại bậc nhất, Diana luôn đi đầu trong việc ứng dụng công nghệ tiên tiến để sáng tạo những sản phẩm có chất lượng cao nhất, phù hợp với nhu cầu của người tiêu dùng Việt Nam.\n" +
+                "Hạn sử dụng: 4 năm kể từ ngày sản xuất .");
+
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/334852ad262192fac4cd23cf00f49dd7");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(870));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602344_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //
+        productInput.setName("Băng đêm dạng quần Diana size M-L 5 chiếc/gói");
+        //
+        productInput.setShopId(602344);
+        productInput.setTradeMarkId("1671551420760118");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sức khoẻ").getId());
+        productInput.setIndustrialTypeName("Sức khoẻ");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/32eb0e9976db06b99c050a93f617462a");
+        images.add("https://cf.shopee.vn/file/9b01e433ad77c09eec59d4527f06ab9c");
+        images.add("https://cf.shopee.vn/file/fbf0ca2196ab2df1c7ef256f9a346170");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/942802ac099ba50771e4e2f6fcaf7a6d");
+        productInput.setDescription("Băng vệ sinh quần Diana chống tràn 360 size M/L, Băng vệ sinh Diana ban đêm dạng quần gói 5 miếng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Băng vệ sinh quần Diana chống tràn 360 size M/L với đột phá “2 trong 1”: Sử dụng Thiết kế quần lót nhỏ gọn vừa vặn với cơ thể kết hợp cùng Cấu trúc băng ban đêm bảo vệ an toàn khiến các nàng mặc thoải mái trong mọi tư thế ngủ, xóa tan nỗi lo tràn băng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thông tin sản phẩm Băng vệ sinh Diana ban đêm dạng quần gói 5 miếng\n" +
+                "\n" +
+                "- Thương hiệu: Diana\n" +
+                "\n" +
+                "- Công ty chịu trách nhiệm sản xuất: Công ty cổ phần Diana Unicharm\n" +
+                "\n" +
+                "Địa chỉ công ty cổ phần Diana Unicharm: Khu Công nghiệp Vĩnh Tuy, đường Lĩnh Nam, phường Vĩnh Hưng, quận Hoàng Mai, Hà Nội.\n" +
+                "\n" +
+                "- Xuất xứ: Việt Nam. Sản xuất theo dây chuyền công nghệ Nhật Bản\n" +
+                "\n" +
+                "- Hạn sử dụng: 4 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "- Số lượng: 5 chiếc/gói\n" +
+                "\n" +
+                "- Size: M-L vòng hông 85cm-105cm\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Đặc điểm nổi bật của băng vệ sinh Diana chống tràn 360\n" +
+                "\n" +
+                "- Diana Sensi ban đêm với thiết kế quần lót nhỏ gọn vừa vặn với cơ thể cùng Cấu trúc băng đêm bảo vệ an toàn mà vẫn thoải mái trong mọi tư thế ngủ.\n" +
+                "\n" +
+                "- Diana ban đêm sử dụng một thao tác mặc vào, một thao tác thay ra thật dễ dàng.\n" +
+                "\n" +
+                "- Vách chống tràn tự động nâng lên ôm khít cơ thể giúp băng vệ sinh Diana dạng quần ban đêm chống tràn trong mọi tư thế.\n" +
+                "\n" +
+                "- Hệ rãnh thông minh thiết kế dẫn chất lỏng xuống lõi thấm nhanh chóng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Diana là thương hiệu của công ty chuyên sản xuất các sản phẩm chăm sóc phụ nữ và trẻ em tại Việt Nam từ nguyên liệu giấy, bột giấy, như băng vệ sinh, tã giấy, khăn giấy lụa,... Với thế mạnh là thành viên của tập đoàn hàng đầu thế giới Unicharm Nhật Bản cùng dây chuyền sản xuất hiện đại bậc nhất, Diana luôn đi đầu trong việc ứng dụng công nghệ tiên tiến để sáng tạo những sản phẩm có chất lượng cao nhất, phù hợp với nhu cầu của người tiêu dùng Việt Nam.\n" +
+                "\n" +
+                "Hạn sử dụng: 4 năm kể từ ngày sản xuất.");
+
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/942802ac099ba50771e4e2f6fcaf7a6d");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(860));
+
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //
+    @Test
+    public void testProduct_602328_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Loa Bluetooth Di Động LG Xboomgo PL2 -Hàng Chính Hãng - Màu Xanh Đen");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/130d179b4f235ff4580ba66b83b7e128_tn");
+        images.add("https://cf.shopee.vn/file/0b14812a590b981027095f3bd661ae2f_tn");
+        images.add("https://cf.shopee.vn/file/833286c728da54eb8c04793cd8295e94_tn");
+        images.add("https://cf.shopee.vn/file/ad784f34e319882a146d022ede733e5b_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/bfc0b4c253ee49a69471312e0d8cbe95_tn");
+        //thêm mô tả
+        productInput.setDescription("Đặc điểm nổi bật\n" +
+                "【KHỬ TIẾNG ỒN CHỦ ĐỘNG NÂNG CAO】Đắm chìm hơn bao giờ hết, ít tiếng ồn hơn trước\n" +
+                "【GEL TAI KHÔNG GÂY DỊ ỨNG ĐẠT TIÊU CHUẨN Y TẾ】 Silicone không độc hại, không gây dị ứng.\n" +
+                "【THIẾT KẾ PHÙ HỢP SLEEK】Sự vừa khít thoải mái và phong cách phù hợp với hình dạng của tai bạn\n" +
+                "【ÂM THANH CỦA MERIDIAN TECHNOLOGY】Âm thanh Hi-Fi với cảm giác không gian thực.\n" +
+                "【SÂN KHẤU ÂM THANH 3D】Một trải nghiệm cảm xúc ngập tràn\n" +
+                "\n" +
+                "Thông số kỹ thuât\n" +
+                "Loại màn hình: Đèn báo LED\n" +
+                "Phiên bản bluetooth: 5,2\n" +
+                "Dịch vụ kết nối nhanh Google: Có\n" +
+                "Sản phẩm-Loại pin: Lithium + ion\n" +
+                "Sản phẩm-Dung lượng pin: 55 mAh *2\n" +
+                "Sản phẩm-Thời gian sạc pin: trong vòng 1 giờ\n" +
+                "Hộp sạc-Loại pin: Lithium + ion\n" +
+                "Hộp sạc-Dung lượng pin: 390 mAh\n" +
+                "Hộp sạc-Thời gian sạc pin: trong vòng 2 giờ\n" +
+                "Cảm ứng: Có\n" +
+                "Phụ kiện: Cáp sạc, Gel tai nghe bổ sung\n" +
+                "\n" +
+                "THÔNG TIN BẢO HÀNH \n" +
+                "Thời hạn bảo hành: 12 tháng \n" +
+                "Trung Tâm Thông Tin Khách Hàng / Customer Information Center: Quý khách vui lòng truy cập vào link \n" +
+                "https://www.lg.com/vn/tro-giup/bao-hanh Hotline: 18001503 (Miễn phí cước gọi/Toll free)");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/130d179b4f235ff4580ba66b83b7e128_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.WHITE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("LG TONE Free FP5 - Màu Trắng - Hàng Chính Hãng");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/b44b74b2b109c9e4a4b28926233c376b_tn");
+        images.add("https://cf.shopee.vn/file/658e0e34ce30129cfe26325c259ea9ea_tn");
+        images.add("https://cf.shopee.vn/file/fd529b56da190c1a6ec8e01ac5c23157_tn");
+        images.add("https://cf.shopee.vn/file/209cf517c5b5b20493e53cf720566c00_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/ab1e7e03f0c442729df6b8cdd314f4e4_tn");
+        //thêm mô tả
+        productInput.setDescription("Với công nghệ Meridian\n" +
+                "Âm thanh 5W\n" +
+                "Âm trầm hành động kép\n" +
+                "Thời lượng pin dài (10 tiếng)\n" +
+                "Chống nước\n" +
+                "Điều khiển bằng giọng nói\n" +
+                "\n" +
+                "Đơn giản mà thời trang\n" +
+                "Thiết kế dáng tròn đẹp mắt với lớp phủ ngoài cao su dễ cầm nắm và vừa vặn trong lòng bàn tay.\n" +
+                "\n" +
+                "Trải nghiệm âm thanh tuyệt đỉnh\n" +
+                "LG XBOOM Go PL2 với công nghệ Meridian mang đến âm thanh chất lượng đẳng cấp. Mỗi lần bật nhạc, \n" +
+                "bạn sẽ được thưởng thức âm bass sâu lắng và những âm sắc phong phú.\n" +
+                "\n" +
+                "Đưa âm nhạc ra cuộc sống\n" +
+                "Sound Boost khuếch đại công suất âm thanh và mở rộng trường âm thanh. \n" +
+                "Chỉ cần nhấn nút để khuấy động không khí bữa tiệc.\n" +
+                "\n" +
+                "Thời lượng pin lâu\n" +
+                "Hoạt động lâu hơn\n" +
+                "Thời lượng pin dài tận 10 tiếng cho phép bạn thoải mái thưởng thức âm nhạc trên đường đi mà không phải lo sạc.\n" +
+                "\n" +
+                "Kết nối không dây nhiều loa cùng lúc\n" +
+                "Nhân rộng âm nhạc\n" +
+                "Liên kết không dây giữa hai loa LG XBOOM Go PL2 để nhân đôi âm thanh đầu ra. \n" +
+                "Âm thanh lớn hơn còn có thể là gì — tiệc xôm hơn và vui vẻ hơn.\n" +
+                "\n" +
+                "Điều khiển bằng giọng nói\n" +
+                "Thưởng thức âm nhạc và hơn thế nữa mà chỉ cần cất lời\n" +
+                "Nhấn nút phát trong hai giây, sau đó nói để kích hoạt Google Assistant trên điện thoại Android™ hoặc Siri trên iOS. \n" +
+                "Bạn có thể bật nhạc, bật phát thanh và các chức năng khác mà chỉ cần dùng lệnh bằng giọng nói.\n" +
+                "\n" +
+                "\n" +
+                "KÍCH THƯỚC\n" +
+                "Loa chính (Rộng x Cao x Dày/ mm): 126 x 82 x 80\n" +
+                "Loa chính (Khối lượng tịnh / kg): 0.35\n" +
+                "Kích thước thùng các tông (Rộng x Cao x Dày / mm): 160 x 134 x 113\n" +
+                "Khối lượng thực tế (kg): 0.66\n" +
+                "Sức chứa container - 20ft: 7560\n" +
+                "Sức chứa container - 40ft: 15960\n" +
+                "Sức chứa container - 40ft (HC): 18240\n" +
+                "\n" +
+                "AMPLI\n" +
+                "Kênh: 1ch\n" +
+                "Công suất ra (W): 5W\n" +
+                "Loa trầm: 1,75inch x 2ea\n" +
+                "Màng rung thụ động: Có\n" +
+                "Trở kháng: 4\n" +
+                "\n" +
+                "NHẬP & XUẤT\n" +
+                "Cổng vào - Aux vào (Φ3,5): Có\n" +
+                "Nguồn-USB loại C: Có (cái)\n" +
+                "\n" +
+                "MÀN HÌNH\n" +
+                "Loại: Đèn báo LED (bluetooth, bật, pin, Bộ cân bằng, Chế độ đa, chế độ đôi)\n" +
+                "\n" +
+                "CHẾ ĐỘ ÂM THANH\n" +
+                "Bộ cân bằn - Kích âm: Có (mặc định)\n" +
+                "Bộ cân bằn - Tiêu chuẩn: Có\n" +
+                "\n" +
+                "PIN TÍCH HỢP\n" +
+                "Dung lượng pin: 3.7V, 1500mAh\n" +
+                "Thời gian sạc pin: 4\n" +
+                "Thời hạn pin: 10 giờ \n" +
+                "\n" +
+                "ĐIỆN NĂNG\n" +
+                "Mức tiêu thụ điện năng - Chế độ bật (trạng thái đang sạc): 5W\n" +
+                "Mức tiêu thụ điện năng - Chế độ chờ: 0,5W\n" +
+                "\n" +
+                "ĐỊNH DẠNG ÂM THANH\n" +
+                "SBC: Có\n" +
+                "AAC: Có\n" +
+                "\n" +
+                "THUẬN TIỆN\n" +
+                "Đa điểm: Có\n" +
+                "Kết nối không dây theo nhóm (Chế độ đôi): Có\n" +
+                "Quản lý nâng cấp (FOTA): Có\n" +
+                "Ứng dụng Bluetooth: Có (Android)\n" +
+                "Điều khiển bằng giọng nói: Có (Trợ lý Google, Siri)\n" +
+                "Chống nước/Chống bắn nước: Có (IPX5)\n" +
+                "Bluetooth: Có\n" +
+                "Loa điện thoại: Có\n" +
+                "Khóa an ninh (trong kho): Có\n" +
+                "\n" +
+                "BỘ PHỤ KIỆN\n" +
+                "Hướng dẫn Sử dụng - Hướng dẫn đơn giản: Có\n" +
+                "Thẻ bảo hành: Có\n" +
+                "Cáp USB-C: Có\n" +
+                "Loại thùng các tông (Tip on / Offset / Flexo): Offset\n" +
+                "\n" +
+                "Thời hạn bảo hành: 12 tháng\n" +
+                "Trung Tâm Thông Tin Khách Hàng / Customer Information Center: Quý khách vui lòng truy cập vào link https://www.lg.com/vn/tro-giup/bao-hanh Hotline: 18001503 (Miễn phí cước gọi/Toll free)\n" +
+                "\n");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/b44b74b2b109c9e4a4b28926233c376b_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLUE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Loa Bluetooth Di Động LG Xboom Go PL5 -Hàng Chính Hãng - Màu Xanh Đen");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/2c9072cca05f6157cd2c253163cae63e_tn");
+        images.add("https://cf.shopee.vn/file/4b5c813e74c84be9549e3af29746bacc_tn");
+        images.add("https://cf.shopee.vn/file/e9487709861ad2aa06615324aa55aae4_tn");
+        images.add("https://cf.shopee.vn/file/c00ab27037f40fb1038573974b79d2fd_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/7a2874d7d52e65631c4d0645b639d420_tn");
+        //thêm mô tả
+        productInput.setDescription("\n" +
+                "MÔ TẢ SẢN PHẨM\n" +
+                "Với công nghệ Meridian\n" +
+                "Âm thanh 20W\n" +
+                "Âm trầm hành động kép\n" +
+                "Thời lượng pin dài (18 tiếng)\n" +
+                "Chế độ đèn nhiều màu\n" +
+                "IPX5\n" +
+                "\n" +
+                "Diện mạo mới của âm thanh cân bằng\n" +
+                "Đơn giản mà thời trang\n" +
+                "Thiết kế dáng tròn đẹp mắt với lớp phủ ngoài cao su dễ cầm nắm và vừa vặn trong lòng bàn tay, \n" +
+                "trong khi đèn loa siêu trầm dạng vòng tròn điểm thêm nét rực rỡ cho không gian của bạn.\n" +
+                "\n" +
+                "Trải nghiệm âm thanh tuyệt đỉnh\n" +
+                "LG XBOOM Go PL5 với công nghệ Meridian mang đến âm thanh chất lượng đẳng cấp. Mỗi lần bật nhạc, \n" +
+                "bạn sẽ được thưởng thức âm bass sâu lắng và những âm sắc phong phú.\n" +
+                "\n" +
+                "Đưa âm nhạc ra cuộc sống\n" +
+                "Sound Boost khuếch đại công suất âm thanh và mở rộng trường âm thanh. Chỉ cần nhấn nút để khuấy động không khí bữa tiệc.\n" +
+                "\n" +
+                "Cảm nhận nhịp nhạc mạnh mẽ hơn\n" +
+                "Màng rung thụ động tạo ra nhịp điệu táo bạo đủ mạnh để khuấy động bữa tiệc dù bạn đang ở đâu. Khi loa siêu trầm rung, \n" +
+                "hệ thống đèn nhấp nháy dạng vòng tròn tạo ra những chuyển động rực rỡ, khiến không khí bữa tiệc càng hào hứng.\n" +
+                "\n" +
+                "Tận hưởng bất kể thời tiết\n" +
+                "Với xếp hạng IPX5, bộ loa của bạn vẫn có thể hoạt động dù bị ướt, nên cứ tiếp tục quẩy thôi.\n" +
+                "\n" +
+                "Hoạt động lâu hơn\n" +
+                "Thời lượng pin dài tận 18 tiếng cho phép bạn thoải mái thưởng thức âm nhạc trên đường đi mà không phải lo sạc.\n" +
+                "\n" +
+                "Thêm khí sắc cho âm nhạc\n" +
+                "Đèn LED rực rỡ sắc màu đa dạng và thay đổi theo điệu nhạc, mang thêm cảm xúc cho âm nhạc của bạn.\n" +
+                "\n" +
+                "Nhân rộng âm nhạc\n" +
+                "Kết nối không dây liên kết tới một trăm loa LG XBOOM Go PL5 để nhân lên âm thanh phát ra.\n" +
+                " Âm thanh lớn hơn còn có thể là gì — tiệc xôm hơn và vui vẻ hơn.\n" +
+                "\n" +
+                "Âm thanh vòm Bluetooth sẵn sàng\n" +
+                "Mang đến âm thanh chân thực hơn cho TV\n" +
+                "Kết nối hai loa LG XBOOM Go PL5 với một TV LG và sử dụng chúng để phát âm thanh cho TV. \n" +
+                "Thiết lập đơn giản, cho bạn âm thanh vòm sống động với mọi nội dung mà bạn xem.\n" +
+                "\n" +
+                "Điều khiển bằng giọng nói\n" +
+                "Thưởng thức âm nhạc và hơn thế nữa mà chỉ cần cất lời\n" +
+                "Nhấn nút phát trong hai giây, sau đó nói để kích hoạt Google Assistant trên điện thoại Android™ hoặc Siri trên iOS.\n" +
+                " Bạn có thể bật nhạc, bật phát thanh và các chức năng khác mà chỉ cần dùng lệnh bằng giọng nói.\n" +
+                "\n" +
+                "KÍCH THƯỚC\n" +
+                "Loa chính (Rộng x Cao x Dày/ mm):201 x 79 x 79\n" +
+                "Loa chính (Khối lượng tịnh / kg): 0.62\n" +
+                "Kích thước thùng các tông (Rộng x Cao x Dày / mm): 249 x 149 x 130\n" +
+                "Khối lượng thực tế (kg): 0.99\n" +
+                "Sức chứa container - 20ft: 5760\n" +
+                "Sức chứa container - 40ft: 12240\n" +
+                "Sức chứa container - 40ft (HC): 14280\n" +
+                "\n" +
+                "AMPLI\n" +
+                "Kênh: 2ch\n" +
+                "Công suất ra (W): 20W\n" +
+                "Loa trầm: 1,75inch x 2ea\n" +
+                "Màng rung thụ động: Có\n" +
+                "Trở kháng: 4\n" +
+                "\n" +
+                "NHẬP & XUẤT\n" +
+                "Cổng vào - Aux vào (Φ3,5): Có\n" +
+                "Nguồn-USB loại C:  Có (cái)\n" +
+                "\n" +
+                "MÀN HÌNH\n" +
+                "Loại: Đèn báo LED (bluetooth, bật, pin, Bộ cân bằng, Chế độ đa, chế độ đôi)\n" +
+                "\n" +
+                "CHẾ ĐỘ ÂM THANH\n" +
+                "Bộ cân bằn - Kích âm: Có (mặc định)\n" +
+                "Bộ cân bằn - Tiêu chuẩn: Có\n" +
+                "\n" +
+                "PIN TÍCH HỢP\n" +
+                "Dung lượng pin: 3.8V, 3900mAh\n" +
+                "Thời gian sạc pin: 4\n" +
+                "Thời hạn pin: 18h \n" +
+                "\n" +
+                "ĐIỆN NĂNG\n" +
+                "Mức tiêu thụ điện năng - Chế độ bật (trạng thái đang sạc): 10W\n" +
+                "Mức tiêu thụ điện năng - Chế độ chờ: 0,5W\n" +
+                "\n" +
+                "ĐỊNH DẠNG ÂM THANH\n" +
+                "SBC: Có\n" +
+                "AAC: Có\n" +
+                "\n" +
+                "THUẬN TIỆN\n" +
+                "Đa điểm: Có\n" +
+                "Kết nối không dây theo nhóm (Chế độ đôi): Có\n" +
+                "Quản lý nâng cấp (FOTA): Có\n" +
+                "Ứng dụng Bluetooth: Có (Android/iOS)\n" +
+                "Điều khiển bằng giọng nói: Có (Trợ lý Google, Siri)\n" +
+                "Chống nước/Chống bắn nước: Có (IPX5)\n" +
+                "Bluetooth: Có\n" +
+                "Loa điện thoại: Có\n" +
+                "Khóa an ninh (trong kho): Có\n" +
+                "\n" +
+                "BỘ PHỤ KIỆN\n" +
+                "Hướng dẫn Sử dụng - Hướng dẫn đơn giản: Có\n" +
+                "Thẻ bảo hành: Có\n" +
+                "Cáp USB-C: Có\n" +
+                "Loại thùng các tông (Tip on / Offset / Flexo): Offset\n" +
+                "\n" +
+                "Thời hạn bảo hành: 12 tháng\n" +
+                "Trung Tâm Thông Tin Khách Hàng / Customer Information Center: Quý khách vui lòng truy cập vào link \n" +
+                "https://www.lg.com/vn/tro-giup/bao-hanh Hotline: 18001503 (Miễn phí cước gọi/Toll free)\n" +
+                "Để bật chế độ hỗ trợ đọc màn hình, nhấn Ctrl+Alt+Z Để tìm hiểu thêm về các phím tắt, nhấn Ctrl+dấu gạch chéo\n" +
+                " \n" +
+                " \n" +
+                " \t\t\n");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/2c9072cca05f6157cd2c253163cae63e_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Loa thanh soundbar LG SL4");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/77275663b219cf34a569a14f05b20f60_tn");
+        images.add("https://cf.shopee.vn/file/0ee7ca61f4fa5cc6a542672a61a33750_tn");
+        images.add("https://cf.shopee.vn/file/bd21725c5cd4b99acfab4d8ff06a1c71_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/59cda0eb10838e3782e00798ecb1dfaf_tn");
+        //thêm mô tả
+        productInput.setDescription("Loa trầm carbon cho âm thanh có độ trung thực cao\n" +
+                "Loa thanh LG SL4 được thiết kế tạo ra âm thanh rõ ràng không bị méo tiếng. \n" +
+                "Đặc biệt, màng loa carbon trong loa trầm mang lại âm thanh trong trẻo tuyệt vời.\n" +
+                "\n" +
+                "Công nghệ âm thanh tự thích nghi Adaptive Sound\n" +
+                "Âm nhạc, phim ảnh và thậm chí cả tin tức đều có cấu hình âm thanh khác nhau. \n" +
+                "Loa thanh LG SL4 có Công nghệ âm thanh tự thích nghi Adaptive Sound Control giúp xác định nội dung đang được phát và\n" +
+                " tự động điều chỉnh chế độ âm thanh để tạo ra trải nghiệm âm thanh lý tưởng.\n" +
+                "\n" +
+                "Loa siêu trầm không dây\n" +
+                "Cảm nhận nhịp điệu mạnh mẽ với loa siêu trầm không dây của Loa thanh LG SL4 - tiện lợi và dễ cài đặt, với công suất 200 watt.\n" +
+                "\n" +
+                "Đa kết nối\n" +
+                "Loa thanh LG SL4Y có nhiều đầu vào thuận tiện khác nhau như HDMI, Cáp quang Optical và Bluetooth®.\n" +
+                "\n" +
+                "Bluetooth, phát trực tuyến mọi nội dung\n" +
+                "Phát nhạc trực tiếp qua Bluetooth® từ điện thoại thông minh của bạn đến Loa thanh LG SL4.\n" +
+                "\n" +
+                "Thông số kỹ thuật\n" +
+                "Năng lượng tiêu thụ của Loa thanh: 23W\n" +
+                "Năng lượng tiêu thụ của Loa thanh ở chế độ chờ: <0.5W\n" +
+                "Năng lượng tiêu thụ của Loa trầm: 33W\n" +
+                "Năng lượng tiêu thụ của Loa trầm ở chế độ chờ: <0.5W\n" +
+                "KÍCH THƯỚC(WXHXD MM)/TRỌNG LƯỢNG(KG)\n" +
+                "Phù hợp với TV        Trên 40\"\n" +
+                "Kích thước Loa Trầm (WxHxD)        6.8\" x 15.4\" x 10.3\"\n" +
+                "Khối lượng tịnh Loa trầm        5.3Kg\n" +
+                "Tổng Khối lượng        9.53Kg\n" +
+                "Kích thước Loa Thanh (WxHxD)        35.1\" x 2.3\" x 3.4\"\n" +
+                "Khối lượng tịnh Loa thanh        2.25Kg\n" +
+                "\n" +
+                "PHỤ KIỆN BAO GỒM\n" +
+                "Điều khiển        Có\n" +
+                "Cáp quang        Có\n" +
+                "Thẻ bảo hành        Có\n" +
+                "Pin        Có\n" +
+                "Giá treo tường        Có\n" +
+                "\n" +
+                "THÔNG TIN BẢO HÀNH\n" +
+                "Thời hạn bảo hành: 12 tháng\n" +
+                "Trung Tâm Thông Tin Khách Hàng / Customer Information Center: Quý khách vui lòng truy cập vào link \n" +
+                "https://www.lg.com/vn/tro-giup/bao-hanh Hotline: 18001503 (Miễn phí cước gọi/Toll free)");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/77275663b219cf34a569a14f05b20f60_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Laptop LG Gram 14ZD90Q-G.AX51A5 (14''| i5-1240P| 8GB | 256GB | WQXGA | Non-OS)");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/55d05ba6a052671dbf7e72e9c617b2a0_tn");
+        images.add("https://cf.shopee.vn/file/b37c5eab18408bd42a54a5c89377f8ed_tn");
+        images.add("https://cf.shopee.vn/file/6e172090b49b766869d5feb66e21232a_tn");
+        images.add("https://cf.shopee.vn/file/f45f226fdf07c88391739207ed6efc45_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22110-u0ioj1vbnfjv32_tn");
+        //thêm mô tả
+        productInput.setDescription("Khách hàng sau khi mua sản phẩm laptop LG gram vui lòng thực hiện các bước sau:\n" +
+                "\n" +
+                "+ Bước 1: Truy cập vào trang - https://quatangLG.com - và điền đầy đủ thông tin theo yêu cầu.\n" +
+                "+ Bước 2: Trong vòng  03 ngày làm việc (không bao gồm Thứ 7, Chủ Nhật và Ngày Lễ), bộ phận chăm sóc khách hàng \n" +
+                "sẽ gọi điện xác nhận thông tin và xử lý yêu cầu.\n" +
+                "- Thông tin hợp lệ: Khách hàng nhận được thông báo qua tin nhắn về thông tin quà tặng và đường link nhận quà.\n" +
+                "- Thông tin không hợp lệ: Khách hàng nhận được cuộc gọi thông báo từ chối do thông tin không hợp lệ.\n" +
+                "+ Bước 3: Khách hàng nhấn vào đường link trong tin nhắn và làm theo hướng dẫn để nhận quà tặng.\n" +
+                "\n" +
+                "Thời gian khuyến mại: Từ 15/07/2022 đến 31/12/2022.\n" +
+                "------------------------------------------------------------------------------\n" +
+                "Thông số kỹ thuật\n" +
+                "- Năm: 2022 \n" +
+                "- Kích thước: 14inch \n" +
+                "- Tấm nền: ÍP\n" +
+                "- Độ phân giải: WUXGA (1920 x 1200)\n" +
+                "- Độ sáng: 30 nit\n" +
+                "- Gam màu: DCI-P3 99% \n" +
+                "- Độ tương phản: 1200:1 \n" +
+                "\n" +
+                "Hệ thống\n" +
+                "- Bộ xử lý: Bộ xử lý Intel® Core™ Thế hệ 12 i7-1260P, L3 Cache 18MB i5-1240P , L3 Cache 12MB\n" +
+                "- Đồ họa: Intel Iris Xe Graphics (i7,i5)/ Intel UHD Graphics (i3)\n" +
+                "\n" +
+                "Lưu trữ \n" +
+                "- Bộ nhớ: 8/16/32GB LPDDR5 \n" +
+                "- SSD: M.2 (2280)\n" +
+                "- Khe cắm MMC: Micro SD \n" +
+                "\n" +
+                "Thông tin chung \n" +
+                "- Pin: 72Wh Li-Ion \n" +
+                "- Phụ kiện: bộ đổi nguồn AC & bộ điều hợp USB-C sang RJ45\n" +
+                "- Tản nhiệt: làm mát mega 4.0\n" +
+                "- Nút: nút nguồn có vân tay \n" +
+                "\n" +
+                "Mỏng, Gọn và Nhẹ\n" +
+                "Siêu mỏng và siêu di động, LG gram là người bạn đồng hành trọng lượng nhẹ luôn di chuyển cùng với bạn\n" +
+                "\n" +
+                "Vươn tới hình ảnh tối ưu hóa \n" +
+                "Đắm mình trong màn hình có tỷ lệ khung hình 16:10 lớn hơn 11% so với tỷ lệ 16:9. Vì vậy, bạn có thể cuộn ít hơn và\n" +
+                " dành nhiều thời gian hơn cho sự hối hả của mình\n" +
+                "\n" +
+                "DCI-P3 99% (Thông thường) Phổ màu rộng \n" +
+                "Đưa nội dung của bạn vào cuộc sống với gam màu rộng giúp bạn thấy màu sắc rực rỡ \n" +
+                "\n" +
+                "Tấm nền chống lóa mắt \n" +
+                "Tấm nền chống lóa mắt ngăn chặn phản chiếu màn hình vào ban ngày hoặc khi ở ngoài trời. \n" +
+                "Luôn hối hả bất cứ lúc nào từ bất cứ đâu.\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Với dòng sản phẩm cao cấp LG Gram 2020, LG áp dụng dịch vụ bảo hành tận nhà.\n" +
+                "Thời gian bảo hành 12 tháng\n" +
+                "https://www.lg.com/vn/tro-giup/bao-hanh \n" +
+                "Trung Tâm Thông Tin Khách Hàng / Customer Information Center 18001503 (Miễn phí cước gọi/Toll free)");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/f45f226fdf07c88391739207ed6efc45_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.WHITE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName(" Màn Hình LG 27MP500-B 27'' IPS 75Hz FHD AMD FreeSync™ - Hàng Chính Hãng");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/4293faac1ae2a8e1613f8a680b8c2f2a_tn");
+        images.add("https://cf.shopee.vn/file/44bca5800bf231db1d94b48b057302f7_tn");
+        images.add("https://cf.shopee.vn/file/58fe597c57d8675f2a1d93d58263520e_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/a47a98bbb73162bba06d088522e84787_tn");
+        //thêm mô tả
+        productInput.setDescription("Thông tin nổi bật:\n" +
+                "Màn hình IPS Full HD\n" +
+                "Màn hình sống động hiển thị ánh sáng xanh thấp\n" +
+                "AMD FreeSync™\n" +
+                "Chế độ đọc sách\n" +
+                "Chống nháy\n" +
+                "Điều khiển trên màn hình\n" +
+                "\n" +
+                "Màn hình IPS Full HD\n" +
+                "Màu sắc chân thực ở góc rộng\n" +
+                "Màn hình LG với công nghệ IPS làm nổi bật hiệu suất của màn hình tinh thể lỏng. Rút ngắn thời gian phản hồi, \n" +
+                "cải thiện khả năng tái tạo màu sắc và người dùng có thể xem ở các góc rộng.\n" +
+                "\n" +
+                "Màn hình sống động hiển thị ánh sáng xanh thấp\n" +
+                "Duy trì chất lượng hình ảnh, giảm hiển thị ánh sáng xanh\n" +
+                "Công nghệ Live Color Low Blue Light của LG có tác dụng giảm sinh ra lượng ánh sáng xanh có hại. Ngoài ra, \n" +
+                "công nghệ này còn giúp người dùng tránh bị mỏi mắt mà không ảnh hưởng xấu tới chất lượng hình ảnh, nhờ khả năng \n" +
+                "làm giảm đáng kể tình trạng biến dạng màu.\n" +
+                "\n" +
+                "Chế độ đọc sách\n" +
+                "Giúp mắt thoải mái hơn\n" +
+                "Để giảm mỏi mắt và giúp mắt thoair mái hơn khi đọc văn bản trên màn hình, Chế độ Đọc sách sẽ điều chỉnh nhiệt độ màu và\n" +
+                " độ sáng tương tự như khi đọc trên giấy.\n" +
+                "\n" +
+                "Chống nháy\n" +
+                "Chăm Sóc Mắt\n" +
+                "Chế độ Chống nháy giúp giảm chớp nháy không nhìn thấy được trên màn hình và mang lại môi trường làm việc thoải mái cho mắt bạn.\n" +
+                "\n" +
+                "Màn hình hầu như không có đường viền 3 cạnh\n" +
+                "Hòa Mình với Nội Dung\n" +
+                "Màn hình này có viền mỏng ở ba cạnh và không gây phân tâm nhờ hình ảnh chính xác đến kinh ngạc, \n" +
+                "và khả năng điều chỉnh độ nghiêng thuận tiện cho phép bạn bố trí một môi trường làm việc tối ưu.\n" +
+                "\n" +
+                "\n" +
+                "MÀN HÌNH\n" +
+                "Kích thước (Inch): 27.0 inch\n" +
+                "Kích thước (cm): 68.6 cm\n" +
+                "Độ phân giải: 1920 x 1080\n" +
+                "Kiểu tấm nền: IPS\n" +
+                "Tỷ lệ màn hình: 16:9\n" +
+                "Kích thước điểm ảnh: 0.3114 x 0.3114 mm\n" +
+                "Độ sáng (Tối thiểu): 200 cd/m²\n" +
+                "Độ sáng (Điển hình): 250 cd/m²\n" +
+                "Gam màu (Điển hình): NTSC 72% (CIE1931)\n" +
+                "Độ sâu màu (Số màu): 16.7M\n" +
+                "Tỷ lệ tương phản (Tối thiểu): 600:1\n" +
+                "Tỷ lệ tương phản (Điển hình): 1000:1\n" +
+                "Thời gian phản hồi: 5ms (GtG nhanh hơn)\n" +
+                "Góc xem (CR≥10)        178º(R/L), 178º(U/D)\n" +
+                "Xử lý bề mặt: Chống lóa\n" +
+                "\n" +
+                "TÍNH NĂNG\n" +
+                "Chống nháy: Có\n" +
+                "Chế độ đọc sách: Có\n" +
+                "Màu sắc yếu: Có\n" +
+                "Super Resolution+:  Có\n" +
+                "AMD FreeSync™: Có\n" +
+                "Cân bằng tối: Có\n" +
+                "Đồng bộ hành động kép: Có\n" +
+                "Crosshair: Có\n" +
+                "Tiết kiệm năng lượng thông minh: Có\n" +
+                "Khác (TÍNH NĂNG)        Màu sống ánh sáng xanh dương thấp\n" +
+                "\n" +
+                "ỨNG DỤNG SW\n" +
+                "Điều khiển trên màn hình (Trình quản lý màn hình LG): Có\n" +
+                "\n" +
+                "KẾT NỐI\n" +
+                "HDMI™: Có (2ea)\n" +
+                "HDMI (Độ phân giải Tối đa tại Hz)        1920 x 1080 at 75Hz\n" +
+                "Tai nghe ra: Có\n" +
+                "\n" +
+                "NGUỒN\n" +
+                "Loại        Hộp nguồn ngoài (Bộ sạc)\n" +
+                "Ngõ vào AC: 100-240Vac, 50/60Hz\n" +
+                "Mức tiêu thụ điện (Điển hình): 25.5W\n" +
+                "Mức tiêu thụ điện (Tối đa): 28.0W\n" +
+                "Công suất tiêu thụ (Energy Star): 20.3W\n" +
+                "Mức tiêu thụ điện (Chế độ ngủ): Dưới 0,5W\n" +
+                "Mức tiêu thụ điện (DC tắt): Dưới 0,3W\n" +
+                "\n" +
+                "ĐẶC ĐIỂM CƠ HỌC\n" +
+                "Điều chỉnh vị trí màn hình: Nghiêng\n" +
+                "Có thể treo tường: 75 x 75 mm\n" +
+                "\n" +
+                "KÍCH THƯỚC/KHỐI LƯỢNG\n" +
+                "Kích thước tính cả chân đế (Rộng x Cao x Dày): 611.1 x 455.1 x 214.9 mm\n" +
+                "Kích thước không tính chân đế (Rộng x Cao x Dày): 611.1 x 362.6 x 39.5 mm\n" +
+                "Khối lượng tính cả chân đế: 4.8 kg\n" +
+                "Khối lượng không tính chân đế: 4.3 kg\n" +
+                "\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Thời gian bảo hành 24 tháng \n" +
+                "https://www.lg.com/vn/tro-giup/bao-hanh \n" +
+                "Trung Tâm Thông Tin Khách Hàng / Customer Information Center 18001503 (Miễn phí cước gọi/Toll free)");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/4293faac1ae2a8e1613f8a680b8c2f2a_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1200));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Smart FHD Tivi LG 43 Inch 43LM5750PTC ThinQ AI");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/77e46b525c2643a74239388dd0b43852_tn");
+        images.add("https://cf.shopee.vn/file/460da44f61d187901056e2a221fd4a98_tn");
+        images.add("https://cf.shopee.vn/file/71b0210a9b153296db7735188a556c50_tn");
+        images.add("https://cf.shopee.vn/file/e2b886e3b35e8ccea6f0281814fd57d7_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/d02c97327d7ffa4b72fbf0bbac0dc437_tn");
+        //thêm mô tả
+        productInput.setDescription("Trải nghiệm chuẩn mực Full HD\n" +
+                "LG TV Full HD mang đến hình ảnh chính xác hơn với độ phân giải tuyệt đẹp với màu sắc sống động.\n" +
+                "\n" +
+                "Hình ảnh rõ nét hơn\n" +
+                "LG TV FHD được gây ấn tượng với chất lượng hình ảnh rõ ràng, đẹp hơn gấp hai lần so với HD. \n" +
+                "Và với các tính năng Dynamic Color và Active HDR, toàn bộ nội dung yêu thích của bạn sẽ trở nên trung thực và sống động hơn.\n" +
+                "\n" +
+                "Màu sắc tự nhiên nhất\n" +
+                "Nâng cao hiệu suất xử lý và điều chỉnh màu sắc cho hình ảnh phong phú hơn, tự nhiên hơn. \n" +
+                "Tận hưởng vẻ đẹp thiên nhiên với màu sắc trung thực trên màn hình TV của bạn.\n" +
+                "\n" +
+                "Đi sâu vào chi tiết\n" +
+                "LG TV FHD mang đến màu sắc rực rỡ và chi tiết chính xác với Active HDR. Thưởng thức các bộ phim yêu thích với \n" +
+                "chất lượng tương tự như bản gốc với nhiều định dạng HDR bao gồm HDR10 và HLG.\n" +
+                "\n" +
+                "Tối ưu hóa mọi trải nghiệm âm thanh\n" +
+                "LG TV FHD có các tính năng Virtual Surround Plus và Dolby Audio giúp bạn đắm chìm trong trải nghiệm âm thanh phong phú và\n" +
+                " chân thực hơn với mọi thể loại phim và chương trình truyền hình.\n" +
+                "\n" +
+                "Âm thanh lan tỏa khắp không gian của bạn\n" +
+                "Bạn có thể trải nghiệm âm thanh đa chiều phong phú với loa có sẵn bên trong TV. \n" +
+                "Nâng cao trải nghiệm xem của bạn với âm thanh đến từ mọi hướng.\n" +
+                "\n" +
+                "Trải nghiệm âm thanh điện ảnh\n" +
+                "Trải nghiệm âm thanh chất lượng rạp hát rõ hơn, ngập tràn hơn tại gia đình với Dolby Audio trên TV.\n" +
+                "\n" +
+                "Thiết kế đơn giản nhưng tinh tế\n" +
+                "Đường viền mỏng và kiểu cách hài hòa với thiết kế nội thất của bạn giúp nâng cấp trải nghiệm.\n" +
+                "\n" +
+                "Thông số kỹ thuật\n" +
+                "Loại tivi: Smart Tivi43 inchFull HD\n" +
+                "Hệ điều hành: webOS 4.5\n" +
+                "Kích thước:: Ngang 97.7 cm - Cao 61.5 cm - Dày 18.7 cm\n" +
+                "\n" +
+                "Kết nối\n" +
+                "Bluetooth:Có (kết nối loa bluetooth)\n" +
+                "Kết nối Internet: Cổng LAN, Wifi\n" +
+                "Cổng AV: Composite tích hợp trong Component\n" +
+                "Cổng HDMI: 2 HDMI\n" +
+                "Cổng xuất âm thanh:\n" +
+                "- HDMI ARC\n" +
+                "- Cổng Optical (Digital Audio Out)\n" +
+                "- Cổng xuất âm thanh 3.5 mm\n" +
+                "USB: 1 USB\n" +
+                "\n" +
+                "Thông tin bảo hành\n" +
+                "Thời gian bảo hành: 24 tháng\n" +
+                "Thông tin chi tiết xem tại: https://www.lg.com/vn/tro-giup/bao-hanh\n" +
+                "\n" +
+                "***Công lắp đặt:\n" +
+                "\n" +
+                "- Miễn phí cho nội thành HCM (Quận 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, Tân Bình, Tân Phú, Phú Nhuận, Bình Thạnh, Gò Vấp,\n" +
+                " Quận 9, 12, Thủ Đức, Bình Tân, Hóc Môn) và nội thành Hà Nội (Quận Ba Đình, Quận Bắc Từ Liêm, Quận Cầu Giấy, \n" +
+                "Quận Hà Đông, Quận Hai Bà Trưng, Quận Hoàn Kiếm, Quận Hoàng Mai, Quận Long Biên, Quận Nam Từ Liêm, \n" +
+                "Quận Tây Hồ, Quận Thanh Xuân, Quận Đống Đa)\n" +
+                "- Chi phí vật tư: Nhân viên sẽ thông báo phí vật tư (ống đồng, dây điện v.v...) khi khảo sát lắp đặt (Bảng kê xem tại ảnh 2). \n" +
+                "Khách hàng sẽ thanh toán trực tiếp cho nhân viên kỹ thuật sau khi việc lắp đặt hoàn thành - chi phí này sẽ không hoàn lại \n" +
+                "trong bất cứ trường hợp nào.\n" +
+                "- Quý khách hàng có thể trì hoãn việc lắp đặt tối đa là 7 ngày lịch kể từ ngày giao hàng thành công (không tính ngày Lễ). \n" +
+                "Nếu nhân viên hỗ trợ không thể liên hệ được với Khách hàng quá 3 lần, hoặc Khách hàng trì hoãn việc lắp đặt quá thời hạn trên, \n" +
+                "Dịch vụ lắp đặt sẽ được hủy bỏ.\n" +
+                "- Đơn vị vận chuyển giao hàng cho bạn KHÔNG có nghiệp vụ lắp đặt sản phẩm.\n" +
+                "- Thời gian bộ phận lắp đặt liên hệ (không bao gồm thời gian lắp đặt): trong vòng 24h kể từ khi nhận hàng (Trừ Chủ nhật/ Ngày Lễ). \n" +
+                "Trong trường hợp bạn chưa được liên hệ sau thời gian này, vui lòng gọi lên hotline của Shopee (19001221) để được tư vấn.\n" +
+                "- Tìm hiểu thêm về Dịch vụ lắp đặt:\n" +
+                "help.shopee.vn/vn/s/article/Làm-thế-nào-để-tôi-có-thể-sử-dụng-dịch-vụ-lắp-đặt-tại-nhà-cho-các-sản-phẩm-tivi-điện-máy-lớn-\n" +
+                "1542942683961\n" +
+                "\n" +
+                "- Quy định đổi trả: Chỉ đổi/trả sản phẩm, từ chối nhận hàng tại thời điểm nhận hàng trong trường hợp sản phẩm giao đến\n" +
+                " không còn nguyên vẹn, thiếu phụ kiện hoặc nhận được sai hàng. Khi sản phẩm đã được cắm điện sử dụng và/hoặc lắp đặt, \n" +
+                "và gặp lỗi kĩ thuật, sản phẩm sẽ được hưởng chế độ bảo hành theo đúng chính sách của nhà sản xuất");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/77e46b525c2643a74239388dd0b43852_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1500));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Máy Lạnh LG Inverter 1 HP V10ENW1");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/7f1f2e0a2d8eab23bf96236ac312141f_tn");
+        images.add("https://cf.shopee.vn/file/a3637e1cb76070bcbc9e8322936f2b7d_tn");
+        images.add("https://cf.shopee.vn/file/6cf617e2e87dd34a6d8710c687a92fff_tn");
+        images.add("https://cf.shopee.vn/file/d03e3368cb25b69506538a298e07d0f2_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/69a2413fc004a16acb9739ca145a503d_tn");
+        //thêm mô tả
+        productInput.setDescription("\n" +
+                "Đặc điểm nổi bật\n" +
+                "Công suất 1 HP thích hợp sử dụng cho phòng có diện tích dưới 15m2\n" +
+                "Công nghệ Inverter giúp máy vận hành êm, giảm ồn, tiết kiệm điện\n" +
+                "Chế độ làm lạnh Jet Cool giúp căn phòng mát lạnh ngay tức thì\n" +
+                "Chế độ thổi hướng gió dễ chịu tránh gió lạnh lùa trực tiếp vào cơ thể\n" +
+                "Lớp phủ chống ăn mòn Gold Fin giúp tăng độ bền cho dàn tản nhiệt\n" +
+                "Máy lạnh sử dụng Gas R32 làm lạnh sâu, thân thiện với môi trường\n" +
+                "\n" +
+                "Đặc điểm sản phẩm\n" +
+                "Model: V10ENW1\n" +
+                "Màu sắc: Trắng\n" +
+                "Nhà sản xuất: LG\n" +
+                "Xuất xứ: Thái Lan\n" +
+                "Năm ra mắt: 2021\n" +
+                "Loại máy lạnh:        1 chiều\n" +
+                "Công suất: 1 HP\n" +
+                "Công nghệ Inverter: Có\n" +
+                "Làm lạnh nhanh: Powerful\n" +
+                "Khử mùi: Tự động làm sạch\n" +
+                "Chế độ gió: Làm lạnh nhanh, hướng gió dễ chịu\n" +
+                "Độ ồn dàn lạnh: 33dB\n" +
+                "Độ ồn dàn nóng: 50dB\n" +
+                "Gas sử dụng: R-32\n" +
+                "Phạm vi hiệu quả: Dưới 15m2\n" +
+                "\n" +
+                "Tiết kiệm năng lượng\n" +
+                "Máy nén kép Inverter liên tục điều chỉnh tốc độ của máy nén để duy trì mức nhiệt độ mong muốn. Hơn thế nữa, \n" +
+                "máy nén kép Dual Inverter Compressor™ với dải tần số hoạt động rộng hơn giúp tiết kiệm được nhiều hơn so với \n" +
+                "máy nén thông thường.\n" +
+                "\n" +
+                "LÀM LẠNH NHANH\n" +
+                "Điều LG DUALCOOL còn mang đến khả năng làm lạnh nhanh hơn tới 40% so với điều hòa thông thường. \n" +
+                "Nhờ hiệu suất mạnh mẽ của máy nén \"kép\" DUAL Inverter được tích hợp đến 2 motor nén đặt lệch pha giúp máy nén \n" +
+                "có thể hoạt động ổn định ở tốc độ cao hơn.\n" +
+                "\n" +
+                "BẢO HÀNH 10 NĂM MÁY NÉN\n" +
+                "Với chế độ bảo hành 10 năm máy nén, giúp bạn luôn an tâm tận hưởng mọi tính năng ưu việt của điều hòa LG DUALCOOL\n" +
+                "\n" +
+                "Dàn tản nhiệt mạ vàng\n" +
+                "Dàn tản nhiệt với lớp phủ đặc biệt màu vàng, giúp bảo vệ bề mặt dàn tản nhiệt, hạn chế quá trình ăn mòn, nâng cao tuổi thọ \n" +
+                "sản phẩm.\n" +
+                "\n" +
+                "TỰ ĐỘNG LÀM SẠCH\n" +
+                "\n" +
+                "Chức năng tự động làm sạch giúp ngăn ngừa sự hình thành vi khuẩn và nấm mốc trong dàn lạnh , \n" +
+                "giúp mang đến một môi trường trong lành hơn cho người sử dụng\n" +
+                "\n" +
+                "CHẾ ĐỘ VẬN HÀNH KHI NGỦ\n" +
+                "Chế độ ngủ đêm sẽ tự động điều chỉnh giảm độ ồn động cơ vận hành xuống mức thấp nhất, \n" +
+                "giúp bạn tận hưởng giấc ngủ ngon và sâu trong không gian yên tĩnh tuyệt đối.\n" +
+                "Hướng gió dễ chịu\n" +
+                "Chế độ hướng gió dễ chịu giúp bạn tránh khỏi luồng gió thổi trực tiếp vào cơ thể, đem đến cho bạn giấc ngủ thư giãn hơn\n" +
+                "\n" +
+                "Màng lọc giúp loại bỏ các tác nhân gây ô nhiễm\n" +
+                "Hệ thống lọc của LG được thiết kế để bắt giữ các hạt bụi có kích thước trên 10μm cũng như các chất có khả năng\n" +
+                " gây dị ứng trong không khí như mạt bụi giúp mang đến một môi trường trong lành hơn.\n" +
+                "\n" +
+                "Tiếng ồn thấp\n" +
+                "Máy điều hòa không khí LG vận hành với mức âm thanh thấp, nhờ có thiết kế quạt nghiêng độc đáo của LG và\n" +
+                " máy nén kép Dual Inverter Compressor™ giúp loại bỏ tiếng ồn không cần thiết và cho phép vận hành êm ái hơn.\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Thời gian bảo hành 24 tháng \n" +
+                "https://www.lg.com/vn/tro-giup/bao-hanh \n" +
+                "Trung Tâm Thông Tin Khách Hàng / Customer Information Center 18001503 (Miễn phí cước gọi/Toll free)\n" +
+                "\n" +
+                "Công lắp đặt:\n" +
+                "- Miễn phí cho nội thành HCM (Quận 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, Tân Bình, Tân Phú, Phú Nhuận, Bình Thạnh, Gò Vấp,\n" +
+                " Quận 9, 12, Thủ Đức, Bình Tân, Hóc Môn) và nội thành Hà Nội (Quận Ba Đình, Quận Bắc Từ Liêm, Quận Cầu Giấy,\n" +
+                " Quận Hà Đông, Quận Hai Bà Trưng, Quận Hoàn Kiếm, Quận Hoàng Mai, Quận Long Biên, Quận Nam Từ Liêm, Quận Tây Hồ,\n" +
+                " Quận Thanh Xuân, Quận Đống Đa)\n" +
+                "- Chi phí vật tư: Nhân viên sẽ thông báo phí vật tư (ống đồng, dây điện v.v...) khi khảo sát lắp đặt (Bảng kê xem tại ảnh 2). \n" +
+                "Khách hàng sẽ thanh toán trực tiếp cho nhân viên kỹ thuật sau khi việc lắp đặt hoàn thành - chi phí này sẽ không hoàn lại\n" +
+                " trong bất cứ trường hợp nào.\n" +
+                "- Quý khách hàng có thể trì hoãn việc lắp đặt tối đa là 7 ngày lịch kể từ ngày giao hàng thành công (không tính ngày Lễ). \n" +
+                "Nếu nhân viên hỗ trợ không thể liên hệ được với Khách hàng quá 3 lần, hoặc Khách hàng trì hoãn việc lắp đặt quá thời hạn trên, \n" +
+                "Dịch vụ lắp đặt sẽ được hủy bỏ.\n" +
+                "- Đơn vị vận chuyển giao hàng cho bạn KHÔNG có nghiệp vụ lắp đặt sản phẩm. \n" +
+                "- Thời gian bộ phận lắp đặt liên hệ (không bao gồm thời gian lắp đặt): trong vòng 24h kể từ khi nhận hàng (Trừ Chủ nhật/ Ngày Lễ). \n" +
+                "Trong trường hợp bạn chưa được liên hệ sau thời gian này, vui lòng gọi lên hotline của Shopee (19001221) để được tư vấn.\n" +
+                "- Tìm hiểu thêm về Dịch vụ lắp đặt: \n" +
+                "help.shopee.vn/vn/s/article/Làm-thế-nào-để-tôi-có-thể-sử-dụng-dịch-vụ-lắp-đặt-tại-nhà-cho-các-sản-phẩm-tivi-điện-máy-lớn-\n" +
+                "1542942683961\n" +
+                "\n" +
+                "- Quy định đổi trả: Chỉ đổi/trả sản phẩm, từ chối nhận hàng tại thời điểm nhận hàng trong trường hợp sản phẩm giao đến \n" +
+                "không còn nguyên vẹn, thiếu phụ kiện hoặc nhận được sai hàng. Khi sản phẩm đã được cắm điện sử dụng và/hoặc lắp đặt, \n" +
+                "và gặp lỗi kĩ thuật, sản phẩm sẽ được hưởng chế độ bảo hành theo đúng chính sách của nhà sản xuất");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/7f1f2e0a2d8eab23bf96236ac312141f_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.WHITE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1500));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Máy lọc không khí LG Puricare Pro AS40GWWJ1");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/cf1c11d40841d372c82be9168dbc2272_tn");
+        images.add("https://cf.shopee.vn/file/b3300bf431726748ecd02f5162a39c3e_tn");
+        images.add("https://cf.shopee.vn/file/e88f8cd5af82d3245ca62f457df2d203_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/03cf81eb69975a43dd8a9af1aaca32b4_tn");
+        //thêm mô tả
+        productInput.setDescription("\n" +
+                "Màn hình hiển thị thông minh\n" +
+                "Màn hình hiển thị thông minh hiển thị mức độ hạt bụi trong nhà theo thời gian thực với cảm biến PM 1.0 và cảm biến mùi.\n" +
+                "Cảm biến PM1.0 có thể cảm nhận được các hạt bụi mịn lên đến 1,0㎛. Cảm biến mùi phát hiện một số hợp chất gây mùi \n" +
+                "trong không khí.\n" +
+                "\n" +
+                "Đèn hiển thị chất lượng không khí\n" +
+                "Giờ đây bạn có thể dễ dàng kiểm tra chất lượng không khí từ xa hoặc vào ban đêm với đèn hiển thị chất lượng không khí \n" +
+                "bằng 4 màu khác nhau.\n" +
+                "*Mức chất lượng không khí và màu sắc đèn tương ứng có thể khác ở mỗi quốc gia.\n" +
+                "\n" +
+                "Hoạt động êm ái\n" +
+                "Với động cơ Inverter thông minh, bạn có thể tận hưởng không khí đã được lọc sạch căn phòng vẫn rất yên tĩnh. \n" +
+                "Chế độ hoạt động LowDecibel có thể giữ độ ồn thấp tới 20dB và vẫn lọc sạch được không khí.\n" +
+                "\n" +
+                "Hệ thống lọc thông minh\n" +
+                "Hệ thống lọc 3 bước giúp loại bỏ các chất có hại như các hạt lớn, bụi mịn PM0.02, mạt cưa, formaldehyde, \n" +
+                "SO2 & NO2, virus và vi khuẩn.\n" +
+                "\n" +
+                "Thiết kế độc đáo và tiện lợi\n" +
+                "Máy lọc không khí LG có thiết kế tối ưu và hướng đến người dùng. Chiều cao của máy cho phép người lớn hoặc\n" +
+                " trẻ em vận hành dễ dàng, và hình dạng tròn thanh lịch giúp tiết kiệm không gian.\n" +
+                "\n" +
+                "Dễ dàng thay thế bảo dưỡng\n" +
+                "Khi cần thay bộ lọc, bạn sẽ nhận được cảnh báo trên màn hình. Ngoài ra, bạn có thể lấy ra tất cả các bộ lọc \n" +
+                "cùng một lúc mà không làm đổ bụi ra khỏi bộ lọc và thay các bộ lọc khác nhau theo màu sắc một cách dễ dàng. \n" +
+                "Với chức năng Khóa trẻ em, bạn có thể giữ cho máy lọc không khí an toàn với trẻ em.\n" +
+                "\n" +
+                "Thông số kỹ thuật\n" +
+                "Mã sản phẩm        AS40GWWJ1\n" +
+                "Công suất [W]        32\n" +
+                "Màu sắc        Trắng\n" +
+                "Kích thước (mm)        295 x 779 x 308\n" +
+                "Trọng lượng (kg)        8.3CADR [m3/hr]        256\n" +
+                "Diện tích sử dụng (m2)        32.8\n" +
+                "Độ ồn (dB)        47/20\n" +
+                "Chế độ hoạt động - Tự động        Có\n" +
+                "Chế độ hoạt động - Auto        Có\n" +
+                "Chế độ hoạt động - Ban đêm        Có\n" +
+                "Hẹn giờ        Có\n" +
+                "Bộ lọc        Màng lọc thô x 1 cái / Màng lọc HEPA x 1 cái / Màng lọc mùi x 1 cái\n" +
+                "Loại màng lọc        E11\n" +
+                "Bộ phát ion        Có\n" +
+                "Cảm biến - Mùi        Có\n" +
+                "Cảm biến - Bụi PM 1.0        Có\n" +
+                "KhÓa trẻ em        Có\n" +
+                "Wi-Fi (ThinQ)        Có\n" +
+                "Phân tích thông minh        Có");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/cf1c11d40841d372c82be9168dbc2272_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.WHITE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602328_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Máy giặt LG inverter 10.5kg (trắng) - T2350VS2W");
+        //mã shop sửa lại
+        productInput.setShopId(602328);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420748290");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/7b7b1c4b91085b9a5b91cb952c5c6a02_tn");
+        images.add("https://cf.shopee.vn/file/086ecd6909ea6fb16bf5a1020be4b298_tn");
+        images.add("https://cf.shopee.vn/file/1d44d0ee67965b58eaab8229f53bb0cb_tn");
+        images.add("https://cf.shopee.vn/file/879ae34be26039dd0b531cd25e2db606_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/6cb035e3a544fb0ebdf98f21da472434_tn");
+        //thêm mô tả
+        productInput.setDescription("\n" +
+                "Tiết kiệm năng lượng với công nghệ Smart Inverter™\n" +
+                "Công nghệ Smart Inverter loại bỏ các hoạt động không cần thiết bằng cách điều khiển điện năng tiêu thụ một cách tối ưu.\n" +
+                "\n" +
+                "Chuyển động thông minh Smart Motion\n" +
+                "Smart Motion là 3 chuyển động giặt do động cơ Smart Inverter tạo ra, để mang tới khả năng giặt tối ưu cho từng loại vải.\n" +
+                " Sự kết hợp tối ưu giúp chăm sóc áo quần hoàn hảo.\n" +
+                "\n" +
+                "Giặt xoay chiều TurboDrum™\n" +
+                "TurboDrum™ mang tới hiệu năng giặt mạnh mẽ và khả năng đánh bật cả các vết bẩn cứng đầu nhất nhờ xoáy nước mạnh mẽ, \n" +
+                "tạo ra bởi việc xoay đảo hướng lồng giặt và mâm giặt ngược chiều nhau.\n" +
+                "\n" +
+                "Đấm nước Punch+3\n" +
+                "Punch+3 tạo ra các dòng nước theo phương thẳng đứng, đưa đồ giặt lên và xuống liên tục, mang tới hiệu quả giặt đồng đều.\n" +
+                "\n" +
+                "Giặt sơ tự động\n" +
+                "Chỉ với một chạm, vết bẩn khó giặt sẽ biến mất.\n" +
+                "Hãy để đôi bàn tay của bạn nghỉ ngơi và để máy giặt làm công việc của chúng!\n" +
+                "\n" +
+                "Thác nước vòng cung\n" +
+                "Các Thác nước vòng cung giúp hòa tan bột giặt nhanh chóng để dễ dàng thẩm thấu vào áo quần, \n" +
+                "đồng thời giảm thiểu cặn bột giặt còn sót lại gây dị ứng và mẩn ngứa\n" +
+                "\n" +
+                "Bền Bỉ & Giảm Rung Ồn\n" +
+                "Động cơ Smart Inverter không chỉ giảm rung và ồn tối đa mà còn tăng sự bền bỉ của động cơ. \n" +
+                "Động cơ sẽ được bảo hành lên tới 10 năm.\n" +
+                "\n" +
+                "Chẩn đoán thông minh Smart Diagnosis™\n" +
+                "Smart Diagnosis™ giúp chẩn đoán và khắc phục các sự cố sản phẩm, giảm số lần phải đến bảo dưỡng tốn chi phí và \n" +
+                "không thuận tiện\n" +
+                "\n" +
+                "Thiết kế an toàn và thuận tiện\n" +
+                "Thiết kế phong cách và bền bỉ, đảm bảo sự thuận tiện và an toàn, đồng thời mang đến những tính năng hiệu quả và đổi mới.\n" +
+                "\n" +
+                "Thông số kỹ thuật\n" +
+                "Khối lượng giặt: 10.5kg\n" +
+                "Màu sắc: Trắng\n" +
+                "Kích thước (Dài x Cao x Sâu): 590 x 960 x 606\n" +
+                "Công nghệ Smart Inverter™: Có\n" +
+                "Chuyển động thông minh Smart Motion™: Có\n" +
+                "Giặt xoay chiều TurboDrum™: Có\n" +
+                "Loại máy giặt: Máy giặt lồng đứng\n" +
+                "Trọng lượng: 39kg\n" +
+                "\n" +
+                "Thông tin bảo hành\n" +
+                "Thời gian bảo hành: 24 tháng.\n" +
+                "Thông tin chi tiết xem tại: https://www.lg.com/vn/tro-giup/bao-hanh.\n" +
+                "\n" +
+                "***Công lắp đặt:\n" +
+                "- Miễn phí cho nội thành HCM (Quận 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, Tân Bình, Tân Phú, Phú Nhuận, Bình Thạnh, Gò Vấp, \n" +
+                "Quận 9, 12, Thủ Đức, Bình Tân, Hóc Môn) và nội thành Hà Nội (Quận Ba Đình, Quận Bắc Từ Liêm, Quận Cầu Giấy, \n" +
+                "Quận Hà Đông, Quận Hai Bà Trưng, Quận Hoàn Kiếm, Quận Hoàng Mai, Quận Long Biên, Quận Nam Từ Liêm, Quận Tây Hồ,\n" +
+                " Quận Thanh Xuân, Quận Đống Đa)\n" +
+                "- Chi phí vật tư: Nhân viên sẽ thông báo phí vật tư (ống đồng, dây điện v.v...) khi khảo sát lắp đặt (Bảng kê xem tại ảnh 2). \n" +
+                "Khách hàng sẽ thanh toán trực tiếp cho nhân viên kỹ thuật sau khi việc lắp đặt hoàn thành - chi phí này sẽ không hoàn lại\n" +
+                " trong bất cứ trường hợp nào.\n" +
+                "- Quý khách hàng có thể trì hoãn việc lắp đặt tối đa là 7 ngày lịch kể từ ngày giao hàng thành công (không tính ngày Lễ). \n" +
+                "Nếu nhân viên hỗ trợ không thể liên hệ được với Khách hàng quá 3 lần, hoặc Khách hàng trì hoãn việc lắp đặt quá thời hạn trên, \n" +
+                "Dịch vụ lắp đặt sẽ được hủy bỏ.\n" +
+                "- Đơn vị vận chuyển giao hàng cho bạn KHÔNG có nghiệp vụ lắp đặt sản phẩm.\n" +
+                "- Thời gian bộ phận lắp đặt liên hệ (không bao gồm thời gian lắp đặt): trong vòng 24h kể từ khi nhận hàng (Trừ Chủ nhật/ Ngày Lễ). \n" +
+                "Trong trường hợp bạn chưa được liên hệ sau thời gian này, vui lòng gọi lên hotline của Shopee (19001221) để được tư vấn.\n" +
+                "- Tìm hiểu thêm về Dịch vụ lắp đặt:\n" +
+                "help.shopee.vn/vn/s/article/Làm-thế-nào-để-tôi-có-thể-sử-dụng-dịch-vụ-lắp-đặt-tại-nhà-cho-các-sản-phẩm-tivi-điện-máy-lớn-\n" +
+                "1542942683961\n" +
+                "\n" +
+                "- Quy định đổi trả: Chỉ đổi/trả sản phẩm, từ chối nhận hàng tại thời điểm nhận hàng trong trường hợp sản phẩm giao đến\n" +
+                " không còn nguyên vẹn, thiếu phụ kiện hoặc nhận được sai hàng. Khi sản phẩm đã được cắm điện sử dụng và/hoặc lắp đặt,\n" +
+                " và gặp lỗi kĩ thuật, sản phẩm sẽ được hưởng chế độ bảo hành theo đúng chính sách của nhà sản xuất");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/7b7b1c4b91085b9a5b91cb952c5c6a02_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.WHITE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    //
+    @Test
+    public void testProduct_602357_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách The Magic Phép màu 142577882");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/7d6513b524af0365c85dee9cbdbd8e42");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/e3df9f4ffe00e063d06cfdfa081c31c1");
+        productInput.setDescription("Giới thiệu sách\n" +
+                "\n" +
+                "thông tin chi tiết\n" +
+                "\n" +
+                "Công ty phát hành : Công ty Cổ Phần Thiên Minh Book\n" +
+                "\n" +
+                "-Tác giả        Rhonda Byrne\n" +
+                "\n" +
+                "-Nhà xuất bản        : Nhà Xuất Bản Thể Giới\n" +
+                "\n" +
+                "-Loại bìa        Bìa cứng\n" +
+                "\n" +
+                "-Số trang        260 trang\n" +
+                "\n" +
+                "khổ sách : 13x19cm\n" +
+                "\n" +
+                "Năm xuất bản : 2020\n" +
+                "\n" +
+                "The Magic Phép màu 142577882\n" +
+                "\n" +
+                "Cuốn sách Trong suốt hơn 20 thế kỷ qua, những lời dạy trong các văn bản linh thiêng cổ xưa đã khiến hầu hết mọi người hiểu nhầm. Chỉ có một số ít người trong lịch sử có thể nhận ra rằng nó thật ra là một câu đố, và một khi đã giải được ẩn ý trong câu đố ấy -  để vén bức màn bí mật - một thế giới hoàn toàn mới sẽ xuất hiện trước mắt bạn.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Trong quyển sách phép màu, Rhonda Byrne đã tiết lộ bí mật đầy quyền năng này cho cả thế giới. Và sau đó, với hành trình 28 ngày nhiệm màu, cô ấy hướng dẫn chúng ta phương pháp ứng dụng kiến thức này vào cuộc sống thường nhật.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bất kể bạn là ai, bất kể bạn ở đâu, bất kể tình huống hiện tại của bạn là gì, phép màu sẽ thay đổi hoàn toàn cuộc sống của bạn!\n" +
+                "\n" +
+                "đây là một cuốn sách rất cần thiết cho các bạn");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/e3df9f4ffe00e063d06cfdfa081c31c1");
+        variant_1.setWeight(25.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(350));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Tôi Tài Giỏi Bạn Cũng Thế (Tái Bản 2019 )");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/d47cb9e0f67e467a5fb13ffc742995aa");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/d47cb9e0f67e467a5fb13ffc742995aa");
+        productInput.setDescription("Công ty phát hành : Cty TGM\n" +
+                "Tác giả : Adam Khoo\n" +
+                "Ngày xuất bản : 02-2019\n" +
+                "Kích thước : 16 x 24 cm\n" +
+                "Nhà xuất bản : NXB Phụ Nữ\n" +
+                "Loại bìa : Bìa mềm\n" +
+                "Số trang : 276 trang\n" +
+                "Khi bạn cầm trên tay quyển sách này, có nghĩa là bạn đã có chiếc chìa khóa đến sự thành công cùng bảng hướng dẫn sử dụng...\n" +
+                "\n" +
+                "Trong chúng ta, bất kỳ ai cũng muốn chính bản thân mình trở thành người tài giỏi, có thể giải quyết mọi vấn đề một cách hiệu quả nhất. Và để có được những điều đó quyển sách này sẽ giúp bạn bằng những hướng dẫn học tập chi tiết nhất.\n" +
+                "\n" +
+                "Tác giả không chỉ đơn thuần giải thích người khác đã thành công như thế nào, mà còn nói làm sao để họ làm được như thế để giúp người đọc khám phá ra tiềm năng của bản thân, và phát huy điều đó. Ngoài ra, sách còn cung cấp những phương pháp học thông minh (như áp dụng các công cụ học bằng cả não bộ như Sơ Đồ Tư Duy, phát triển trí nhớ siêu việt để ghi nhớ các sự kiện, con số một cách dễ dàng, thành thạo việc quản lý thời gian và xác định mục tiêu). Adam Khoo đã cho thấy, tài giỏi mang lại sự tự tin như thế nào và còn hướng dẫn bạn cách thức trở thành người tài giỏi. Qua đó độc giả sẽ lập được kế hoạch cho cuộc đời của chính mình.\n" +
+                "\n" +
+                "Tôi Tài Giỏi - Bạn Cũng Thế sẽ giúp tìm ra giải pháp tốt nhất cho mọi vấn đề, và giúp nhận ra cách thức để thành công. Tuy nhiên để làm một người tài giỏi thì người đọc cần đặt quyển sách xuống và thực thi ngay các kế hoạch. Đương nhiên, không phải chỉ chăm chỉ ngày một, ngày hai mà mỗi người phải thực hiện lâu dài, thậm chí cả đời thì mới đạt được những gì mình muốn.\n" +
+                "\n" +
+                "Thật sự đây là một quyển sách rất tuyệt vời và bổ ích, đem lại cho chúng ta những kinh nghiệm quý báu. Một quyển sách không - thể - thiếu trong tủ sách!\n" +
+                "\n" +
+                "“Thật không biết phải làm sao với con trai chúng tôi. Nó được gởi đi học thêm khắp nơi mà vẫn làm bài thi tệ hại. Chúng tôi tự hỏi sau này nó có làm nên trò trống gì không nữa”…\n" +
+                "\n" +
+                "Đó chính là những gì mà cha mẹ của Adam Khoo đã từng than vãn về sự kém cõi và kết quả thi cử thảm hại của cậu bé Adam nhiều năm về trước. May mắn thay, vào thời điểm tăm tối nhất trong đời, Adam đã tìm thấy và học tập theo công thức thành công của những người tài giỏi vượt bậc. Chính vì thế, từ một cậu học trò kém cỏi nhất trong số những học sinh kém, không những anh đã vươn lên để đạt đuợc kết quả xuất sắc trong các kỳ thi cuối cấp hai và cấp ba, anh còn đuợc xếp hạng trong số 1% sinh viên tài năng nhất của trường Đại học Quốc Gia Singapore (NUS)");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/d47cb9e0f67e467a5fb13ffc742995aa");
+        variant_1.setWeight(21.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(350));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách - Truyện tranh tư duy cho bé,phát triển ngôn ngữ, PT trí tưởng tượng,rèn luyện khả năng quan sát,pt khả năng tư duy");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/dbbca2b146480594bd5ce1cbfa872120");
+        images.add("https://cf.shopee.vn/file/d1044582f33209badc0f12d7f245b537");
+        images.add("https://cf.shopee.vn/file/f58f4b1d153fd7888a4967bb9b69363e");
+        images.add("https://cf.shopee.vn/file/2d20d73b7bdd8f8d3eb97f30b4eb19ec");
+        images.add("https://cf.shopee.vn/file/cc1bc8f9db05354573070e0fa856f2fa");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/d1e62936a717e362c8b2c2a48aef01ce");
+        productInput.setDescription("THÔNG TIN CHI TIẾT\n" +
+                "Công Ty phát hành : NS Đại Mai\n" +
+                "Tác giả        Hải Minh\n" +
+                "Ngày xuất bản        08-2019\n" +
+                "Kích thước        17x24\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Phụ Nữ\n" +
+                "Dịch Giả        Hải Minh ( biên soạn )\n" +
+                "Loại bìa        Bìa cứng\n" +
+                "Số trang        146 trang\n" +
+                "GIỚI THIỆU SÁCH\n" +
+                "Truyện tranh tư duy cho bé,phát triển ngôn ngữ, PT trí tưởng tượng,rèn luyện khả năng quan sát,pt khả năng tư duy\n" +
+                "cuốn sách là những câu chuyện ngụ ngôn hay nhất , được thiết kế đọc truyện theo tư duy hình ảnh ,từng câu chuyện kết hợp với hình ảnh thay cho từ , để bé đoán hình thành câu chuyện đọc hay cho bé , giúp bé phát triển tư duy nhanh trí , khả năng tưởng tượng , rèn luyện cho bé");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/d1e62936a717e362c8b2c2a48aef01ce");
+        variant_1.setWeight(22.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(450));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách - Combo 25 Chuyên Đề Ngữ Pháp Tiếng Anh Trọng Tâm Tập 1 và Tập 2 (Trọn Bộ 2 Tập)");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/fcb79729b9b5b41848772c1b7eecb328");
+        images.add("https://cf.shopee.vn/file/ed5256ff782493bbef3abadd9364f517");
+        images.add("https://cf.shopee.vn/file/c1aed5564d6d84443e5f34badd9d6af1");
+        images.add("https://cf.shopee.vn/file/a8b358de96c0f60b2196dd48c62b37b6");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/980089e0069f23fbfd6ebafbee79d023");
+        productInput.setDescription("THÔNG TIN CHI TIẾT\n" +
+                "Công ty phát hành        Huy Hoàng Bookstore\n" +
+                "Ngày xuất bản        : 02-2019\n" +
+                "Tác Giả        Trang Anh\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        308 trang\n" +
+                "Khổ sách : 19x26cm\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Đại Học Sư Phạm\n" +
+                "GIỚI THIỆU SÁCH\n" +
+                "Combo 25 Chuyên Đề Ngữ Pháp Tiếng Anh Trọng Tâm Tập 1 và Tập 2 (Trọn Bộ 2 Tập)\n" +
+                "Bộ sách ngữ pháp Tiếng Anh gồm 2 tập chắt lọc toàn bộ kiến thức ngữ pháp trọng tâm trong Tiếng Anh, phù hợp cho nhiều đối tượng: học sinh, sinh viên, các bạn muốn luyện thi các kì thi chuyên, kì thi quốc gia và cả những kì thi quốc tế và cả những đồng nghiệp, đồng môn tham khảo.\n" +
+                "\n" +
+                "Toàn bộ kiến thức trong sách được tác giả sắp xếp theo từng chuyên đề, hệ thống logic và diễn giải đơn giản, dễ hiểu. Hệ thống từ vựng đi kèm phong phú đủ để bạn vận dụng vào những cấu trúc tiếng Anh phù hợp. ‘Practice makes perfect’ – đây là slogan của cô giáo Trang Anh trong quá trình dạy học cho các bạn nên tác giả đã thiết kế rất nhiều dạng bài tập thực hành cho người học ghi nhớ, củng cố kiến thức. Sau 5 chuyên đề là có phần ôn tập để liên kết và hệ thống kiến thức với nhau nên người học không sợ quên kiến thức.\n" +
+                "~~~*~~~\n" +
+                "THÔNG TIN CHI TIẾT\n" +
+                "Công ty phát hành: Huy Hoàng Book\n" +
+                "Nhà Xuất bản: Đại Học Sư Phạm\n" +
+                "Tác Giả: Trang Anh\n" +
+                "Loại bìa: Bìa mềm\n" +
+                "Kích Thước: 19 x 26.5 cm\n" +
+                "Số Trang: 308 trang/tập 1; 363 trang/tập 2\n" +
+                "Năm Xuất Bản: 01-2019 (Phiên Bản Tái Bản có sửa chữa, bổ sung)");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/980089e0069f23fbfd6ebafbee79d023");
+        variant_1.setWeight(50.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(700));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Cẩm Nang Cấu Trúc Tiếng Anh");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/dd1bc094eb06947cba620041f264ffcd");
+        images.add("https://cf.shopee.vn/file/3fdbc963a1ef667cebf51939436f85ae");
+        images.add("https://cf.shopee.vn/file/ff7cb5ab8f3ecdb1da32939261ac8f79");
+        images.add("https://cf.shopee.vn/file/e98c976f9d08974caafa55231f5e2a05");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/3b204b6a090682c8039c029aa1ef478d");
+        productInput.setDescription("GIỚI THIỆU SÁCH\n" +
+                "Cẩm Nang Cấu Trúc Tiếng Anh (Trang Anh) -  (Kiến Thức Siêu Đầy Đủ - Áp Dụng Cực Dễ Dàng)\n" +
+                "\n" +
+                "Cuốn sách CẨM NANG CẤU TRÚC TIẾNG ANH gồm 25 phần, mỗi phần là một phạm trù kiến thức trong tiếng Anh được trình bày một cách ngắn gọn, đơn giản, cô đọng và hệ thống hoá dưới dạng sơ đồ, bảng biểu nhằm phát triển khả năng tư duy của người học và từ đó giúp người học nhớ kiến thức nhanh hơn và sâu hơn.\n" +
+                "\n" +
+                "Sau hầu hết các phần lí thuyết đều có 20-30 câu bài tập áp dụng để kiểm tra cũng như khắc sâu kiến thức cho người học.\n" +
+                "\n" +
+                "Tuy dày chưa đến 250 trang nhưng cuốn sách lại có thể bao trọn toàn bộ kiến thức từ đơn giản đến phức tạp cộng với cách tận dụng tối đa và áp dụng triệt để cách học tiếng Anh bằng sơ đồ tư duy.\n" +
+                "\n" +
+                "\"Kiến thức siêu đầy đủ - Áp dụng cực dễ dàng\", cuốn sách phù hợp với mọi trình độ, mọi đối tượng cũng như nhu cầu của người học.\n" +
+                "\n" +
+                "\" Tôi tự tin là người sẽ thay đổi quan niệm của người học bằng cách đơn giản hóa Tiếng Anh để người học nhận thấy học tiếng anh thật dễ dàng\" - Trang Anh (Lời tựa tác giả)\n" +
+                "\n" +
+                "~~~*~~~\n" +
+                "THÔNG TIN CHI TIẾT\n" +
+                "Công ty phát hành: Huy Hoang Bookstore\n" +
+                "Nhà xuất bản: Nhà Xuất Bản Đại Học Sư Phạm\n" +
+                "Tác giả: Trang Anh\n" +
+                "Loại bìa: Bìa mềm\n" +
+                "Kích thước: 19x26.5 cm\n" +
+                "Số trang: 239\n" +
+                "Ngày xuất bản: 04-2019");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/3b204b6a090682c8039c029aa1ef478d");
+        variant_1.setWeight(40.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(600));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Giáo Trình Hán Ngữ Tập 1 Quyển Thượng (Phiên Bản Mới App)");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/33a4f93e215b7d9f99a0586d926efd83");
+        images.add("https://cf.shopee.vn/file/e19f5d14a25ed944b73c6a8b019fe547");
+        images.add("https://cf.shopee.vn/file/662f078f49171cee3e23f0422d6338e3");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/344f25943bcce98841ca1bb975c3f622");
+        productInput.setDescription("Thông Tin Chi Tiết\n" +
+                "\n" +
+                "Công ty phát hành : MCBOOKS\n" +
+                "\n" +
+                "Tác giả : Đại học ngôn ngữ bắc kinh\n" +
+                "\n" +
+                "Biên dịch : Trần thị thanh Liêm\n" +
+                "\n" +
+                "Kích thước ;19 x 27 cm\n" +
+                "\n" +
+                "Loại bìa :Bìa mềm\n" +
+                "\n" +
+                "Số trang 158 trang\n" +
+                "\n" +
+                "Năm xuất bản : 2022\n" +
+                "\n" +
+                "Nhà xuất bản : Nhà Xuất Bản Đại Học quốc gia Hà Nội\n" +
+                "\n" +
+                "Giới thiệu sách\n" +
+                "\n" +
+                "Giáo Trình Hán Ngữ Tập 1 - Quyển Thượng (Phiên Bản Mới - App)\n" +
+                "\n" +
+                "Bộ Giáo Trình Hán Ngữ gồm nhiều bài với nội dung từ dễ đến khó. Bắt đầu từ luyện tập ngữ âm cơ bản tiếng Hán, từ đó tiến hành giảng dạy kết cấu ngữ pháp, ngữ nghĩa và ngữ dụng, cuối cùng là giai đoạn giảng dạy ngữ đoạn, thông qua sự hiểu biết sâu hơn về ngữ pháp và vận dụng từ ngữ, để nâng cao hơn nữa khả năng biểu đạt thành đoạn văn của người học.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Mỗi bài học bao gồm các phần:\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bài khóa\n" +
+                "\n" +
+                "Từ mới\n" +
+                "\n" +
+                "Chú thích\n" +
+                "\n" +
+                "Ngữ pháp, ngữ âm\n" +
+                "\n" +
+                "Luyện tập\n" +
+                "\n" +
+                "Giáo Trình Hán Ngữ có 3300 từ mới. Phần bài khóa và nội dung đàm thoại có quan hệ chủ điểm đồng nhất với bài luyện đọc trong phần bài tập, trên cơ sở bảng từ mới của từng bài. Đặc biệt, cuốn sách học cùng app MCBooks ghi giọng đọc chuẩn giúp bạn luyện nghe và học phát âm hiệu quả.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Mục lục\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bài 1: Xin chào\n" +
+                "\n" +
+                "Bài 2: Tiếng Hán không khó lắm\n" +
+                "\n" +
+                "Bài 3: Ngày mai gặp lại\n" +
+                "\n" +
+                "Bài 4: Bạn đi đâu đấy\n" +
+                "\n" +
+                "Bài 5: Đây là thầy giáo Vương\n" +
+                "\n" +
+                "Bài 6: Tôi học tiếng Hán\n" +
+                "\n" +
+                "Bài 7: Bạn ăn gì\n" +
+                "\n" +
+                "Bài 8: Một cân táo bao nhiêu tiền II\n" +
+                "\n" +
+                "Bài 3: Ngày mai gặp lại\n" +
+                "\n" +
+                "Bài 4: Bạn đi đâu đấy IV\n" +
+                "\n" +
+                "Bài 9: Tôi đổi tiền nhân dân tệ\n" +
+                "\n" +
+                "Bài 10: Ông ấy sống ở đâu\n" +
+                "\n" +
+                "Bài 11: Chúng tôi đều là lưu học sinh V\n" +
+                "\n" +
+                "Bài 12: Bạn học ở đâu\n" +
+                "\n" +
+                "Bài 13: Đây không phải là thuốc Đông y\n" +
+                "\n" +
+                "Bài 14: Xe của bạn mới hay cũ\n" +
+                "\n" +
+                "Bài 15: Công ty của ông có bao nhiêu nhân viên\n" +
+                "\n" +
+                "Bảng từ vựng");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/344f25943bcce98841ca1bb975c3f622");
+        variant_1.setWeight(45.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(650));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Đồng Dao Thơ Truyện cho bé tập nói");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/18ddc7ad793c41e9d46a465065cf73c7");
+        images.add("https://cf.shopee.vn/file/58e8f352cec3493be28613f3c3ae45f5");
+        images.add("https://cf.shopee.vn/file/6a91327dd9f3bf9bf7a0285dbe5c450c");
+        images.add("https://cf.shopee.vn/file/70509ba76f79ad69a3f4f016220cdff9");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/4eb5e10c0cf2de04d697e293199cf01f");
+        productInput.setDescription("Thông tin chi tiết \n" +
+                "Công ty phát hành : ĐẠI MAI BOOKS\n" +
+                "-Tác giả        : Hải Minh\n" +
+                "-Ngày xuất bản        2020\n" +
+                "-Nhà xuất bản        :Nhà Xuất Bản Phụ Nữ việt nam\n" +
+                "-Loại bìa        Bìa mềm\n" +
+                "-Số trang        128 trang\n" +
+                "Khổ sách 20x28cm\n" +
+                "Giới thiệu sách\n" +
+                "Đồng dao thơ-truyện cho bé tập nói , giúp bé phát triển ngôn ngữ, khả năng nghe hiểu, khả năng nhận biết,\n" +
+                "\n" +
+                "Ngay từ năm đầu đời, bé có thể bập bẹ những tiếng nói đầu tiên. Theo thời gian, ngôn ngữ của bé càng được hoàn thiện và phát triển. Đọc sách cho bé nghe để khuyến khích bé tập nói là một trong những phương pháp tối ưu giúp bé phát triển ngôn ngữ.\n" +
+                "\n" +
+                "Cuốn sách Đồng dao -Thơ -Truyện cho bé tập nói '' tuyển chọn những bài đồng dao, bài thơ và những câu chuyện phù hợp cho lứa tuổi tập nói, sách gồm có 3 phần.\n" +
+                "\n" +
+                "Đồng dao : là thơ ca truyền miệng dân gian, có nhịp có vần. Trẻ em nhỏ chưa hiểu lời thích đồng dao và chỉ cần mẹ đọc cho nghe, bé dậm chậm chân, vỗ vỗ tay theo nhịp. Bé lớn hơn càng thích đồng dao vì các bé có thể vừa hát đồng dao, vừa chơi những trò chơi gắn với đồng\n" +
+                "\n" +
+                "Phần Thơ : tuyển chọn những bài thơ hay, ngắn và nghộ nghĩnh.\n" +
+                "\n" +
+                "Phần Truyện : gồm những câu chuyện nhỏ dễ đọc, dễ hiểu, nội dung phong phú. Dung lượng chữ trong mỗi chuyện phù hợp với sự tiếp nhận của các bé trong độ tuổi tập nói.\n" +
+                "\n" +
+                "Cuốn sách có tranh minh họa sinh động, không chỉ giúp bé phát triển ngôn ngữ mà còn giúp bé hiểu thêm về cuộc sống quanh mình. Sách phù hợp với bé từ 0-6 tuổi");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/4eb5e10c0cf2de04d697e293199cf01f");
+        variant_1.setWeight(20.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(350));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách 301 Câu Đàm Thoại Tiếng Hoa ( Trương văn giới lê khắc kiều lục ,khổ to )");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/9f41866760ddec818486b02c0dba9000");
+        images.add("https://cf.shopee.vn/file/6f63bff561f02907717ad7e90f4187ec");
+        images.add("https://cf.shopee.vn/file/4d3265212ed29c991ccff0d639c83eb4");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/9a21168b60a51de153d060aba7e4ab66");
+        productInput.setDescription("Giới thiệu sách : \n" +
+                "công ty phát hành : Hải hà\n" +
+                "Tác giả : Nhiều tác giả\n" +
+                "Kích thước : 17x24cm\n" +
+                "Số trang : 479 trang\n" +
+                "Kích thước : 16x24 cm\n" +
+                "nhà xuất bản : NXB Khoa Học Xã Hội\n" +
+                "Hình thức : bìa mềm\n" +
+                "Năm xuất bản : 2021\n" +
+                "301 Câu Đàm Thoại Tiếng Hoa ( Trương văn giới- lê khắc kiều lục, khổ to )\n" +
+                "Giáo Trình 301 Câu Đàm Thoại Tiếng Hoa được biên soạn công phu, có chú trọng đến những đặc điểm mà học viên cần lưu tâm khi mới học chữ Hán. Mục đích là để giúp học viên nhanh chóng nắm vững chữ Hán, nắm vững cách viết chính xác các nét cơ bản của chữ Hán và những quy tắc cơ bản khi viết chữ Hán nhằm giúp các bạn viết được chuẩn xác và đúng hơn các câu, từ của chữ Hán.\n" +
+                "\n");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/9a21168b60a51de153d060aba7e4ab66");
+        variant_1.setWeight(30.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(550));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách - Truyện tranh ngụ ngôn dành cho thiếu nhi song ngữ anh việt, những người bạn đường");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/bf9a77e2f00f1cd719f16e1012c74304");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/ea1f829e549b5fb9c3c9f86564b3c761");
+        productInput.setDescription("Thông tin chi tiết :\n" +
+                "Công ty phát hành : Đại Mai\n" +
+                "Tác giả : Nhiều tác giả \n" +
+                "Hình thức:  bìa mềm \n" +
+                "Số trang : 25 trang\n" +
+                "Năm xuất bản : 2020\n" +
+                "Nhà xuất bản : NXB Phụ Nữ Việt Nam\n" +
+                "KHổ sách : 20x23cm\n" +
+                "Giới thiệu sách:\n" +
+                "Truyện tranh ngụ ngôn dành cho thiếu nhi song ngữ anh việt, những người bạn đường\n" +
+                "Truyện tranh ngụ ngôn dành cho thiếu nhi ( song ngữ Anh - Việt ) là những câu chuyện nổi tiếng trong văn học dành cho thiếu nhi, sách được thiết kế và vẽ câu chuyện theo tranh , sách được thiết kế phần tiếng anh và tiếng việt , với sự kết hợp cả hai thứ tiếng , giúp các bạn nhỏ thích thú hơn trong từng câu chuyện hay nhất được chọn lọc , bạn nhỏ có thể vừa đọc truyện tiếng anh và tiếng việt , để nâng cao phần ngoại ngữ thêm cho bé , cuối mỗi cuốn truyện đều có phần câu hỏi theo tranh cho bé thích thú hơn khi đọc xong câu chuyện, Bộ sách này có 10 chủ đề các em nhỏ tìm cho đủ tập nhé. Chúc Các bạn thiếu nhi học tập tốt.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/ea1f829e549b5fb9c3c9f86564b3c761");
+        variant_1.setWeight(26.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(300));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602357_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách - Truyện tranh ngụ ngôn dành cho thiếu nhi song ngữ anh việt , chuột nhà và chuột đồng");
+        productInput.setShopId(602357);
+        productInput.setTradeMarkId("1671551420774201");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/bbb966730a62fd9a220716815dabf8ec");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/bbb966730a62fd9a220716815dabf8ec");
+        productInput.setDescription("Thông tin chi tiết :\n" +
+                "Công ty phát hành : Đại Mai\n" +
+                "Tác giả : Nhiều tác giả \n" +
+                "Số trang : 23 trang\n" +
+                "Hình thức:  bìa mềm \n" +
+                "Năm xuất bản : 2020\n" +
+                "Nhà xuất bản : NXB Phụ Nữ Việt Nam\n" +
+                "KHổ sách : 20x23cm\n" +
+                "Giới thiệu sách:\n" +
+                "Truyện tranh ngụ ngôn dành cho thiếu nhi song ngữ anh việt , chuột nhà và chuột đồng\n" +
+                "Truyện tranh ngụ ngôn dành cho thiếu nhi ( song ngữ Anh - Việt ) là những câu chuyện nổi tiếng trong văn học dành cho thiếu nhi, sách được thiết kế và vẽ câu chuyện theo tranh , sách được thiết kế phần tiếng anh và tiếng việt , với sự kết hợp cả hai thứ tiếng , giúp các bạn nhỏ thích thú hơn trong từng câu chuyện hay nhất được chọn lọc , bạn nhỏ có thể vừa đọc truyện tiếng anh và tiếng việt , để nâng cao phần ngoại ngữ thêm cho bé , cuối mỗi cuốn truyện đều có phần câu hỏi theo tranh cho bé thích thú hơn khi đọc xong câu chuyện, Bộ sách này có 10 chủ đề các em nhỏ tìm cho đủ tập nhé. Chúc Các bạn thiếu nhi học tập tốt.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/bbb966730a62fd9a220716815dabf8ec");
+        variant_1.setWeight(21.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(300));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

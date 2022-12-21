@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ClientException;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
+import vn.mellow.ecom.ecommercefloor.enums.UserStatus;
 import vn.mellow.ecom.ecommercefloor.model.input.ShopGHNInput;
 import vn.mellow.ecom.ecommercefloor.client.GHNClient;
 import vn.mellow.ecom.ecommercefloor.enums.ActiveStatus;
@@ -76,7 +77,7 @@ public class ShopController extends BaseController {
         shop.setShopId(shopId);
         if (null == shopInput.getImageUrl()) {
             String imageUrl = shopInput.getName() == null ? user.getUsername() : shopInput.getName();
-            shopInput.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl.replaceAll(" ",""));
+            shopInput.setImageUrl("https://ui-avatars.com/api/?name=" + imageUrl.replaceAll(" ", ""));
         }
         shop.setImageUrl(shopInput.getImageUrl());
 
@@ -104,6 +105,13 @@ public class ShopController extends BaseController {
             throw new ServiceException(e.getErrorCode(), e.getErrorMessage(), e.getErrorDetail());
         }
         return shopId;
+    }
+
+    @ApiOperation(value = "get shop by shop id")
+    @GetMapping("/shop/{shopId}")
+    public Shop getInfoShop(@PathVariable int shopId) throws ServiceException {
+        Shop data = userManager.getInfoShop(shopId);
+        return data;
     }
 
     @ExceptionHandler(ServiceException.class)

@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 public class CartDetail {
     private Cart cart;
-    private HashMap<Shop,List<CartItem>> itemToShops ;
+    private HashMap<Integer,List<CartItem>> itemToShops ;
     private List<ActivityLog> activityLogs;
 
 }
