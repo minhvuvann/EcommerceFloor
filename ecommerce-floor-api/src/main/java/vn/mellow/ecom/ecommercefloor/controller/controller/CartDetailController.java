@@ -83,11 +83,11 @@ public class CartDetailController {
         double price = cartItem.getProductVariant().getPrice().getAmount() * quantity;
         cartManager.updateQuantityCartItem(cartItemId, quantity, price);
         //update total price and quantity
-        Cart cart = cartManager.getCart(cartItem.getCartId());
+        Cart cart = cartManager.getCartById(cartItem.getCartId());
         long quantityReload = (cart.getTotalQuantity() - quantityCurrent) + quantity;
         double priceReload = (cart.getTotalPrice() - priceCurrent) + price;
         cartManager.updateCartQuantity(cartItem.getCartId(), quantityReload, priceReload);
 
-        return getCartDetail(cartItem.getCartId());
+        return getCartDetail(cart.getUserId());
     }
 }

@@ -51,6 +51,10 @@ public class CartManager extends BaseManager {
         return getCartMongoCollection().find(Filters.eq("userId", userId)).first();
 
     }
+    public Cart getCartById(String userId) {
+        return getCartMongoCollection().find(Filters.eq("_id", userId)).first();
+
+    }
 
     public CartItem getCartItem(String cartItemId) {
         return getCartItemMongoCollection().find(Filters.eq("_id", cartItemId)).first();
