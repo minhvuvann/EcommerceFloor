@@ -58,7 +58,7 @@ public class CartManager extends BaseManager {
     public CartItem getCartItem(String cartId,String variantId){
         List<Bson> filter = new ArrayList<>();
         filter.add(Filters.eq("cartId", cartId));
-        filter.add(Filters.eq("productVariant._id", variantId));
+        filter.add(Filters.eq("productVariant.id", variantId));
         return getCartItemMongoCollection().find(Filters.and(filter)).first();
     }
 
@@ -78,6 +78,7 @@ public class CartManager extends BaseManager {
         getCartMongoCollection().insertOne(cart);
         if (null != cartItems && cartItems.size() != 0) {
             for (CartItem cartItem : cartItems) {
+                cartItem.setId(generateId());
                 cartItem.setCartId(cart.getId());
                 cartItem.setCreatedAt(new Date());
                 cartItem.setUpdatedAt(null);
@@ -91,6 +92,7 @@ public class CartManager extends BaseManager {
     public CartItem createCartItem(CartItem cartItem) {
         cartItem.setCreatedAt(new Date());
         cartItem.setUpdatedAt(null);
+        cartItem.setId(generateId());
         getCartItemMongoCollection().insertOne(cartItem);
         return cartItem;
 
