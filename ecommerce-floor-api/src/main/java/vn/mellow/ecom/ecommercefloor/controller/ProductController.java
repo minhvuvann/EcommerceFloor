@@ -148,6 +148,15 @@ public class ProductController extends BaseController {
         }
         return data;
     }
+    @ApiOperation(value = "get product variant by product id")
+    @GetMapping("/product-variant/{productVariantId}")
+    public ProductVariant getProductVariant(@PathVariable String productVariantId) throws ServiceException {
+        ProductVariant data = productManager.getProductVariant(productVariantId);
+        if (null == data) {
+            throw new ServiceException("not_found", "Không tìm thấy thông tin biến thể sản phẩm", "Not found data product by id: " + productVariantId);
+        }
+        return data;
+    }
 
     @ApiOperation(value = "get product detail by product id")
     @GetMapping("/product/{productId}/detail")

@@ -38,9 +38,9 @@ public class CartController extends BaseController {
     }
 
     @ApiOperation(value = "get cart detail by cart id")
-    @GetMapping("/cart/{cartId}/detail")
-    public CartDetail getProductDetail(@PathVariable String cartId) throws ServiceException {
-        return cartDetailController.getCartDetail(cartId);
+    @GetMapping("/cart/{userId}/detail")
+    public CartDetail getCartDetail(@PathVariable String userId) throws ServiceException {
+        return cartDetailController.getCartDetail(userId);
     }
 
     @ApiOperation(value = "deleted cart item by cart item id")
