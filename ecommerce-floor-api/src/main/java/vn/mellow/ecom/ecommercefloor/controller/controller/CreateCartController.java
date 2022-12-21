@@ -48,7 +48,7 @@ public class CreateCartController {
         if (null == cartItem.getProductVariant().getPrice()) {
             throw new ServiceException("not_found", "Sản phẩm chưa có giá", "product variant.price is null");
         }
-        double total = cartItem.getQuantity() + cartItem.getProductVariant().getPrice().getAmount();
+        double total = cartItem.getQuantity() * cartItem.getProductVariant().getPrice().getAmount();
         cartItem.setTotalPrice(total);
     }
 

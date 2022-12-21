@@ -64,7 +64,7 @@ public class CartManager extends BaseManager {
 
 
     public List<CartItem> getCartItems(String cartId) {
-        return getCartItemMongoCollection().find(Filters.eq("_id", cartId)).into(new ArrayList<>());
+        return getCartItemMongoCollection().find(Filters.eq("cartId", cartId)).into(new ArrayList<>());
     }
 
     public List<ActivityLog> getActivityLogs(String requestId) {

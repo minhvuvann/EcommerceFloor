@@ -7,14 +7,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import vn.mellow.ecom.ecommercefloor.EcommerceFloorApplication;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityUser;
-import vn.mellow.ecom.ecommercefloor.controller.ProductController;
-import vn.mellow.ecom.ecommercefloor.controller.RegisterController;
-import vn.mellow.ecom.ecommercefloor.controller.ShopController;
+import vn.mellow.ecom.ecommercefloor.controller.*;
 import vn.mellow.ecom.ecommercefloor.enums.*;
 import vn.mellow.ecom.ecommercefloor.manager.GeoManager;
 import vn.mellow.ecom.ecommercefloor.manager.ProductManager;
+import vn.mellow.ecom.ecommercefloor.model.cart.CartDetail;
 import vn.mellow.ecom.ecommercefloor.model.geo.Address;
-import vn.mellow.ecom.ecommercefloor.controller.UserController;
 import vn.mellow.ecom.ecommercefloor.model.geo.Geo;
 import vn.mellow.ecom.ecommercefloor.model.industrial.IndustrialProduct;
 import vn.mellow.ecom.ecommercefloor.model.input.*;
@@ -35,6 +33,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
 
+import static org.junit.Assert.assertTrue;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(
         classes = EcommerceFloorApplication.class)
@@ -54,6 +54,9 @@ class EcommerceFloorTest {
 
     @Autowired
     private ProductManager productManager;
+
+    @Autowired
+    private CartController cartController;
 
     @Autowired
     private GeoManager geoManager;
@@ -170,7 +173,8 @@ class EcommerceFloorTest {
         }
 
     }
-    public void t(){
+
+    public void t() {
 
     }
 
@@ -288,6 +292,18 @@ class EcommerceFloorTest {
         }
     }
 
+    @Test
+    public void testCartDetail()  {
+        CartDetail cartDetail = null;
+        try {
+            cartDetail = cartController.getCartDetail("1671610208305328");
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+
+        assertTrue(cartDetail != null);
+    }
 
     @Test
     public void testProduct() {
@@ -412,6 +428,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     //apple store
     @Test
     public void testProduct_602329_1() {
@@ -547,6 +564,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_2() {
         List<IndustrialProduct> industrialProducts = null;
@@ -635,6 +653,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_3() {
         List<IndustrialProduct> industrialProducts = null;
@@ -749,6 +768,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_4() {
         List<IndustrialProduct> industrialProducts = null;
@@ -877,6 +897,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_5() {
         List<IndustrialProduct> industrialProducts = null;
@@ -997,6 +1018,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_6() {
         List<IndustrialProduct> industrialProducts = null;
@@ -1143,6 +1165,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_7() {
         List<IndustrialProduct> industrialProducts = null;
@@ -1240,6 +1263,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_8() {
         List<IndustrialProduct> industrialProducts = null;
@@ -1385,6 +1409,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_9() {
         List<IndustrialProduct> industrialProducts = null;
@@ -1511,6 +1536,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602329_10() {
         List<IndustrialProduct> industrialProducts = null;
@@ -1713,6 +1739,1469 @@ class EcommerceFloorTest {
         variant_2.setRequiresShipping(true);
         variant_2.setPrice(MoneyCalculateUtils.getMoney(1300));
         productVariantList.add(variant_2);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Vinfastore --------------------
+    @Test
+    public void testProduct_602349_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe máy điện VinFast Feliz S");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/0a7642dc53b2a96509f5998a705b51ea_tn");
+        images.add("https://cf.shopee.vn/file/4e1236dade3e74c798b01b64f990c2d5_tn");
+        images.add("https://cf.shopee.vn/file/75cfbb02cbc1894ae434afd56db0e942_tn");
+        images.add("https://cf.shopee.vn/file/843a3bd801e25b3a63f6df3d349249b1_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/953e2723509b9d4941e2a9b6daeb6597_tn");
+        //thêm mô tả
+        productInput.setDescription("Giá niêm yết Feliz S: 29,900,000 VNĐ (giá đã bao gồm VAT, 1 bộ sạc và không bao gồm pin).\n" +
+                "\n" +
+                "----------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "2. Giới thiệu về công nghệ Pin thế hệ mới\n" +
+                "\n" +
+                "Với tầm nhìn dài hạn về việc kiến tạo tương lai di chuyển xanh, VinFast đã làm chủ được công nghệ sản xuất pin, từ việc nghiên cứu thị trường, thiết kế kiểu dáng công nghiệp,\n" +
+                " phần cứng và đặc biệt là phần mềm quản lý pin BMS. Chỉ sau 9 tháng cùng hợp tác, VinFast cùng Gotion Hightech đã phát triển thành công loại cell pin LFP mới cho tuổi thọ,\n" +
+                " độ ổn định và an toàn vượt trội. Theo đó tuổi thọ pin lên tới hơn 2000 lần sạc/xả vẫn còn dung lượng tới 70%. Pin LFP có khả năng chống cháy nổ trong mọi trường hợp và\n" +
+                " giúp giảm tác động tới môi trường do không chứa thành phần kim loại hiếm như Co-ban, Ni-ken.\n" +
+                "\n" +
+                "Đặc biệt, nhờ việc tối ưu phần mềm qua 4 chức năng chính gồm Thu thập, Điều khiển, Truyền thông tin và Đảm bảo an toàn, các mẫu xe máy điện sử dụng pin LFP \n" +
+                "mới của VinFast có thể đạt được quãng đường di chuyển tối đa sau 1 lần sạc đầy lên tới khoảng 200km.\n" +
+                "\n" +
+                "----------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "3. Thông số kỹ thuật Feliz S\n" +
+                "\n" +
+                "- Công suất 1800W\n" +
+                "\n" +
+                "- Thời gian sạc đầy 6h\n" +
+                "\n" +
+                "- Động cơ Inhub/ Pin LFP\n" +
+                "\n" +
+                "- Giảm xóc trước: ống lồng - giảm chấn thủy lực; Giảm xóc sau: đôi - giảm chấn thủy lực\n" +
+                "\n" +
+                "- Max speed: 78km/h\n" +
+                "\n" +
+                "- Trọng lượng xe: 110kg (bao gồm pin)\n" +
+                "\n" +
+                "- Quãng đường 1 lần sạc: 198km ở điều kiện tiêu chuẩn\n" +
+                "\n" +
+                "- Phanh trước: đĩa; phanh sau: cơ\n" +
+                "\n" +
+                "- Chiều cao yên: 770mm\n" +
+                "\n" +
+                "- Chuẩn chống nước IP67\n" +
+                "\n" +
+                "- Đèn pha trước LED projector\n" +
+                "\n" +
+                "- Đèn xi nhan, đèn hậu: Full LED\n" +
+                "\n" +
+                "- Thể tích cốp: 25 lít\n" +
+                "\n" +
+                "- Tìm xe bằng chìa khóa: Có\n" +
+                "\n" +
+                "------------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "4. Các gói thuê bao pin:\n" +
+                "\n" +
+                "Gói thuê Pin linh hoạt: Khách hàng trả phí thuê bao pin hàng tháng cho quãng đường 500km/ tháng, nếu Khách hàng sử dụng nhiều hơn 500 km/ tháng\n" +
+                " thì cần trả thêm số tiền bằng quãng đường vượt nhân với đơn giá thuê bao pin/km.\n" +
+                "\n" +
+                "Gói thuê Pin cố định: Khách hàng trả chi phí thuê cố định mà không bị tính chi phí phụ trội khi vượt số km/tháng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Khách hàng lựa chọn thủ tục thuê pin / mua pin tại địa chỉ Showroom gần nhất khi nhận bàn giao xe.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Chi phí gói thuê Pin cố định: 350.000 VNĐ / tháng.\n" +
+                "\n" +
+                "Giá bán Pin: 19.900.000 VNĐ / 01 pin.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/0a7642dc53b2a96509f5998a705b51ea_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/4e1236dade3e74c798b01b64f990c2d5_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1020));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/75cfbb02cbc1894ae434afd56db0e942_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLUE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe máy điện VinFast Theon S");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/a479458db484ed58d9fa8f0ffa64b8a2_tn");
+        images.add("https://cf.shopee.vn/file/47606d82a6c1ddd096d1d8a326cc52fc_tn");
+        images.add("https://cf.shopee.vn/file/254a7d52641844f889b7ec65cd4a70dd_tn");
+        images.add("https://cf.shopee.vn/file/636d97db0e0982406e9a76f2036a7421_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/37c3fa447dd076c8503ed496bd97d37e_tn");
+        //thêm mô tả
+        productInput.setDescription("Giá niêm yết Theon S: 69,900,000 VNĐ (giá đã bao gồm VAT, 1 bộ sạc và không bao gồm pin).\n" +
+                "\n" +
+                "1. Giới thiệu về công nghệ Pin thế hệ mới\n" +
+                "\n" +
+                "Với tầm nhìn dài hạn về việc kiến tạo tương lai di chuyển xanh, VinFast đã làm chủ được công nghệ sản xuất pin, từ việc nghiên cứu thị trường, thiết kế kiểu dáng công nghiệp,\n" +
+                " phần cứng và đặc biệt là phần mềm quản lý pin BMS. Chỉ sau 9 tháng cùng hợp tác, VinFast cùng Gotion Hightech đã phát triển thành công loại cell pin LFP mới cho tuổi thọ, \n" +
+                "độ ổn định và an toàn vượt trội. Theo đó tuổi thọ pin lên tới hơn 2000 lần sạc/xả vẫn còn dung lượng tới 70%. Pin LFP có khả năng chống cháy nổ trong mọi trường hợp và \n" +
+                "giúp giảm tác động tới môi trường do không chứa thành phần kim loại hiếm như Co-ban, Ni-ken.\n" +
+                "\n" +
+                "Đặc biệt, nhờ việc tối ưu phần mềm qua 4 chức năng chính gồm Thu thập, Điều khiển, Truyền thông tin và Đảm bảo an toàn, các mẫu xe máy điện sử dụng pin LFP mới của VinFast\n" +
+                " có thể đạt được quãng đường di chuyển tối đa sau 1 lần sạc đầy lên tới khoảng 200km.\n" +
+                "\n" +
+                "----------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "2. Thông số kỹ thuật Theon S\n" +
+                "\n" +
+                "- Công suất 3500W\n" +
+                "\n" +
+                "- Thời gian sạc đầy khoảng 6h\n" +
+                "\n" +
+                "- Động cơ Center motor / Pin LFP\n" +
+                "\n" +
+                "- Giảm xóc trước: ống lồng - giảm chấn thủy lực; Giảm xóc sau: đôi - giảm chấn thủy lực\n" +
+                "\n" +
+                "- Max speed: 99km/h\n" +
+                "\n" +
+                "- Trọng lượng xe: 145kg (bao gồm pin)\n" +
+                "\n" +
+                "- Quãng đường 1 lần sạc: 150km ở điều kiện tiêu chuẩn\n" +
+                "\n" +
+                "- Phanh đĩa ABS 2 kênh\n" +
+                "\n" +
+                "- Chiều cao yên: 780mm\n" +
+                "\n" +
+                "- Chuẩn chống nước IP67\n" +
+                "\n" +
+                "- Đèn pha trước LED projector\n" +
+                "\n" +
+                "- Đèn xi nhan, đèn hậu: Full LED\n" +
+                "\n" +
+                "- Thể tích cốp: 24 lít\n" +
+                "\n" +
+                "- Tìm xe bằng chìa khóa: Có\n" +
+                "\n" +
+                "------------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "3. Các gói thuê bao pin:\n" +
+                "\n" +
+                "Gói thuê Pin linh hoạt: Khách hàng trả phí thuê bao pin hàng tháng cho quãng đường 500km/ tháng, nếu Khách hàng sử dụng nhiều hơn 500 km/ tháng\n" +
+                " thì cần trả thêm số tiền bằng quãng đường vượt nhân với đơn giá thuê bao pin/km.\n" +
+                "\n" +
+                "Gói thuê Pin cố định: Khách hàng trả chi phí thuê cố định mà không bị tính chi phí phụ trội khi vượt số km/tháng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Khách hàng lựa chọn thủ tục thuê pin / mua pin tại địa chỉ Showroom gần nhất khi nhận bàn giao xe.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Chi phí gói thuê Pin cố định: 350.000 VNĐ / tháng.\n" +
+                "\n" +
+                "Giá bán Pin: 19.900.000 VNĐ / 01 pin.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/636d97db0e0982406e9a76f2036a7421_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/a479458db484ed58d9fa8f0ffa64b8a2_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1020));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/47606d82a6c1ddd096d1d8a326cc52fc_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe máy điện VinFast Vento S 2022");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/c70249b922f372ac563b7f8c5cc65179_tn");
+        images.add("https://cf.shopee.vn/file/097aa132cd572fe6e22f8adb703f5da9_tn");
+        images.add("https://cf.shopee.vn/file/75cfbb02cbc1894ae434afd56db0e942_tn");
+        images.add("https://cf.shopee.vn/file/140cd1faa9925d3787c8ded7a6fabda5_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/ec75dab542a10958575c26c15f99ac4e_tn");
+        //thêm mô tả
+        productInput.setDescription("Giá niêm yết Vento S: 56,000,000 VNĐ (giá đã bao gồm VAT, 1 bộ sạc và không bao gồm pin).\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "1. Giới thiệu về công nghệ Pin thế hệ mới\n" +
+                "\n" +
+                "Với tầm nhìn dài hạn về việc kiến tạo tương lai di chuyển xanh, VinFast đã làm chủ được công nghệ sản xuất pin, từ việc nghiên cứu thị trường, \n" +
+                "thiết kế kiểu dáng công nghiệp, phần cứng và đặc biệt là phần mềm quản lý pin BMS. Chỉ sau 9 tháng cùng hợp tác, VinFast cùng Gotion Hightech \n" +
+                "đã phát triển thành công loại cell pin LFP mới cho tuổi thọ, độ ổn định và an toàn vượt trội. Theo đó tuổi thọ pin lên tới hơn 2000 lần sạc/xả \n" +
+                "vẫn còn dung lượng tới 70%. Pin LFP có khả năng chống cháy nổ trong mọi trường hợp và giúp giảm tác động tới môi trường do không chứa \n" +
+                "thành phần kim loại hiếm như Co-ban, Ni-ken.\n" +
+                "\n" +
+                "Đặc biệt, nhờ việc tối ưu phần mềm qua 4 chức năng chính gồm Thu thập, Điều khiển, Truyền thông tin và Đảm bảo an toàn, \n" +
+                "các mẫu xe máy điện sử dụng pin LFP mới của VinFast có thể đạt được quãng đường di chuyển tối đa sau 1 lần sạc đầy lên tới khoảng 200km.\n" +
+                "\n" +
+                "----------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "2. Thông số kỹ thuật Vento S\n" +
+                "\n" +
+                "- Công suất 3000W\n" +
+                "\n" +
+                "- Thời gian sạc đầy 6h\n" +
+                "\n" +
+                "- Động cơ Mô tơ điện đặt bên, truyền động bằng bánh răng/ Pin LFP\n" +
+                "\n" +
+                "- Giảm xóc trước: ống lồng - lò xo; Giảm xóc sau: đôi - giảm chấn thủy lực\n" +
+                "\n" +
+                "- Max speed: 89km/h\n" +
+                "\n" +
+                "- Trọng lượng xe: 122kg (bao gồm pin)\n" +
+                "\n" +
+                "- Quãng đường 1 lần sạc: 160km ở điều kiện tiêu chuẩn\n" +
+                "\n" +
+                "- Phanh trước: phanh đĩa ABS Continental; phanh sau: đĩa\n" +
+                "\n" +
+                "- Chiều cao yên: 780mm\n" +
+                "\n" +
+                "- Chuẩn chống nước IP67\n" +
+                "\n" +
+                "- Đèn pha trước LED projector\n" +
+                "\n" +
+                "- Đèn xi nhan, đèn hậu: Full LED\n" +
+                "\n" +
+                "- Thể tích cốp: 25 lít\n" +
+                "\n" +
+                "- Tìm xe bằng chìa khóa: Có\n" +
+                "\n" +
+                "------------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "3. Các gói thuê bao pin:\n" +
+                "\n" +
+                "Gói thuê Pin linh hoạt: Khách hàng trả phí thuê bao pin hàng tháng cho quãng đường 500km/ tháng, nếu Khách hàng sử dụng nhiều hơn 500 km/ tháng\n" +
+                " thì cần trả thêm số tiền bằng quãng đường vượt nhân với đơn giá thuê bao pin/km.\n" +
+                "\n" +
+                "Gói thuê Pin cố định: Khách hàng trả chi phí thuê cố định mà không bị tính chi phí phụ trội khi vượt số km/tháng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Khách hàng lựa chọn thủ tục thuê pin / mua pin tại địa chỉ Showroom gần nhất khi nhận bàn giao xe.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Chi phí gói thuê Pin cố định: 350.000 VNĐ / tháng.\n" +
+                "\n" +
+                "Giá bán Pin: 19.900.000 VNĐ / 01 pin.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/c70249b922f372ac563b7f8c5cc65179_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/097aa132cd572fe6e22f8adb703f5da9_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1020));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/140cd1faa9925d3787c8ded7a6fabda5_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLUE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe máy điện VinFast Klara S (2022)");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/cdece7d22791617fbbb8d7b5f3407136_tn");
+        images.add("https://cf.shopee.vn/file/2ac450d37a7e1e8f74d797bcb56179b1_tn");
+        images.add("https://cf.shopee.vn/file/df928df3782c04806254be40c4d55f50_tn");
+        images.add("https://cf.shopee.vn/file/a5e661fc72d5478445e647f8c54fe225_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/3778e7fecc28f0879ed9655d61cc34e0_tn");
+        //thêm mô tả
+        productInput.setDescription("Giá niêm yết Klara S (2022): 36,900,000 VNĐ (giá đã bao gồm VAT, 1 bộ sạc và không bao gồm pin).\n" +
+
+                "\n" +
+                "1. Giới thiệu về công nghệ Pin thế hệ mới\n" +
+                "\n" +
+                "Với tầm nhìn dài hạn về việc kiến tạo tương lai di chuyển xanh, VinFast đã làm chủ được công nghệ sản xuất pin, từ việc nghiên cứu thị trường, \n" +
+                "thiết kế kiểu dáng công nghiệp, phần cứng và đặc biệt là phần mềm quản lý pin BMS. Chỉ sau 9 tháng cùng hợp tác, VinFast cùng Gotion Hightech \n" +
+                "đã phát triển thành công loại cell pin LFP mới cho tuổi thọ, độ ổn định và an toàn vượt trội. Theo đó tuổi thọ pin lên tới hơn 2000 lần sạc/xả \n" +
+                "vẫn còn dung lượng tới 70%. Pin LFP có khả năng chống cháy nổ trong mọi trường hợp và giúp giảm tác động tới môi trường do không chứa thành \n" +
+                "phần kim loại hiếm như Co-ban, Ni-ken.\n" +
+                "\n" +
+                "Đặc biệt, nhờ việc tối ưu phần mềm qua 4 chức năng chính gồm Thu thập, Điều khiển, Truyền thông tin và Đảm bảo an toàn,\n" +
+                " các mẫu xe máy điện sử dụng pin LFP mới của VinFast có thể đạt được quãng đường di chuyển tối đa sau 1 lần sạc đầy lên tới khoảng 200km.\n" +
+                "\n" +
+                "----------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "2. Thông số kỹ thuật Klara S (2022)\n" +
+                "\n" +
+                "- Công suất 1800W\n" +
+                "\n" +
+                "- Thời gian sạc đầy 6h\n" +
+                "\n" +
+                "- Động cơ Inhub/ Pin LFP\n" +
+                "\n" +
+                "- Giảm xóc trước: ống lồng - giảm chấn thủy lực; Giảm xóc sau: đôi - giảm chấn thủy lực\n" +
+                "\n" +
+                "- Max speed: 78km/h\n" +
+                "\n" +
+                "- Trọng lượng xe: 112kg (bao gồm pin)\n" +
+                "\n" +
+                "- Quãng đường 1 lần sạc: 194km ở điều kiện tiêu chuẩn\n" +
+                "\n" +
+                "- Phanh trước: đĩa; phanh sau: đĩa\n" +
+                "\n" +
+                "- Chiều cao yên: 760mm\n" +
+                "\n" +
+                "- Chuẩn chống nước IP67\n" +
+                "\n" +
+                "- Đèn pha trước LED \n" +
+                "\n" +
+                "- Đèn xi nhan, đèn hậu: Full LED\n" +
+                "\n" +
+                "- Thể tích cốp: 23 lít\n" +
+                "\n" +
+                "- Tìm xe bằng chìa khóa: Có\n" +
+                "\n" +
+                "------------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "3. Các gói thuê bao pin:\n" +
+                "\n" +
+                "Gói thuê Pin linh hoạt: Khách hàng trả phí thuê bao pin hàng tháng cho quãng đường 500km/ tháng, nếu Khách hàng sử dụng nhiều hơn 500 km/ tháng\n" +
+                " thì cần trả thêm số tiền bằng quãng đường vượt nhân với đơn giá thuê bao pin/km.\n" +
+                "\n" +
+                "Gói thuê Pin cố định: Khách hàng trả chi phí thuê cố định mà không bị tính chi phí phụ trội khi vượt số km/tháng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Khách hàng lựa chọn thủ tục thuê pin / mua pin tại địa chỉ Showroom gần nhất khi nhận bàn giao xe.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Chi phí gói thuê Pin cố định: 350.000 VNĐ / tháng.\n" +
+                "\n" +
+                "Giá bán Pin: 19.900.000 VNĐ / 01 pin.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/cdece7d22791617fbbb8d7b5f3407136_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/a5e661fc72d5478445e647f8c54fe225_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1020));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/2ac450d37a7e1e8f74d797bcb56179b1_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe máy điện VinFast Ludo");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/3c8c8a8d155314743e1eab895bad2abc_tn");
+        images.add("https://cf.shopee.vn/file/ef7633e1d0f1b2cc5e72d816ce098cf4_tn");
+        images.add("https://cf.shopee.vn/file/e3f67fb013276465bfe16387a7755562_tn");
+        images.add("https://cf.shopee.vn/file/96ade7c891c63a01f27b251a48d7a7d7_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/c71e0a97e0236c7ca7f1350ebad34f47_tn");
+        //thêm mô tả
+        productInput.setDescription("Giá bán xe đã bao gồm VAT, đã bao gồm sạc và chưa bao gồm pin, lệ phí thuế trước bạ, làm giấy tờ, biển số.\n" +
+                "Khách hàng đến nhận xe tại hệ thống hơn 70 showroom trên toàn quốc, tra cứu địa chỉ nhận xe gần nhất tại link : \n" +
+                "https://xemaydien.vinfast.vn/he-thong-phan-phoi/\n" +
+                "Sản phẩm không cho phép đổi trả sau khi xuất hóa đơn.\n" +
+                "Bảo hành xe 03 năm, không giới hạn số km.\n" +
+                "\n" +
+                "Thiết kế năng động, cá tính\n" +
+                "\n" +
+                "An toàn vượt trội\n" +
+                "Xe được trang bị phanh đĩa trước và phanh tang trống phía sau giúp đảm bảo an toàn tuyệt đối cho người sử dụng, lốp không săm giúp xe bám đường tốt, \n" +
+                "khung xe siêu bền được thử nghiệm qua hàng loạt các hạng mục kiểm tra vô cùng nghiêm ngặt giúp xe đạt độ bền rất cao và chịu được tải trọng lớn.\n" +
+                " Hệ thống giảm sóc đôi phía trước, giảm sóc đơn phía sau giúp xe vận hành êm ái trên mọi điều kiện địa hình.\n" +
+                "\n" +
+                "Vận hành ưu việt\n" +
+                "Vinfast Ludo được trang bị động cơ Bosch chống nước tiêu chuẩn IP57 cho xe chạy mượt mà. Dòng xe Ludo với tùy chọn lái xe Sport có công suất hoạt động 500W,\n" +
+                " tốc độ tối đa 35 Km/h và quãng đường đi khoảng 70km mới đổi pin 1 lần.\n" +
+                "\n" +
+                "Xe máy điện thông minh\n" +
+                "Nhờ tích hợp eSIM, xe được kết nối điện thoại thông minh qua Mobile App, giúp LUDO sở hữu tính năng thông minh như:\n" +
+                "\n" +
+                "Cảnh báo chống trộm: Khi xe bị dắt đi một khoảng nhất định hoặc ổ khóa điện bị mở khóa trái phép, xe sẽ rung lắc và cảnh báo bằng còi.\n" +
+                "Định vị xe (GPS): Người dùng dễ dàng kiểm tra vị trí hiện tại của xem hay tìm xe trong bãi đỗ.\n" +
+                "Kiểm tra lịch sử di chuyển của xe: Có thể xem lại lịch sử di chuyển của xe trong khoảng thời gian 01 tháng gần nhất.\n" +
+                "Kiểm tra tình trạng xe: Thông qua App có thể kiểm tra dung lượng còn lại của Pin.\n" +
+                "Xe máy điện Vinfast Ludo\n" +
+                "\n" +
+                "Hệ thống trạm đổi pin tiên tiến\n" +
+                "Với hệ thống hàng ngàn trạm đổi pin hiện đại phủ khắp Việt Nam, khách hàng có thể dễ dàng tìm, tiếp cận trạm đổi pin gần nhất và \n" +
+                "nhanh chóng đổi pin để tiếp tục hành trình.\n" +
+                "\n" +
+                "ĐỘNG CƠ         \n" +
+                "Công suất hữu ích lớn nhất (Công suất lớn nhất )        1100 W\n" +
+                "Công suất danh định        500 W\n" +
+                "Loại động cơ        Động cơ điện một chiều không chổi than\n" +
+                "Tốc độ tối đa        33,5±5% Km/h\n" +
+                "HỆ THỐNG ẮC QUY         \n" +
+                "Loại Ắc-Quy        Ắc quy li-ion\n" +
+                "Dung lượng        22 Ampe/Giờ\n" +
+                "Trọng lượng trung bình        7.8 Kg\n" +
+                "HỆ THỐNG KHUNG/GIẢM XÓC/PHANH         \n" +
+                "Giảm Xóc trước        Giảm chấn lò xo dầu\n" +
+                "Giảm Xóc sau        Giảm xóc đôi (Kép)\n" +
+                "Phanh trước        Phanh Đĩa, dẫn động thủy lực, điều khiển bằng tay\n" +
+                "Phanh sau        Phanh tang chống, dẫn động cơ khí, điều khiển bằng tay\n" +
+                "KÍCH THƯỚC CƠ BẢN         \n" +
+                "Khoảng cách trục bánh Trước-sau        1157 mm\n" +
+                "Dài x Rộng x Cao (mm)        1700 x 715 x 1070\n" +
+                "Khoảng sáng gầm        147 mm\n" +
+                "Chiều cao Yên        750");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/3c8c8a8d155314743e1eab895bad2abc_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.WHITE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/e3f67fb013276465bfe16387a7755562_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1020));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/96ade7c891c63a01f27b251a48d7a7d7_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.GRAY);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("VinFast - Xe máy điện Impes Red");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/13f47dcf9115a7d7666b7ea6b1f35650_tn");
+        images.add("https://cf.shopee.vn/file/799f2bac92b3b08cc405d06684dd8bca_tn");
+        images.add("https://cf.shopee.vn/file/4d12c80fbeaf66d918368b01a5017c8b_tn");
+        images.add("https://cf.shopee.vn/file/681fcbc7ffc943236add3fb6dc0865d4_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/6a1357a8f75e74349acacd4418eaefaa_tn");
+        //thêm mô tả
+        productInput.setDescription("Giá bán đã bao gồm VAT, bao gồm sạc và không bao gồm pin, phí đăng ký, đăng kiểm, biển số, lệ phí trước bạ.\n" +
+                "Khách hàng đến nhận xe tại hệ thống hơn 70 showroom trên toàn quốc, tra cứu địa chỉ nhận xe gần nhất tại link\n" +
+                " : https://xemaydien.vinfast.vn/he-thong-phan-phoi/\n" +
+                "Sản phẩm không cho phép đổi trả sau khi xuất hóa đơn.\n" +
+                "Bảo hành xe 03 năm, không giới hạn số km.\n" +
+                "\n" +
+                "Thông số kỹ thuật\n" +
+                "ĐỘNG CƠ         \n" +
+                "Công suất hữu ích lớn nhất (Công suất lớn nhất )        1700 W\n" +
+                "Công suất danh định        1200 W\n" +
+                "Loại động cơ        Động cơ điện một chiều không chổi than\n" +
+                "Tốc độ tối đa        49 Km/h\n" +
+                "HỆ THỐNG ẮC QUY         \n" +
+                "Loại Ắc-Quy        Ắc quy li-ion\n" +
+                "Dung lượng        22 Ampe/Giờ\n" +
+                "Trọng lượng trung bình        7.8 Kg\n" +
+                "HỆ THỐNG KHUNG/GIẢM XÓC/PHANH         \n" +
+                "Giảm Xóc trước        Giảm chấn lò xo dầu\n" +
+                "Giảm Xóc sau        Giảm xóc đơn\n" +
+                "Phanh trước        Phanh Đĩa, dẫn động thủy lực, điều khiển bằng tay\n" +
+                "Phanh sau        Phanh tang chống, dẫn động cơ khí, điều khiển bằng tay\n" +
+                "KÍCH THƯỚC CƠ BẢN         \n" +
+                "Khoảng cách trục bánh Trước-sau        1300 mm\n" +
+                "Dài x Rộng x Cao (mm)        1800 x 710 x 1070\n" +
+                "Khoảng sáng gầm        155 mm\n" +
+                "Chiều cao Yên        733 mm\n" +
+                "Kích thước lốp trước | sau        90/90 - 12 44J | 90/90 - 12 44J\n" +
+                "TRỌNG LƯỢNG         \n" +
+                "Xe và Ắc-Quy Li-On        75kg\n" +
+                "HỆ THỐNG CHIẾU SÁNG         \n" +
+                "Đèn pha trước        LED\n" +
+                "Đèn xi nhan, Đèn Hậu        LED");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/13f47dcf9115a7d7666b7ea6b1f35650_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.RED);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Motor Điện VinFast EVO 200");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/0a7642dc53b2a96509f5998a705b51ea_tn");
+        images.add("https://cf.shopee.vn/file/4e1236dade3e74c798b01b64f990c2d5_tn");
+        images.add("https://cf.shopee.vn/file/75cfbb02cbc1894ae434afd56db0e942_tn");
+        images.add("https://cf.shopee.vn/file/843a3bd801e25b3a63f6df3d349249b1_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/953e2723509b9d4941e2a9b6daeb6597_tn");
+        //thêm mô tả
+        productInput.setDescription("Giá niêm yết EVO 200: 22,000,000 VNĐ (giá đã bao gồm VAT, 1 bộ sạc và không bao gồm pin).\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "1. Chính sách bán hàng:\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Khách hàng đặt cọc/mua xe trong khoảng thời gian từ 21/9/2022 - 21/10/2022 hoặc 20.000 đơn hàng đầu tiên (tùy điều kiện nào đến trước) \n" +
+                "sẽ nhận được ưu đãi gói thuê bao pin miễn phí 12 tháng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thời gian giao xe dự kiến: Bắt đầu trả xe từ tháng 10. \n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "----------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "2. Giới thiệu về công nghệ Pin thế hệ mới\n" +
+                "\n" +
+                "\n" +
+                "Với tầm nhìn dài hạn về việc kiến tạo tương lai di chuyển xanh, VinFast đã làm chủ được công nghệ sản xuất pin, \n" +
+                "từ việc nghiên cứu thị trường, thiết kế kiểu dáng công nghiệp, phần cứng và đặc biệt là phần mềm quản lý pin BMS. \n" +
+                "Chỉ sau 9 tháng cùng hợp tác, VinFast cùng Gotion Hightech đã phát triển thành công loại cell pin LFP mới cho tuổi thọ, \n" +
+                "độ ổn định và an toàn vượt trội. Theo đó tuổi thọ pin lên tới hơn 2000 lần sạc/xả vẫn còn dung lượng tới 70%. \n" +
+                "Pin LFP có khả năng chống cháy nổ trong mọi trường hợp và giúp giảm tác động tới môi trường do không chứa thành phần \n" +
+                "kim loại hiếm như Co-ban, Ni-ken.\n" +
+                "\n" +
+                "Đặc biệt, nhờ việc tối ưu phần mềm qua 4 chức năng chính gồm Thu thập, Điều khiển, Truyền thông tin và Đảm bảo an toàn,\n" +
+                " các mẫu xe máy điện sử dụng pin LFP mới của VinFast có thể đạt được quãng đường di chuyển tối đa sau 1 lần sạc đầy lên tới khoảng 200km.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "----------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "3. Thông số kỹ thuật EVO 200\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Công suất tối đa 2500W\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Thời gian sạc đầy:\n" +
+                "\n" +
+                "\n" +
+                "   + Sạc tiêu chuẩn: 10h (0%-100%)\n" +
+                "\n" +
+                "\n" +
+                "   + Sạc nhanh: 4h (0%-100%)\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Động cơ Inhub/ Pin LFP\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Giảm xóc trước: ống lồng - giảm chấn thủy lực; Giảm xóc sau: đôi - giảm chấn thủy lực\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Max speed: 70km/h\n" +
+                "\n" +
+                "\n" +
+                "- Trọng lượng xe: 97kg (bao gồm pin)\n" +
+                "\n" +
+                "\n" +
+                "- Quãng đường 1 lần sạc: 203km ở điều kiện tiêu chuẩn\n" +
+                "\n" +
+                "\n" +
+                "- Phanh trước: đĩa; phanh sau: cơ\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Chiều cao yên: 750mm\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Chuẩn chống nước IP67\n" +
+                "\n" +
+                "\n" +
+                "- Đèn pha trước LED projector\n" +
+                "\n" +
+                "\n" +
+                "- Đèn xi nhan, đèn hậu: LED\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Thể tích cốp: 22 lít\n" +
+                "\n" +
+                "\n" +
+                "- Tìm xe bằng chìa khóa: Không (có thể lắp thêm)\n" +
+                "\n" +
+                "\n" +
+                "------------------------------------------------------------------------------------------\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "4. Các gói thuê bao pin:\n" +
+                "\n" +
+                "\n" +
+                "Gói thuê Pin linh hoạt: Khách hàng trả phí thuê bao pin hàng tháng cho quãng đường 500km/ tháng, nếu Khách hàng sử dụng \n" +
+                "nhiều hơn 500 km/ tháng thì cần trả thêm số tiền bằng quãng đường vượt nhân với đơn giá thuê bao pin/km.\n" +
+                "\n" +
+                "Gói thuê Pin cố định: Khách hàng trả chi phí thuê cố định mà không bị tính chi phí phụ trội khi vượt số km/tháng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Khách hàng lựa chọn thủ tục thuê pin / mua pin tại địa chỉ Showroom gần nhất khi nhận bàn giao xe.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Chi phí gói thuê Pin linh hoạt: 189.000 VNĐ / tháng (Chi phí cho mỗi KM phụ trội: 374 VNĐ / km).\n" +
+                "\n" +
+                "Chi phí gói thuê Pin cố định: 350.000 VNĐ / tháng.\n" +
+                "\n" +
+                "Giá bán Pin: 19.900.000 VNĐ / 01 pin.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Từ 1/10/2022, VinFast áp dụng tính phí chuyển đổi gói cước thuê bao pin cho tất cả các dòng xe máy điện với mức phí 600.000 đ/ 1 lần\n" +
+                " chuyển đổi.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/0a7642dc53b2a96509f5998a705b51ea_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/4e1236dade3e74c798b01b64f990c2d5_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1020));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/75cfbb02cbc1894ae434afd56db0e942_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLUE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe motor điện VinFast Theon");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/bbcb49babefa093103ee24ef0cc9a63b_tn");
+        images.add("https://cf.shopee.vn/file/8590194cd9414ce66134a5b14d26ec80_tn");
+        images.add("https://cf.shopee.vn/file/11d547c80f64493da0c4fd1c80c00cdb_tn");
+        images.add("https://cf.shopee.vn/file/ee486b342fcbb8c0caad2c2b46df1438_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/d43ee70b8d602964f17c9724b2b36e38_tn");
+        //thêm mô tả
+        productInput.setDescription("\uD83D\uDD31 Thông tin chung:\n" +
+                "\n" +
+                "\uD83D\uDD38 Giá bán xe đã bao gồm VAT và 01 bộ sạc kèm xe, chưa bao gồm pin, lệ phí thuế trước bạ, làm giấy tờ, biển số.\n" +
+                "\uD83D\uDD38 Khách hàng nhận xe và làm thủ tục giấy tờ tại hệ thống showroom VinFast trên toàn quốc. Thời hạn nhận xe: \n" +
+                "trong vòng tối đa 12 ngày tính từ thời điểm thanh toán thành công (không bao gồm T7, CN, Lễ Tết).\n" +
+                "\uD83D\uDD38 Sản phẩm không cho phép đổi trả sau khi xuất hóa đơn.\n" +
+                "\uD83D\uDD38 Bảo hành xe 03 năm, không giới hạn số km.\n" +
+                "\n" +
+                "\uD83D\uDD31 Thông số kỹ thuật:\n" +
+                ".\n" +
+                "\uD83C\uDFC6 Thiết kế hài hòa theo tiêu chuẩn của Kriska - Ý\n" +
+                "\uD83C\uDFC6 Tiêu chuẩn chống nước IP67 vượt trội ( có thể lội nước 0,5m trong thời gian 30 phút)\n" +
+                "\uD83C\uDFC6 Tốc độ tối đa 90km/h\n" +
+                "\uD83C\uDFC6 Công suất 3500W - Pin lithium thương hiệu Samsung\n" +
+                "\uD83C\uDFC6 Động cơ điện đặt giữa\n" +
+                "\uD83C\uDFC6 Quãng đường đi được 1 lần sạc: 101 km\n" +
+                "\uD83C\uDFC6 Thời gian sạc: 5,5 - 06 tiếng \n" +
+                "\uD83C\uDFC6 Dung lượng pin: 24,8 Ah, không swap pin\n" +
+                "\uD83C\uDFC6 Phanh xe: Phanh thương hiệu Nissin, trang bị ABS 2 kênh Continental \n" +
+                "\uD83C\uDFC6 Khoảng sáng gầm xe: 160 mm, vượt ổ gà lội ngập nước dễ dàng\n" +
+                "\uD83C\uDFC6 Chiều cao yên: 780 mm\n" +
+                "\uD83C\uDFC6 Giảm sóc đôi thương hiệu Showa, giảm chấn lò xo dầu, giảm chấn thủy lực\n" +
+                "\uD83C\uDFC6 Đèn pha LED projector thiết kế thời trang hiện đại công nghệ, đèn xi nhan/đèn hậu: LED\n" +
+                "\uD83C\uDFC6 Hiển thị thông tin xe liên tục, theo dõi tình trạng xe. Có kế hoạch thay thế bảo dưỡng, phụ tùng phù hợp và kịp thời\n" +
+                "\uD83C\uDFC6 Chức năng tìm xe trong bãi đỗ bằng ứng dụng (App)\n" +
+                "\uD83C\uDFC6 Bật/tắt tính năng chống trộm, khóa/ mở khóa xe từ xa qua app  \n" +
+                "\uD83C\uDFC6 Thể tích cốp: 17 Lít\n" +
+                "\uD83C\uDFC6 Khóa xe: Smart key. Khóa cổ xe từ xa, tìm xe trong bãi đỗ\n" +
+                "\uD83C\uDFC6 Chức năng định vị, tìm xe dễ dàng khi bị mất\n" +
+                "\uD83C\uDFC6 Thống kê lịch sử hành trình, quãng đường, thiết lập vùng an toàn\n" +
+                "\uD83C\uDFC6 Sạc pin với trạm sạc VinFast: Có\n" +
+                "\uD83C\uDFC6 Chức năng tự động chuẩn đoán và cảnh báo lỗi \n" +
+                "\uD83C\uDFC6 Chức năng mở khóa bằng tay 1 chạm \n" +
+                "\uD83C\uDFC6 Cập nhật phần mềm từ xa");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/8590194cd9414ce66134a5b14d26ec80_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/bbcb49babefa093103ee24ef0cc9a63b_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1500));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/ee486b342fcbb8c0caad2c2b46df1438_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe máy điện VinFast Klara A2 - 2021");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/211d03dbff65d40fd94d57d54ba32a57_tn");
+        images.add("https://cf.shopee.vn/file/7ec2baeef5092b2805e45b64ab75d35a_tn");
+        images.add("https://cf.shopee.vn/file/f7edf6e9c2c736a779f1ac6ae277a899_tn");
+        images.add("https://cf.shopee.vn/file/bb3f3a5b33da4e33e27b835d76c95362_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/8f80fc07aa046ab6ca62c29dcff620d3_tn");
+        //thêm mô tả
+        productInput.setDescription("\n" +
+                "MÔ TẢ SẢN PHẨM\n" +
+                "THÔNG SỐ KỸ THUẬT\n" +
+                "\n" +
+                "Chiều cao yên: 757 mm\n" +
+                "\n" +
+                "Khoảng sáng gầm: 125 mm \n" +
+                "\n" +
+                "Dài x rộng x cao: 1890 mm x 684 mm x 1125 mm\n" +
+                "\n" +
+                "Đèn pha trước: Halogen \n" +
+                "\n" +
+                "Đèn xi nhan, đèn hậu: LED\n" +
+                "\n" +
+                "Tải trọng xe và ắc quy: 127 kg (gồm ắc quy Leoch)\n" +
+                "\n" +
+                "Giảm xóc trước và sau: Giảm chấn lò xo dầu, giảm xóc đôi, giảm chấn thủy lực \n" +
+                "\n" +
+                "Phanh trước và sau: Phanh đĩa / Cơ \n" +
+                "\n" +
+                "Động cơ 1 chiều không chổi than tích hợp bánh sau (BLDC) \n" +
+                "\n" +
+                "Kích thước lốp: Trước 90/90  - 14 46P.  Sau 120/70 12 58P. Nhà sản xuất lốp: IRC \n" +
+                "\n" +
+                "Vành bánh xe: Trước MT2. 15 x 14 , vành hợp kim nhôm\n" +
+                "\n" +
+                "Sau: MT3.5 x 12, vành thép \n" +
+                "\n" +
+                "Động cơ VinFast, một chiều không chổi than \n" +
+                "\n" +
+                "Động cơ tích hợp trong vành sau \n" +
+                "\n" +
+                "Bộ truyền động trực tiếp \n" +
+                "\n" +
+                "Ắc quy chì axit kín khí, 6 bình nối tiếp \n" +
+                "\n" +
+                "Dung lượng ắc quy: 20 - 20 Ah \n" +
+                "\n" +
+                "Trọng lượng ắc quy: 40.5 kg  (6.75 kg/ bình ắc quy) \n" +
+                "\n" +
+                "Loại sạc: Sạc di động 72V \n" +
+                "\n" +
+                "Thời gian sạc: 8h được 80%, 9h được 95%, 11h được 100% \n" +
+                "\n" +
+                "Công suất danh định: 1200 W \n" +
+                "\n" +
+                "Mô men xoắn lớn nhất 98 Nm@ 100 rpm\n" +
+                "\n" +
+                "Gia tốc tăng tốc 0 - 50 km / h (1 người 65kg)  trong vòng 14 giây \n" +
+                "\n" +
+                "Tốc độ tối đa: 60km / 1h\n" +
+                "\n" +
+                "Quãng đường đi được tối đa: 90 km trên 1 lần sạc.\n" +
+                "\n" +
+                "Chế độ vận hành: Eco và Sport\n" +
+                "\n" +
+                "Chế độ parking: Có \n" +
+                "\n" +
+                "Khả năng leo dốc 20% khi chở người 65 kg đạt hiệu suất 9km/ h\n" +
+                "\n" +
+                "Dung tích cốp 20 lít, có thể chứa 2 mũ bảo hiểm nửa đầu.\n" +
+                "\n" +
+                "Chìa khóa RF, bao gồm: Nút khóa, nút mở xe, nút tìm xe\n" +
+                "\n" +
+                "Chứng nhận an toàn ISO 9001:2015\n" +
+                "\n" +
+                "Đạt tiêu chuẩn chống nước cho động cơ IP65 \n" +
+                "\n" +
+                "Đạt tiêu chuẩn chống nước cho ắc quy IP67  \n" +
+                "\n" +
+                "Chế độ bảo hành ắc quy: 1 năm, bảo hành xe: 3 năm\n" +
+                "\n" +
+                "Lưu ý vận hành:\n" +
+                "\n" +
+                "1. Nên sạc ắc quy đều đặn, không nên để dưới 10% gây kiệt ắc quy.\n" +
+                "\n" +
+                "2. Khi đi về, nên đợi 30 phút để ắc quy nguội rồi sạc\n" +
+                "\n" +
+                "3. Không nên chở 3 người, chở nặng quá gây quá tải ắc quy\n" +
+                "\n" +
+                "4. Khi không sử dụng trong thời gian dài, nên sạc ~50% và ngắt nguồn điện, để chỗ khô mát\n" +
+                "\n" +
+                "Lưu ý về chính sách bán hàng qua sàn TMĐT:\n" +
+                "\n" +
+                "Giá bán xe đã bao gồm VAT, 01 bộ sạc theo xe, chưa bao gồm lệ phí thuế trước bạ, làm giấy tờ, biển số. Xe không sử dụng Pin lithium, \n" +
+                "thay vào đó xe sử dụng Ắc quy chì. \n" +
+                "Sản phẩm không cho phép đổi trả sau khi xuất hóa đơn. \n" +
+                "Khách hàng nhận xe và hoàn tất thủ tục giấy tờ tại hệ thống các showroom VinFast trên toàn quốc.\n" +
+                "Đối với đơn hàng thanh toán trả sau (COD), sau 07 ngày kể từ ngày Đặt hàng thành công, khách hàng không đến showroom VinFast \n" +
+                "nhận xe và thanh toán - Đơn hàng sẽ tự động Hủy.\n" +
+                "Trường hợp Khách hàng muốn nhận xe tại nhà, cần đảm bảo thanh toán đủ chi phí liên quan và chấp nhận rủi ro trầy xước trong quá trình vận chuyển.\n" +
+                "\n" +
+                "Để bật chế độ hỗ trợ đọc màn hình, nhấn Ctrl+Alt+Z Để tìm hiểu thêm về các phím tắt, nhấn Ctrl+dấu gạch chéo\n" +
+                " \n" +
+                " \n" +
+                " \t\t\n" +
+                "MÔ TẢ SẢN PHẨM\n" +
+                "THÔNG SỐ KỸ THUẬT\n" +
+                "\n" +
+                "Chiều cao yên: 757 mm\n" +
+                "\n" +
+                "Khoảng sáng gầm: 125 mm \n" +
+                "\n" +
+                "Dài x rộng x cao: 1890 mm x 684 mm x 1125 mm\n" +
+                "\n" +
+                "Đèn pha trước: Halogen \n" +
+                "\n" +
+                "Đèn xi nhan, đèn hậu: LED\n" +
+                "\n" +
+                "Tải trọng xe và ắc quy: 127 kg (gồm ắc quy Leoch)\n" +
+                "\n" +
+                "Giảm xóc trước và sau: Giảm chấn lò xo dầu, giảm xóc đôi, giảm chấn thủy lực \n" +
+                "\n" +
+                "Phanh trước và sau: Phanh đĩa / Cơ \n" +
+                "\n" +
+                "Động cơ 1 chiều không chổi than tích hợp bánh sau (BLDC) \n" +
+                "\n" +
+                "Kích thước lốp: Trước 90/90  - 14 46P.  Sau 120/70 12 58P. Nhà sản xuất lốp: IRC \n" +
+                "\n" +
+                "Vành bánh xe: Trước MT2. 15 x 14 , vành hợp kim nhôm\n" +
+                "\n" +
+                "Sau: MT3.5 x 12, vành thép \n" +
+                "\n" +
+                "Động cơ VinFast, một chiều không chổi than \n" +
+                "\n" +
+                "Động cơ tích hợp trong vành sau \n" +
+                "\n" +
+                "Bộ truyền động trực tiếp \n" +
+                "\n" +
+                "Ắc quy chì axit kín khí, 6 bình nối tiếp \n" +
+                "\n" +
+                "Dung lượng ắc quy: 20 - 20 Ah \n" +
+                "\n" +
+                "Trọng lượng ắc quy: 40.5 kg  (6.75 kg/ bình ắc quy) \n" +
+                "\n" +
+                "Loại sạc: Sạc di động 72V \n" +
+                "\n" +
+                "Thời gian sạc: 8h được 80%, 9h được 95%, 11h được 100% \n" +
+                "\n" +
+                "Công suất danh định: 1200 W \n" +
+                "\n" +
+                "Mô men xoắn lớn nhất 98 Nm@ 100 rpm\n" +
+                "\n" +
+                "Gia tốc tăng tốc 0 - 50 km / h (1 người 65kg)  trong vòng 14 giây \n" +
+                "\n" +
+                "Tốc độ tối đa: 60km / 1h\n" +
+                "\n" +
+                "Quãng đường đi được tối đa: 90 km trên 1 lần sạc.\n" +
+                "\n" +
+                "Chế độ vận hành: Eco và Sport\n" +
+                "\n" +
+                "Chế độ parking: Có \n" +
+                "\n" +
+                "Khả năng leo dốc 20% khi chở người 65 kg đạt hiệu suất 9km/ h\n" +
+                "\n" +
+                "Dung tích cốp 20 lít, có thể chứa 2 mũ bảo hiểm nửa đầu.\n" +
+                "\n" +
+                "Chìa khóa RF, bao gồm: Nút khóa, nút mở xe, nút tìm xe\n" +
+                "\n" +
+                "Chứng nhận an toàn ISO 9001:2015\n" +
+                "\n" +
+                "Đạt tiêu chuẩn chống nước cho động cơ IP65 \n" +
+                "\n" +
+                "Đạt tiêu chuẩn chống nước cho ắc quy IP67  \n" +
+                "\n" +
+                "Chế độ bảo hành ắc quy: 1 năm, bảo hành xe: 3 năm\n" +
+                "\n" +
+                "Lưu ý vận hành:\n" +
+                "\n" +
+                "1. Nên sạc ắc quy đều đặn, không nên để dưới 10% gây kiệt ắc quy.\n" +
+                "\n" +
+                "2. Khi đi về, nên đợi 30 phút để ắc quy nguội rồi sạc\n" +
+                "\n" +
+                "3. Không nên chở 3 người, chở nặng quá gây quá tải ắc quy\n" +
+                "\n" +
+                "4. Khi không sử dụng trong thời gian dài, nên sạc ~50% và ngắt nguồn điện, để chỗ khô mát\n" +
+                "\n" +
+                "Lưu ý về chính sách bán hàng qua sàn TMĐT:\n" +
+                "\n" +
+                "Giá bán xe đã bao gồm VAT, 01 bộ sạc theo xe, chưa bao gồm lệ phí thuế trước bạ, làm giấy tờ, biển số. Xe không sử dụng Pin lithium, \n" +
+                "thay vào đó xe sử dụng Ắc quy chì. \n" +
+                "Sản phẩm không cho phép đổi trả sau khi xuất hóa đơn. \n" +
+                "Khách hàng nhận xe và hoàn tất thủ tục giấy tờ tại hệ thống các showroom VinFast trên toàn quốc.\n" +
+                "Đối với đơn hàng thanh toán trả sau (COD), sau 07 ngày kể từ ngày Đặt hàng thành công, khách hàng không đến showroom VinFast \n" +
+                "nhận xe và thanh toán - Đơn hàng sẽ tự động Hủy.\n" +
+                "Trường hợp Khách hàng muốn nhận xe tại nhà, cần đảm bảo thanh toán đủ chi phí liên quan và chấp nhận rủi ro trầy xước trong quá trình vận chuyển.\n" +
+                "\n");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/211d03dbff65d40fd94d57d54ba32a57_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/7ec2baeef5092b2805e45b64ab75d35a_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/bb3f3a5b33da4e33e27b835d76c95362_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLUE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602349_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe máy điện VinFast Ludo Mint To Be - Phiên bản giới hạn");
+        //mã shop sửa lại
+        productInput.setShopId(602349);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420765418");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/ee82a7088fbb45c8147feb6dbca080f6_tn");
+        images.add("https://cf.shopee.vn/file/3dd12a5700320cd2770645d20477595b_tn");
+        images.add("https://cf.shopee.vn/file/e06118487edeb7a0900bd7b4603bd55e_tn");
+        images.add("https://cf.shopee.vn/file/075c3b4725104a87fad2d50e4fb4ecda_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/15b7bfa4253d613966fabffb7bc0c5e3_tn");
+        //thêm mô tả
+        productInput.setDescription("➡️Giá bán xe đã bao gồm VAT, đã bao gồm sạc & pin & Không bao gồm lệ phí thuế trước bạ, làm giấy tờ, biển số.\n" +
+                "\n" +
+                "➡️ Thông tin chung:\n" +
+                "\uD83D\uDD38 Giá bán xe đã bao gồm VAT, đã bao gồm sạc & pin,  chưa bao gồm lệ phí thuế trước bạ, làm giấy tờ, biển số.\n" +
+                "\uD83D\uDD38 Khách hàng nhận xe và làm thủ tục giấy tờ tại toàn bộ các showroom VinFast trên toàn quốc.\n" +
+                "\uD83D\uDD38 Sản phẩm không cho phép đổi trả sau khi xuất hóa đơn.\n" +
+                "\uD83D\uDD38 Bảo hành xe 03 năm, không giới hạn số km.\n" +
+                "\n" +
+                "➡️ - Bảo hành 03 năm.\n" +
+                "      - Phí cứu hộ pin: 50.000/lần/pin\n" +
+                "\n" +
+                "➡️ VinFast Ludo Mint To Be - Phiên bản giới hạn\n" +
+                "“Mint to be” là cách chơi chữ từ “Meant to be”, nghĩa là luôn tạo ra điều gì đó có ý nghĩa tại mọi thời điểm. Với màu xanh tươi sáng và tràn đầy hy vọng, \n" +
+                "Ludo Mint to be ra đời để song hành cùng bạn trong những năm tháng tràn đầy ý nghĩa của thời học sinh, để mỗi ngày của bạn luôn là ngày vui nhất.\n" +
+                "\n" +
+                "➡️Thông số kỹ thuật\n" +
+                "ĐỘNG CƠ         \n" +
+                "Công suất hữu ích lớn nhất (Công suất lớn nhất ): 1700 W\n" +
+                "Công suất danh định: 1200 W\n" +
+                "Loại động cơ: Động cơ điện một chiều không chổi than\n" +
+                "Tốc độ tối đa: 33.5 +-5% Km/h\n" +
+                "HỆ THỐNG ẮC QUY         \n" +
+                "Loại Ắc-Quy: Ắc quy li-ion\n" +
+                "Dung lượng: 22 Ampe/Giờ\n" +
+                "Trọng lượng trung bình: 7.8 Kg\n" +
+                "HỆ THỐNG KHUNG/GIẢM XÓC/PHANH         \n" +
+                "Giảm Xóc trước: Giảm chấn lò xo dầu\n" +
+                "Giảm Xóc sau: Giảm xóc đơn\n" +
+                "Phanh trước: Phanh Đĩa, dẫn động thủy lực, điều khiển bằng tay\n" +
+                "Phanh sau: Phanh tang chống, dẫn động cơ khí, điều khiển bằng tay\n" +
+                "KÍCH THƯỚC CƠ BẢN         \n" +
+                "Khoảng cách trục bánh Trước-sau: 1300 mm\n" +
+                "Dài x Rộng x Cao (mm): 1800 x 710 x 1070\n" +
+                "Khoảng sáng gầm: 155 mm\n" +
+                "Chiều cao Yên: 733 mm\n" +
+                "Kích thước lốp trước | sau: 90/90 - 12 44J | 90/90 - 12 44J\n" +
+                "TRỌNG LƯỢNG         \n" +
+                "Xe và Ắc-Quy Li-On: 75kg\n" +
+                "HỆ THỐNG CHIẾU SÁNG         \n" +
+                "Đèn pha trước: LED\n" +
+                "Đèn xi nhan, Đèn Hậu: LED");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/ee82a7088fbb45c8147feb6dbca080f6_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.GREEN);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
 
         createProductInput1.setProductVariants(productVariantList);
 
