@@ -294,7 +294,7 @@ class EcommerceFloorTest {
     }
 
     @Test
-    public void testCartDetail()  {
+    public void testCartDetail() {
         CartDetail cartDetail = null;
         try {
             cartDetail = cartController.getCartDetail("1671610208305328");
@@ -1894,6 +1894,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_2() {
         List<IndustrialProduct> industrialProducts = null;
@@ -2033,6 +2034,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_3() {
         List<IndustrialProduct> industrialProducts = null;
@@ -2175,6 +2177,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_4() {
         List<IndustrialProduct> industrialProducts = null;
@@ -2316,6 +2319,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_5() {
         List<IndustrialProduct> industrialProducts = null;
@@ -2442,6 +2446,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_6() {
         List<IndustrialProduct> industrialProducts = null;
@@ -2533,6 +2538,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_7() {
         List<IndustrialProduct> industrialProducts = null;
@@ -2738,6 +2744,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_8() {
         List<IndustrialProduct> industrialProducts = null;
@@ -2849,6 +2856,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_9() {
         List<IndustrialProduct> industrialProducts = null;
@@ -3113,6 +3121,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void testProduct_602349_10() {
         List<IndustrialProduct> industrialProducts = null;
@@ -3215,4 +3224,1904 @@ class EcommerceFloorTest {
         }
     }
 
+    //Yamaha
+    @Test
+    public void testProduct_602350_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Máy Yamaha NVX 155 ABS VVA");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/97269174e6606f9219cbed9155ce5b5d_tn");
+        images.add("https://cf.shopee.vn/file/921543f18e57726d32bdf821bd32c600_tn");
+        images.add("https://cf.shopee.vn/file/937fb199a71873b79d982a0e417cd8be_tn");
+        images.add("https://cf.shopee.vn/file/9b96c2d057ef61e4218d342b99be548f_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/aa0643920f4780e3e916bdcb7850ccf6_tn");
+        //thêm mô tả
+        productInput.setDescription("Loại        Blue Core, 4 thì, 4 van, SOHC, làm mát bằng dung dịch\n" +
+                "Bố trí xi lanh        Xy lanh đơn\n" +
+                "Dung tích xy lanh (CC)        155,1 cc\n" +
+                "Đường kính và hành trình piston        58 x 58,7mm\n" +
+                "Tỷ số nén        11,6:1\n" +
+                "Công suất tối đa        11,3kW (15,4 PS)/8.000 vòng/phút\n" +
+                "Mô men cực đại        13,9 N.m (1,4kgf.m)/6.500 vòng/phút\n" +
+                "Hệ thống khởi động        Điện\n" +
+                "Dung tích bình xăng        5,5 lít\n" +
+                "Mức tiêu thụ nhiên liệu (l/100km)        2,19\n" +
+                "Tỷ số truyền động        2,300-0,724:1\n" +
+                "Kiểu hệ thống truyền lực        CVT\n" +
+                "Khung xe\n" +
+                "Kích thước\n" +
+                "Bảo hành\n" +
+                "Hệ thống điện\n" +
+                "Lưu ý:thanh toán bằng thẻ tín dụng hay tất cả hình thức khác trên shopee \n" +
+                "đều có phí 3% thanh toán khi nhận xe");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/97269174e6606f9219cbed9155ce5b5d_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.ORANGE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/921543f18e57726d32bdf821bd32c600_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.GRAY);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(920));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/937fb199a71873b79d982a0e417cd8be_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(910));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Máy Yamaha Latte Phiên Bản Chuẩn");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22110-55p67jeo9mjv00_tn");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22120-s4sl9e1bq3kva9_tn");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22120-lhelif1bq3kv3b_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/aa0643920f4780e3e916bdcb7850ccf6_tn");
+        //thêm mô tả
+        productInput.setDescription("Yamaha Grande là mẫu xe tay ga tiết kiệm xăng số 1 Việt Nam với mức tiêu thụ chỉ 1,69 lít/100km, \n" +
+                "theo số liệu thống kê và phân tích được Cục Đăng kiểm Việt Nam công bố, xác nhận bởi Báo Giao thông. \n" +
+                "Bên cạnh thiết kế thời trang, thanh lịch, ở phiên bản Grande Bluecore Hybrid mới còn sở hữu cốp xe siêu rộng 27 lít và\n" +
+                " được trang bị hàng loạt tính năng hiện đại như trợ lực Hybrid, Smart key, hệ thống Stop & Start System, phanh ABS,.. \n" +
+                "với mức giá rất hấp dẫn.\n" +
+                "\n" +
+                "QUY TRÌNH ĐẶT XE :\n" +
+                "B1: Chọn xe/ Màu xe cho vào giỏ hàng\n" +
+                "B2 : Chat cùng cửa hàng để biết thêm thông tin về sản phẩm và các chi phí phát sinh kèm theo.\n" +
+                "B3: Khách đồng ý -> đặt xe -> cửa hàng nhận đơn->giao xe cho khách. \n" +
+                "Hotline Zalo : 0904505045\n" +
+                "Giá bán xe đã bao gồm thuế VAT, chưa bao gồm thuế trước bạ, biển số, và các chi phí khác\n" +
+                "Cửa hàng có hỗ trợ về thủ tục đăng ký, khách hàng mua xe có thể tự đi đăng ký.\n" +
+                "Khách đến nhận xe tại cửa hàng.\n" +
+                "Thời hạn bảo hành: 3 năm\n" +
+                "*Sau khi đặt hàng thành công, cửa hàng sẽ liên hệ và thông báo thời gian nhận xe trong vòng 24h.\n" +
+                "Đại lý Yamaha Xe Máy 74 \n" +
+                "Địa chỉ: 74 Khâm Thiên, quận Đống Đa, Hà Nội\n" +
+                "\uD83D\uDCDE Tư vấn bán hàng: 02438510610 \n" +
+                "\uD83D\uDCDE Di động: 0904505045");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22110-55p67jeo9mjv00_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.RED);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-s4sl9e1bq3kva9_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.GRAY);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-lhelif1bq3kv3b_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Máy YAMAHA Janus ");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-diounf5ji8ivcf_tn");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-yx2ubh5ji8ivc2_tn");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-n8vynf5ji8iv2f_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-0uzojrmzonivd8_tn");
+        //thêm mô tả
+        productInput.setDescription("Giá bán xe đã bao gồm thuế VAT, chưa bao gồm thuế trước bạ, biển số, \n" +
+                "chi phí thanh toán bằng thẻ tín dụng của Shopee.\n" +
+                "YAMAHA 74 KHÂM THIÊN    có hỗ trợ về thủ tục đăng ký, khách hàng mua xe\n" +
+                " có thể TỰ ĐI ĐĂNG KÍ \n" +
+                "Khách hàng nhận xe tại cửa hàng.\n" +
+                "Thời hạn bảo hành: 3 năm\n" +
+                "\n" +
+                "\n" +
+                "QUY TRÌNH ĐẶT XE :\n" +
+                "B1: Chọn xe/ Màu xe cho vào giỏ hàng\n" +
+                "B2 : Chat cùng cửa hàng để biết thêm thông tin về sản phẩm và các chi phí phát sinh kèm theo.\n" +
+                "B3: Khách đồng ý -> đặt xe -> cửa hàng nhận đơn->giao xe cho khách. \n" +
+                "Hotline Zalo : 0904505045\n" +
+                "Giá bán xe đã bao gồm thuế VAT, chưa bao gồm thuế trước bạ, biển số, và các chi phí khác\n" +
+                "Cửa hàng có hỗ trợ về thủ tục đăng ký, khách hàng mua xe có thể tự đi đăng ký.\n" +
+                "Khách đến nhận xe tại cửa hàng.\n" +
+                "Thời hạn bảo hành: 3 năm\n" +
+                "*Sau khi đặt hàng thành công, cửa hàng sẽ liên hệ và thông báo thời gian nhận xe trong vòng 24h.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Đại lý Yamaha Xe Máy 74 \n" +
+                "Địa chỉ: 74 Khâm Thiên, quận Đống Đa, Hà Nội\n" +
+                "\uD83D\uDCDE Tư vấn bán hàng: 02438510610 \n" +
+                "\uD83D\uDCDE Di động: 0904505045");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-diounf5ji8ivcf_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-yx2ubh5ji8ivc2_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.GRAY);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(920));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-n8vynf5ji8iv2f_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(910));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe máy Yamaha Janus Phiên Bản Giới Hạn");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/970938f58e68e37ddbeeaffe2ba7bcc6_tn");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22110-e0z1qa0h9mjvb6_tn");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22110-hdrwoc0h9mjv2b_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/73f1f6763965aabf62c0f7cc9398a8b3_tn");
+        //thêm mô tả
+        productInput.setDescription("Yamaha Grande là mẫu xe tay ga tiết kiệm xăng số 1 Việt Nam với mức tiêu thụ chỉ 1,69 lít/100km, \n" +
+                "theo số liệu thống kê và phân tích được Cục Đăng kiểm Việt Nam công bố, xác nhận bởi Báo Giao thông. \n" +
+                "Bên cạnh thiết kế thời trang, thanh lịch, ở phiên bản Grande Bluecore Hybrid mới còn sở hữu cốp xe siêu rộng 27 lít và\n" +
+                " được trang bị hàng loạt tính năng hiện đại như trợ lực Hybrid, Smart key, hệ thống Stop & Start System, phanh ABS,.. \n" +
+                "với mức giá rất hấp dẫn.\n" +
+                "\n" +
+                "QUY TRÌNH ĐẶT XE :\n" +
+                "B1: Chọn xe/ Màu xe cho vào giỏ hàng\n" +
+                "B2 : Chat cùng cửa hàng để biết thêm thông tin về sản phẩm và các chi phí phát sinh kèm theo.\n" +
+                "B3: Khách đồng ý -> đặt xe -> cửa hàng nhận đơn->giao xe cho khách. \n" +
+                "Hotline Zalo : 0904505045\n" +
+                "Giá bán xe đã bao gồm thuế VAT, chưa bao gồm thuế trước bạ, biển số, và các chi phí khác\n" +
+                "Cửa hàng có hỗ trợ về thủ tục đăng ký, khách hàng mua xe có thể tự đi đăng ký.\n" +
+                "Khách đến nhận xe tại cửa hàng.\n" +
+                "Thời hạn bảo hành: 3 năm\n" +
+                "*Sau khi đặt hàng thành công, cửa hàng sẽ liên hệ và thông báo thời gian nhận xe trong vòng 24h.\n" +
+                "Đại lý Yamaha Xe Máy 74 \n" +
+                "Địa chỉ: 74 Khâm Thiên, quận Đống Đa, Hà Nội\n" +
+                "\uD83D\uDCDE Tư vấn bán hàng: 02438510610 \n" +
+                "\uD83D\uDCDE Di động: 0904505045");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/970938f58e68e37ddbeeaffe2ba7bcc6_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22110-e0z1qa0h9mjvb6_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.GRAY);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1200));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22110-hdrwoc0h9mjv2b_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Máy Yamaha Grande Phiên Bản Giới Hạn");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/4c5ea8bc9c8bbfbae25c96f83ca59fdf_tn");
+        images.add("https://cf.shopee.vn/file/77d27b55eb2eda0d3b188f0b478471ac_tn");
+        images.add("https://cf.shopee.vn/file/2c586c78f19bae7bc35f69a2ae5610bf_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/509cf4e0d80675cb95cae3ea41e6c3f4_tn");
+        //thêm mô tả
+        productInput.setDescription("Loại        Blue Core, 4 thì, 4 van, SOHC, làm mát bằng dung dịch\n" +
+                "Bố trí xi lanh        Xy lanh đơn\n" +
+                "Dung tích xy lanh (CC)        155,1 cc\n" +
+                "Đường kính và hành trình piston        58 x 58,7mm\n" +
+                "Tỷ số nén        11,6:1\n" +
+                "Công suất tối đa        11,3kW (15,4 PS)/8.000 vòng/phút\n" +
+                "Mô men cực đại        13,9 N.m (1,4kgf.m)/6.500 vòng/phút\n" +
+                "Hệ thống khởi động        Điện\n" +
+                "Dung tích bình xăng        5,5 lít\n" +
+                "Mức tiêu thụ nhiên liệu (l/100km)        2,19\n" +
+                "Tỷ số truyền động        2,300-0,724:1\n" +
+                "Kiểu hệ thống truyền lực        CVT\n" +
+                "Khung xe\n" +
+                "Kích thước\n" +
+                "Bảo hành\n" +
+                "Hệ thống điện\n" +
+                "Lưu ý:thanh toán bằng thẻ tín dụng hay tất cả hình thức khác trên shopee \n" +
+                "đều có phí 3% thanh toán khi nhận xe");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/2c586c78f19bae7bc35f69a2ae5610bf_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.ORANGE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/77d27b55eb2eda0d3b188f0b478471ac_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.GRAY);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(920));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/4c5ea8bc9c8bbfbae25c96f83ca59fdf_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(910));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Máy Yamaha Exciter 150 Phiên Bản Gp và Rc");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/7803aa9c3e0d2c64d6f8f9bc5f4f2925_tn");
+        images.add("https://cf.shopee.vn/file/020f9b4704b1366331c3ffa780cee8b7_tn");
+        images.add("https://cf.shopee.vn/file/043df65b14e76f116a3f5e4bd1520f48_tn");
+
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/b11e3fcd26b8d03818387c6e15ab41af_tn");
+        //thêm mô tả
+        productInput.setDescription("Yamaha Grande là mẫu xe tay ga tiết kiệm xăng số 1 Việt Nam với mức tiêu thụ chỉ 1,69 lít/100km, \n" +
+                "theo số liệu thống kê và phân tích được Cục Đăng kiểm Việt Nam công bố, xác nhận bởi Báo Giao thông. \n" +
+                "Bên cạnh thiết kế thời trang, thanh lịch, ở phiên bản Grande Bluecore Hybrid mới còn sở hữu cốp xe siêu rộng 27 lít và\n" +
+                " được trang bị hàng loạt tính năng hiện đại như trợ lực Hybrid, Smart key, hệ thống Stop & Start System, phanh ABS,.. \n" +
+                "với mức giá rất hấp dẫn.\n" +
+                "\n" +
+                "QUY TRÌNH ĐẶT XE :\n" +
+                "B1: Chọn xe/ Màu xe cho vào giỏ hàng\n" +
+                "B2 : Chat cùng cửa hàng để biết thêm thông tin về sản phẩm và các chi phí phát sinh kèm theo.\n" +
+                "B3: Khách đồng ý -> đặt xe -> cửa hàng nhận đơn->giao xe cho khách. \n" +
+                "Hotline Zalo : 0904505045\n" +
+                "Giá bán xe đã bao gồm thuế VAT, chưa bao gồm thuế trước bạ, biển số, và các chi phí khác\n" +
+                "Cửa hàng có hỗ trợ về thủ tục đăng ký, khách hàng mua xe có thể tự đi đăng ký.\n" +
+                "Khách đến nhận xe tại cửa hàng.\n" +
+                "Thời hạn bảo hành: 3 năm\n" +
+                "*Sau khi đặt hàng thành công, cửa hàng sẽ liên hệ và thông báo thời gian nhận xe trong vòng 24h.\n" +
+                "Đại lý Yamaha Xe Máy 74 \n" +
+                "Địa chỉ: 74 Khâm Thiên, quận Đống Đa, Hà Nội\n" +
+                "\uD83D\uDCDE Tư vấn bán hàng: 02438510610 \n" +
+                "\uD83D\uDCDE Di động: 0904505045");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/043df65b14e76f116a3f5e4bd1520f48_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLUE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/020f9b4704b1366331c3ffa780cee8b7_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.BLACK);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(920));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/7803aa9c3e0d2c64d6f8f9bc5f4f2925_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(910));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Máy Yamaha MT15  ");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/f804603ed99d44755cd288d69e181fb6_tn");
+        images.add("https://cf.shopee.vn/file/c3f97d1cfcd6c61f9268e4df12245d62_tn");
+        images.add("https://cf.shopee.vn/file/f8b5e3f82631338c344f32412cf2dc6d_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/54f2a3a01d31df919c1ee5ec924dc121_tn");
+        //thêm mô tả
+        productInput.setDescription("Loại        Blue Core, 4 thì, 4 van, SOHC, làm mát bằng dung dịch\n" +
+                "Bố trí xi lanh        Xy lanh đơn\n" +
+                "Dung tích xy lanh (CC)        155,1 cc\n" +
+                "Đường kính và hành trình piston        58 x 58,7mm\n" +
+                "Tỷ số nén        11,6:1\n" +
+                "Công suất tối đa        11,3kW (15,4 PS)/8.000 vòng/phút\n" +
+                "Mô men cực đại        13,9 N.m (1,4kgf.m)/6.500 vòng/phút\n" +
+                "Hệ thống khởi động        Điện\n" +
+                "Dung tích bình xăng        5,5 lít\n" +
+                "Mức tiêu thụ nhiên liệu (l/100km)        2,19\n" +
+                "Tỷ số truyền động        2,300-0,724:1\n" +
+                "Kiểu hệ thống truyền lực        CVT\n" +
+                "Khung xe\n" +
+                "Kích thước\n" +
+                "Bảo hành\n" +
+                "Hệ thống điện\n" +
+                "Lưu ý:thanh toán bằng thẻ tín dụng hay tất cả hình thức khác trên shopee \n" +
+                "đều có phí 3% thanh toán khi nhận xe");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/f804603ed99d44755cd288d69e181fb6_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLUE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/c3f97d1cfcd6c61f9268e4df12245d62_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.BLACK);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(920));
+        productVariantList.add(variant_2);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Máy Yamaha Sirius Phanh Cơ");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/4c5ea8bc9c8bbfbae25c96f83ca59fdf_tn");
+        images.add("https://cf.shopee.vn/file/77d27b55eb2eda0d3b188f0b478471ac_tn");
+        images.add("https://cf.shopee.vn/file/2c586c78f19bae7bc35f69a2ae5610bf_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/509cf4e0d80675cb95cae3ea41e6c3f4_tn");
+        //thêm mô tả
+        productInput.setDescription("Loại        Blue Core, 4 thì, 4 van, SOHC, làm mát bằng dung dịch\n" +
+                "Bố trí xi lanh        Xy lanh đơn\n" +
+                "Dung tích xy lanh (CC)        155,1 cc\n" +
+                "Đường kính và hành trình piston        58 x 58,7mm\n" +
+                "Tỷ số nén        11,6:1\n" +
+                "Công suất tối đa        11,3kW (15,4 PS)/8.000 vòng/phút\n" +
+                "Mô men cực đại        13,9 N.m (1,4kgf.m)/6.500 vòng/phút\n" +
+                "Hệ thống khởi động        Điện\n" +
+                "Dung tích bình xăng        5,5 lít\n" +
+                "Mức tiêu thụ nhiên liệu (l/100km)        2,19\n" +
+                "Tỷ số truyền động        2,300-0,724:1\n" +
+                "Kiểu hệ thống truyền lực        CVT\n" +
+                "Khung xe\n" +
+                "Kích thước\n" +
+                "Bảo hành\n" +
+                "Hệ thống điện\n" +
+                "Lưu ý:thanh toán bằng thẻ tín dụng hay tất cả hình thức khác trên shopee \n" +
+                "đều có phí 3% thanh toán khi nhận xe");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/2c586c78f19bae7bc35f69a2ae5610bf_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/77d27b55eb2eda0d3b188f0b478471ac_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.GRAY);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(820));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/2c586c78f19bae7bc35f69a2ae5610bf_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(810));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe yamaha YZF-R15-V4 ");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-eis02rk4ohiv6a_tn");
+        images.add("https://cf.shopee.vn/file/sg-11134201-22100-sus73rcrmuiv82_tn");
+
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-eis02rk4ohiv6a_tn");
+        //thêm mô tả
+        productInput.setDescription("Yamaha Grande là mẫu xe tay ga tiết kiệm xăng số 1 Việt Nam với mức tiêu thụ chỉ 1,69 lít/100km, \n" +
+                "theo số liệu thống kê và phân tích được Cục Đăng kiểm Việt Nam công bố, xác nhận bởi Báo Giao thông. \n" +
+                "Bên cạnh thiết kế thời trang, thanh lịch, ở phiên bản Grande Bluecore Hybrid mới còn sở hữu cốp xe siêu rộng 27 lít và\n" +
+                " được trang bị hàng loạt tính năng hiện đại như trợ lực Hybrid, Smart key, hệ thống Stop & Start System, phanh ABS,.. \n" +
+                "với mức giá rất hấp dẫn.\n" +
+                "\n" +
+                "QUY TRÌNH ĐẶT XE :\n" +
+                "B1: Chọn xe/ Màu xe cho vào giỏ hàng\n" +
+                "B2 : Chat cùng cửa hàng để biết thêm thông tin về sản phẩm và các chi phí phát sinh kèm theo.\n" +
+                "B3: Khách đồng ý -> đặt xe -> cửa hàng nhận đơn->giao xe cho khách. \n" +
+                "Hotline Zalo : 0904505045\n" +
+                "Giá bán xe đã bao gồm thuế VAT, chưa bao gồm thuế trước bạ, biển số, và các chi phí khác\n" +
+                "Cửa hàng có hỗ trợ về thủ tục đăng ký, khách hàng mua xe có thể tự đi đăng ký.\n" +
+                "Khách đến nhận xe tại cửa hàng.\n" +
+                "Thời hạn bảo hành: 3 năm\n" +
+                "*Sau khi đặt hàng thành công, cửa hàng sẽ liên hệ và thông báo thời gian nhận xe trong vòng 24h.\n" +
+                "Đại lý Yamaha Xe Máy 74 \n" +
+                "Địa chỉ: 74 Khâm Thiên, quận Đống Đa, Hà Nội\n" +
+                "\uD83D\uDCDE Tư vấn bán hàng: 02438510610 \n" +
+                "\uD83D\uDCDE Di động: 0904505045");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-eis02rk4ohiv6a_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLUE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-sus73rcrmuiv82_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.BLACK);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(920));
+        productVariantList.add(variant_2);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602350_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Xe Máy Yamaha Sirius Vành Đúc");
+        //mã shop sửa lại
+        productInput.setShopId(602350);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420766767");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Ô tô").getId());
+        productInput.setIndustrialTypeName("Ô tô");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/d8f4c895a58b8a01039ab6b829998190_tn");
+        images.add("https://cf.shopee.vn/file/793bc35b35e52a4886a283fc7b1a0405_tn");
+        images.add("https://cf.shopee.vn/file/69820f0835581834e1f684c357c8d13b_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/c67245663241a658918b11dc79445023_tn");
+        //thêm mô tả
+        productInput.setDescription("Loại        Blue Core, 4 thì, 4 van, SOHC, làm mát bằng dung dịch\n" +
+                "Bố trí xi lanh        Xy lanh đơn\n" +
+                "Dung tích xy lanh (CC)        155,1 cc\n" +
+                "Đường kính và hành trình piston        58 x 58,7mm\n" +
+                "Tỷ số nén        11,6:1\n" +
+                "Công suất tối đa        11,3kW (15,4 PS)/8.000 vòng/phút\n" +
+                "Mô men cực đại        13,9 N.m (1,4kgf.m)/6.500 vòng/phút\n" +
+                "Hệ thống khởi động        Điện\n" +
+                "Dung tích bình xăng        5,5 lít\n" +
+                "Mức tiêu thụ nhiên liệu (l/100km)        2,19\n" +
+                "Tỷ số truyền động        2,300-0,724:1\n" +
+                "Kiểu hệ thống truyền lực        CVT\n" +
+                "Khung xe\n" +
+                "Kích thước\n" +
+                "Bảo hành\n" +
+                "Hệ thống điện\n" +
+                "Lưu ý:thanh toán bằng thẻ tín dụng hay tất cả hình thức khác trên shopee \n" +
+                "đều có phí 3% thanh toán khi nhận xe");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/d8f4c895a58b8a01039ab6b829998190_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.RED);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/793bc35b35e52a4886a283fc7b1a0405_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.GRAY);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(920));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/69820f0835581834e1f684c357c8d13b_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.WHITE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(910));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Inistree
+    @Test
+    public void testProduct_602334_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Phấn phủ bột kiềm dầu innisfree No Sebum Mineral Powder 5g");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/8a0c878f58e08c86a127040ac89bb63d");
+        images.add("https://cf.shopee.vn/file/66057aee11843ae46ea38458f022453c");
+        images.add("https://cf.shopee.vn/file/c69e636e738288be7fb3248253aa93b9");
+        images.add("https://cf.shopee.vn/file/2f45bd462cd17aac30582d22946c545c");
+        images.add("https://cf.shopee.vn/file/e74f80862cbd52df6a16e4d65a4c7a8c");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-vuwhm6d3salv21");
+        productInput.setDescription("PHẤN PHỦ BỘT KIỀM DẦU INNISFREE NO SEBUM MINERAL POWDER 5G\n" +
+                "\n" +
+                "Phấn phủ bột kiềm dầu innisfree No Sebum Mineral Powder chiết xuất từ bạc hà và khoáng chất tự nhiên đảo Jeju, kiểm soát bã nhờn và dầu thừa để lớp nền luôn khô thoáng và mịn màng. Phấn phủ đa năng này còn có thể dùng như dầu gội khô hay làm phấn lót giữ màu mắt lâu trôi.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần & Công dụng\n" +
+                "\n" +
+                "1. Hút sạch và kiểm soát dầu thừa\n" +
+                "Phấn phủ kiềm dầu vượt trội, mang lại làn da khô thoáng và mịn màng như da em bé nhờ thành phần bạc hà và dầu khoáng tự nhiên đảo Jeju. Phấn phủ không màu, tạo độ che phủ tự nhiên, cho lớp nền mượt mà hơn và xóa tan cảm giác nhờn rít khó chịu.\n" +
+                "\n" +
+                "2. Duy trì làn da rạng rỡ\n" +
+                "Bên cạnh tác dụng kiểm soát dầu thừa hiệu quả, phấn phủ chiết xuất thiên nhiên còn giúp duy trì làn da rạng rỡ và hạn chế lớp nền bị xuống tông.\n" +
+                "\n" +
+                "3. Đa năng và tiện lợi\n" +
+                "Ngoài sử dụng cho lớp nền, phấn phủ đa năng còn có thể được dùng để hút sạch bã nhờn trên da đầu hay lót dưới phấn mắt để giữ màu bền lâu. Thiết kế nhỏ gọn, thông minh, tiện lợi khi mang theo bên mình mỗi ngày.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "Dùng ở bước cuối cùng của quy trình chăm sóc da. Thoa phấn lên vùng da nhiều dầu, có thể dặm lại khi cần thiết.\n" +
+                "\n" +
+                "Lưu ý\n" +
+                "1. Chỉ sử dụng ngoài da. \n" +
+                "2. Tránh tiếp xúc trực tiếp với mắt. \n" +
+                "3. Rửa sạch ngay với nước nếu tiếp xúc trực tiếp với mắt. \n" +
+                "4. Ngưng sử dụng sản phẩm và tham khảo ngay ý kiến bác sĩ khi thấy có dấu hiệu bất thường. \n" +
+                "5. Tránh xa tầm tay trẻ em.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "--\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "--\n" +
+                "Xuất xứ: Hàn Quốc \n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất in trên bao bì sản phẩm.\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #phanphu #phankiemdau #nosebummineralpowder #nosebum");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-vuwhm6d3salv21");
+        variant_1.setWeight(5.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem dưỡng da tay innisfree Jeju Life Perfumed Hand Cream 30ml");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/0eae41afd7c614d5c7cf33e2f5de0a24");
+        images.add("https://cf.shopee.vn/file/e55a17b5d0a73c919f0f1d509b237bb9");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/8c603c56d978cf5fe557545bb226baff");
+        productInput.setDescription("Kem dưỡng da tay innisfree Jeju Life Perfumed Hand Cream 30ml\n" +
+                "\n" +
+                "Một đôi tay luôn mềm mại và toả hương thơm nhè nhẹ sẽ là điểm thu hút quyến rũ của bạn. Hãy để innisfree giúp bạn làm điều đó, với kem dưỡng da tay mang phong cách Jeju, với mùi thơm lãng mạn mang đậm khung cảnh Jeju, dưỡng ẩm và dễ dàng thẩm thấu vào da đem lại day tay mềm mại ngát hương\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần, công dụng\n" +
+                "- Chuẩn phong cách với những mùi hương đa dạng:  10 loại mùi hương dưỡng da tay mang phong cách Jeju, với mùi thơm lãng mạn mang đậm khung cảnh Jeju.\n" +
+                "- Dạng kem dưỡng ẩm ôm trọn lấy đôi bàn tay. Giúp đôi bàn tay mềm mại, không gây bết dính, thẩm thấu nhanh và không để lại vết bóng dầu\n" +
+                "- Hương thơm bền lâu với kĩ thuật semi-wax trap, giúp hương thơm được bền lâu\n" +
+                "\n" +
+                "Phù hợp với mọi làn da tay, kể cả da nhạy cảm\n" +
+                "\n" +
+                "Gồm 10 hương\n" +
+                "- Hương Tropic Sherbet\n" +
+                "- Hương Lilac Path\n" +
+                "- Hương Sky Surfing\n" +
+                "- Hương Snow Love\n" +
+                "- Hương Guesthouse\n" +
+                "- Hương Small Wedding\n" +
+                "- Hương Sunshine Wildberry\n" +
+                "- Hương Peach\n" +
+                "- Hương Pink Coral\n" +
+                "- Hương Yuja Tea\n" +
+                "\n" +
+                "Thiết kế: tuýp 30ml\n" +
+                "\n" +
+                "Hướng dẫn sử dụng:\n" +
+                "- Sau khi rửa tay, lấy lượng vừa đủ và thao đều lên bàn tay.\n" +
+                "\n" +
+                "Hướng dẫn bảo quản\n" +
+                "- Đóng nắp sau khi sử dụng\n" +
+                "- Bảo quản nơi khô thoáng mát. \n" +
+                "- Không bảo quản nơi có nhiệt độ quá cao hoặc quá thấp, nơi có ánh sáng trực tiếp.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "--\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "--\n" +
+                "Xuất xứ: Hàn Quốc.\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất.\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "#innisfreeofficial #jejuhandcream #kemduongtay");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/8c603c56d978cf5fe557545bb226baff");
+        variant_1.setWeight(30.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(700));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Mặt nạ innisfree My Real Squeeze Mask 20ml");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/7a965de5f7973b690724dbbeba4e98cb");
+        images.add("https://cf.shopee.vn/file/24555648e8707398cc4b513c912dc9c3");
+        images.add("https://cf.shopee.vn/file/259aa948870d92e272e741168fdf5298");
+        images.add("https://cf.shopee.vn/file/0bd0302033765d5df371f3f9b8109f45");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-0e8fdlsl83iv4a");
+        productInput.setDescription("Mặt nạ innisfree My Real Squeeze Mask 20ml\n" +
+                "\n" +
+                "Mặt nạ My Real Squeeze Mask 20ml chiết xuất từ nước ép tự nhiên đảo Jeju, giải quyết các vấn đề khác nhau của làn da. Làm từ 100% cellulose lành tính, mặt nạ ứng dụng công nghệ vắt - ép lạnh để tối ưu hóa dưỡng chất. Mặt nạ dưa leo phục hồi nước tức thì cho da.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần, công dụng\n" +
+                "1. Chiết xuất nước ép tươi với công nghệ vắt hiện đại \n" +
+                "Mặt nạ dồi dào năng lượng thiên nhiên từ các loại hoa quả tại hòn đảo Jeju trong lành. Dưỡng chất được lưu giữ trọn vẹn nhờ ứng dụng công nghệ vắt và ép lạnh ở nhiệt độ thấp.\n" +
+                "\n" +
+                "2. Làm từ 100% cellulose nguyên chất\n" +
+                "Mặt nạ với chất liệu cellulose từ cây bạch đàn cho thiết kế mỏng nhẹ và bền chắc. Mặt nạ lành tính, ôm nhẹ và bám tốt trên mặt, giúp đưa dưỡng chất vào da hiệu quả hơn. Thiết kế mới Easy-peel có hai tai gấu bên trên cho thao tác tiện lợi hơn.\n" +
+                "*Được làm từ nguyên liệu tự phân hủy, đây là mặt nạ giấy thân thiện với môi trường.\n" +
+                "\n" +
+                "3. Ba loại dưỡng chất chăm sóc da toàn diện:\n" +
+                "A. Dạng nước tinh chất dịu mát:\n" +
+                "- Tea Tree (Cây tràm trà): Làm mượt và kháng khuẩn.\n" +
+                "- Bamboo (Tre): Cấp nước và làm dịu.\n" +
+                "- Lime (Chanh): Làm sáng da.\n" +
+                "- Green Tea (trà xanh): Cấp nước và làm diu da.\n" +
+                "- Rose (hoa hồng): Cấp nước và làm sáng da.\n" +
+                "B. Dạng tinh chất dưỡng ẩm: \n" +
+                "- Fig (Trái phỉ): Thanh lọc da.\n" +
+                "- Pomergranate (Lựu): Làm mịn và sáng da.\n" +
+                "- Honey (Mật ong manuka): Dưỡng ẩm và phục hồi da.\n" +
+                "- Cucumber (Dưa leo): Phục hồi nước.\n" +
+                "- Aloe (Nha đam): Cấp nước và làm dịu da.\n" +
+                "C. Dạng kem giàu dưỡng chất: \n" +
+                "- Rice (Gạo): Làm sáng và mịn da.\n" +
+                "- Acai Berry: Phục hồi và giúp da săn chắc.\n" +
+                "- Ginseng (Nhân sâm Hàn Quốc): phục hồi da và nuôi dưỡng.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "1) Sau khi rửa mặt, thoa nước cân bằng làm dịu da.\n" +
+                "2) Lấy mặt nạ ra khỏi bao bì và đắp lên mặt. Lưu ý tránh vùng mắt, môi.\n" +
+                "3) Đắp mặt nạ từ 10-20 phút.\n" +
+                "4) Tháo mặt nạ ra. Vỗ nhẹ để tăng cường khả năng thấm thấu.\n" +
+                "\n" +
+                "Lưu ý\n" +
+                "1) Ngưng sử dụng ngay khi có dấu hiệu bất thường.\n" +
+                "2) Sử dụng ngay sau khi mở nắp.\n" +
+                "3) Tránh tiếp xúc vùng mắt.\n" +
+                "4) Lưu ý với người dễ bị kích ứng với cao dán và khăn ướt. \n" +
+                "5) Tránh xa tầm tay trẻ em.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "--\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "--\n" +
+                "Xuất xứ: Hàn Quốc.\n" +
+                "Hạn sử dụng: 2 năm kể từ ngày sản xuất.\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #matna #matnagiay \n" +
+                "#innisfreemyrealsqueezemask #myrealsqueezemask #mask #sheetmask");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22100-0e8fdlsl83iv4a");
+        variant_1.setWeight(20.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem dưỡng ẩm sáng da innisfree Cherry Blossom Tone Up Cream 50ml");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/2320796afe1a33e86d1621e0ccd9e60f");
+        images.add("https://cf.shopee.vn/file/26d222e0e42ee310149142bf0acc694d");
+        images.add("https://cf.shopee.vn/file/e26152fd98df94fff515a3fd816d00f5");
+        images.add("https://cf.shopee.vn/file/798e1a8263f7dae0f0b807a9ae57925d");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-80ysxexje6kv7a");
+        productInput.setDescription("Kem dưỡng ẩm sáng da innisfree Cherry Blossom Tone Up Cream 50ml\n" +
+                "\n" +
+                "Kem dưỡng ẩm sáng da innisfree Cherry Blossom Tone Up Cream cho làn da tinh khiết, trắng sáng rạng rỡ tức thì. Có thể sử dụng thay kem nền khi muốn trang điểm nhẹ nhàng.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần & Công dụng\n" +
+                "1. Làm sáng da hiệu quả với Jeju Cherry Blossom, không gây mỏng da\n" +
+                "Khả năng dưỡng sáng hiệu quả của chiết xuất cánh hoa anh đào Jeju được nâng tầm bằng phương pháp ủ lạnh với nước biển lava đảo Jeju trong 3 tuần. Làn da hấp thụ tinh hoa dưỡng chất sẽ trở nên tươi sáng, trong veo và tràn đầy sức sống. \n" +
+                "\n" +
+                "2. Cung cấp và duy trì độ ẩm cho làn da mịn màng, không còn khô ráp\n" +
+                "Bổ sung thêm Betaine từ củ dền với khả năng dưỡng ẩm dồi dào, mang đến vẻ mềm mại, mịn màng và căng mọng cho làn da.\n" +
+                "\n" +
+                "3. Nâng tone tự nhiên, tự tin với làn da mộc\n" +
+                "Cánh hoa anh đào từ Jeju với dưỡng chất giúp nâng tông da tức thì, đồng thời dưỡng sáng da từ bên trong. Có thể sử dụng thay kem nền khi muốn trang điểm nhẹ nhàng vào mùa nóng.\n" +
+                "\n" +
+                "Tips\n" +
+                "- Kết hợp cùng với Cherry Blossom Jelly Cream (tuỳ theo tỉ lệ) cho làn da thêm ẩm mượt rạng rỡ.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "- Ở bước cuối cùng của quá trình chăm sóc da, thoa một lượng thích hợp lên mặt và cổ. Để sản phẩm thẩm thấu, sau đó thoa thêm một lớp mỏng để tăng hiệu quả dưỡng sáng da nếu cần.\n" +
+                "\n" +
+                "Lưu ý\n" +
+                "1. Chỉ dùng ngoài da.\n" +
+                "2. Tránh tiếp xúc trực tiếp với mắt.\n" +
+                "3. Rửa sạch ngay với nước nếu sản phẩm tiếp xúc với mắt.\n" +
+                "4. Ngưng sử dụng sản phẩm và tham khảo ngay ý kiến bác sĩ khi thấy da có dấu hiệu bất thường.\n" +
+                "5. Tránh xa tầm tay trẻ em.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "--\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "--\n" +
+                "Xuất xứ: Hàn Quốc.\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất.\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #cherryblossom #cream");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-80ysxexje6kv7a");
+        variant_1.setWeight(50.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa rửa mặt dành cho da mụn innisfree Bija Trouble Facial Foam 150g");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/d97f9b0fdf880a3a9f72aab08869421e");
+        images.add("https://cf.shopee.vn/file/253b6b4b1af4923fe61bd7bda237d4d3");
+        images.add("https://cf.shopee.vn/file/7c5109c8b0298450ba1bb545853ff3ee");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-ia7mb1f4e6kv8b");
+        productInput.setDescription("Sữa rửa mặt dành cho da mụn innisfree Bija Trouble Facial Foam 150g\n" +
+                "\n" +
+                "Sữa rửa mặt chiết xuất từ dầu Bija Jeju giúp làm sạch hoàn hảo bụi bẩn từ sâu bên trong lỗ chân lông, đặc biệt phù hợp cho làn da đang gặp vấn đề về mụn.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần, công dụng\n" +
+                "\n" +
+                "1. Hạt Bija tăng sức đề kháng cho da\n" +
+                "Bija hấp thụ tinh hoa thiên nhiên suốt một khoảng thời gian dài, nhẹ nhàng làm dịu và tăng sức đề kháng cho da. Từ đó, tình trạng làn da được cải thiện đáng kể. innisfree lựa chọn hình thức thương mại công bằng, thu mua Bija được trồng tại Songdang-ri, Jeju. Nhờ vậy, innisfree đã mang lại nguồn thu nhập mới và thúc đẩy phát triển cộng đồng nơi đây.\n" +
+                "\n" +
+                "*Sản phẩm đạt chứng nhận 6 không (Không parabens, không màu tổng hợp, không dầu khoáng, không dầu động vật, không mùi hương nhân tạo, không imidazolidinyl urea).\n" +
+                "\n" +
+                "2. Sạch thoáng lỗ chân lông và tế bào chết\n" +
+                "Thành phần Acid Salicylic BHA giúp loại bỏ tế bào chết trên da và làm sạch sâu tạp chất bên trong lỗ chân lông.\n" +
+                "\n" +
+                "3. An toàn cho da mụn và dầu mụn\n" +
+                "Sản phẩm đạt kết quả thử nghiệm Noncomedogenic, an toàn cho da mụn. Dầu hạt Bija Jeju giúp làm dịu và bảo vệ vùng da gặp rắc rối về vấn đề mụn. Bọt mịn tạo cảm giác sảng khoái cho làn da dầu.\n" +
+                "\n" +
+                "Loại da phù hợp\n" +
+                "- Da gặp vấn đề về mụn\n" +
+                "\n" +
+                "Thiết kế sản phẩm\n" +
+                "- Dung tích 150g\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "Cho một lượng thích hợp vào lòng bàn tay, tạo bọt vừa đủ rồi thoa nhẹ lên da. Mát-xa toàn mặt, sau đó rửa mặt sạch bằng nước ấm.\n" +
+                "\n" +
+                "Hướng dẫn bảo quản\n" +
+                "1. Chỉ sử dụng ngoài da.\n" +
+                "2. Tránh tiếp xúc trực tiếp với mắt.\n" +
+                "3. Rửa sạch ngay với nước nếu tiếp xúc trực tiếp với mắt.\n" +
+                "4. Ngưng sử dụng sản phẩm và tham khảo ngay ý kiến bác sĩ khi thấy có dấu hiệu bất thường.\n" +
+                "5. Tránh xa tầm tay trẻ em.\n" +
+                "\n" +
+                "*Cảnh báo rám nắng : Sản phẩm này chứa Alpha hydroxy acid (AHA) có thể làm tăng sự nhạy cảm của da với nắng cụ thể là có thể bị rám nắng. Hãy sử dụng các dụng cụ che nắng và hạn chế phơi nắng khi sử dụng Sản phẩm này cho đến sau đó một tuần.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "--\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "--\n" +
+                "Xuất xứ: Hàn Quốc.\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất.\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #suaruamat #facialfoam #bija");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-ia7mb1f4e6kv8b");
+        variant_1.setWeight(150.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Mặt nạ lột mụn đầu đen innisfree Jeju Volcanic Nose Pack 1 Miếng");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/0b95f700dff9fba598b5074f6e0ac180");
+        images.add("https://cf.shopee.vn/file/d627dae05cbae67486c615b5059482a3");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/ddb18f1f06bc188a31395525f5a0e49d");
+        productInput.setDescription("Mặt nạ lột mụn đầu đen innisfree Jeju Volcanic Nose Pack 1 Miếng\n" +
+                "\n" +
+                "\n" +
+                "Mặt nạ dành cho da vùng mũi chiết xuất từ tro núi lửa Jeju giúp làm sạch chất nhờn và loại bỏ mụn đầu đen.\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần, công dụng\n" +
+                "\n" +
+                "- Chứa thành phần tro núi lửa Jeju có tác dụng loại bỏ bụi bẩn và đánh bay bã nhờn, làm sạch tận sâu lỗ chân lông.\n" +
+                "\n" +
+                "- Loại bỏ mụn đầu đen cứng đầu \"đóng quân\" quanh vùng mũi và lớp bã nhờn bám sâu lỗ chân lông một cách hiệu quả.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "\n" +
+                "- Sau khi rửa sạch, không dùng sữa dưỡng hoặc kem dưỡng. Thoa ít nước làm ướt mũi.\n" +
+                "\n" +
+                "- Gỡ bỏ tấm phim trong suốt, sau đó nhẹ nhàng dán mặt mịn miếng dán lội mụn vào giữa mũi.\n" +
+                "\n" +
+                "- Sau khoảng 15 phút, khi miếng dán khô hoàn toàn, từ từ gỡ bỏ miếng dán từ ngoài mép vào trong.\n" +
+                "\n" +
+                "- Làm sạch lại vùng mũi bằng bông cotton thấm nước cân bằng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn bảo quản\n" +
+                "\n" +
+                "- Đậy nắp lại sau khi sử dụng.\n" +
+                "\n" +
+                "- Không bảo quản nơi có nhiệt độ quá cao hoặc quá thấp, nơi có ánh sáng trực tiếp.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "\n" +
+                "--\n" +
+                "\n" +
+                "Xuất xứ: Hàn Quốc.\n" +
+                "\n" +
+                "Hạn sử dụng: 3 năm kể từ ngày sản xuất.\n" +
+                "\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #matna #jejuvolcanicnosepack #maskMặt nạ lột mụn đầu đen innisfree Jeju Volcanic Nose Pack 1 Miếng\n" +
+                "\n");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/ddb18f1f06bc188a31395525f5a0e49d");
+        variant_1.setWeight(5.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(600));
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Kem lót kiềm dầu làm mờ lỗ chân lông innisfree No Sebum Blur Primer 25ml");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/f9621851e40429c20b209966deced0df");
+        images.add("https://cf.shopee.vn/file/0600e6c0f46ceda952453d3b223d9f51");
+        images.add("https://cf.shopee.vn/file/0b25b1b9ce96ece6bbad343df283de23");
+        images.add("https://cf.shopee.vn/file/babde95ab07ab6986ac4868d21d3d932");
+        images.add("https://cf.shopee.vn/file/d011f3e709a41ab4b380f87a09bb5ed1");
+        images.add("https://cf.shopee.vn/file/42670eb64085334b6308c9b6e7461a94");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/1c4200a6646886acac0750a6f0aea696");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Kem lót kiềm dầu làm mờ lỗ chân lông innisfree No Sebum Blur Primer 25ml\n" +
+                "\n" +
+                "Kem lót kiềm dầu làm mờ lỗ chân lông innisfree No Sebum Blur Primer giúp kiềm dầu, đồng thời che phủ lỗ chân lông, làm mờ các nếp nhăn và tạo lớp lót mịn màng bảo vệ da.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần & công dụng\n" +
+                "\n" +
+                "1. Kiềm dầu cho lớp nền lâu trôi\n" +
+                "\n" +
+                "Thành phần bạc hà và khoáng chất tự nhiên giúp cân bằng dầu và độ ẩm trên da, giúp làn da khô thoáng và và duy trì lớp nền bền lâu.\n" +
+                "\n" +
+                "2. Che phủ lỗ chân lông và làm mờ nếp nhăn\n" +
+                "\n" +
+                "Kem lót che phủ lỗ chân lông, làm mờ các nếp nhăn tạo lớp lót mịn màng, lý tưởng trước khi trang điểm.\n" +
+                "\n" +
+                "3. Chăm sóc làn da khỏe khoắn với thành phần thiên nhiên \n" +
+                "\n" +
+                "Chiết xuất từ hồng xanh Jeju giúp chăm sóc làn da mịn màng và tạo lớp bảo vệ da trước khi trang điểm.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "\n" +
+                "- Sau bước chăm sóc da, thoa một lượng mỏng thích hợp lên vùng cần che phủ lỗ chân lông rồi vỗ nhẹ để tạo lớp lót tự nhiên.\n" +
+                "\n" +
+                "Lưu ý\n" +
+                "\n" +
+                "1. Chỉ sử dụng ngoài da.\n" +
+                "\n" +
+                "2. Tránh tiếp xúc trực tiếp với mắt.\n" +
+                "\n" +
+                "3. Rửa sạch ngay với nước nếu sản phẩm tiếp xúc với mắt.\n" +
+                "\n" +
+                "4. Ngưng sử dụng sản phẩm khi có dấu hiệu bất thường.\n" +
+                "\n" +
+                "5. Tránh xa tầm tay trẻ em.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "\n" +
+                "-- \n" +
+                "\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "\n" +
+                "--\n" +
+                "\n" +
+                "Xuất xứ: Hàn Quốc\n" +
+                "\n" +
+                "Hạn sử dụng: 03 năm kể từ ngày sản xuất\n" +
+                "\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #kemlottrangdiem #kemlot #primer");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/1c4200a6646886acac0750a6f0aea696");
+        variant_1.setWeight(25.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(750));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sữa rửa mặt làm sáng và sạch da innisfree Brightening Pore Facial Cleanser 150ml");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/781b62e50f6a3de125ed6f0e32802523");
+        images.add("https://cf.shopee.vn/file/f968e10c54259f170d3b53450eae90b7");
+        images.add("https://cf.shopee.vn/file/98a998633ee1a1f18ff3367204a35d8c");
+        images.add("https://cf.shopee.vn/file/7c129599dfe90b5c625516b180d575f1");
+        images.add("https://cf.shopee.vn/file/7c1ca026bf38183aa2beee81ea61d15c");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-24oalix8e6kv05");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Sữa rửa mặt làm sáng và sạch da innisfree Brightening Pore Facial Cleanser 150ml\n" +
+                "\n" +
+                "Sữa rửa mặt làm sáng và sạch da innisfree Brightening Pore Facial Cleanser giúp cải thiện sắc da, thu nhỏ lỗ chân lông và cấp ẩm bằng cách loại bỏ các tạp chất bên trong da nhờ vào lớp bọt dày mịn\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM \n" +
+                "\n" +
+                "Thành phần công dụng \n" +
+                "- Chăm sóc đồng thời các đốm tối màu + lỗ chân lông + dưỡng ẩm: Được chiết xuất từ vỏ quýt Hallabong và dẫn xuất 3 loại vitamin C, B3, B5 giúp kiểm soát các đốm tối màu và làm thu nhỏ lỗ chân lông để mang lại làn da sáng đều màu không khuyết điểm\n" +
+                "- Cảm giác ẩm mượt kéo dài kể cả sau khi rửa mặt: Lớp bọt mềm mịn và dày được làm từ kết cấu dạng sữa giúp loại bỏ các chất cặn bã hiệu quả nhưng vẫn lưu lại cảm giác ẩm mướt trong thời gian dài \n" +
+                "\n" +
+                "Phù hợp với da đang gặp vấn đề về sắc tố và khuyết điểm\n" +
+                "\n" +
+                "Thiết kế sản phẩm\n" +
+                "- Dung tích 150ml\n" +
+                "\n" +
+                "Cách sử dụng\n" +
+                "- Lấy 1 lượng vừa đủ ra tay và tạo bọt \n" +
+                "- Massage lên da mặt và rửa sạch lại với nước ấm\n" +
+                "\n" +
+                "Hướng dẫn bảo quản\n" +
+                "- Đóng nắp sau khi sử dụng\n" +
+                "- Bảo quản nơi thoáng mát\n" +
+                "- Không bảo quản nơi có nhiệt độ quá cao hoặc quá thấp, nơi có ánh sáng trực tiếp\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "--\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "--\n" +
+                "Xuất xứ: Hàn Quốc\n" +
+                "Hạn sử dụng: 03 năm kể từ ngày sản xuất\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #brighteningpore #cleanser#suaruamat");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-24oalix8e6kv05");
+        variant_1.setWeight(150.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(850));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Mặt nạ tẩy tế bào da chết innisfree Green Barley Gommage Mask 120ml");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/585024f559681d38fac9464b2a38d1dd");
+        images.add("https://cf.shopee.vn/file/cb09d6fa95cb1cc13643dca518a732cc");
+        images.add("https://cf.shopee.vn/file/efd15cc5e928325c365160c9fe1af0d3");
+        images.add("https://cf.shopee.vn/file/c4fbdda25c85a29c8ffc6c52f66b7993");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/585027f559681d38fac9464b2a38d1dd");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Mặt nạ tẩy tế bào da chết innisfree Green Barley Gommage Mask 120ml\n" +
+                "\n" +
+                "Mặt nạ tẩy tế bào da chết innisfree Green Barley Gommage Mask chiết xuất từ lúa mạch xanh kết hợp hiệu quả tẩy da chết hóa học và vật lý Cellulose mang lại làn da sạch khỏe và láng mịn.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần & Công dụng\n" +
+                "1. Năng lượng làm sạch hiệu quả từ lúa mạch xanh trên đảo Gapado\n" +
+                "Lúa mạch xanh không hóa chất thu hoạch từ đảo Gapado chứa hàm lượng chất xơ và các thành phần dinh dưỡng khác (protein, vitamin, …) dồi dào hiệu quả trong việc làm sạch và sáng da.\n" +
+                "Áp dụng phương pháp lên men 3 bước lúa mạch xanh tạo ra giấm lúa mạch xanh có tác dụng loại bỏ tế bào chết hiệu quả.\n" +
+                "3 loại AHA có nguồn gốc thiên nhiên chiết xuất từ mầm lúa mạch xanh đảo Jeju giúp lấy đi tế bào chết hiệu quả cho làn da sạch mướt và tươi sáng\n" +
+                "\n" +
+                "2. Loại bỏ tế bào chết trên da 2 trong 1\n" +
+                "Hiệu quả làm sạch và loại bỏ tế bào chết trên da gấp 2 lần nhờ kết hợp chức năng tẩy tế bào chết hóa học từ AHA, BHA và tẩy tế bào chết vật lý của Cellulose tự nhiên.\n" +
+                "\n" +
+                "3. Làn da láng mịn mà không khô căng\n" +
+                "Chiết xuất từ lúa mạch xanh giàu chất xơ và protein giúp tăng cường khả năng loại bỏ tế bào chết, cải thiện bề mặt da mà không gây cảm giác khô căng trên da.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "- Sau khi rửa mặt và lau khô nước, lấy một lượng thích hợp khoảng bằng đồng xu thoa đều lên mặt, tránh vùng mắt và môi. Sau 3 phút, dùng đầu ngón tay miết nhẹ lên da rồi rửa sạch bằng nước. (Dùng 1-2 lần/tuần).\n" +
+                "\n" +
+                "Lưu ý\n" +
+                "- Chỉ dùng ngoài da. \n" +
+                "- Tránh tiếp xúc trực tiếp với mắt. \n" +
+                "- Rửa sạch ngay với nước nếu sản phẩm tiếp xúc trực tiếp với mắt. \n" +
+                "- Ngưng sử dụng sản phẩm và tham khảo ngay ý kiến bác sĩ nếu có dấu hiệu bất thường. \n" +
+                "- Tránh xa tầm tay trẻ em. \n" +
+                "- Không sử dụng cho trẻ em dưới 3 tuổi.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "--\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "--\n" +
+                "Xuất xứ: Hàn Quốc\n" +
+                "Hạn sử dụng: 03 năm kể từ ngày sản xuất\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #taytebaochet #peeling");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/585027f559681d38fac9464b2a38d1dd");
+        variant_1.setWeight(120.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(800));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testProduct_602334_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Nước cân bằng làm sạch tế bào da chết innisfree Green Barley Peeling Toner 250ml");
+        productInput.setShopId(602334);
+        productInput.setTradeMarkId("1671551420753844");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Sắc đẹp").getId());
+        productInput.setIndustrialTypeName("Sắc đẹp");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/8dbf984abddb1cfbd88fedd158b20c58");
+        images.add("https://cf.shopee.vn/file/87f25622cf6e2307a98f70cf95361af1");
+        images.add("https://cf.shopee.vn/file/7901c396a4c63a038992759fefdeab08");
+        images.add("https://cf.shopee.vn/file/6ba9996ab0846e18d11dfc1d40cb8923");
+        images.add("https://cf.shopee.vn/file/0301aeb6125d9c7af2a6c075a7aeb470");
+        images.add("https://cf.shopee.vn/file/900ca46ca7f6f0a9d3110d64d522053d");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/beb93ed4a0df465a3f474891d2daeb5c");
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Nước cân bằng làm sạch tế bào da chết innisfree Green Barley Peeling Toner 250ml\n" +
+                "\n" +
+                "Nước cân bằng làm sạch tế bào da chết innisfree Green Barley Peeling Toner chiết xuất từ lúa mạch xanh giúp cân bằng độ ẩm và nhẹ nhàng loại bỏ tế bào chết mang lại làn da ẩm mềm, tươi mát.\n" +
+                "\n" +
+                "THÔNG TIN SẢN PHẨM\n" +
+                "\n" +
+                "Thành phần & Công dụng\n" +
+                "1. Năng lượng làm sạch hiệu quả từ lúa mạch xanh trên đảo Gapado gần Jeju\n" +
+                "Lúa mạch xanh không hóa chất thu hoạch từ đảo Gapado chứa hàm lượng chất xơ và các thành phần dinh dưỡng khác (protein, vitamin, …) dồi dào hiệu quả trong việc làm sạch và sáng da.\n" +
+                "Áp dụng phương pháp lên men 3 bước lúa mạch xanh tạo ra giấm lúa mạch xanh có tác dụng loại bỏ tế bào chết hiệu quả.\n" +
+                "3 loại AHA có nguồn gốc thiên nhiên chiết xuất từ mầm lúa mạch xanh đảo Jeju giúp lấy đi tế bào chết hiệu quả cho làn da sạch mướt và tươi sáng\n" +
+                "\n" +
+                "2. Bổ sung độ ẩm và cân bằng da.\n" +
+                "Công thức dạng nước phân tử nhỏ chứa Hyaluronic Acid giúp bổ sung độ ẩm nhanh chóng và cân bằng lượng dầu – nước mang lại làn da ẩm mềm, láng mịn, không gây nhờn dính.\n" +
+                "\n" +
+                "3. Loại bỏ tế bào chết dịu nhẹ\n" +
+                "Chiết xuất từ lúa mạch xanh chứa AHA giúp nhẹ nhàng loại bỏ tế bào chết trên da, làm sạch bã nhờn dư thừa mang lại làn da sạch thoáng, láng mịn.\n" +
+                "\n" +
+                "Hướng dẫn sử dụng\n" +
+                "- Cho một lượng sản phẩm thích hợp lên miếng bông cotton và nhẹ nhàng lau đều toàn mặt. Vỗ nhẹ để tăng khả năng thẩm thấu.\n" +
+                "- Với làn da bị mất nước, có thể dùng thay cho rửa mặt vào buổi sáng.\n" +
+                "\n" +
+                "Lưu ý\n" +
+                "- Chỉ dùng ngoài da. \n" +
+                "- Tránh tiếp xúc trực tiếp với mắt. \n" +
+                "- Rửa sạch ngay với nước nếu sản phẩm tiếp xúc trực tiếp với mắt. \n" +
+                "- Ngưng sử dụng sản phẩm và tham khảo ngay ý kiến bác sĩ nếu có dấu hiệu bất thường. \n" +
+                "- Tránh xa tầm tay trẻ em.\n" +
+                "\n" +
+                "THÔNG TIN THƯƠNG HIỆU\n" +
+                "\n" +
+                "Innisfree là thương hiệu chia sẻ những lợi ích của thiên nhiên từ hòn đảo Jeju tinh khiết, mang đến vẻ đẹp của cuộc sống xanh, thân thiện với môi trường nhằm bảo vệ cân bằng hệ sinh thái.\n" +
+                "Mục tiêu innisfree muốn mang lại là vẻ đẹp khoẻ mạnh thực sự cho khách hàng thông qua những ưu đãi từ thiên nhiên.\n" +
+                "--\n" +
+                "Xuất xứ: Hàn Quốc\n" +
+                "Hạn sử dụng: 03 năm kể từ ngày sản xuất\n" +
+                "Công ty chịu trách nhiệm nhập khẩu và phân phối độc quyền: Công ty TNHH AmorePacific Việt Nam.\n" +
+                "Mẫu mã bao bì sản phẩm sẽ thay đổi tùy vào đợt nhập hàng.\n" +
+                "--\n" +
+                "Cảm ơn bạn đã đồng hành cùng innisfree Việt Nam.\n" +
+                "\n" +
+                "#innisfree #innisfreeVietnam #chinhhang #toner");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/beb93ed4a0df465a3f474891d2daeb5c");
+        variant_1.setWeight(250.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
 }
