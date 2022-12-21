@@ -113,6 +113,7 @@ public class ProductManager extends BaseManager {
     public Trademark getTrademark(String trademarkId) {
         return getTrademarkCollection().find(Filters.eq("_id", trademarkId)).first();
     }
+
     public Trademark getTrademarkByIndustrialId(String industrialId) {
         return getTrademarkCollection().find(Filters.eq("industrialId", industrialId)).first();
     }
@@ -137,15 +138,15 @@ public class ProductManager extends BaseManager {
             betweenFilter("mediumPrice.amount", productFilter.getPriceFrom(), productFilter.getPriceTo(), filter);
         }
         if (null != productFilter.getTradeMarkId())
-            appendFilter("tradeMarkId", productFilter.getTradeMarkId(), filter);
+            appendFilter(productFilter.getTradeMarkId(), "tradeMarkId", filter);
         if (null != productFilter.getName())
-            appendFilter("name", productFilter.getName(), filter);
+            appendFilter(productFilter.getName(), "name", filter);
         if (null != productFilter.getShopId())
-            appendFilter("shopId", productFilter.getShopId(), filter);
+            appendFilter(productFilter.getShopId(), "shopId", filter);
         if (null != productFilter.getIndustrialId())
-            appendFilter("industrialId", productFilter.getIndustrialId(), filter);
+            appendFilter(productFilter.getIndustrialId(), "industrialId", filter);
         if (null != productFilter.getProductId())
-            appendFilter("_id", productFilter.getProductId(), filter);
+            appendFilter(productFilter.getProductId(), "_id", filter);
 
         return getResultList(getProductCollection(), filter, productFilter.getOffset(), productFilter.getMaxResult());
     }
