@@ -11,6 +11,7 @@ import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.model.industrial.IndustrialProduct;
 import vn.mellow.ecom.ecommercefloor.model.product.*;
+import vn.mellow.ecom.ecommercefloor.model.shop.Shop;
 import vn.mellow.ecom.ecommercefloor.model.size.DimensionUnit;
 import vn.mellow.ecom.ecommercefloor.model.input.WeightUnit;
 import vn.mellow.ecom.ecommercefloor.manager.ProductManager;
@@ -161,7 +162,12 @@ public class ProductController extends BaseController {
     @ApiOperation(value = "get product detail by product id")
     @GetMapping("/product/{productId}/detail")
     public ProductDetail getProductDetail(@PathVariable String productId) throws ServiceException {
-        return productManager.getProductDetail(productId);
+        ProductDetail data = productManager.getProductDetail(productId);
+        Shop shop = userManager.getInfoShop(data.getProduct().getShopId());
+        if (null!=shop) {
+            data.setShop(shop);
+        }
+        return data;
     }
 
     @ApiOperation(value = "get list industrial")
