@@ -10,16 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ScoreType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/ScoreManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/Score.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/RegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ScoreType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/enums/ScoreType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/OrderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/controller/controller/UserCreateController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/classes/vn/mellow/ecom/ecommercefloor/model/order/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/ScoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/ScoreManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/model/user/UserProfile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +247,8 @@
       <workItem from="1670681025546" duration="320000" />
       <workItem from="1670687784194" duration="733000" />
       <workItem from="1670715155454" duration="117165000" />
-      <workItem from="1671569545979" duration="2160000" />
+      <workItem from="1671569545979" duration="5034000" />
+      <workItem from="1671594870620" duration="733000" />
     </task>
     <servers />
   </component>
@@ -312,6 +310,11 @@
           <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/BankController.java</url>
           <line>97</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java</url>
+          <line>291</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NumberFormatException" package="java.lang" />

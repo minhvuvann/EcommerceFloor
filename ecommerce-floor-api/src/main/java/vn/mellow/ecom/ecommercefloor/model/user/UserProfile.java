@@ -9,5 +9,6 @@ public class UserProfile {
     private User user;
     private List<KeyPassword> keyPassword;
     private List<Role> role;
+    private Score score;
 
 }

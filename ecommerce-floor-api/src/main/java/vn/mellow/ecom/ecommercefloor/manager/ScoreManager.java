@@ -3,17 +3,24 @@ package vn.mellow.ecom.ecommercefloor.manager;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.FindOneAndUpdateOptions;
+import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
+import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
+import vn.mellow.ecom.ecommercefloor.enums.PasswordStatus;
 import vn.mellow.ecom.ecommercefloor.enums.ScoreType;
 import vn.mellow.ecom.ecommercefloor.model.geo.Geo;
+import vn.mellow.ecom.ecommercefloor.model.user.KeyPassword;
 import vn.mellow.ecom.ecommercefloor.model.user.Score;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.mongodb.client.model.ReturnDocument.AFTER;
 
 @Repository
 public class ScoreManager extends BaseManager {
@@ -30,27 +37,43 @@ public class ScoreManager extends BaseManager {
         }
         return scoreMongoCollection;
     }
-    public Score createScore(Score score){
+
+    public Score createScore(Score score) {
         score.setId(generateId());
         score.setCreatedAt(new Date());
         getScoreMongoCollection().insertOne(score);
         return score;
     }
-    public Score getScore(String id){
-        return getScoreMongoCollection().find(Filters.eq("_id",id)).first();
+
+    public Score getScore(String id) {
+        return getScoreMongoCollection().find(Filters.eq("_id", id)).first();
 
     }
-    public Score getScoreCustomer(String customerId){
-        List<Bson> filter = new ArrayList<>();
-        filter.add(Filters.eq("userId",customerId));
-        filter.add(Filters.eq("type", ScoreType.BUY));
-        return getScoreMongoCollection().find(Filters.and(filter)).first();
-    }
-    public Score getScoreShop(String shopId){
-        List<Bson> filter = new ArrayList<>();
-        filter.add(Filters.eq("userId",shopId));
-        filter.add(Filters.eq("type", ScoreType.SELL));
-        return getScoreMongoCollection().find(Filters.and(filter)).first();
+
+    public Score updateScore(String userId, long count) {
+        Document document = new Document();
+        document.put("updatedAt", new Date());
+        Document adjustmentScore = new Document();
+
+        adjustmentScore.put("score", count);
+        Document newDocument = new Document();
+        newDocument.append("$set", document);
+        newDocument.append("$inc", adjustmentScore);
+        FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+        List<Bson> filters = new ArrayList<>();
+        filters.add(Filters.eq("userId", userId));
+        return getScoreMongoCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
     }
 
+    public Score updateScoreType(String userId, ScoreType type) {
+        Document document = new Document();
+        document.put("updatedAt", new Date());
+        document.put("type", type.toString());
+        Document newDocument = new Document();
+        newDocument.append("$set", document);
+        FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
+        List<Bson> filters = new ArrayList<>();
+        filters.add(Filters.eq("userId", userId));
+        return getScoreMongoCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
+    }
 }

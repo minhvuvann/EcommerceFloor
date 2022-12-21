@@ -104,7 +104,7 @@ public class UserCreateController {
         // create score
         Score score = new Score();
         score.setUserId(user.getId());
-        score.setType(ScoreType.BUY);
+        score.setType(ScoreType.RANK_BRONZE);
         score.setScore(0);
         scoreManager.createScore(score);
         return user;

@@ -4,7 +4,7 @@ import vn.mellow.ecom.ecommercefloor.enums.utils.BaseEnum;
 import vn.mellow.ecom.ecommercefloor.model.user.Score;
 
 public enum ScoreType {
-    BUY("Tích điểm cho người mua"), SELL("Tích điểm cho người bán");
+    RANK_BRONZE("Hạng đồng"), RANK_SILVER("Tích điểm cho người bán"), RANK_GOLD("Hạng vàng");
     private final String description;
 
     private ScoreType(String description) {
@@ -28,6 +28,7 @@ public enum ScoreType {
         return listName.substring(0, listName.length() - 2);
 
     }
+
     public static boolean isExist(Object current) {
         return BaseEnum.isExist(values(), current);
     }

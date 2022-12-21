@@ -13,10 +13,7 @@ import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.filter.ResultList;
 import vn.mellow.ecom.ecommercefloor.base.logs.ActivityLog;
 import vn.mellow.ecom.ecommercefloor.base.manager.BaseManager;
-import vn.mellow.ecom.ecommercefloor.enums.ActivityLogType;
-import vn.mellow.ecom.ecommercefloor.enums.OrderCancelReason;
-import vn.mellow.ecom.ecommercefloor.enums.OrderStatus;
-import vn.mellow.ecom.ecommercefloor.enums.OrderType;
+import vn.mellow.ecom.ecommercefloor.enums.*;
 import vn.mellow.ecom.ecommercefloor.model.input.UpdateStatusInput;
 import vn.mellow.ecom.ecommercefloor.model.order.Order;
 import vn.mellow.ecom.ecommercefloor.model.order.OrderDetail;
@@ -123,7 +120,7 @@ public class OrderManager extends BaseManager {
             statusInput.setStatus(OrderStatus.CANCELLED.toString());
             updateOrderStatus(orderId, statusInput);
             //update order reason cancel
-            updateOrderCancel(orderId,cancelReason);
+            updateOrderCancel(orderId, cancelReason);
             List<OrderItem> orderLineItems = getItems(orderId);
             for (OrderItem orderLineItem : orderLineItems) {
                 updateItemCancel(orderLineItem.getId());
@@ -144,7 +141,8 @@ public class OrderManager extends BaseManager {
         filters.add(Filters.eq("_id", itemId));
         getOrderItemCollection().findOneAndUpdate(Filters.and(filters), newDocument, options);
     }
-    public Order updateOrderCancel( String orderId, OrderCancelReason orderCancelReason) {
+
+    public Order updateOrderCancel(String orderId, OrderCancelReason orderCancelReason) {
         getLogger().log(Level.INFO, "Update order cancel by id:" + orderId);
         Document document = new Document();
         document.put("updatedAt", new Date());
@@ -203,6 +201,16 @@ public class OrderManager extends BaseManager {
                 description += ". " + statusBody.getNote();
             }
             if (OrderStatus.DELIVERED.toString().equals(statusBody.getStatus())) {
+                long count = (long) order.getTotalPrice().getAmount() / 1000;
+                Score score = scoreManager.updateScore(order.getUserId(), count);
+                if (score.getScore() > 1000) {
+                    scoreManager.updateScoreType(order.getUserId(), ScoreType.RANK_SILVER);
+                }
+                if (score.getScore() > 5000) {
+                    scoreManager.updateScoreType(order.getUserId(), ScoreType.RANK_GOLD);
+
+                }
+
 
             }
             // add log update status
