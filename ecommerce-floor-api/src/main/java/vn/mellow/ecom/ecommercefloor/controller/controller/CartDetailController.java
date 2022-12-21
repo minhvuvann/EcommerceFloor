@@ -74,7 +74,7 @@ public class CartDetailController {
         if (null == cartItem) {
             throw new ServiceException("not_found", "Không tìm thấy thông tin cart item :" + cartItemId, "Not found cart item :" + cartItemId);
         }
-        if (cartItem.getQuantity() == 0) {
+        if (quantity == 0) {
             deleteCartItem(cartItemId);
             return getCartDetail(cartItem.getCartId());
         }
