@@ -101,10 +101,10 @@ public class CartManager extends BaseManager {
     public Cart updateCartQuantity(String cartId, long quantity, double totalPrice) {
         Document updateDocument = new Document();
         updateDocument.put("updatedAt", new Date());
-        updateDocument.put("quantity", quantity);
+        updateDocument.put("totalQuantity", quantity);
         updateDocument.put("totalPrice", totalPrice);
         Document newDocument = new Document();
-        newDocument.append("$set", updateDocument);
+        newDocument.append("$inc", updateDocument);
         FindOneAndUpdateOptions options = new FindOneAndUpdateOptions().returnDocument(AFTER);
         List<Bson> filters = new ArrayList<>();
         filters.add(Filters.eq("_id", cartId));
