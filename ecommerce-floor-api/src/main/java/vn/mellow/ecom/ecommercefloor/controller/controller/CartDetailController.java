@@ -74,16 +74,17 @@ public class CartDetailController {
         if (null == cartItem) {
             throw new ServiceException("not_found", "Không tìm thấy thông tin cart item :" + cartItemId, "Not found cart item :" + cartItemId);
         }
+        Cart cart = cartManager.getCartById(cartItem.getCartId());
+
         if (quantity == 0) {
             deleteCartItem(cartItemId);
-            return getCartDetail(cartItem.getCartId());
+            return getCartDetail(cart.getUserId());
         }
         long quantityCurrent = cartItem.getQuantity();
         double priceCurrent = cartItem.getTotalPrice();
         double price = cartItem.getProductVariant().getPrice().getAmount() * quantity;
         cartManager.updateQuantityCartItem(cartItemId, quantity, price);
         //update total price and quantity
-        Cart cart = cartManager.getCartById(cartItem.getCartId());
         long quantityReload = (cart.getTotalQuantity() - quantityCurrent) + quantity;
         double priceReload = (cart.getTotalPrice() - priceCurrent) + price;
         cartManager.updateCartQuantity(cartItem.getCartId(), quantityReload, priceReload);

@@ -69,14 +69,16 @@ public class CreateCartController {
         Product product = productManager.getProduct(variant.getProductId());
         Integer shopId = product.getShopId();
         cartItem.setShopId(shopId);
+        Cart cart = cartManager.getCartById(cartItem.getCartId());
         CartItem cartItemExist = cartManager.getCartItem(cartItem.getCartId(), cartItem.getProductVariant().getId());
         if (null != cartItemExist) {
-            cartManager.updateCartQuantity(cartItem.getCartId(), cartItem.getQuantity(), cartItem.getTotalPrice());
+            cartManager.updateCartQuantity(cartItem.getCartId(), cart.getTotalQuantity() + cartItem.getQuantity(),cart.getTotalPrice()+ cartItem.getTotalPrice());
             return cartManager.updateQuantityCartItem(cartItemExist.getId(), cartItem.getQuantity() + cartItemExist.getQuantity()
                     , cartItem.getTotalPrice() + cartItemExist.getTotalPrice());
         }
 
-        cartManager.updateCartQuantity(cartItem.getCartId(), cartItem.getQuantity(), cartItem.getTotalPrice());
+        cartManager.updateCartQuantity(cartItem.getCartId(), cart.getTotalQuantity() + cartItem.getQuantity(),cart.getTotalPrice()+ cartItem.getTotalPrice());
+
         return cartManager.createCartItem(cartItem);
     }
 }

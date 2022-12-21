@@ -12,8 +12,7 @@
     <list default="true" id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/CartDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/CartDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/CartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/CartManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/resources/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/resources/application-local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/CreateCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/controller/controller/CreateCartController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,6 +247,7 @@
       <workItem from="1671594870620" duration="5784000" />
       <workItem from="1671606173036" duration="6365000" />
       <workItem from="1671630139346" duration="21830000" />
+      <workItem from="1671660760108" duration="2214000" />
     </task>
     <servers />
   </component>
