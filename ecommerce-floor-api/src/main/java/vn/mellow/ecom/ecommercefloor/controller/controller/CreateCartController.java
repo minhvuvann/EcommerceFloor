@@ -45,6 +45,9 @@ public class CreateCartController {
         if (0 == cartItem.getQuantity()) {
             throw new ServiceException("not_found", "Số lượng của sản phầm :" + cartItem.getProductVariant().getProductName() + " nhỏ hơn hoặc bằng không.", "Quantity is not available");
         }
+        if (null == cartItem.getProductVariant().getPrice()) {
+            throw new ServiceException("not_found", "Sản phẩm chưa có giá", "product variant.price is null");
+        }
         double total = cartItem.getQuantity() + cartItem.getProductVariant().getPrice().getAmount();
         cartItem.setTotalPrice(total);
     }
@@ -56,9 +59,10 @@ public class CreateCartController {
             throw new ServiceException("not_found", "Vui lòng nhập thông tin mã giỏ hàng.", "cart id is not available");
 
         }
-        //update cart quantity
-        double price = cartItem.getProductVariant().getPrice().getAmount() * cartItem.getQuantity();
-        cartManager.updateCartQuantity(cartItem.getCartId(), cartItem.getQuantity(), price);
+        CartItem cartItemExist = cartManager.getCartItem(cartItem.getCartId(),cartItem.getProductVariant().getId());
+
+
+        cartManager.updateCartQuantity(cartItem.getCartId(), cartItem.getQuantity(),cartItem.getTotalPrice());
         return cartManager.createCartItem(cartItem);
     }
 }

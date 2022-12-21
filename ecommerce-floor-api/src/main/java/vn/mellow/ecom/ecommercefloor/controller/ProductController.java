@@ -132,7 +132,7 @@ public class ProductController extends BaseController {
             variant.getDimension().setDimensionUnit(DimensionUnit.CM);
             medium += variant.getPrice().getAmount();
         }
-        medium = medium / productVariant.size();
+        medium =(int) medium / productVariant.size();
 
         product.setMediumPrice(MoneyCalculateUtils.getMoney(medium));
 

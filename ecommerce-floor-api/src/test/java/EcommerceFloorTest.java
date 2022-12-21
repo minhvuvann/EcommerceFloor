@@ -412,6 +412,1317 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+    //apple store
+    @Test
+    public void testProduct_602329_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
 
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple Watch Series 7 45mm GPS Sport Band");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/decaf47f7cb7a2df555dbff0deeed698");
+        images.add("https://cf.shopee.vn/file/a5dc7787667f07f10c26456c04a51d34");
+        images.add("https://cf.shopee.vn/file/5fa46c2de37a681744f74bc59ed5005e");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/c42123a453771f56de2c938a6ee8af6d");
+        //thêm mô tả
+        productInput.setDescription("Trải nghiệm hoàn hảo trên màn hình lớn tràn viền\n" +
+                "Apple Watch Series 7 sở hữu màn hình lớn hơn tới 20% so với thế hệ Series 6, hơn 50% so với Series 3, nhưng điều đặc biệt là kích thước tổng thể của đồng hồ không hề thay đổi. Để có được kết quả này, đội ngũ kỹ sư của Apple đã thiết kế lại hoàn toàn màn hình giúp giảm tới 40% diện tích phần viền, tạo thành một màn hình tràn viền đầy quyến rũ, nơi bạn xem được nhiều nội dung hơn, hình ảnh hấp dẫn hơn.\n" +
+                "\n" +
+                "Màn hình Retina Always-On tuyệt đẹp\n" +
+                "Bạn không cần phải đưa tay lên hay chạm vào màn hình để xem giờ hoặc các thông tin khác nữa, đơn giản vì màn hình Apple Watch Series 7 luôn bật. Màn hình Retina Always-On của Apple Watch 7 giờ đây còn sáng hơn tới 70%, cho hình ảnh luôn hiển thị sáng đẹp và nổi bật.\n" +
+                "\n" +
+                "Màn hình lớn cho bạn làm được nhiều việc hơn\n" +
+                "Không chỉ hiển thị được nhiều nội dung hơn, màn hình lớn của Apple Watch Series 7 còn cho bạn một trải nghiệm hoàn toàn mới, ngay từ các ứng dụng cơ bản. Apple đã thiết kế lại giao diện của máy tính, đồng hồ bấm giờ, bàn phím Qwerty và nhiều ứng dụng khác để tận dụng lợi thế của màn hình lớn, giúp bạn sử dụng đồng hồ trực quan và dễ dàng hơn bao giờ hết.\n" +
+                "\n" +
+                "Bền bỉ, cao cấp và tinh tế\n" +
+                "Kiểu dáng sang trọng của dòng Apple Watch đã mang tính thương hiệu trong suốt nhiều năm qua. Giờ đây mọi thứ còn hoàn hảo hơn khi Apple tập trung về độ bền và những thay đổi đầy tinh tế. Phần màn hình được làm cong nhẹ với hiệu ứng ánh sáng khúc xạ rìa màn hình, tạo kết nối liền mạch với khung kim loại sắc sảo.\n" +
+                "\n" +
+                "Hơn nữa, đồng hồ Apple Watch Series 7 còn có khả năng chống bụi, chống nước và màn hình cứng cáp nhất từ trước đến nay với tinh thể pha lê dày gấp đôi Series 6. Sẽ có 5 màu sắc mới tươi trẻ thời thượng dành cho bạn lựa chọn trên phiên bản Apple Watch 7.\n" +
+                "\n" +
+                "Đo nồng độ oxy trong máu\n" +
+                "Chỉ số oxy trong máu SpO2 là một chỉ số rất quan trọng về sức khỏe tổng quát của mỗi người. Nếu chỉ số này thấp hơn mức bình thường, nghĩa là sức khỏe của bạn đang tổn thương nghiêm trọng. Cảm biến thông minh và ứng dụng trực quan trên Apple Watch Series 7 cho phép bạn đo nồng độ oxy trong máu cùng các chỉ số nền liên quan bất cứ lúc nào, dù ngày hay đêm.\n" +
+                "\n" +
+                "Chụp điện tâm đồ chuyên nghiệp\n" +
+                "Trên Apple Watch Series 7, bạn có thể tạo ra những bảng điện tâm đồ ECG tương tự các thiết bị y tế chuyên nghiệp. Đây là một thành tựu đột phá trên đồng hồ thông minh, có thể cung cấp dữ liệu quan trọng cho bản thân bạn và cả các bác sĩ, giúp bạn yên tâm hơn, đồng thời phát hiện sức khỏe bất thường kịp thời.\n" +
+                "\n" +
+                "Cảm biến nhịp tim chính xác\n" +
+                "Chỉ cần chạm ngón tay vào vòng xoay Digital Crown trên Apple Watch Series 7, đồng hồ sẽ tạo ra sóng ECG trong 30 giây và cho biết chính xác nhịp tim của bạn. Qua đó bạn sẽ kiểm soát được nhịp tim, nếu nhịp tim đều nghĩa là sức khỏe của bạn đang bình thường còn nếu nhịp tim không đều, có thể bạn đang có dấu hiệu rung nhĩ và cần phải gặp bác sĩ.\n" +
+                "\n" +
+                "Công nghệ sạc nhanh tiện lợi\n" +
+                "Hệ thống sạc trên Apple Watch Series 7 đã được nâng cấp để tốc độ sạc nhanh hơn bao giờ hết. Với kiến trúc sạc mới và cáp sạc nhanh USB-C, bạn chỉ mất 45 phút để sạc được từ 0 lên 80%, nhanh hơn tới 33% so với Series 6.\n" +
+                "\n" +
+                "Rèn luyện sức khỏe mọi lúc mọi nơi\n" +
+                "Apple Watch Series 7 là động lực để bạn tập luyện, nâng cao sức khỏe mỗi ngày. Trên Apple Watch có một hệ thống các bài tập thể dục tại chỗ để bạn tranh thủ tập luyện ở bất cứ đâu. Với màn hình lớn hơn, bạn sẽ thấy thống kê chi tiết các chỉ số tập luyện một cách trực quan hơn, qua đó quá trình tập luyện sẽ hiệu quả và thú vị hơn.\n" +
+                "\n" +
+                "ĐẶC ĐIỂM NỔI BẬT\n" +
+                "- Chức năng màn hình luôn bật giữ cho chức năng xem giờ luôn hoạt động,tiết kiệm pin hơn\n" +
+                "- Thoải mái sử dụng ở hồ bơi hay ngoài trời với chuẩn kháng bụi IP6X ,chống nước đến 50m\n" +
+                "- Đo nhịp tim,oxy trong máu,theo dõi giấc ngủ cùng nhiều tính năng sức khoẻ tích hợp sẵn\n" +
+                "- Trải nghiệm âm nhạc với bộ nhớ trong 32GB cùng khả năng kết nối tai nghe bluetooth\n" +
+                "- Cổng sạc Type C,sạc nhanh 45 phút cho 80% pin\n" +
+                "\n" +
+                "Thông số kỹ thuật\n" +
+                "Công nghệ màn hình: LTPO OLED display (1000 nits)\n" +
+                "Kích thước màn hình: 45mm\n" +
+                "CPU: Apple S7\n" +
+                "Bộ nhớ trong: 32GB\n" +
+                "Hệ điều hành: watchOS 8\n" +
+                "Kết nối được với hệ điều hành: iPhone 6s trở lên dùng iOS mới nhất\n" +
+                "Chất liệu mặt: Ion-X strengthened glass\n" +
+                "Chất liệu dây: Cao su\n" +
+                "Chống nước: Có, độ sâu dưới 50m\n" +
+                "Thời gian sử dụng pin: Sử dụng đến 18h\n" +
+                "Kết nối: Wi-Fi, Cellular, Bluetooth\n" +
+                "\n" +
+                "Thông tin bảo hành\n" +
+                "Sản phẩm được bảo hành bằng hóa đơn \n" +
+                "Bảo hành: 12 tháng kể từ ngày xuất hóa đơn \n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất: \n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "Bước 2: Chọn sản phẩm. \n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu. \n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/c42123a453771f56de2c938a6ee8af6d");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setSize(SizeType.L);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/ac1e535a386002f69d24cf59a929da62");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(920));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/d992ed6a1dfe51d755750689b0b094b9");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLUE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(910));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple AirPods with Charging ");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/74f393af9467db98f825d50c3c71304c_tn");
+        images.add("https://cf.shopee.vn/file/77fcdcf6e091441846fb0f9cae6439a5_tn");
+        images.add("https://cf.shopee.vn/file/1553529b098197d0493e41cde92c011e_tn");
+        images.add("https://cf.shopee.vn/file/cff5850e5abc59ab782c8c2f88ce45e7_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/a256a89d3b7b4b80224e768d9ff6fdff_tn");
+        //thêm mô tả
+        productInput.setDescription("Với thời gian đàm thoại tối ưu, công nghệ đột phá và kết hợp cùng Hộp Sạc, AirPods đem đến trải nghiệm \n" +
+                "tai nghe không dây tuyệt vời chưa từng có. Tai nghe có thể sử dụng được với tất cả các thiết bị của bạn (2). \n" +
+                "Sau khi nhét vào tai, tai nghe sẽ kết nối ngay lập tức, đưa bạn hòa mình vào âm thanh phong phú và \n" +
+                "có độ trung thực cao. Đều tuyệt vời. \n" +
+                "\n" +
+                "Tính năng nổi bật \n" +
+                "•        Vừa vặn với mọi kích cỡ, thoải mái cả ngày dài \n" +
+                "•        Tự động bật, tự động kết nối \n" +
+                "•        Dễ dàng kết nối với tất cả thiết bị Apple của bạn (2)\n" +
+                "•        Điều khiển nhạc và cuộc gọi của bạn từ AirPods \n" +
+                "•        Chuyển đổi mượt mà giữa các thiết bị (2) \n" +
+                "•        Hộp sạc đem đến thời lượng pin hơn 24 giờ (1)\n" +
+                " \n" +
+                "Pháp lý \n" +
+                "(1) Thời lượng pin khác nhau tùy theo cách sử dụng và cấu hình. Truy cập apple.com/batteries \n" +
+                "để biết thêm thông tin. \n" +
+                "(2) Cần có tài khoản iCloud và macOS 10.14.4, iOS 12.2, iPadOS, watchOS 5.2 hoặc tvOS 13.2 trở lên. \n" +
+                " \n" +
+                "Bộ sản phẩm bao gồm: \n" +
+                "•        Tai nghe\n" +
+                "•        Sách hướng dẫn\n" +
+                "•        Hộp sạc: Lightning\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Sản phẩm được bảo hành bằng hóa đơn\n" +
+                "Bảo hành: 12 tháng kể từ ngày xuất hóa đơn\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất..");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/74f393af9467db98f825d50c3c71304c_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(950));
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple Watch Series 3 38mm GPS Sport Band");
+
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/baa6bf0f0db1fe474a5ab815ec189f25_tn");
+        images.add("https://cf.shopee.vn/file/4b1df878ee257bd895c0b6b0e8bdd5d2_tn");
+        images.add("https://cf.shopee.vn/file/80c2d5fac406bff413bfda3c8f31eca2_tn");
+        images.add("https://cf.shopee.vn/file/b229b6c671e963d5ed9f3954b860d02f_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/982a277b97e49732507d9d68341267c6_tn");
+        //thêm mô tả
+        productInput.setDescription("MÔ TẢ SẢN PHẨM\n" +
+                "Kiểm tra nhịp tim và nhận thông báo khi nhịp tim nhanh và chậm. Đo lường các bài luyện tập, theo dõi và \n" +
+                "chia sẻ hoạt động của bạn. Nhận cuộc gọi, trả lời tin nhắn và đồng bộ nhạc và podcast yêu thích. \n" +
+                "Với Apple Watch Series 3, tất cả đều gần trong tầm tay.\n" +
+                "\n" +
+                "Tính năng nổi bật\n" +
+                "•        Xem nhanh thông tin quan trọng trên màn hình Retina\n" +
+                "•        Theo dõi nhịp tim bất cứ lúc nào với ứng dụng Nhịp Tim\n" +
+                "•        Nhận thông báo về nhịp tim nhanh và chậm\n" +
+                "•        Nhận cuộc gọi và trả lời tin nhắn ngay từ cổ tay\n" +
+                "•        Đồng bộ nhạc và podcast yêu thích\n" +
+                "•        Theo dõi hoạt động hàng ngày của bạn trên Apple Watch và xem xu hướng của bạn trong \n" +
+                "ứng dụng Thể Dục trên iPhone\n" +
+                "•        Đo lường các hoạt động thể dục của bạn như chạy, đi bộ, đạp xe, tập yoga, bơi lội và khiêu vũ\n" +
+                "•        Thiết kế chống thấm nước khi bơi lội (1)\n" +
+                "•        SOS Khẩn Cấp giúp bạn gọi xin trợ giúp ngay từ cổ tay (2)\n" +
+                "•        S3 có bộ xử lý lõi kép\n" +
+                "•        watchOS 7 sở hữu tính năng theo dõi giấc ngủ, chỉ đường khi đi xe đạp và mặt đồng hồ có thể \n" +
+                "tùy chỉnh mới\n" +
+                "•        Vỏ nhôm hiện có hai màu\n" +
+                "\n" +
+                "Pháp lý\n" +
+                "Apple Watch Series 3 tương thích với iPhone 6s hoặc các phiên bản cao hơn sử dụng iOS 14 hoặc \n" +
+                "các bản cập nhật cao hơn. \n" +
+                "(1) Tiêu chuẩn ISO 22810:2010. Phù hợp cho các hoạt động dưới nước nông như bơi lội. Khuyến nghị \n" +
+                "không sử dụng sản phẩm dưới độ sâu cho phép và khi tham gia các hoạt động có tốc độ cao dưới nước.\n" +
+                "(2) Để sử dụng SOS khẩn cấp, iPhone phải ở gần bạn. Nếu iPhone không ở gần bạn, Apple Watch cần \n" +
+                "được kết nối với mạng Wi-Fi đã xác định và bạn phải thiết lập Cuộc Gọi Wi-Fi.\n" +
+                "\n" +
+                "Bộ sản phẩm bao gồm: \n" +
+                "•        Đồng hồ\n" +
+                "•        Hộp\n" +
+                "•        Dây đế sạc Apple\n" +
+                "•        Sách hướng dẫn\n" +
+                "•        Dây đeo dự phòng\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Sản phẩm được bảo hành bằng hóa đơn\n" +
+                "Bảo hành: 12 tháng kể từ ngày xuất hóa đơn\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&amp;locale=en_VN\n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.\n" +
+                "Note : Silver Aluminium Case with White Sport Band, Space Gray Aluminum Black Sport");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/74f393af9467db98f825d50c3c71304c_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.SILVER);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1200));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/4b1df878ee257bd895c0b6b0e8bdd5d2_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.GRAY);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_2);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple iPhone 14 128GB");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/39c9bb82bbf0dbe7d573ebec7c0bbfac_tn");
+        images.add("https://cf.shopee.vn/file/8b299a01bed582fe9b285405833dff97_tn");
+        images.add("https://cf.shopee.vn/file/ef7e86e59bc3f59667abe75b2cb523b4_tn");
+        images.add("https://cf.shopee.vn/file/5d40817b8aa13d6685a825e06cc9d932_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/0982de1d517eed28495a9bbcaced5881_tn");
+        //thêm mô tả
+        productInput.setDescription("IPhone 14. Với hệ thống camera kép tiên tiến nhất từng có trên iPhone. Chụp những bức ảnh tuyệt đẹp \n" +
+                "trong điều kiện từ thiếu sáng đến dư sáng. Phát hiện Va Chạm,1 một tính năng an toàn mới, t\n" +
+                "hay bạn gọi trợ giúp khi cần kíp.\n" +
+                "\n" +
+                "Tính năng nổi bật\n" +
+                "•        Màn hình Super Retina XDR 6,1 inch2\n" +
+                "•        Hệ thống camera tiên tiến cho chất lượng ảnh đẹp hơn trong mọi điều kiện ánh sáng\n" +
+                "•        Chế độ Điện Ảnh nay đã hỗ trợ 4K Dolby Vision tốc độ lên đến 30 fps\n" +
+                "•        Chế độ Hành Động để quay video cầm tay mượt mà, ổn định\n" +
+                "•        Công nghệ an toàn quan trọng - Phát Hiện Va Chạm1 thay bạn gọi trợ giúp khi cần kíp\n" +
+                "•        Thời lượng pin cả ngày và thời gian xem video lên đến 20 giờ3\n" +
+                "•        Chip A15 Bionic với GPU 5 lõi để đạt hiệu suất siêu nhanh. Mạng di động 5G siêu nhanh4\n" +
+                "•        Các tính năng về độ bền dẫn đầu như Ceramic Shield và khả năng chống nước5\n" +
+                "•        iOS 16 đem đến thêm nhiều cách để cá nhân hóa, giao tiếp và chia sẻ6\n" +
+                "\n" +
+                "Pháp lý\n" +
+                "1SOS Khẩn Cấp sử dụng kết nối mạng di động hoặc Cuộc Gọi Wi-Fi.\n" +
+                "2Màn hình có các góc bo tròn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo \n" +
+                "đường chéo là 6,06 inch. Diện tích hiển thị thực tế nhỏ hơn.\n" +
+                "3Thời lượng pin khác nhau tùy theo cách sử dụng và cấu hình; truy cập apple.com/batteries để biết \n" +
+                "thêm thông tin.\n" +
+                "4Cần có gói cước dữ liệu. Mạng 5G chỉ khả dụng ở một số thị trường và được cung cấp qua một \n" +
+                "số nhà mạng. \n" +
+                "Tốc độ có thể thay đổi tùy địa điểm và nhà mạng. Để biết thông tin về hỗ trợ mạng 5G, vui lòng liên hệ \n" +
+                "nhà mạng và truy cập apple.com/iphone/cellular.\n" +
+                "5iPhone 14 có khả năng chống tia nước, chống nước và chống bụi. Sản phẩm đã qua kiểm nghiệm \n" +
+                "trong điều kiện phòng thí nghiệm có kiểm soát đạt mức IP68 theo tiêu chuẩn IEC 60529 (chống nước \n" +
+                "ở độ sâu tối đa 6 mét trong vòng tối đa 30 phút). Khả năng chống tia nước, chống nước và chống bụi \n" +
+                "không phải là các điều kiện vĩnh viễn. Khả năng này có thể giảm do hao mòn thông thường. Không sạc pin \n" +
+                "khi iPhone đang bị ướt. Vui lòng tham khảo hướng dẫn sử dụng để biết cách lau sạch và làm khô máy. \n" +
+                "Không bảo hành sản phẩm bị hỏng do thấm chất lỏng. \n" +
+                "6Một số tính năng không khả dụng tại một số quốc gia hoặc khu vực. \n" +
+                "\n" +
+                "Thông số kỹ thuật\n" +
+                "Truy cập apple.com/iphone/compare để xem cấu hình đầy đủ. \n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bộ sản phẩm bao gồm: \n" +
+                "•        Điện thoại \n" +
+                "•        Dây sạc\n" +
+                "•        HDSD Bảo hành điện tử 12 tháng.\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Bảo hành: 12 tháng kể từ ngày kích hoạt sản phẩm.\n" +
+                "Kích hoạt bảo hành tại: https://checkcoverage.apple.com/vn/en/\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/39c9bb82bbf0dbe7d573ebec7c0bbfac_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.PURPLE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1300));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/8b299a01bed582fe9b285405833dff97_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.RED);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1200));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/ef7e86e59bc3f59667abe75b2cb523b4_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLUE);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple iPhone 14 128GB");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/3af324bc17f502e8b1898fd5a2b01844_tn");
+        images.add("https://cf.shopee.vn/file/b7addff24c257ae552ee31f16a23af7c_tn");
+        images.add("https://cf.shopee.vn/file/bdda15455bac30f5bc2b404752bbe3ba_tn");
+        images.add("https://cf.shopee.vn/file/198720e37eeccfcdc98c6ea87f5decaa_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/93b3f6d4799b06f9279f817540daa4d1_tn");
+        //thêm mô tả
+        productInput.setDescription("Điện thoại iPhone 14 Pro sở hữu trọng lượng 206g cùng thiết kế nhỏ gọn cho khả năng cầm nắm thoải mái. \n" +
+                "Về thông số màn hình, điện thoại được trang bị màn hình có độ phân giải 2556 x 1179 pixel và \n" +
+                "mật độ điểm ảnh 2556 x 1179 pixel mang lại khả năng hiển thị ấn tượng.\n" +
+                "\n" +
+                "Điện thoại được trang bị màn hình Dynamic Island siêu ấn tượng với khả năng tuy biến thành nhiều dạng\n" +
+                " theo điều khiển của người dùng. Nhờ đó người dùng có thể theo dõi và hiển thị nhanh các thông tin như \n" +
+                "cuộc gọi, chỉ đường, hẹn giờ,...\n" +
+                "\n" +
+                "Trên điện thoại iPhone 14 Pro, lần đầu Apple trang bị cho sản phẩm của mình camera cảm biến lớn. \n" +
+                "Theo đó, thiết bị đã được nâng cấp camera chính lên độ phân giải 48MP, kết hợp công ngệ pixel-pinning \n" +
+                "hỗ trợ nâng cao khả năng chụp hình trong điều kiện thiếu sáng.\n" +
+                "\n" +
+                "Điện thoại được trang bị viên pin dung lượng lớn cùng con chip Apple A16, thiết bị mang lại thời gian \n" +
+                "phát video trực tuyến lên tới 20 giờ hoặc 75 giờ phát nhạc.\n" +
+                "\n" +
+                "Bộ sản phẩm bao gồm: \n" +
+                "•        Điện thoại \n" +
+                "•        Dây sạc\n" +
+                "•        HDSD Bảo hành điện tử 12 tháng.\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Bảo hành: 12 tháng kể từ ngày kích hoạt sản phẩm.\n" +
+                "Kích hoạt bảo hành tại: https://checkcoverage.apple.com/vn/en/\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.\n" +
+                "\n" +
+                "Bộ sản phẩm bao gồm: \n" +
+                "•        Điện thoại \n" +
+                "•        Dây sạc\n" +
+                "•        HDSD Bảo hành điện tử 12 tháng.\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Bảo hành: 12 tháng kể từ ngày kích hoạt sản phẩm.\n" +
+                "Kích hoạt bảo hành tại: https://checkcoverage.apple.com/vn/en/\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/3af324bc17f502e8b1898fd5a2b01844_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.PURPLE);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1500));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/b7addff24c257ae552ee31f16a23af7c_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.SILVER);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1300));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/198720e37eeccfcdc98c6ea87f5decaa_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLACK);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1100));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple Macbook Air (2022) M2 chip, 13.6 inches, 8GB, 256GB SSD");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/b9245889043f87930168547032a5843e_tn");
+        images.add("https://cf.shopee.vn/file/b09430e3c8c8dba7b6dc87d25cd8cb0e_tn");
+        images.add("https://cf.shopee.vn/file/d3ebf604bcc0fcc5420cd0e680ef501a_tn");
+        images.add("https://cf.shopee.vn/file/26b018e5decbecf17fb8f72117f8ea10_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/1cba156175a5ef0b0d356b52451b4c42_tn");
+        //thêm mô tả
+        productInput.setDescription("Apple Macbook Air (2022) M2 chip  (năm SX 2022), 13.6 inches, 8GB, 256GB SSD\n" +
+                "SPG (Space Gray), STL (Starlight), MDN (Midnight). \n" +
+                "Bộ xử lý\n" +
+                "Hãng CPU: Apple\n" +
+                "Công nghệ CPU: M2\n" +
+                "Loại CPU: 8 - Core\n" +
+                "Tốc độ CPU: 100GB/s memory bandwidth\n" +
+                "\n" +
+                "RAM & Ổ cứng\n" +
+                "Dung lượng RAM: 8 GB\n" +
+                "Dung lượng ổ cứng: 256GB SSD\n" +
+                "\n" +
+                "Màn hình\n" +
+                "Kích thước màn hình: 13.6 inches\n" +
+                "Công nghệ màn hình: Liquid Retina, True Tone Technology, Wide color (P3)\n" +
+                "Độ phân giải: 2560 x 1664 Pixels\n" +
+                "Loại màn hình: LED\n" +
+                "Độ sáng: 500 nits\n" +
+                "Colors: 1 triệu màu\n" +
+                "\n" +
+                "Đồ họa\n" +
+                "Card onboard\n" +
+                "Hãng: Apple\n" +
+                "Model GPU: 8 - Core\n" +
+                "\n" +
+                "Bảo mật\n" +
+                "Mở khóa vân tay\n" +
+                "Mật khẩu\n" +
+                "\n" +
+                "Giao tiếp & kết nối\n" +
+                "Cổng giao tiếp        \n" +
+                "2 x Thunderbolt 3/USB 4\n" +
+                "1 x Jack tai nghe 3.5 mm\n" +
+                "1 x MagSafe 3\n" +
+                "\n" +
+                "Wifi: 802.11ax\n" +
+                "Bluetooth: v5.0\n" +
+                "Webcam: 1080p FaceTime HD camera\n" +
+                "\n" +
+                " m thanh\n" +
+                "Số lượng loa: 4\n" +
+                "Số lượng microphones: 3\n" +
+                "Công nghệ âm thanh: Spatial Audio, Dolby Atmos\n" +
+                "\n" +
+                "Bàn phím & TouchPad\n" +
+                "Kiểu bàn phím: Backlit Magic Keyboard\n" +
+                "Bàn phím số: Không\n" +
+                "Đèn bàn phím: Có\n" +
+                "Touch ID: Có\n" +
+                "TouchPad: Multi-touch touchpad\n" +
+                "\n" +
+                "Thông tin pin & Sạc\n" +
+                "Loại PIN: Lithium polymer\n" +
+                "Nguồn vào: 30W USB-C Power Adapter \n" +
+                "Dung lượng pin: \n" +
+                "- Lên tới 18 giờ Apple TV app movie playback\n" +
+                "- Lên tới 15 giờ wireless web\n" +
+                "\n" +
+                "Hệ điều hành\n" +
+                "OS: macOS\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Bảo hành: 12 tháng kể từ ngày kích hoạt sản phẩm.\n" +
+                "Kích hoạt bảo hành tại: https://checkcoverage.apple.com/vn/en/\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/b9245889043f87930168547032a5843e_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.GRAY);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(2000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/b09430e3c8c8dba7b6dc87d25cd8cb0e_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.SILVER);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1500));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/d3ebf604bcc0fcc5420cd0e680ef501a_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLACK);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(1200));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple AirPods Pro");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/a188dbde7bf8b549535fb5b2dc99902e_tn");
+        images.add("https://cf.shopee.vn/file/dd89f8691815c4b874ffb3772fa0f62f_tn");
+        images.add("https://cf.shopee.vn/file/883547817583605ccfb1fb925a1f950e_tn");
+        images.add("https://cf.shopee.vn/file/89a436849bfefddcd542dfba60ec955a_tn");
+        images.add("https://cf.shopee.vn/file/82037f8c1b7dfdcfb543072e8c2f5b85_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/5b0ee8b80d604dd93e2b77278b770928_tn");
+        //thêm mô tả
+        productInput.setDescription("Tính năng Chủ Động Khử Tiếng Ồn tạo ra âm thanh sống động. Chế Độ Xuyên Âm giúp bạn nghe và kết nối \n" +
+                "với thế giới xung quanh. Và kích cỡ tai nghe tùy chỉnh tạo sự thoải mái cả ngày dài. Chống mồ hôi và \n" +
+                "chống nước (1). Tất cả trong một chiếc tai nghe siêu nhẹ, dễ thiết lập với mọi thiết bị Apple của bạn (2). \n" +
+                "\n" +
+                "Tính năng nổi bật\n" +
+                "•        Tính năng Chủ Động Khử Tiếng Ồn tạo ra âm thanh sống động\n" +
+                "•        Chế Độ Xuyên Âm giúp bạn nghe và kết nối với thế giới xung quanh\n" +
+                "•        Đầu silicon mềm mại với ba kích cỡ khác nhau tạo sự thoải mái và ôm khít\n" +
+                "•        Chống mồ hôi và chống nước (1)\n" +
+                "•        EQ thích ứng sẽ tự động điều chỉnh nhạc theo kích thước tai của bạn\n" +
+                "•        Dễ dàng kết nối với tất cả thiết bị Apple của bạn (2)\n" +
+                "•        Điều khiển nhạc và cuộc gọi của bạn từ AirPods\n" +
+                "•        Hộp Sạc Không Dây đem đến thời lượng pin hơn 24 giờ (3)\n" +
+                "\n" +
+                "Pháp lý\n" +
+                "(1) AirPods Pro có khả năng chống mồ hôi và chống nước, có thể sử dụng trong các môn thể thao và \n" +
+                "luyện tập không liên quan đến nước. Tai nghe cũng đạt chuẩn IPX4. Khả năng chống mồ hôi và chống \n" +
+                "nước không phải là điều kiện vĩnh viễn. Hộp sạc không có khả năng chống mồ hôi hoặc chống nước.\n" +
+                "(2) Cần có tài khoản iCloud và macOS 10.14.4, iOS 12.2, iPadOS, watchOS 5.2 hoặc tvOS 13.2 trở lên.\n" +
+                "(3) Thời lượng pin khác nhau tùy theo cách sử dụng và cấu hình. Truy cập apple.com/batteries để biết \n" +
+                "thêm thông tin.\n" +
+                "\n" +
+                "Bộ sản phẩm bao gồm: \n" +
+                "•        Tai nghe\n" +
+                "•        Sách hướng dẫn\n" +
+                "•        Hộp sạc\n" +
+                "•        Cáp Type C - Lightning\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Sản phẩm được bảo hành bằng hóa đơn\n" +
+                "Bảo hành: 12 tháng kể từ ngày xuất hóa đơn\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/a188dbde7bf8b549535fb5b2dc99902e_tn");
+        variant_1.setWeight(400.0);
+        variant_1.setColor(ColorProduct.BLACK);
+        //sửa màu
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        productVariantList.add(variant_1);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple iPad Gen 9th 10.2-inch Wi-Fi 64GB");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/b46eef299808bc1751af1b5e9dce6cde_tn");
+        images.add("https://cf.shopee.vn/file/5e1b81fa44eb632009b2eeec30edef2f_tn");
+        images.add("https://cf.shopee.vn/file/ae538aa64c0ce480fd22bb5f0e8430d7_tn");
+        images.add("https://cf.shopee.vn/file/4869283ee2d5359f3faadacf22bcc19b_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/38a51fee63a623600932f1aea78d76a9_tn");
+        //thêm mô tả
+        productInput.setDescription("Mạnh mẽ. Dễ sử dụng. Đa năng. iPad mới có màn hình Retina tuyệt đẹp, chip A13 Bionic mạnh mẽ, \n" +
+                "camera trước Ultra Wide có tính năng Trung Tâm Màn Hình, tương thích với Apple Pencil và \n" +
+                "Smart Keyboard (1). iPad giúp bạn dễ dàng làm được nhiều việc hơn nữa. Tất cả tính năng \n" +
+                "với mức giá ấn tượng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Tính năng nổi bật\n" +
+                "\n" +
+                "•        Màn hình Retina 10.2 inch sống động với True Tone\n" +
+                "\n" +
+                "•        Chip A13 Bionic với Neural Engine\n" +
+                "\n" +
+                "•        Camera sau Wide 8MP, camera trước Ultra Wide 12MP với tính năng Trung Tâm Màn Hình\n" +
+                "\n" +
+                "•        Ổ lưu trữ lên tới 64GB\n" +
+                "\n" +
+                "•        Loa stereo\n" +
+                "\n" +
+                "•        Xác thực bảo mật với Touch ID\n" +
+                "\n" +
+                "•        Wi-Fi 802.11ac và dữ liệu di động LTE chuẩn Gigabit (2)\n" +
+                "\n" +
+                "•        Thời lượng pin lên tới 10 giờ (3)\n" +
+                "\n" +
+                "•        Cổng kết nối Lightning để sạc và kết nối phụ kiện\n" +
+                "\n" +
+                "•        Tương thích với Apple Pencil (thế hệ thứ 1) và Smart Keyboard (1)\n" +
+                "\n" +
+                "•        iPadOS 15 sở hữu sức mạnh độc đáo, dễ sử dụng và được thiết kế cho tính đa năng của iPad\n" +
+                "\n" +
+
+                "Pháp lý \n" +
+                "\n" +
+                "Ứng dụng có sẵn trên App Store. Nội dung được cung cấp có thể thay đổi.\n" +
+                "\n" +
+                "(1) Phụ kiện được bán riêng. Khả năng tương thích tùy thuộc thế hệ sản phẩm.\n" +
+                "\n" +
+                "(2) Cần có gói cước dữ liệu. Mạng LTE chuẩn Gigabit, 4G LTE Advanced, 4G LTE và gọi Wi-Fi chỉ khả dụng \n" +
+                "ở một số thị trường và được cung cấp qua một số nhà mạng. Tốc độ phụ thuộc vào thông lượng lý thuyết và \n" +
+                "có thể thay đổi tùy địa điểm và nhà mạng. Để biết thông tin về hỗ trợ mạng LTE, vui lòng liên hệ nhà mạng \n" +
+                "và truy cập apple.com/ipad/cellular.\n" +
+                "\n" +
+                "(3) Thời lượng pin khác nhau tùy theo cách sử dụng và cấu hình. Truy cập apple.com/batteries \n" +
+                "để biết thêm thông tin.\n" +
+                "\n" +
+                "Bộ sản phẩm bao gồm: \n" +
+                "\n" +
+                "•        iPad\n" +
+                "\n" +
+                "•        Dây sạc Lighting to USB-C\n" +
+                "\n" +
+                "•        20W USB Power Adaper\n" +
+                "\n" +
+                "•        HDSD Bảo hành điện tử 12 tháng.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "\n" +
+                "Bảo hành: 12 tháng kể từ ngày kích hoạt sản phẩm.\n" +
+                "\n" +
+                "Kích hoạt bảo hành tại: https://checkcoverage.apple.com/vn/en/\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "\n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.\n" +
+                "\n" +
+
+                "Model: A2602 : 10.2-inch");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/4869283ee2d5359f3faadacf22bcc19b_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1500));
+        productVariantList.add(variant_1);
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("ttps://cf.shopee.vn/file/5e1b81fa44eb632009b2eeec30edef2f_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.SILVER);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1300));
+        productVariantList.add(variant_2);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple iPhone 11 64GB");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/3af324bc17f502e8b1898fd5a2b01844_tn");
+        images.add("https://cf.shopee.vn/file/b7addff24c257ae552ee31f16a23af7c_tn");
+        images.add("https://cf.shopee.vn/file/bdda15455bac30f5bc2b404752bbe3ba_tn");
+        images.add("https://cf.shopee.vn/file/198720e37eeccfcdc98c6ea87f5decaa_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/93b3f6d4799b06f9279f817540daa4d1_tn");
+        //thêm mô tả
+        productInput.setDescription("Lưu ý: Các sản phẩm sản xuất sau tháng 10/2020 sẽ không có củ sạc và tai nghe trong bộ sản phẩm.\n" +
+                "\n" +
+                "Quay video 4K, chụp ảnh chân dung tuyệt đẹp và chụp ảnh phong cảnh rộng với hệ thống camera kép \n" +
+                "hoàn toàn mới. Chụp ảnh tuyệt đẹp trong điều kiện ánh sáng yếu với chế độ Ban Đêm. Xem ảnh, video và\n" +
+                "chơi game màu sắc chân thực trên màn hình Liquid Retina 6.1 inch (3). Trải nghiệm hiệu năng chưa từng có\n" +
+                "với chip A13 Bionic cho game, thực tế ảo tăng cường (AR) và chụp ảnh. Làm được nhiều việc hơn và \n" +
+                "sạc ít hơn với thời lượng pin bền bỉ cả ngày (2). Và bớt phải lo lắng nhờ khả năng chống nước \n" +
+                "ở độ sâu tối đa 2 mét trong vòng 30 phút (1).\n" +
+                "\n" +
+                "Tính năng nổi bật \n" +
+                "•        Màn hình Liquid Retina HD LCD 6.1 inch (3)  \n" +
+                "•        Chống nước và chống bụi (chống nước ở độ sâu 2 mét trong vòng tối đa 30 phút, đạt mức IP68) (1) \n" +
+                "•        Hệ thống camera kép 12MP với camera Ultra Wide và Wide; chế độ Ban Đêm, chế độ Chân Dung và \n" +
+                "video 4K tốc độ tối đa 60fps \n" +
+                "•        Camera trước TrueDepth 12MP với chế độ Chân Dung, quay video 4K và quay video chậm \n" +
+                "•        Xác thực bảo mật với Face ID \n" +
+                "•        Chip A13 Bionic với Neural Engine thế hệ thứ ba \n" +
+                "•        Khả năng sạc nhanh\n" +
+                "•        Sạc không dây (4) \n" +
+                "•        iOS 13 cùng với chế độ Dark Mode, các công cụ chỉnh ảnh và quay video mới, và \n" +
+                "các tính năng bảo mật hoàn toàn mới \n" +
+                "\n" +
+                "Pháp lý \n" +
+                "(1) iPhone 11 có khả năng chống tia nước, chống nước và chống bụi. Sản phẩm đã qua kiểm nghiệm \n" +
+                "trong điều kiện phòng thí nghiệm có kiểm soát đạt mức IP68 theo tiêu chuẩn IEC 60529 (chống nước \n" +
+                "ở độ sâu tối đa 2 mét trong vòng tối đa 30 phút). Khả năng chống tia nước, chống nước, và chống bụi \n" +
+                "không phải là các điều kiện vĩnh viễn và khả năng này có thể giảm do hao mòn thông thường. \n" +
+                "Không sạc pin khi iPhone đang bị ướt. Vui lòng tham khảo hướng dẫn sử dụng để biết cách lau sạch và \n" +
+                "làm khô máy. Không bảo hành sản phẩm bị hỏng do thấm chất lỏng.\n" +
+                "(2) Thời lượng pin khác nhau tùy theo cách sử dụng và cấu hình. Truy cập www.apple.com/batteries \n" +
+                "để biết thêm thông tin. \n" +
+                "(3) Màn hình có các góc bo tròn. Khi tính theo hình chữ nhật, kích thước màn hình iPhone 11 là\n" +
+                " 6.06 inch theo đường chéo. Diện tích hiển thị thực tế nhỏ hơn.\n" +
+                "(4) Không bán kèm bộ sạc không dây Qi. \n" +
+                "\n" +
+                "Bộ sản phẩm bao gồm: \n" +
+                "•        Điện thoại \n" +
+                "•        Cáp sạc\n" +
+                "•        Củ sạc + Tai nghe (Với sản phẩm sản xuất trước 10/2020)\n" +
+                "•        HDSD Bảo hành điện tử 12 tháng.\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "Bảo hành: 12 tháng kể từ ngày kích hoạt sản phẩm.\n" +
+                "Kích hoạt bảo hành tại: https://checkcoverage.apple.com/vn/en/\n" +
+                "\n" +
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/4a10e843c4fc5d42876d7822a0548cf1_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.RED);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/fa1c711b31f401fda182f8d43b251fa7_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.SILVER);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1300));
+        productVariantList.add(variant_2);
+
+        ProductVariant variant_3 = new ProductVariant();
+        variant_3.setImageUrl("https://cf.shopee.vn/file/ab149f4798333a55d3d890c93a6ef86f_tn");
+        variant_3.setWeight(400.0);
+        variant_3.setColor(ColorProduct.BLACK);
+        variant_3.setDimension(dimensionMeasurement);
+        variant_3.setRequiresShipping(true);
+        variant_3.setPrice(MoneyCalculateUtils.getMoney(950));
+        productVariantList.add(variant_3);
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void testProduct_602329_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        //sửa tên sản phâm
+        productInput.setName("Apple Macbook Pro (2022) M2 chip, 13.3 inches, 8GB, 512GB SSD");
+        //mã shop sửa lại
+        productInput.setShopId(602329);
+        //mã thương hiệu
+        productInput.setTradeMarkId("1671551420749648");
+        //sửa ngành hàng
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Điện tử").getId());
+        productInput.setIndustrialTypeName("Điện tử");
+        //thêm link ảnh phụ
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/6f65b108bcdcabae207d8255360e6f61_tn");
+        images.add("https://cf.shopee.vn/file/7492878c607c83190a1c33f74fea076d_tn");
+        images.add("https://cf.shopee.vn/file/decaf47f7cb7a2df555dbff0deeed698_tn");
+        images.add("https://cf.shopee.vn/file/a5dc7787667f07f10c26456c04a51d34_tn");
+        productInput.setImageUrls(images);
+        //thêm link ảnh chính vô
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/a5e087409cca78fb6bdd281da177ff88_tn");
+        //thêm mô tả
+        productInput.setDescription("Apple Macbook Pro (2022) M2 chip, 13.3 inches, 8GB, 512GB SSD\n" +
+                "( SPG : màu Space Gray; SLV: màu Silver)\n" +
+                "Bộ xử lý\n" +
+                "Hãng CPU: Apple\n" +
+                "Công nghệ CPU: M2\n" +
+                "\n" +
+                " Loại CPU: 8 - Core\n" +
+                "\n" +
+                "Tốc độ CPU: 2.40 GHz\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "RAM\n" +
+                "\n" +
+                "Dung lượng RAM: 8 GB\n" +
+                "\n" +
+                "Loại RAM: LPDDR4\n" +
+                "\n" +
+                "Tốc độ RAM: 3200 MHz\n" +
+                "\n" +
+                "Số khe cắm rời: 0\n" +
+                "\n" +
+                "Số khe RAM còn lại: 0\n" +
+                "\n" +
+                "Số RAM onboard: 1\n" +
+                "\n" +
+                "Hỗ trợ RAM tối đa: 8 GB\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Màn hình\n" +
+                "\n" +
+                " Kích thước màn hình: 13.3 inches\n" +
+                "\n" +
+                "Công nghệ màn hình: Retina\n" +
+                "\n" +
+                "Độ phân giải: 2560 x 1600 Pixels\n" +
+                "\n" +
+                "Loại màn hình: LED\n" +
+                "\n" +
+                "Độ sáng: 500 nits\n" +
+                "\n" +
+                "Màn hình cảm ứng: Không\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Đồ họa\n" +
+                "\n" +
+                "Card onboard\n" +
+                "\n" +
+                "Hãng: Apple\n" +
+                "\n" +
+                "Model GPU: 10 nhân\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Lưu trữ        \n" +
+                "\n" +
+                "Loại SSD: M2. PCIe\n" +
+                "\n" +
+                "Dung lượng: 512 GB\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bảo mật\n" +
+                "\n" +
+                "Mở khóa vân tay\n" +
+                "\n" +
+                "Mật khẩu\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Giao tiếp & kết nối\n" +
+                "\n" +
+                "Cổng giao tiếp        \n" +
+                "\n" +
+                "1 Jack 3.5 mm\n" +
+                "\n" +
+                "2 Type C\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Wifi: 802.11 ax\n" +
+                "\n" +
+                "Bluetooth: v5.0\n" +
+                "\n" +
+                "Webcam: HD Webcam (720p Webcam)\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Âm thanh\n" +
+                "\n" +
+                "Số lượng loa: 2\n" +
+                "\n" +
+                "Công nghệ âm thanh: Stereo speakers with high dynamic range\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bàn phím & TouchPad\n" +
+                "\n" +
+                "Kiểu bàn phím: English International Backlit Keyboard\n" +
+                "\n" +
+                "Bàn phím số: Không\n" +
+                "\n" +
+                "Đèn bàn phím: LED\n" +
+                "\n" +
+                "Công nghệ đèn bàn phím: Đơn sắc\n" +
+                "\n" +
+                "Màu đèn LED: Trắng\n" +
+                "\n" +
+                "TouchPad: Multi-touch touchpad\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thông tin pin & Sạc\n" +
+                "\n" +
+                "Loại PIN: Lithium polymer\n" +
+                "\n" +
+                "Power Supply: 67 W\n" +
+                "\n" +
+                "Dung lượng pin: 20 Giờ\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Hệ điều hành\n" +
+                "\n" +
+                "OS: macOS\n" +
+                "\n" +
+                "Version: macOS 12\n" +
+                "\n" +
+                "Thông tin bảo hành:\n" +
+                "\n" +
+                "Bảo hành: 12 tháng kể từ ngày kích hoạt sản phẩm.\n" +
+                "\n" +
+                "Kích hoạt bảo hành tại: https://checkcoverage.apple.com/vn/en/\n" +
+
+                "Hướng dẫn kiểm tra địa điểm bảo hành gần nhất:\n" +
+                "\n" +
+                "Bước 1: Truy cập vào đường link https://getsupport.apple.com/?caller=grl&locale=en_VN \n" +
+                "\n" +
+                "Bước 2: Chọn sản phẩm.\n" +
+                "\n" +
+                "Bước 3: Điền Apple ID, nhập mật khẩu.\n" +
+                "\n" +
+                "Sau khi hoàn tất, hệ thống sẽ gợi ý những trung tâm bảo hành gần nhất.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/a5dc7787667f07f10c26456c04a51d34_tn");
+        variant_1.setWeight(400.0);
+        //sửa màu
+        variant_1.setColor(ColorProduct.BLACK);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        // sửa giá tiền 1000
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1500));
+        productVariantList.add(variant_1);
+
+
+        ProductVariant variant_2 = new ProductVariant();
+        variant_2.setImageUrl("https://cf.shopee.vn/file/7492878c607c83190a1c33f74fea076d_tn");
+        variant_2.setWeight(400.0);
+        variant_2.setColor(ColorProduct.SILVER);
+        variant_2.setDimension(dimensionMeasurement);
+        variant_2.setRequiresShipping(true);
+        variant_2.setPrice(MoneyCalculateUtils.getMoney(1300));
+        productVariantList.add(variant_2);
+
+        createProductInput1.setProductVariants(productVariantList);
+
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

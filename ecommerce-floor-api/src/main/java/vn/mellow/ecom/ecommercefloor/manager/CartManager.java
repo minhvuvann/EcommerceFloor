@@ -55,6 +55,13 @@ public class CartManager extends BaseManager {
     public CartItem getCartItem(String cartItemId) {
         return getCartItemMongoCollection().find(Filters.eq("_id", cartItemId)).first();
     }
+    public CartItem getCartItem(String cartId,String variantId){
+        List<Bson> filter = new ArrayList<>();
+        filter.add(Filters.eq("cartId", cartId));
+        filter.add(Filters.eq("productVariant._id", variantId));
+        return getCartItemMongoCollection().find(Filters.and(filter)).first();
+    }
+
 
     public List<CartItem> getCartItems(String cartId) {
         return getCartItemMongoCollection().find(Filters.eq("_id", cartId)).into(new ArrayList<>());
