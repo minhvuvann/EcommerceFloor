@@ -11,6 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="75feb892-bbcd-44d7-a6b1-81df56987836" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/CartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/main/java/vn/mellow/ecom/ecommercefloor/manager/CartManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-floor-api/target/test-classes/EcommerceFloorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-floor-api/target/test-classes/EcommerceFloorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +109,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EcommerceFloorApplication">
+  <component name="RunManager" selected="JUnit.EcommerceFloorTest.testCartDetail">
     <configuration name="EcommerceFloorTest.testCartDetail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce-floor-api" />
       <option name="PACKAGE_NAME" value="" />
@@ -162,8 +165,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EcommerceFloorApplication" />
         <item itemvalue="JUnit.EcommerceFloorTest.testCartDetail" />
+        <item itemvalue="Spring Boot.EcommerceFloorApplication" />
         <item itemvalue="JUnit.EcommerceFloorTest.testProduct_602349_10" />
         <item itemvalue="JUnit.EcommerceFloorTest.testProduct_602349_9" />
         <item itemvalue="JUnit.EcommerceFloorTest.testProduct_602349_8" />
@@ -244,7 +247,7 @@
       <workItem from="1671569545979" duration="5034000" />
       <workItem from="1671594870620" duration="5784000" />
       <workItem from="1671606173036" duration="6365000" />
-      <workItem from="1671630139346" duration="10143000" />
+      <workItem from="1671630139346" duration="11286000" />
     </task>
     <servers />
   </component>
@@ -309,13 +312,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java</url>
-          <line>369</line>
+          <line>370</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java</url>
-          <line>298</line>
+          <line>299</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ecommerce-floor-api/src/test/java/EcommerceFloorTest.java</url>
+          <line>305</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NumberFormatException" package="java.lang" />

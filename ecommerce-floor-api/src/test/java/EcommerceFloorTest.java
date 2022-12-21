@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
@@ -302,7 +303,7 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
 
-        assertTrue(cartDetail != null);
+        assertNotNull(cartDetail != null);
     }
 
     @Test
