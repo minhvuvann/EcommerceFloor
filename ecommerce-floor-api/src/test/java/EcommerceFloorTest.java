@@ -11310,5 +11310,928 @@ class EcommerceFloorTest {
         }
     }
 
+    @Test
+    public void testProduct_602359_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
 
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Nhà Giả Kim ( Paulo Coelho )");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/a6882e15b20e5ecb22a0c87e14d1fde9");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/a6882e15b20e5ecb22a0c87e14d1fde9");
+        productInput.setDescription("Công ty phát hành        Nhã Nam\n" +
+                "\n" +
+                "Tác giả        Paulo Coelho\n" +
+                "\n" +
+                "Ngày xuất bản        10-2022\n" +
+                "\n" +
+                "Kích thước        13 x 20.5 cm\n" +
+                "\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Văn Học\n" +
+                "\n" +
+                "Dịch Giả        Lê Chu Cầu\n" +
+                "\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "\n" +
+                "Số trang        228\n" +
+                "\n" +
+                "SKU        2518407786529\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Nhà Giả Kim\n" +
+                "\n" +
+                "Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.\n" +
+                "\n" +
+                "Tiểu thuyết Nhà giả kim của Paulo Coelho như một câu chuyện cổ tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông. Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia, Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc.\n" +
+                "\n" +
+                "“Nhưng nhà luyện kim đan không quan tâm mấy đến những điều ấy. Ông đã từng thấy nhiều người đến rồi đi, trong khi ốc đảo và sa mạc vẫn là ốc đảo và sa mạc. Ông đã thấy vua chúa và kẻ ăn xin đi qua biển cát này, cái biển cát thường xuyên thay hình đổi dạng vì gió thổi nhưng vẫn mãi mãi là biển cát mà ông đã biết từ thuở nhỏ. Tuy vậy, tự đáy lòng mình, ông không thể không cảm thấy vui trước hạnh phúc của mỗi người lữ khách, sau bao ngày chỉ có cát vàng với trời xanh nay được thấy chà là xanh tươi hiện ra trước mắt. ‘Có thể Thượng đế tạo ra sa mạc chỉ để cho con người biết quý trọng cây chà là,’ ông nghĩ.”\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "- Trích Nhà giả kim");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/a6882e15b20e5ecb22a0c87e14d1fde9");
+        variant_1.setWeight(30.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(400));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Combo 3 cuốn Nuôi con không phải là cuộc chiến");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/ec04ad5084c74927eb5891882d1d7b5e");
+        images.add("https://cf.shopee.vn/file/ac576096d7ebc99425cfe96dc360374f");
+        images.add("https://cf.shopee.vn/file/1eacf246f5737e168c8a27edfb26bb19");
+        images.add("https://cf.shopee.vn/file/076caf52a6d60207ff36533e92246d77");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/de14d4d318f7c66a67ae28b279da36ed");
+        productInput.setDescription("Công ty phát hành        Thái Hà\n" +
+                "\n" +
+                "Tác giả        Nhiều Tác Giả\n" +
+                "\n" +
+                "Ngày xuất bản        09-2018\n" +
+                "\n" +
+                "Kích thước        17x23x6 cm\n" +
+                "\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Lao Động\n" +
+                "\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "\n" +
+                "Số trang        1052\n" +
+                "\n" +
+                "SKU        5189538798889 GIỚI THIỆU SÁCH\n" +
+                "\n" +
+                "Nuôi Con Không Phải Là Cuộc Chiến 2 (Trọn Bộ 3 Tập )\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Mốc thai kì 40 tuần đến gần, lúc này cũng là lúc mà bản năng “làm tổ” của mẹ trỗi dậy. Nhiều cha mẹ, đặc biệt là các cha mẹ chờ đợi đứa con đầu lòng chắc hẳn không tránh khỏi cảm thấy lo lắng, bồn chồn hoặc tất bật mua sắm đồ dùng, giặt là quần áo và chuẩn bị tươm tất, chờ ngày được gặp mặt con yêu.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Đây cũng là lúc mà câu chuyện của chúng ta bắt đầu…\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bên cạnh những vật chất cơ bản như quần áo, tã, bình… thì những kiến thức khoa học về ăn, ngủ và an toàn cho bé cũng là những yếu tố hết sức cần thiết mà cha mẹ cần trang bị cho mình từ trước khi con chào đời. Khoa học về dinh dưỡng trẻ sơ sinh, về sữa non và dự trữ dinh dưỡng nơi cuống rốn, khoa học về giấc ngủ của trẻ và những điều kiện an toàn ăn và an toàn ngủ của bé sơ sinh là những thông tin thiết yếu mà cha mẹ thực sự cần trang bị đầy đủ để đón chào bé thơ.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Thời khắc Bé chào đời cũng là lúc mà nhịp sinh hoạt của gia đình xáo trộn, và lúc đó sự phục hồi sức khoẻ của ngƣời mẹ phụ thuộc rất nhiều vào cách tổ chức nếp sống, sinh hoạt cũng như bố trí việc ăn ngủ dành cho bé sơ sinh.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bộ sách này là sự giải đáp cho những câu hỏi mà chúng tôi nhận được từ các bậc cha mẹ trẻ trong 5 năm qua về những vấn đề của các em bé từ sơ sinh cho đến chập chững biết đi: con ăn ra sao, con ngủ bao nhiêu là đủ… Và bí quyết là gì để nuôi con khoẻ mạnh và khoa học nhất, để tăng thêm thành viên mới là tăng thêm niềm vui chứ không phải gánh nặng vất vả cho mọi ngƣời?\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Làm thế nào để con ngủ đủ theo nhu cầu lứa tuổi và có nền tảng tốt nhất cho sự phát triển thể chất và trí tuệ? Làm thế nào để bé thơ có thể tự học cách đưa mình vào giấc ngủ mà không cần phải chờ đến ti mẹ, không phải phụ thuộc vào cánh tay bế hay từ sự đung đưa của những chiếc võng và những lời ru đến lạc giọng của người lớn?\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Song hành cùng bạn, qua bộ sách này, chúng tôi cố gắng cung cấp đầy đủ và chi tiết hơn theo những mốc phát triển của bé cũng như lý giải những khúc mắc và giảm bớt những lo lắng, hoang mang không cần thiết cho những bậc ông bà - cha mẹ khi nuôi con trong những năm đầu đời. Chúng tôi mong rằng bộ sách này sẽ mang đến cho gia đình bạn sự an tâm, thƣ giãn và phong thái bình tĩnh khi nuôi và dạy bé thơ. Bởi, suy cho cùng, nuôi con không bao ");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/de14d4d318f7c66a67ae28b279da36ed");
+        variant_1.setWeight(90.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(750));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Đắc Nhân Tâm( khổ lớn)");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/f6bea1f2e1aa442a0afd43f20f3f5e4c");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/b5bed61f6abdd57280fea3e658134b72");
+        productInput.setDescription("Công ty phát hành        First News - Trí Việt\n" +
+                "\n" +
+                "Tác giả        Dale Carnegie\n" +
+                "\n" +
+                "Ngày xuất bản         2022\n" +
+                "\n" +
+                "Kích thước        14.5 x 20.5 cm\n" +
+                "\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Tổng hợp TP.HCM\n" +
+                "\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "\n" +
+                "Số trang        320\n" +
+                "\n" +
+                "SKU        2436661537384\n" +
+                "\n" +
+                "Tại sao Đắc Nhân Tâm luôn trong Top sách bán chạy nhất thế giới?\n" +
+                "\n" +
+                "Bởi vì đó là cuốn sách mọi người đều nên đọc.\n" +
+                "\n" +
+                "Hiện nay có một sự hiểu nhầm đã xảy ra. Tuy Đắc Nhân Tâm là tựa sách hầu hết mọi người đều biết đến, vì những danh tiếng và mức độ phổ biến, nhưng một số người lại “ngại” đọc. Lý do vì họ tưởng đây là cuốn sách “dạy làm người” nên có tâm lý e ngại. Có lẽ là do khi giới thiệu về cuốn sách, người ta luôn gắn với miêu tả đây là “nghệ thuật đối nhân xử thế”, “nghệ thuật thu phục lòng người”… Những cụm từ này đã không còn hợp với hiện nay nữa, gây cảm giác xa lạ và không thực tế.\n" +
+                "\n" +
+                "Nhưng đâu phải thế, Đắc Nhân Tâm là cuốn sách không hề lỗi thời! \n" +
+                "\n" +
+                "Những vấn đề được chỉ ra trong đó đều là căn bản ứng xử giữa người với người. Nếu diễn giải theo từ ngữ bây giờ, có thể gọi đây là “giáo trình” giúp hiểu mình – hiểu người để thành công trong giao tiếp. Có ai sống mà không cần giao tiếp? Có bao nhiêu người ngày ngày mệt mỏi, khổ sở vì gặp phải các vấn đề trong giao tiếp? Vì thế, Đắc Nhân Tâm chính là cuốn sách dành cho mọi người. Con cái nên đọc – cha mẹ càng nên đọc, nhân viên nên đọc – sếp càng nên đọc, người quen nhau nên đọc – người lạ nhau càng nên đọc…. Và đó mới chính thật là lý do Đắc Nhân Tâm luôn lọt vào Top sách bán chạy nhất thế giới, dù đã ra đời cách đây gần 80 năm.\n" +
+                "\n" +
+                "Có lẽ sẽ có người vừa đọc vừa nghĩ, mấy điều trong sách này đơn giản mà, ai chẳng biết? Đúng thế, vì toàn bộ đều là những quy tắc, những cách cư xử căn bản giữa chúng ta với nhau thôi. Kiểu như “Không chỉ trích, oán trách hay than phiền”, “Thành thật khen ngợi và biết ơn người khác”, “Thật lòng làm cho người khác thấy rằng họ quan trọng”… Những điều này đúng thật là ai cũng biết, nhưng bạn có chắc bạn nhớ được và làm được những điều đơn giản đó? Vì vậy, cuốn sách mới ra đời, để giúp bạn thực hành.\n" +
+                "\n" +
+                "Nhưng có lẽ đa số người đọc sẽ thành thật gật gù đồng ý với từng trang sách. Ồ nếu như bình tâm suy xét lại mọi việc, thì trong bất cứ trường hợp nào mình cũng có thể cư xử đúng mực, không làm người khác tổn thương, giúp bầu không khí luôn thoải mái, và thế là cả hai bên đều vui vẻ, công việc cũng vì thế mà suôn sẻ, thành công hơn. Vậy chứ mà cũng không dễ, bởi “cái tôi” của mỗi người thường chiến thắng tâm trí trong đa số trường hợp. Để thỏa mãn nó, chúng ta hay mắc sai lầm không đáng. Đó cũng chính là lý do Đắc Nhân Tâm có mặt, để nhắc nhở và từng chút giúp ta uốn nắn chính “cái tôi” của mình.\n" +
+                "\n" +
+                "Đắc Nhân Tâm - Dale Carnegie\n" +
+                "\n" +
+                "Cuốn Sách Hay Nhất Của Mọi Thời Đại Đưa Bạn Đến Thành Công\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Đắc nhân tâm – How to win friends and Influence People của Dale Carnegie là quyển sách nổi tiếng nhất, bán chạy nhất và có tầm ảnh hưởng nhất của mọi thời đại. Tác phẩm đã được chuyển ngữ sang hầu hết các thứ tiếng trên thế giới và có mặt ở hàng trăm quốc gia. Đây là quyển sách duy nhất về thể loại self-help liên tục đứng đầu danh mục sách bán chạy nhất (best-selling Books) do báo The New York Times bình chọn suốt 10 năm liền. Riêng bản tiếng Anh của sách đã bán được hơn 15 triệu bản trên thế giới. Tác phẩm có sức lan toả vô cùng rộng lớn – dù bạn đi đến bất cứ đâu, bất kỳ quốc gia nào cũng đều có thể nhìn thấy. Tác phẩm được đánh giá là quyển sách đầu tiên và hay nhất, có ảnh hưởng làm thay đổi cuộc đời của hàng triệu người trên thế giới.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Không còn nữa khái niệm giới hạn Đắc Nhân Tâm là nghệ thuật thu phục lòng người, là làm cho tất cả mọi người yêu mến mình. Đắc nhân tâm và cái Tài trong mỗi người chúng ta. Đắc Nhân Tâm trong ý nghĩa đó cần được thụ đắc bằng sự hiểu rõ bản thân, thành thật với chính mình, hiểu biết và quan tâm đến những người xung quanh để nhìn ra và khơi gợi những tiềm năng ẩn khuất nơi họ, giúp họ phát triển lên một tầm cao mới. Đây chính là nghệ thuật cao nhất về con người và chính là ý nghĩa sâu sắc nhất đúc kết từ những nguyên tắc vàng của Dale Carnegie.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Quyển sách Đắc nhân tâm “Đầu tiên và hay nhất mọi thời đại về nghệ thuật giao tiếp và ứng xử”, quyển sách đã từng mang đến thành công và hạnh phúc cho hàng triệu người trên khắp thế giới\n" +
+                "\n" +
+                "#dacnhantam #vadatabooks #book #sachkinang");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/b5bed61f6abdd57280fea3e658134b72");
+        variant_1.setWeight(45.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(650));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Giải Thích Ngữ Pháp Tiếng Anh ( Bài Tập & Đáp Án )");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/cfb91110741a5367728fa14fe4e3b055");
+        images.add("https://cf.shopee.vn/file/131f37936cd4b0946074ffeb3368b2b4");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/d290cf92ddc6c4c11bb0e0641e7f90d6");
+        productInput.setDescription("Công ty phát hành        Zenbooks\n" +
+                "\n" +
+                "Tác giả: Nhiều tác giả\n" +
+                "\n" +
+                "Ngày xuất bản   2022\n" +
+                "\n" +
+                "Kích thước        17 x 24 cm\n" +
+                "\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "\n" +
+                "Số trang        560\n" +
+                "\n" +
+                "SKU        7924944303061\n" +
+                "\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Đà Nẵng\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "GIẢI THÍCH NGỮ PHÁP TIẾNG ANH, tác giả Mai Lan Hương - Hà Thanh Uyên, là cuốn sách ngữ pháp đã được phát hành và tái bản rất nhiều lần trong suốt những năm vừa qua.\n" +
+                "\n" +
+                "Trong lần tái bản GIẢI THÍCH NGỮ PHÁP TIẾNG ANH năm 2020 này, nhằm nâng cao chất lượng sách và giúp người học trau dồi, củng cố và nâng cao kiến thức ngữ pháp tiếng Anh, chúng tôi chỉnh sửa, bổ sung và cập nhật một số kiến thức ngữ pháp mới.\n" +
+                "\n" +
+                "Ấn bản mới GIẢI THÍCH NGỮ PHÁP TIẾNG ANH gồm 5 chương, hệ thống hóa toàn diện kiến thức ngữ pháp tiếng Anh từ cơ bản đến nâng cao:\n" +
+                "\n" +
+                "Chương 1: Từ Loại (Parts of Speech)\n" +
+                "\n" +
+                "Chương 2: Thì và Sự Phối Hợp Thì (Tenses and Sequence of Tenses)\n" +
+                "\n" +
+                "Chương 3: Mệnh Đề (Clauses)\n" +
+                "\n" +
+                "Chương 4: Câu (Sentences)\n" +
+                "\n" +
+                "Chương 5: Từ Vựng Học (Word Study)\n" +
+                "\n" +
+                "Các chủ điểm ngữ pháp trong từng chương được trình bày rõ ràng, chi tiết, giải thích cặn kẽ các cách dùng và quy luật mà người học cần nắm vững. Sau mỗi chủ điểm ngữ pháp là phần bài tập đa dạng nhằm giúp người học củng cố phần lý thuyết.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/d290cf92ddc6c4c11bb0e0641e7f90d6");
+        variant_1.setWeight(45.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(650));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Tuổi Trẻ Đáng Giá Bao Nhiêu");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/9605fd24ddec4d8c566cc7e9247b0829");
+        images.add("https://cf.shopee.vn/file/68fab4cd1345cc34f45bdf8ddb1945eb");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/e558991a7192bb0ac88b798390c631ac");
+        productInput.setDescription("Công ty phát hành        Nhã Nam\n" +
+                "Tác giả        Rosie Nguyễn\n" +
+                "Ngày xuất bản        10-2020\n" +
+                "Kích thước        14 x 20.5 cm\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Hội Nhà Văn\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        285\n" +
+                "SKU        2431864615280\n" +
+                "Tuổi Trẻ Đáng Giá Bao Nhiêu\n" +
+                "\n" +
+                "\"Bạn hối tiếc vì không nắm bắt lấy một cơ hội nào đó, chẳng có ai phải mất ngủ.\n" +
+                "\n" +
+                "Bạn trải qua những ngày tháng nhạt nhẽo với công việc bạn căm ghét, người ta chẳng hề bận lòng.\n" +
+                "\n" +
+                "Bạn có chết mòn nơi xó tường với những ước mơ dang dở, đó không phải là việc của họ.\n" +
+                "\n" +
+                "Suy cho cùng, quyết định là ở bạn. Muốn có điều gì hay không là tùy bạn.\n" +
+                "\n" +
+                "Nên hãy làm những điều bạn thích. Hãy đi theo tiếng nói trái tim. Hãy sống theo cách bạn cho là mình nên sống.\n" +
+                "\n" +
+                "Vì sau tất cả, chẳng ai quan tâm.\"\n" +
+                "\n" +
+                "Nhận định\n" +
+                "\n" +
+                "\"Tôi đã đọc quyển sách này một cách thích thú. Có nhiều kiến thức và kinh nghiệm hữu ích, những điều mới mẻ ngay cả với người gần trung niên như tôi.\n" +
+                "\n" +
+                "Tuổi trẻ đáng giá bao nhiêu? được tác giả chia làm 3 phần: HỌC, LÀM, ĐI.\n" +
+                "\n" +
+                "Nhưng tôi thấy cuốn sách còn thể hiện một phần thứ tư nữa, đó là ĐỌC.\n" +
+                "\n" +
+                "Hãy đọc sách, nếu bạn đọc sách một cách bền bỉ, sẽ đến lúc bạn bị thôi thúc không ngừng bởi ý muốn viết nên cuốn sách của riêng mình.\n" +
+                "\n" +
+                "Nếu tôi còn ở tuổi đôi mươi, hẳn là tôi sẽ đọc Tuổi trẻ đáng giá bao nhiêu? nhiều hơn một lần.\"\n" +
+                "\n" +
+                "(Đặng Nguyễn Đông Vy, tác giả, nhà báo)");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/e558991a7192bb0ac88b798390c631ac");
+        variant_1.setWeight(25.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(350));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Combo Lẻ Tùy Chọn: Tô Bình Yên Vẽ Hạnh Phúc + Từ Điển Tiếng “Em”");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/d3a4c0b038ba267dbf030342f89817b0");
+        images.add("https://cf.shopee.vn/file/d5da57bccdd0487bdf3bda3670c9b029");
+        images.add("https://cf.shopee.vn/file/2595b06a1cb0d6ffdb92edc6d9cd73df");
+        images.add("https://cf.shopee.vn/file/b25b945507431a4900d9bb1e13038f01");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-3ti0mb765ukv14");
+        productInput.setDescription("1. Tô Bình Yên Vẽ Hạnh Phúc\n" +
+                "\n" +
+                "Công ty phát hành        Skybooks\n" +
+                "\n" +
+                "Tác giả: Kulzsc\n" +
+                "\n" +
+                "Ngày xuất bản        2021\n" +
+                "\n" +
+                "Kích thước        24 x 19 cm\n" +
+                "\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "\n" +
+                "Số trang        96\n" +
+                "\n" +
+                "SKU        4373072270180\n" +
+                "\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Phụ Nữ Việt Nam\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "TÔ BÌNH YÊN VẼ HẠNH PHÚC – KULZSC\n" +
+                "\n" +
+                "Sau thành công của cuốn sách đầu tay “Phải lòng với cô đơn” chàng họa sĩ nổi tiếng và tài năng Kulzsc đã trở lại với một cuốn sách vô cùng đặc biệt mang tên:\n" +
+                "\n" +
+                "\"Tô bình yên - vẽ hạnh phúc” – sắc nét phong cách cá nhân với một chút “thơ thẩn, rất hiền”.\n" +
+                "\n" +
+                "Không giống với những cuốn sách chỉ để đọc, “Tô bình yên – vẽ hạnh phúc” là một cuốn sách mà độc giả vừa tìm được “Hạnh phúc to to từ những điều nho nhỏ” vừa được thực hành ngay lập tức. Một sự kết hợp mới lạ đầy thú vị giữa thể loại sách tản văn và sách tô màu.\n" +
+                "\n" +
+                "Lật mở cuốn sách này, bạn sẽ thấy vô vàn những điều nhỏ bé dễ thương lan tòa nguồn năng lượng tích cực. Và kèm theo một list những điều tuyệt vời khiến bạn không thể bỏ lỡ:\n" +
+                "\n" +
+                "- Tận tình chỉ dẫn: 8 hướng dẫn tô màu đầy hứng thú từ Kulzsc\n" +
+                "\n" +
+                "- Tranh vẽ đơn giản, gần gũi. Nét vẽ đáng yêu, dễ thương\n" +
+                "\n" +
+                "- Chủ đề xoay quanh những điều bình yên trong cuộc sống: Đọc sách, đi dạo, dọn dẹp nhà cửa, trồng cây, ăn cơm mẹ nấu, nghe một bản nhạc hay, và nghĩ về nụ cười của một ai đó…\n" +
+                "\n" +
+                "- Mỗi bức tranh lại là những lời thủ thỉ, tâm tình của tác giả. Là những điều nhắn gửi nho nhỏ mong bạn bớt đi những xao động:\n" +
+                "\n" +
+                "“Em chọn hạnh phúc\n" +
+                "\n" +
+                "Em chọn bình yên\n" +
+                "\n" +
+                "Em chọn bên cạnh\n" +
+                "\n" +
+                "Những điều an yên”\n" +
+                "\n" +
+                "Hay đơn giản là những giãi bày ngắn gọn, thay nỗi lòng của một ai đó: \"Tớ biết cậu một mình vẫn ổn, nhưng có những chuyện, có ai đó cùng làm, vẫn hơn.\"\n" +
+                "\n" +
+                "Thông qua những hình vẽ đang đợi được lấp đầy bằng muôn vàn sắc màu ấy, Kulzsc sẽ giúp bạn - những người lớn cô đơn, những ai đang cần bổ sung vitamin\n" +
+                "\n" +
+                "hạnh phúc “truy tìm” những niềm vui bị bỏ quên hay tuyệt chiêu để đối phó với stress.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "2. Từ Điển Tiếng “Em”\n" +
+                "\n" +
+                "Công ty phát hành        Skybooks\n" +
+                "\n" +
+                "Tác giả: Khotudien\n" +
+                "\n" +
+                "Ngày xuất bản        10-2020\n" +
+                "\n" +
+                "Kích thước        12 x 18 cm\n" +
+                "\n" +
+                "Dịch Giả        Quote\n" +
+                "\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "\n" +
+                "Số trang        280\n" +
+                "\n" +
+                "SKU        9507721326293\n" +
+                "\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Phụ Nữ Việt Nam\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "TỪ ĐIỂN TIẾNG “EM” – Định nghĩa về thế giới mới!\n" +
+                "\n" +
+                "Bạn sẽ bất ngờ, khi cầm cuốn “từ điển” xinh xinh này trên tay.\n" +
+                "\n" +
+                "Và sẽ còn ngạc nhiên hơn nữa, khi bắt đầu đọc từng trang sách…\n" +
+                "\n" +
+                "Dĩ nhiên là vì “Từ điển tiếng “Em” không phải là một cuốn từ điển thông thường rồi!\n" +
+                "\n" +
+                "Nói đến “từ điển”, xưa nay chúng ta đều nghĩ về một bộ sách đồ sộ, giải thích ý nghĩa, cách dùng, dịch, cách phát âm, và thường kèm theo các ví dụ về cách sử dụng từ đó.\n" +
+                "\n" +
+                "Tuy nhiên, với cuốn sách “Từ điển tiếng “em”, các bạn sẽ hết sức bất ngờ với những định nghĩa mới, bắt trend, sáng tạo, thông minh và vô cùng hài hước.\n" +
+                "\n" +
+                "Tiếng “em” [danh từ] ở đây là tiếng lòng của những người yêu sự thật, ghét sự giả dối\n" +
+                "\n" +
+                "Cô đơn [ tính từ ] không phải là không có ai bên cạnh, mà là người mình muốn ở cạnh lại không hề ở bên\n" +
+                "\n" +
+                "Sống lỗi [ động từ ] là cách sống của mấy bạn có người yêu cái là bỏ bê bạn bè liền hà\n" +
+                "\n" +
+                "Nhưng đây không chỉ là cuốn sách chỉ biết nói dăm ba câu chuyện về tình yêu.\n" +
+                "\n" +
+                "Còn nhiều hơn thế!\n" +
+                "\n" +
+                "Là những câu cửa miệng của giới trẻ thời nay; là hoạt động tưởng vô bổ nhưng cần thiết cho sự sống: ăn, ngủ, tắm, gội cũng được định nghĩa hết sức dí dỏ Và cũng không thiếu những “tật xấu, thói hư” nghĩ đến đã thấy “tức cái lồng ngực”\n" +
+                "\n" +
+                "Và bạn yên tâm, “tập đoàn” Kho Từ Điển điều hành bởi Thịt Kho – Hiệp Thị - 2 chủ xị cho ra đời cuốn sách nhỏ bé xíu xiu nhưng mới mẻ và mặn mà vô cùng này sẽ khiến bạn thoát mác “người tối cổ” cười cả ngày không chán, nhìn bạn bè quanh mình bằng ánh mắt dễ thương, tận hưởng cuộc đời với những định nghĩa hoàn toàn!!!\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "3. Ở Tiệm Bánh Ngày Mai\n" +
+                "\n" +
+                "Công ty phát hành SkyComics \n" +
+                "\n" +
+                "Tác giả: Múc\n" +
+                "\n" +
+                "Ngày xuất bản        2022\n" +
+                "\n" +
+                "Kích thước 24 cm x 19 cm\n" +
+                "\n" +
+                "Loại bìa Bìa mềm\n" +
+                "\n" +
+                "Số trang 104\n" +
+                "\n" +
+                "Nhà xuất bản Nhà Xuất Bản Dân Trí\n" +
+                "\n" +
+                "Ở tiệm bánh Ngày Mai - Sắc màu nào tô điểm ngày mai?\n" +
+                "\n" +
+                "“Tại sao lại là tiệm bánh “Ngày Mai” thế?”\n" +
+                "\n" +
+                "“Vì nhìn xem, hôm nay mình đã chuẩn bị gì cho nó đâu nào!”\n" +
+                "\n" +
+                "Chuyển mình từ series truyện tranh đời thường gây nhung nhớ - “Chuyện vặt của Múc”, cô nàng Múc dễ thương hài hước đã trở lại với cuốn sách hoàn toàn mới, không phải về những mẩu chuyện nhí nhố hàng ngày chúng ta từng quen thuộc, mà là về một tiệm bánh đặc biệt mang tên “Ngày Mai”. Tiệm bánh này không hề có câu chuyện nào để kể, cũng chỉ có duy nhất hai màu đen trắng, chính là bởi nó vẫn đang chờ đợi bạn tô điểm lên bằng những gam màu rực rỡ!\n" +
+                "\n" +
+                "“Ở tiệm bánh Ngày Mai” là một cuốn sách tô màu, với những trang sách vẽ về “Ngày Mai” - tiệm bánh xinh xắn của bạn và Múc: nếu như Múc dựng xây cửa tiệm bằng nét bút thì bạn là người tạo nên màu sắc riêng của “Ngày Mai”. Tiệm bánh sẽ mở cửa vào buổi sớm hay ban trưa? Giữa sắc vàng rực rỡ của nắng hạ hay màu xanh êm ả của trời thu? Nào là góc bếp gọn gàng ngay ngắn, nào là khay bánh nóng hổi mới ra lò, nào những chiếc ghế xinh xắn bên khung cửa sổ…, tiệm bánh “Ngày Mai” trong mắt bạn sẽ mang những sắc màu gì?");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/sg-11134201-22120-3ti0mb765ukv14");
+        variant_1.setWeight(45.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(650));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Think & Grow Rich Nghĩ Giàu Và Làm Giàu");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/1ad91c2a2cfa85c2b3059b1f22e913bb");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/39f1386415bcdadb7d0f6c1f400a644d");
+        productInput.setDescription("Công ty phát hành        First News - Trí Việt\n" +
+                "Tác giả        Napoleon Hill\n" +
+                "Ngày xuất bản        11-2017\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Kích thước        16 x 24 cm\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Tổng hợp TP.HCM\n" +
+                "Dịch Giả        Việt Khương\n" +
+                "Số trang        372\n" +
+                "SKU        2005311986454\n" +
+                "Think & Grow Rich - Nghĩ Giàu Và Làm Giàu là một trong những cuốn sách bán chạy nhất mọi thời đại. Đã hơn 60 triệu bản được phát hành với gần trăm ngôn ngữ trên toàn thế giới và được công nhận là cuốn sách tạo ra nhiều triệu phú hơn, một cuốn sách truyền cảm hứng thành công nhiều hơn bất cứ cuốn sách kinh doanh nào trong lịch sử.\n" +
+                "\n" +
+                "Tác phẩm này đã giúp tác giả của nó, Napoleon Hill, được tôn vinh bằng danh hiệu “người tạo ra những nhà triệu phú”. Đây cũng là cuốn sách hiếm hoi được đứng trong top của rất nhiều bình chọn theo nhiều tiêu chí khác nhau - bình chọn của độc giả, của giới chuyên môn, của báo chí.\n" +
+                "\n" +
+                "Lý do để Think and Grow Rich - Nghĩ giàu và Làm giàu có được vinh quang này thật hiển nhiên và dễ hiểu: Bằng việc đọc và áp dụng những phương pháp đơn giản, cô đọng này vào đời sống của mỗi cá nhân mà đã có hàng ngàn người trên thế giới trở thành triệu phú và thành công bền vững. Điều thú vị nhất là các bí quyết này có thể được hiểu và áp dụng bởi bất kỳ một người bình thường nào, hoạt động trong bất cứ lĩnh vực nào. Qua hơn 70 năm tồn tại, những đúc kết về thành công của Napoleon Hill đến nay vẫn không hề bị lỗi thời, ngược lại, thời gian chính là minh chứng sống động cho tính đúng đắn của những bí quyết mà ông chia sẻ.\n" +
+                "\n" +
+                "Sinh ra trong một gia đình nghèo vùng Tây Virginia, con đường thành công của Napoleon Hill cũng trải qua nhiều thăng trầm. Khởi đầu bằng chân cộng tác viên cho một tờ báo địa phương lúc 15 tuổi, đến năm 19 tuổi Hill trở thành nhà quản lý mỏ than trẻ tuổi nhất, sau đó bỏ ngang để theo đuổi ngành luật. Napoleon Hill còn kinh qua nhiều nghề như kinh doanh gỗ, xe hơi, viết báo về kinh doanh… Đó là những công việc ông từng nếm trải trước khi 25 tuổi! Song khác với những người thành đạt khác, ông cẩn thận phân tích từng sự kiện trọng đại trong đời mình, rút ra những bài học, rồi tiếp tục rút gọn chúng thành các nguyên tắc căn bản, tổ chức các nguyên tắc ấy thành triết lý sống và rèn luyện... Cơ hội đặc biệt đã đến với Hill trong một lần phỏng vấn để viết về chân dung Andrew Carnegie - ông “vua thép” huyền thoại của Mỹ đã đi lên từ hai bàn tay trắng. Từ lần phỏng vấn đó, Napoleon Hill có dịp tiếp cận với những con người thành đạt và có quyền lực nhất tại Mỹ để tìm hiểu và học hỏi những bí quyết thành công của họ, trong thế so sánh và kiểm chứng với những công thức thành công của Andrew Carnegie. Ông muốn qua đó có thể đúc kết và viết nên một cuốn sách ghi lại những bí quyết giúp biến các cá nhân bình thường thành những người thành công trong xã hội.\n" +
+                "#vadata  #sáchtiếnghàn  #hàntổnghợp  #sáchngoạingữ  #sáchminna  #sáchthật   #sách  #sáchgiáotrình  #minnanonihongo  #sáchtiếngtrung  #giáotrìnhhánngữ  #sáchvănhọc  #sáchkinhdoanh  #sáchmẹbé  #sáchtiếngnhật  #sáchgiảmgiá  #Sáchtựhọc  #Sáchkỹnăng");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/39f1386415bcdadb7d0f6c1f400a644d");
+        variant_1.setWeight(23.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(300));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Người Nam Châm Bí Mật Của Luật Hấp Dẫn (Tái Bản)");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/0e11983562b5f8f04574fb5ce9d95e2c");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/0e11983562b5f8f04574fb5ce9d95e2c");
+        productInput.setDescription("Công ty phát hành        Thái Hà\n" +
+                "Tác giả        Jack Canfield, D.D Watkins\n" +
+                "Ngày xuất bản        01-2018\n" +
+                "Kích thước        13 x 20.5 cm\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Lao Động Xã Hội\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        216\n" +
+                "SKU        5538890778952 GIỚI THIỆU SÁCH\n" +
+                "Người Nam Châm - Bí Mật Của Luật Hấp Dẫn\n" +
+                "\n" +
+                "Cuốn sách viết về cách hoạt động của Luật hấp dẫn trong cuộc sống của bạn, từ đó bạn có thể hiểu nhiều hơn về bản thân mình - thực ra bạn là ai và tại sao bạn lại ở đây. Cuốn sách này chính là chìa khóa của bạn. Nó có thể mở cánh cửa tới tương lai như bạn mong ước và đưa bạn tới con đường có nhiều niềm vui, sung túc và giàu có hơn. Khi đọc cuốn sách này, bạn sẽ thấy mình được truyền cảm hứng vì bạn nhận ra rằng bạn có thể tạo ra cuộc sống mà bạn khao khát, và bạn sẽ được trao quyền khi sử dụng những công cụ, những chiến lược và những khái niệm cơ bản được chuyển tải trong những trang sách này.\n" +
+                "#vadata #nguoinamcham");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/0e11983562b5f8f04574fb5ce9d95e2c");
+        variant_1.setWeight(25.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(320));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Trọn Bộ Giáo Trình Tiếng Hàn Tổng Hợp Sơ Cấp 1 (SGK + SBT)");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/f2913e2ca341f4b2078f3505921bf5ee");
+        images.add("https://cf.shopee.vn/file/54af4c63647dda86ff6169dd233523d8");
+        images.add("https://cf.shopee.vn/file/2ac03f22692a78a69c59127f575e819a");
+        images.add("https://cf.shopee.vn/file/9c386090ee709601d954175f6d31483e");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/337bf81a572e11cd6cd5eaefa08b2298");
+        productInput.setDescription("NĂM XUẤT BẢN: 2021\n" +
+                "\n" +
+                "NHÀ XUẤT BẢN: Đại học Quốc Gia Hà Nội\n" +
+                "\n" +
+                "SỐ TRANG: 378\n" +
+                "\n" +
+                "KÍCH THƯỚC        :19×27 cm\n" +
+                "\n" +
+                "Công ty phát hành: Mcbooks\n" +
+                "\n" +
+                "Tác giả: Nhiều tác giả\n" +
+                "\n" +
+                "Trong những năm gần đây, nhu cầu học tiếng Hàn và tìm hiểu về văn hóa Hàn Quốc đang có xu hướng tăng lên. Người học tiếng Hàn rất mong muốn có được một bộ giáo trình chuẩn, được biên soạn một cách tỉ mỉ và hữu ích nhất.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Giáo trình tiếng Hàn tổng hợp lần đầu tiên được trao bản quyền chính thức tại Việt Nam\n" +
+                "\n" +
+                "Hiểu được điều đó, ngày 4-7, Đại diện chính phủ Hàn Quốc, ngài Woo Hyeong Min – Trưởng đại diện Văn phòng Quỹ giao lưu Quốc tế HQ tại Việt Nam cùng GS.TS.NGƯT Mai Ngọc Chừ – Chủ tịch Hội Nghiên cứu khoa học về Hàn Quốc của Việt Nam (KRAV) đã trao quyết định cho phép Công ty Cổ phần sách MCBooks của Việt Nam được xuất bản cuốn sách này tại thị trường Việt Nam. Và đây chính là bộ giáo trình tiếng Hàn tổng hợp đầu tiên có bản quyền chính thức có mặt tại Việt Nam.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Cũng theo ông Woo Hyeong Min, Thực tế đây là bộ giáo trình chính thống mà tất cả người học tiếng Hàn tại Việt Nam cần sử dụng. Tuy nhiên nhiều năm qua bộ sách đến tay người dùng đều là sách lậu nên chưa đạt được kết quả mà chính phủ Hàn muốn mang tới Việt Nam. Do đó Chính phủ Hàn Quốc đã quyết  định tìm 1 đơn vị xuất bản uy tín của Việt Nam để giúp họ mang đến cho người học những cuốn sách tiếng Hàn chất lượng tốt với giá cả hợp lý.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bộ giáo trình được Hội nghiên cứu khoa học Hàn Quốc của Việt Nam biên soạn và hiệu đính.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Bộ giáo trình sẽ giúp nâng cao hiệu quả trong việc sử dụng ngôn ngữ Hàn sau tiếng mẹ đẻ và tiếng Anh, là nền tảng giúp người lao động Việt Nam nhận được những vị trí làm việc cao trong doanh nghiệp Hàn Quốc. Đây cũng là cách để thúc đẩy quan hệ hợp tác về văn hoá và giáo dục giữa hai nước trong thời gian tới.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Giới thiệu về cuốn Giáo trình tiếng Hàn tổng hợp dành cho người Việt Nam – Sơ cấp 1\n" +
+                "\n" +
+                "Giáo trình tiếng Hàn tổng hợp dành cho người Việt Nam – Sơ cấp 1 được biên soạn dành cho người  Việt Nam muốn học tiếng Hàn ở trình độ sơ cấp. Sách được biên soạn nhằm hướng tới việc sử dụng được trong các tiết học tiếng Hàn tại giảng đường đại học nên mỗi bài học được chia thành nhiều phần như: Lý thuyết cơ bản gồm từ vựng và cấu trúc ngữ pháp; phần luyện tập theo 4 kỹ năng giao tiếp như: Nghe – Nói – Đọc – Viết, phần luyện phát âm, phần tìm hiểu văn hóa…\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Các chủ đề trong sách được sắp xếp một cách có hệ thống và liên quan chặt chẽ với nhau. Giáo trình tiếng Hàn tổng hợp được biên soạn kèm theo một cuốn sách bài tập hỗ trợ giúp người học ôn tập kỹ hơn và có thể luyện tập nâng cao trong những trường hợp cần thiết.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Nội dung trong Giáo trình tiếng Hàn tổng hợp – Sơ cấp 1\n" +
+                "\n" +
+                "2 cuốn sách trong bộ Sơ cấp được xây dựng với 30 bài khóa và bảng chữ cái. Trong đó quyển 1 gồm phần bảng chữ cái và 15 bài đầu. Học hết quyển 1, bạn sẽ học đến quyển sơ cấp 2 với 15 bài còn lại.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Cấu trúc tổng thể của giáo trình được xây dựng theo các chủ đề; mỗi chủ đề được liên kết thống nhất với một hệ thống các từ vựng và cấu trúc ngữ pháp cơ bản, bài tập ứng dụng, kỹ năng và tìm hiểu văn hóa.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Trong mỗi bài học, nội dung học được chia thành các phần như: luyện từ vựng, luyện ngữ pháp cơ bản, luyện tập kỹ năng nghe – nói – đọc – viết, luyện phát âm, tìm hiểu văn hóa của đất nước Hàn Quốc xinh đẹp. Và kết thúc mỗi bài đều có thêm bảng từ mới xuất hiện trong bài học.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Phần cuối của sách, các tác giả đưa ra hệ thống từ mới được sắp xếp theo thứ tự của bảng chữ cái. Đây là những từ không xuất hiện trong phần ngữ pháp, từ vựng cơ bản; nhưng lại xuất hiện nhiều ở phần luyện tập của từng bài.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Học Giáo trình tiếng Hàn tổng hợp cùng hệ thống app MCBooks tiện dụng mọi lúc mọi nơi\n" +
+                "\n" +
+                "Các cuốn trong bộ Giáo trình tiếng Hàn tổng hợp đều được hỗ trợ kèm theo app MCBooks hiện đại. Tất cả những tài liệu cần thiết trong quá trình học bài khóa, bài nghe đều được tích hợp trên app MCBooks. Người học chỉ cần tải app, quét mã là có thể học tiếng Hàn, luyện tập phản xạ nghe – nói hay thực hành các bài tập trong sách giáo trình mọi lúc mọi nơi một cách dễ dàng, tiện dụng. Nếu người học khai thác triệt để tài liệu luyện nghe và bài tập luyện tập trong app, kết hợp song song với học giáo trình trong sách in thì chắc chắn việc học tập sẽ đạt hiệu quả cao hơn rất nhiều, nhanh chóng cải thiện khả năng nói tiếng Hàn và ngày càng yêu thích thứ ngôn ngữ tuyệt vời này.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Có thể nói, Giáo trình tiếng Hàn tổng hợp Sơ cấp 1 nằm trong bộ giáo trình được xây dựng hết sức công phu trên cơ sở những nghiên cứu sâu sắc môi trường học tiếng Hàn tại Việt Nam, cũng như nghiên cứu chiến lược học tiếng Hàn của người Việt. Giáo trình được biên soạn dựa trên những kinh nghiệm thực tế và nền tảng lý luận sư phạm được tích lũy từ những chuyên gia dạy tiếng Hàn hàng đầu. Vì vậy,  bộ Giáo trình tiếng Hàn tổng hợp phiên bản mới – Sơ cấp 1 là sự lựa chọn hoàn hảo cho những người yêu thích và muốn chinh phục thứ ngôn ngữ này");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/337bf81a572e11cd6cd5eaefa08b2298");
+        variant_1.setWeight(420.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1000));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602359_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Cây Cam Ngọt Của Tôi");
+        productInput.setShopId(602359);
+        productInput.setTradeMarkId("1671551420775935");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/4dd18d2d7f32298b6886ac3557cc1bc9");
+        images.add("https://cf.shopee.vn/file/483589092a58edfc94bcd3e824e00f2d");
+        images.add("https://cf.shopee.vn/file/ff17278247de9ca6fb17b29675e1b877");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/414cdecac5e1b3dd08f34827bdbca1c7");
+        productInput.setDescription("Nhà Phát Hành  Nhã Nam\n" +
+                "\n" +
+                "Tác giả: José Mauro de Vasconcelos\n" +
+                "\n" +
+                "Dịch giả: Nguyễn Bích Lan , Tô Yến Ly\n" +
+                "\n" +
+                "Nhà xuất bản: Hội nhà văn\n" +
+                "\n" +
+                "Số trang: 244\n" +
+                "\n" +
+                "Kích thước: 14 x 20.5 cm\n" +
+                "\n" +
+                "Ngày phát hành: 2022\n" +
+                "\n" +
+                "Hơn nửa thế kỷ trôi qua kể từ lần đầu tiên cậu bé Zezé bước vào văn chương và ở lại đó cùng với cây cam ngọt ngào lẫn đắng chát của mình, độc giả tiếp tục khóc cười với cuốn tiểu thuyết thành công nhất của nhà văn José Mauro de Vasconcelos (1920 - 1984) - Cây cam ngọt của tôi (Nguyễn Bích Lan - Tô Yến Ly dịch, Nhã Nam và Nhà xuất bản Hội Nhà Văn).\n" +
+                "\n" +
+                "Cuốn sách xuất bản lần đầu năm 1968 ở Brazil, khi cơn sốt văn chương châu Mỹ Latin đang lan dần ra toàn thế giới.\n" +
+                "\n" +
+                "Nếu Hảo hán nơi trảng cát của Jorge Amado (1912 - 2002) là cuộc sống của những đứa trẻ mồ côi ở Salvador thì Cây cam ngọt của tôi là cuộc đời của những con người trong khu xóm nghèo ở thủ đô Rio de Janeiro.\n" +
+                "\n" +
+                "Ở đó, những người lớn tất tả trong cuộc mưu sinh bỏ quên chú bé Zezé nghịch ngợm chật vật trong thế giới tuổi thơ của mình. Trước một thế giới ảm đạm buồn chán, Zezé phải bày đủ trò quậy phá đến mức bị đòn roi.\n" +
+                "\n" +
+                "Zezé lấy trí tưởng tượng để làm vũ khí chống lại thế giới người lớn quay cuồng trong tiền bạc nhưng thiếu vắng hạnh phúc và ước mơ. Cậu đặt tên cho cây cam trong vườn là Minguinho và như hai người bạn, chúng trò chuyện với nhau, cùng nhau bước qua một tuổi thơ khốn khó nhưng không tuyệt vọng.\n" +
+                "\n" +
+                "Câu chuyện đơn giản nhuốm màu sắc tự truyện vẫn khiến cuốn sách gặt hái được thành công quốc tế, trở thành một tác phẩm mang tính giáo dục cao, dẫu tác giả không tuyên ngôn dưới bất kỳ hình thức nào.\n" +
+                "\n" +
+                "Tác phẩm được đưa vào chương trình tiểu học, chuyển thể thành phim và cách đây không lâu trở thành nguồn cảm hứng sáng tạo cho một ngôi sao K-pop.\n" +
+                "\n" +
+                "Thời đại bất an mà nhà văn sống là thời đại của những nhà độc tài, những cuộc cách mạng, nội chiến liên miên.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Cho nên tác phẩm không chỉ là hành trình hướng thiện của một đứa trẻ mà còn là cuộc chiến thu nhỏ diễn ra ở chốn tận cùng, nơi con người chống lại sự tàn nhẫn của cuộc đời để bảo vệ sự ngây thơ của thế giới.");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/414cdecac5e1b3dd08f34827bdbca1c7");
+        variant_1.setWeight(120.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(500));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -38,9 +38,7 @@ public class CartDetailController {
             throw new ServiceException("not_found", "Không tìm thấy thông tin giỏ hàng :" + userId, "Cart not found");
         }
         List<CartItem> cartItems = cartManager.getCartItems(cart.getId());
-        HashMap<Integer, List<CartItem>> mapShopTos = null;
         if (null != cartItems || cartItems.size() != 0) {
-            mapShopTos = new HashMap<>();
             for (CartItem cartItem : cartItems) {
                 ProductVariant variant = cartItem.getProductVariant();
                 Product product = productManager.getProduct(variant.getProductId());
@@ -48,20 +46,11 @@ public class CartDetailController {
                 if (null == shopId) {
                     continue;
                 }
-                List<CartItem> cartItemList = mapShopTos.get(shopId);
-                if (null == cartItemList) {
-                    cartItemList = new ArrayList<>();
-                    cartItemList.add(cartItem);
-                    mapShopTos.put(shopId, cartItemList);
-                } else {
-                    cartItemList.add(cartItem);
-                }
+                cartItem.setShopId(shopId);
 
             }
         }
-        if (null != mapShopTos) {
-            cartDetail.setItemToShops(mapShopTos);
-        }
+        cartDetail.setItemToShops(cartItems);
 //        List<ActivityLog> activityLogs = cartManager.getActivityLogs(cart.getId());
 //        cartDetail.setActivityLogs(activityLogs);
         cartDetail.setCart(cart);

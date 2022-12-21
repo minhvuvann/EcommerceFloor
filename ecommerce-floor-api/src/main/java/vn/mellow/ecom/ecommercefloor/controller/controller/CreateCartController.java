@@ -4,14 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.manager.CartManager;
+import vn.mellow.ecom.ecommercefloor.manager.ProductManager;
 import vn.mellow.ecom.ecommercefloor.model.cart.Cart;
 import vn.mellow.ecom.ecommercefloor.model.cart.CartDetail;
 import vn.mellow.ecom.ecommercefloor.model.cart.CartItem;
+import vn.mellow.ecom.ecommercefloor.model.product.Product;
+import vn.mellow.ecom.ecommercefloor.model.product.ProductVariant;
 
 import java.util.List;
 
 @Component
 public class CreateCartController {
+
+    @Autowired
+    private ProductManager productManager;
     @Autowired
     private CartManager cartManager;
 
@@ -59,6 +65,10 @@ public class CreateCartController {
             throw new ServiceException("not_found", "Vui lòng nhập thông tin mã giỏ hàng.", "cart id is not available");
 
         }
+        ProductVariant variant = cartItem.getProductVariant();
+        Product product = productManager.getProduct(variant.getProductId());
+        Integer shopId = product.getShopId();
+        cartItem.setShopId(shopId);
         CartItem cartItemExist = cartManager.getCartItem(cartItem.getCartId(), cartItem.getProductVariant().getId());
         if (null != cartItemExist) {
             cartManager.updateCartQuantity(cartItem.getCartId(), cartItem.getQuantity(), cartItem.getTotalPrice());
