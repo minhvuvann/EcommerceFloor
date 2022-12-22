@@ -12234,4 +12234,885 @@ class EcommerceFloorTest {
             e.printStackTrace();
         }
     }
+
+    //
+    @Test
+    public void testProduct_602360_1() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách 300 Miếng Bóc Dán Thông Minh");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/1e4af2c55e7354b2dea34a1fb8615039");
+        images.add("https://cf.shopee.vn/file/b4a134e6a2d3372bd40fa3125b0bc2e8");
+        images.add("https://cf.shopee.vn/file/c9dd53569e97ad2897c7c7e2c353b96a");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/08cfa550ab697507891a62e41d69ae46");
+        productInput.setDescription("300 Miếng Bóc Dán Thông Minh - Bộ 6 quyển\n" +
+                "\n" +
+                "3-6 tuổi là giai đoạn bộ não của trẻ phát triển nhanh nhất để có thể nhận thức được màu sắc, hình khối, đồ vật, phát triển mạnh mẽ về cả ngôn ngữ, tư duy logic và khả năng sáng tạo... Cũng bởi thế mà trẻ cần có những \"công cụ\" phù hợp để có thể nâng cao được toàn diện những kỹ năng của mình. Bộ sách 300 miếng bóc dán thông minh là một \"thiết kế\" đặc biệt phù hợp cho trẻ ở độ tuổi này. Bộ sách gồm 6 cuốn, bao hàm tổng quát các lĩnh vực phát triển tư duy cần thiết, sẽ giúp trẻ:\n" +
+                "\n" +
+                "\n" +
+                "- Phát huy tối đa khả năng nhận biết thế giới xung quanh, các hình khối, đồ vật.\n" +
+                "- Nâng cao khả năng sáng tạo và tư duy logic, giúp bé tạo ra những \"tác phẩm\" độc đáo mang cá tính riêng.\n" +
+                "- Nhận biết và phân biệt được chính xác giữa bộ phận cơ thể người và động vật\n" +
+                "- Rèn luyện khả năng ngôn ngữ linh hoạt, biết vận dụng ngôn ngữ thích hợp trong mỗi tình huống.\n" +
+                "- Rèn luyện thói quen sinh hoạt nề nếp và khoa học.\n" +
+                "\n" +
+                "\n" +
+                "~~~~~~\n" +
+                "Công ty phát hành        Đinh Tị\n" +
+                "Tác giả        Ưu Ưu Thử\n" +
+                "Ngày xuất bản        3/2021\n" +
+                "Kích thước        24 x 17 cm\n" +
+                "Nhà xuất bản        NXB Thanh Niên\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        108");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/08cfa550ab697507891a62e41d69ae46");
+        variant_1.setWeight(150.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(300));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_2() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách 365 Chuyện Kể Trước Giờ Đi Ngủ (Combo 2 quyển)");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/1cb376e86d8e40a519aeb2c7f9d6da6b");
+        images.add("https://cf.shopee.vn/file/c043637549dd90dba18a6df47fe7b12e");
+        images.add("https://cf.shopee.vn/file/dbf944d9ac2fc1914a766033a91b539d");
+        images.add("https://cf.shopee.vn/file/38c0458c8d186c7889e65aad13cec447");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/a22e03d0f31cd4597a490806ccad35e5");
+        productInput.setDescription("Mỗi buổi tối trước giờ đi ngủ, các bậc cha mẹ đừng quên đọc truyện cho con em mình. Những câu chuyện có nội dung hay, nhân vật lại vô cùng gần gũi, cuối mỗi truyện lại có mục. “Bài học nhỏ” - nhẹ nhàng mà sâu sắc chắc chắn sẽ giúp các em trở nên thông minh hơn, lương thiện hơn, biết quan tâm, yêu thương mọi người, yêu cuộc sống và có sức sáng tạo. Mỗi ngày cha mẹ cùng trẻ đọc một câu chuyện, những điều tiếp thu được sẽ là tài sản tinh thần to lớn giúp ích cho các em trong suốt cuộc đời.\n" +
+                "***\n" +
+                "365 Chuyện Kể Trước Giờ Đi Ngủ gồm 2 quyển:\n" +
+                "- Những Câu Chuyện Phát Triển Chỉ Số Tình Cảm EQ\n" +
+                "- Những Câu Chuyện Phát Triển Chỉ Số Thông Minh IQ\n" +
+                " \n" +
+                "-----\n" +
+                "Công ty phát hành        Đinh Tị\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Thế Giới\n" +
+                "Phiên bản        2017\n" +
+                "Kích thước        13 x 20.5 cm\n" +
+                "Tác giả        Ngọc Linh (biên soạn)\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        244 trang/ 1 quyển * 2 quyển\n" +
+                "Ngày xuất bản        04-2017");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/a22e03d0f31cd4597a490806ccad35e5");
+        variant_1.setWeight(300.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(700));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_3() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Đồng dao, thơ, truyện cho bé tập nói");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/e401dffd894cad277ca99a7baccf53db");
+        images.add("https://cf.shopee.vn/file/81530dfac0159064aa25fc9009172d05");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/33752b698d9fc316fc29eb52683be053");
+        productInput.setDescription("Sách Đồng dao, thơ, truyện cho bé tập nói \n" +
+                "\n" +
+                "Ngay từ năm đầu đời, bé đã có thể bập bẹ những tiếng nói đầu tiên, theo thời gian ngôn ngữ của bé càng được hoàn thiện và phát triển. Đọc sách cho bé nghe để khuyến khích bé tập nói là một trong những phương pháp tối ưu và hữu dụng nhất giúp bé phát triển ngôn ngữ\n" +
+                "\n" +
+                "\n" +
+                "ĐỒNG DAO: Là thơ ca truyền miệng dân gian, có nhịp, có vần. Trẻ em nhỏ chưa hiểu lời, thích đồng dao vì chỉ cần mẹ đọc cho nghe, vé dậm chậm chân, vỗ vỗ tay theo nhịp.Bé lớn hơn càng thích đồng dao vì các bé có thể vừa hát đồng dao, vừa chơi các trò chơi gắn với đồng dao...\n" +
+                "\n" +
+                "THƠ: Tuyển chọn những bài thơ hay, ngắn và ngộ nghĩnh theo chủ để:\n" +
+                "\n" +
+                "TRUYỆN: Gồm những câu truyện ngắn, nhỏ, dễ đọc, dễ hiểu nội dung phong phú, thông qua mỗi câu truyện là một bài học nho nhỏ, giúp bé rèn luyện tính cách tốt. Dung lượng chữ trong mỗi truyện phù hợp với sự tiếp nhận của các bé ở giai đoạn tập nói và phát triển ngôn ngữ.\n" +
+                "\n" +
+                "Những cuốn sách minh họa sinh động, không chỉ giúp bé phát triển ngôn ngữ đúng theo tiêu chí : PHÁT TRIỂN NGÔN NGỮ TỪ TRONG NÔI - mà còn giúp bé ngày càng hiểu hơn về thế giới xung quanh mình!\n" +
+                "Sau mỗi phần đều có mục trò chơi rèn luyện tư duy và tập kể chuyện theo tranh!\n" +
+                "\n" +
+                "\n" +
+                "Cty phát hành Đại Mai\n" +
+                "Tác giả        Hải Minh, T-Books minh họa\n" +
+                "Ngày xuất bản        01-2019\n" +
+                "Kích thước        20,5x28,5\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Phụ Nữ\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        128");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/33752b698d9fc316fc29eb52683be053");
+        variant_1.setWeight(150.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(320));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_4() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Ehon Kĩ Năng Sống Miu Miu Tự Lập Combo 6 quyển (16 tuổi)");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/d0a9b8b4086cf36a1f2fedbe71ea38a1");
+        images.add("https://cf.shopee.vn/file/99ff514e0d654a6b3041827876bce01f");
+        images.add("https://cf.shopee.vn/file/c3737d639b5605e4b1e4c67f71acd2f0");
+        images.add("https://cf.shopee.vn/file/f5f40093428713af0c7b92501cee646e");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/2bb9a4138e7f56201cc45d89b3b8cb7e");
+        productInput.setDescription("Ehon Kĩ Năng Sống - Miu Miu Tự Lập - Combo 6 quyển (1-6 tuổi)\n" +
+                "\n" +
+                "Trọn bộ Miu Miu Tự Lập gồm 6 quyển:\n" +
+                "- Miu Miu Tự Lập - Đánh Răng (1-6 tuổi)\n" +
+                "- Miu Miu Tự Lập - Đi Tắm (1-6 tuổi)\n" +
+                "- Miu Miu Tự Lập - Mặc Quần Áo (1-6 tuổi)\n" +
+                "- Miu Miu Tự Lập - Đi Ị (1-6 tuổi)\n" +
+                "- Miu Miu Tự Lập - Xúc Cơm Ăn (1-6 tuổi)\n" +
+                "- Miu Miu Tự Lập - Thay Răng Sữa (1-6 tuổi)\n" +
+                "\n" +
+                "Miu Miu là bộ sách giúp con hình thành thói quen tự lập rất nên đọc ngay khi bé lên 2 tuổi, là những công việc đơn giản hàng ngày như đánh răng, tự xúc cơm ăn, tự con mặc quần áo. Từng công việc nhỏ thôi nhưng góp phần rất lớn đến việc hình thành tính cách độc lập của con sau này!\n" +
+                "\n" +
+                "Khi bé đọc sách Miu Miu, bé sẽ đồng nhất hoá mình là bạn Miu Miu và sẽ hành động y chang bạn Miu Miu vì bé cảm nhận thấy Miu Miu là nhân vật được ba mẹ yêu quý. Những bài học về kỹ năng sống đơn giản qua những trang sách Ehon mà bé học được từ bạn Miu Miu sẽ nuôi dưỡng tâm hồn bé.\n" +
+                "\n" +
+                "\n" +
+                "-*-*-*-*-*-\n" +
+                "Công ty phát hành        CÔNG TY CỔ PHẦN MUKI VIỆT NAM\n" +
+                "Tác giả        Nhiều tác giả \n" +
+                "Ngày xuất bản        02-2020\n" +
+                "Kích thước        18 x 18 cm\n" +
+                "Nhà xuất bản        NXB Phụ Nữ Việt Nam\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        28 trang/ 1 quyển * 6 quyển");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/2bb9a4138e7f56201cc45d89b3b8cb7e");
+        variant_1.setWeight(450.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(720));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_5() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách - Ehon Kĩ Năng Sống - Miu Bé Nhỏ - Bộ 8 quyển (1-6 tuổi) ");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/f50c332fc5401d2e59a1c3b7be9718e3");
+        images.add("https://cf.shopee.vn/file/86d0f1df1f3697311aae47ed94d30be7");
+        images.add("https://cf.shopee.vn/file/089871b0a2907193fb6179c201e327d1");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/e8f280723c41f0fa3e68d0eedbc3b4f9");
+        productInput.setDescription("Ehon Kĩ Năng Sống - Miu Bé Nhỏ - Combo 8 quyển (1-6 tuổi) + Tặng ngay 1 bạn Miu nhồi bông xinh xắn số lượng có hạn:\n" +
+                "\n" +
+                "Duy nhất chỉ có 1000 Bản Đặc biệt do Thanh Hà Books độc quyền phát hành, các bé sẽ được tặng kèm 1 bạn Miu nhồi bông xinh xắn dễ thương.\n" +
+                "\n" +
+                "Chỉ có 1000 bạn Miu nhồi bông xinh xắn dễ thương tặng cho 1000 bộ đầu tiên. Do số lượng quà tặng có hạn, nên các ba mẹ hãy nhanh tay nhé!\n" +
+                "\n" +
+                "\n" +
+                "GIỚI THIỆU:\n" +
+                "\n" +
+                "Trẻ nhỏ lớn lên cần rất nhiều sự giúp đỡ và giáo dục của ba mẹ, nếu ba mẹ lơ đãng không đồng hành cùng con trên chặng đường phát triển này thì rất có thể các bé sẽ trở thành những người xấu trong tương lai. Vậy nên trẻ nhỏ rất cần sự sát cánh của ba mẹ.\n" +
+                "\n" +
+                "Bộ sách này là những “bức tranh” vẽ lại khung cảnh hỗn loạn và không thiếu sự hài hước của bạn Miu và cũng chính là hình ảnh của rất nhiều các bạn nhỏ. Với màu sắc cuốn sách nổi bật, hình vẽ thú vị và có nét nguệch ngoạc “hơi trẻ con” tạo sự gần gũi với các em nhỏ. Qua bộ sách, bé sẽ học được cách giúp đỡ người khác, giải quyết được tình huống sao cho giống được bạn “Miu bé nhỏ”.\n" +
+                "\n" +
+                "Nhắc lại cho con về những hành động ấy và sẽ điều chỉnh dần dần thói quen xấu của con bố mẹ nhé!!!\n" +
+                "\n" +
+                "Trọn bộ 8 quyển bao gồm:\n" +
+                "\n" +
+                "- Đừng Khóc Nhè Nhé!\n" +
+                "- Đừng Ăn Vạ Nhé!\n" +
+                "- Đừng Thức Khuya Nhé!\n" +
+                "- Đừng Mút Tay Nhé!\n" +
+                "- Đừng Đánh Chừa Nhé!\n" +
+                "- Đừng Xem Tivi Nhiều Nhé!\n" +
+                "- Đừng Tè Bậy Nhé!\n" +
+                "- Đừng Ị Đùn Nhé!\n" +
+                "\n" +
+                "Đặc biệt khi mua bộ sách này các bé sẽ được tặng kèm 1 chú gấu bông. Số lượng quà tặng có hạn nên ba mẹ hãy nhanh tay nhé!\n" +
+                "\n" +
+                "------\n" +
+                "Công ty phát hành        CÔNG TY CỔ PHẦN MUKI VIỆT NAM\n" +
+                "Tác giả        Nhiều tác giả \n" +
+                "Ngày xuất bản        04-2020\n" +
+                "Kích thước        20 x 20 cm\n" +
+                "Nhà xuất bản        NXB Phụ Nữ Việt Nam\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        214 trang/ Bộ 8 quyển");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/e8f280723c41f0fa3e68d0eedbc3b4f9");
+        variant_1.setWeight(750.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(1200));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_6() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách - Ehon Kích Thích Thị Giác - Song Ngữ - Black and White books ");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/a7561af53961e0c05154ec38c73c4b4b");
+        images.add("https://cf.shopee.vn/file/f18d564816c029d522591d206ac1574a");
+        images.add("https://cf.shopee.vn/file/ce0c180287a256bcffbefe38009a8606");
+        images.add("https://cf.shopee.vn/file/e11e16dad26136100912ae5362f1d944");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/6e0d8c108524f0e737d7d4b1aebca5ee");
+        productInput.setDescription("Ehon Kích Thích Thị Giác - Song Ngữ - Black and White books (Bộ 6 quyển) gồm các chủ đề:\n" +
+                "\n" +
+                "- Chúc Bé Ngủ Ngon\n" +
+                "- Xin Chào Các Bạn Động Vật\n" +
+                "- Xin Chào Các Bạn Hình Khối\n" +
+                "- Xin Chào Các Bạn Sinh Vật Bé Nhỏ\n" +
+                "- Xin Chào Các Bạn Sinh Vật Biển\n" +
+                "- Xin Chào Các Bạn Phương Tiện Giao Thông\n" +
+                "\n" +
+                "Việc nâng cao khả năng ghi nhớ vốn từ tiếng anh là bước đệm vô cùng quan trọng, hiểu được điều này, Black and White book sẽ giúp bé ghi nhớ cực nhanh và làm quen với rất nhiều chủ đề gần gũi thân thuộc\n" +
+                "Hình ảnh kèm theo sinh động, hấp dẫn theo từng chủ đề giúp bé dễ dàng nhận biết, tạo cho bé sự hào hứng khi bắt đầu bài học.\n" +
+                "Việc ghi nhớ từ vựng chưa bao giờ dễ dàng hơn thế. Hãy để Black and White book trở thành người bạn đồng hành cùng bé yêu học tiếng anh ngay từ những từ ngữ đầu tiên.\n" +
+                "\n" +
+                "_______ _ _ _ _ _______\n" +
+                "Công ty phát hành        CÔNG TY CỔ PHẦN MUKI VIỆT NAM\n" +
+                "Tác giả        Kawa\n" +
+                "Kích thước        20 x 20 cm\n" +
+                "Nhà xuất bản        NXB Phụ Nữ Việt Nam\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Minh họa        Mai Anh Đỗ\n" +
+                "Ngày xuất bản        07-2020\n" +
+                "Số trang        24 trang/1q * 6 quyển");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/6e0d8c108524f0e737d7d4b1aebca5ee");
+        variant_1.setWeight(600.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(900));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_7() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Ehon Âm Thanh Màu Sắc Quanh Bé 0 3 Tuổi ");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/a6b93b2cfd855cf6869cf1a41d7ffcad");
+        images.add("https://cf.shopee.vn/file/7ff29e56e82b6c5072c91c5e02631f95");
+        images.add("https://cf.shopee.vn/file/dc592433c429a5b2598eec1022211fa4");
+        images.add("https://cf.shopee.vn/file/e64056ade75eed61ab06df95d11f2402");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/f5f952d2c6dd7c9ba8931a3d5fb542e8");
+        productInput.setDescription("Ehon Âm Thanh - Màu Sắc Quanh Bé  0 - 3 Tuổi (lẻ tùy chọn)\n" +
+                "\n" +
+                "A.        Ehon Âm Thanh (Bộ 3 quyển)\n" +
+                " “Cáo Ken và Đồ Vật\" mang tên “Lộp bộp lộp bộp”, gợi ra những âm thanh vô cùng “bắt tai” khi bạn cáo Ken sử dụng các đồ vật thường ngày: Gõ cánh cửa sẽ phát ra tiếng “cốc cốc cốc”, chiếc ô hứng mưa sẽ kêu “lộp bộp lộp bộp”, máy ảnh kêu “tách tách”, còn ô tô khởi động kêu “bờ-rừn, bờ-rừn”,… Mỗi đồ vật đều có những tiếng kêu đặc trưng giúp trẻ phân biệt được mà không cần phải ngước mắt lên nhìn. \n" +
+                "\n" +
+                "Công ty phát hành        Wabooks\n" +
+                "Tác giả        Fuku Mitsu\n" +
+                "Ngày xuất bản        03-2019\n" +
+                "Kích thước        20 x 20 cm\n" +
+                "Nhà xuất bản        Nhà Xuất Bản Lao Động - Xã Hội\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        69\n" +
+                "\n" +
+                "\n" +
+                "B. Ehon Âm Thanh Quanh Bé (0 - 6 tuổi) - Bộ 3 quyển\n" +
+                "- Ehon Âm Thanh Quanh Bé - Tùng Tùng (0 - 6 tuổi)\n" +
+                "- Ehon Âm Thanh Quanh Bé - Leng Keng (0 - 6 tuổi)\n" +
+                "- Ehon Âm Thanh Quanh Bé - Ùm Bò (0 - 6 tuổi)\n" +
+                "Nội dung đơn giản mà sâu sắc được thể hiện bằng những hình vẽ vô cùng đáng yêu ngộ nghĩnh cùng với những mảng màu lớn, chắc chắn sẽ khiến các bé vô cùng thích thú và hào hứng theo dõi. Hứa hẹn đây sẽ là một bộ sách gối đầu giường của bất kỳ bạn nhỏ nào đang trong độ tuổi lên 0 - 6 đấy. \n" +
+                "Công ty phát hành        Wabooks\n" +
+                "Tác giả        Fuku mitsu \n" +
+                "Ngày xuất bản        2020\n" +
+                "Kích thước        20 x 20 cm\n" +
+                "Nhà xuất bản        NXB Lao Động Xã Hội\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        28 trang/ 1 quyển\n" +
+                "\n" +
+                "C. Ehon Nhận Biết - Chơi Cùng Các Âm Thanh (1-6 tuổi) - Bộ 4 quyển bao gồm:\n" +
+                "1. Ehon Nhận Biết - Chơi Cùng Các Âm Thanh - Gâu Gâu, Quác Quác (1-6 tuổi)\n" +
+                "2. Ehon Nhận Biết - Chơi Cùng Các Âm Thanh - Tu Tu Bíp Bíp (1-6 tuổi)\n" +
+                "3. Ehon Nhận Biết - Chơi Cùng Các Âm Thanh - Ì Oạp Choang (1-6 tuổi)\n" +
+                "4. Ehon Nhận Biết - Chơi Cùng Các Âm Thanh - Oa Oa Tõm Tõm (1-6 tuổi)\n" +
+                "\n" +
+                "Bộ sách \"Ehon Nhận Biết - Chơi Cùng Các Âm Thanh\" đã ra đời và làm bạn đồng hành cùng các bé, qua cuốn sách bé được làm quen với những âm thanh rất đỗi quen thuộc trong cuộc sống, bé sẽ cảm thấy hào hứng khi chính những âm thanh bình thường lại được thể hiện thú vị và sinh động qua cuốn sách như tiếng kêu của các loại động vật, âm thanh của các loại phương tiện, hay âm thanh của các hoạt động sinh hoạt hàng ngày....\n" +
+                "Công ty phát hành        CÔNG TY CỔ PHẦN MUKI VIỆT NAM\n" +
+                "Tác giả        Kawa\n" +
+                "Minh họa        Minh Trang\n" +
+                "Ngày xuất bản        07-2020\n" +
+                "Kích thước        20 x 20 cm\n" +
+                "Nhà xuất bản        NXB Phụ Nữ Việt Nam\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        28 trang/ 1q * 4\n" +
+                "\n" +
+                "D. Ehon Kể Chuyện - Tuti Tuti (1-6 tuổi) - Bộ 3 quyển bao gồm\n" +
+                "\n" +
+                "1. Ehon Kể Chuyện - Tuti Tuti - Cục Ị Thối, Úm Ba La (1-6 tuổi)\n" +
+                "2. Ehon Kể Chuyện - Tuti Tuti - Bãi Tè, Roong Roong (1-6 tuổi)\n" +
+                "3. Ehon Kể Chuyện - Tuti Tuti - Rắm, Bủm Bủm (1-6 tuổi)\n" +
+                "Bộ sách Ehon Kể Chuyện Tuti - Tuti kể về các hoạt động bình thường của bé như \"đi ị\", \"tè dầm\", \"đánh rắm\", nhưng với một câu chuyện thú vị và độc đáo hơn. Các bé sẽ được học cách vệ sinh sao cho đúng cách và giữ vệ sinh cho mình. Bố mẹ có thể cùng đọc sách với trẻ, thông qua đó giáo dục trẻ nhận thức những điều ấy là không xấu và khuyến khích bé đi vệ sinh sao cho đúng\n" +
+                "Màu sắc cuốn sách nổi bật, hình vẽ thú vị và có nét nguệch ngoạc “hơi trẻ con” tạo sự gần gũi với các em nhỏ, tạo sự thân mật hơn đối với trẻ\n" +
+                "Công ty phát hành        CÔNG TY CỔ PHẦN MUKI VIỆT NAM\n" +
+                "Tác giả        Kawa\n" +
+                "Họa sĩ         Chây\n" +
+                "Ngày xuất bản        07-2020\n" +
+                "Kích thước        20 x 20 cm\n" +
+                "Nhà xuất bản        NXB Phụ Nữ Việt Nam\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        28 trang/ 1q * 3\n" +
+                "\n" +
+                "E. Ehon Màu Sắc Quanh Ta (Bộ 4 quyển) (3-6 tuổi)\n" +
+                "Giới thiệu bộ sách:\n" +
+                "Trọn bộ Ehon “Màu sắc quanh ta” gồm 4 quyển:\n" +
+                "- Cả Nhà Giống Nhau\n" +
+                "- Vịt Con Goro Sặc Sỡ\n" +
+                "- Màu Sắc Chơi Trốn Tìm\n" +
+                "- Nếu Mặt Trăng Có Thể Đổi Màu\n" +
+                "\n" +
+                "Công ty phát hành        Wabooks\n" +
+                "Tác giả        Heian Akira\n" +
+                "Ngày xuất bản        02-2020\n" +
+                "Kích thước        20 x 20 cm \n" +
+                "Nhà xuất bản        Nhà xuất bản Lao Động Xã Hội\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        24 trang/ 1 quyển * 4 quyển\n" +
+                "\n" +
+                "F.  Ehon Nhận Biết - Đoán Dấu Chân Xinh - Tớ Là Ai? - Combo 3 quyển (Song ngữ Anh - Việt cho bé 1-6 tuổi)\n" +
+                "Đoán dấu chân xinh BỘ SÁCH KÍCH THÍCH THỊ GIÁC & PHÁT TRIỂN TƯ DUY DÀNH CHO BÉ TỪ 0 - 6 TUỔI \n" +
+                "Combo gồm 3 quyển, mỗi 1 quyển gồm 3 phần:\n" +
+                "+ Mở đầu là \"Hướng dẫn cách đọc Picture Book khoa học cho bé\"\n" +
+                "+ Phần 2: Truyện tranh song ngữ về dấu chân của các loài động vật\n" +
+                "+ Phần 3: Hiểu biết vui\n" +
+                "1. Tập 1:\n" +
+                "Với tập đầu tiên này tác giả Ota Umme giới thiệu với các bé những đặc điểm dấu chân của các loài động vật quen thuộc như voi, mèo, gấu trúc,... \n" +
+                "2. Tập 2: \n" +
+                "Tiếp nối với tập 1, tập 2 mang đến cho các bé những dấu chân vô cùng đáng yêu của các bạn sư tử, bò sữa, cô bé,...\n" +
+                "\"Chúa tể rừng xanh\n" +
+                "Gầm vang khắp chốn\n" +
+                "Dấu chân để lại\n" +
+                "Biết tớ là ai? \n" +
+                "- Tớ là Sư tử (À uồm! À uồm! À uồm!)\"\n" +
+                "3. Tập 3:\n" +
+                "Kết thúc bộ sách \"Đoán dấu chân xinh\" là cuốn sách tập 3 này với những dấu chân vô cùng đặc biệt và mới lạ của các bạn chuột túi,vịt, trẻ em,... \n" +
+                "\"Bốn chân móng guốc\n" +
+                "Nước đại tớ phi\n" +
+                "Vang tiếng \"Hí! Hí!\"\n" +
+                "Nhìn dấu chân đi\n" +
+                "Tớ là ai thế?\n" +
+                "- Tớ là Ngựa (Hí! Hí! Hí!)\"\n" +
+                "\n" +
+                "Công ty phát hành        CÔNG TY CỔ PHẦN MUKI VIỆT NAM\n" +
+                "Tác giả        Ota Umme\n" +
+                "Ngày xuất bản        08-2019\n" +
+                "Kích thước        19 x 20.3 cm\n" +
+                "Nhà xuất bản        NXB Phụ Nữ \n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        32 trang/ 1 quyển * 3 quyển");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/f5f952d2c6dd7c9ba8931a3d5fb542e8");
+        variant_1.setWeight(500.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(750));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_8() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách 10 vạn câu hỏi vì sao (Bộ 5q) Huy Hoàng");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/9a119ba3c57e75e7683eea0e086a7609");
+        images.add("https://cf.shopee.vn/file/41c3ca08f296d7cb731a27eec45b2531");
+        images.add("https://cf.shopee.vn/file/45fdfeb35a7b1f92d342875e83878333");
+        images.add("https://cf.shopee.vn/file/4f90082991919d81dfc5585232fe2f27");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/0437cbc06457377fe598e3fc9f2fe51b");
+        productInput.setDescription("10 vạn câu hỏi vì sao (Bộ 5q) - Huy Hoàng\n" +
+                "\n" +
+                "Đứng trước thế giới với bao kì diệu, mang trong mình sự tò mò, khát khao tìm hiểu, câu hỏi thường thấy nhất ở trẻ là \"Vì sao?\". \"Vì sao phải hít thở?\", \"Vì sao Vịt có thể bơi trên mặt nước?\"… Quả thực, những câu hỏi \"Vì sao?\" đó khiến người lớn chúng ta cũng khó mà trả lời để con trẻ hiểu được.\n" +
+                "\n" +
+                "Bộ sách 10 Vạn Câu Hỏi Vì Sao sẽ giúp các bậc phụ huynh tháo gỡ những khúc mắc của trẻ. Bộ sách gồm:\n" +
+                "\n" +
+                "10 Vạn Câu Hỏi Vì Sao - Thực Vật\n" +
+                "10 Vạn Câu Hỏi Vì Sao - Động Vật\n" +
+                "10 Vạn Câu Hỏi Vì Sao - Con Người\n" +
+                "10 Vạn Câu Hỏi Vì Sao - Vũ Trụ Kỳ Bí\n" +
+                "10 Vạn Câu Hỏi Vì Sao - Bí Ẩn Quanh Ta.\n" +
+                "0-0-0-0\n" +
+                "Công ty phát hành        Huy Hoàng Bookstore\n" +
+                "Tác giả        Đức Anh\n" +
+                "Ngày xuất bản        08-2016\n" +
+                "Kích thước        13.5 x 20.5 cm\n" +
+                "Nhà xuất bản        Nhà Xuất Bản  Dân Trí\n" +
+                "Loại bìa        Bìa mềm\n" +
+                "Số trang        962 trang/5 quyển");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/0437cbc06457377fe598e3fc9f2fe51b");
+        variant_1.setWeight(500.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(850));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_9() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách 200 Miếng bóc dán thông minh 2-6 tuổi");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/4b794e7261dd70652efbd07df7a3e9cb");
+        images.add("https://cf.shopee.vn/file/ccc3f54c09c48feab02e85e8113f0450");
+        images.add("https://cf.shopee.vn/file/9a6c6eedbec48a9b0de1d0efc0643b36");
+        images.add("https://cf.shopee.vn/file/ffc85be3a5609f9e26ed2a39c7e422d6");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/6fac2b24476ac714301113a01e902146");
+        productInput.setDescription("200 Miếng bóc dán thông minh 2-6 tuổi gồm 12 cuốn:\n" +
+                "1.        200 Miếng bóc dán thông minh 2-6 tuổi - Nhận biết rau củ quả\n" +
+                "2.        200 Miếng bóc dán thông minh 2-6 tuổi - Đồ chơi của bé\n" +
+                "3.     200 Miếng bóc dán thông minh 2-6 tuổi - Bé học Toán\n" +
+                "4.        200 Miếng bóc dán thông minh 2-6 tuổi - Bé học Tiếng Anh\n" +
+                "5.        200 Miếng bóc dán thông minh 2-6 tuổi - Rèn luyện ngôn ngữ\n" +
+                "6.        200 Miếng bóc dán thông minh 2-6 tuổi - Phát triển chỉ số Tình cảm EQ\n" +
+                "7.        200 Miếng bóc dán thông minh 2-6 tuổi - Phát triển chỉ số Thông minh IQ\n" +
+                "8.        200 Miếng bóc dán thông minh 2-6 tuổi - Bé làm quen với Toán\n" +
+                "9.        200 Miếng bóc dán thông minh 2-6 tuổi - Khủng long\n" +
+                "10.   200 Miếng bóc dán thông minh 2-6 tuổi - Bảng chữ cái\n" +
+                "11.   200 Miếng bóc dán thông minh 2-6 tuổi - Phương tiện giao thông\n" +
+                "12.        200 Miếng bóc dán thông minh 2-6 tuổi - Các loài động vật\n" +
+                "\n" +
+                "Đây là cuốn sách được tuyển chọn và những trò chơi dán hình, giúp cho đôi tay của các em thêm linh hoạt, khéo léo, nhận biết được các hình để bóc và dán cho đúng chỗ...\n" +
+                "Trong sách có tặng kèm hơn 80 miếng bóc dán. Xin trân trọng giới thiệu.\n" +
+                "-------\n" +
+                "Công ty phát hành Đinh Tị\n" +
+                "Tác giả Nhiều tác giả\n" +
+                "Nhà xuất bản Nhà xuất bản Thanh Niên\n" +
+                "Năm xuất bản 2018\n" +
+                "Kích thước 25 x 26.3 cm\n" +
+                "Số trang 25\n" +
+                "Hình thức Bìa Mềm");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/6fac2b24476ac714301113a01e902146");
+        variant_1.setWeight(300.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(450));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testProduct_602360_10() {
+        List<IndustrialProduct> industrialProducts = null;
+        try {
+            industrialProducts = productController.getListIndustrial();
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        //------1
+        CreateProductInput createProductInput1 = new CreateProductInput();
+        Product productInput = new Product();
+        productInput.setName("Sách Mê cung phát triển tư duy");
+        productInput.setShopId(602360);
+        productInput.setTradeMarkId("1671551420776021");
+        productInput.setIndustrialId(productManager.getIndustrialProduct("Nhà sách online").getId());
+        productInput.setIndustrialTypeName("Nhà sách online");
+        List<String> images = new ArrayList<>();
+        images.add("https://cf.shopee.vn/file/b0464e9f49a7141eb87a5b201ab9c03f");
+        images.add("https://cf.shopee.vn/file/bbcf2b661eb2c4d817f3712a5d8c75d3");
+        images.add("https://cf.shopee.vn/file/641992cf649024d9ef3c2c37dccfcfe5");
+        images.add("https://cf.shopee.vn/file/873ac0740dd05eda747999e77cd9364f");
+        images.add("https://cf.shopee.vn/file/74920d1dc7ed8ed537213970415ea2eb");
+        images.add("https://cf.shopee.vn/file/dbe6365a4c7dc5b6a5e64339f7da1e5b");
+        productInput.setImageUrls(images);
+        productInput.setFeaturedImageUrl("https://cf.shopee.vn/file/d8a113e578ff642e30864c494b647997");
+        productInput.setDescription("Mê cung phát triển tư duy bao gồm:\n" +
+                "\n" +
+                "1. Mê cung phát triển tư duy 1\n" +
+                "\n" +
+                "Công ty phát hành    Pingbooks\n" +
+                "Tác giả     Nhiều Tác Giả\n" +
+                "Ngày xuất bản    10-2017\n" +
+                "Kích thước     21.5 x 25 cm\n" +
+                "Nhà xuất bản     Nhà Xuất Bản Phụ Nữ\n" +
+                "Loại bìa     Bìa mềm\n" +
+                "Số trang: 32 trang\n" +
+                "\n" +
+                "2. Mê cung phát triển tư duy 2\n" +
+                "\n" +
+                "Công ty phát hành    Pingbooks\n" +
+                "Tác giả     Nhiều Tác Giả\n" +
+                "Ngày xuất bản    10-2017\n" +
+                "Kích thước     21.5 x 25 cm\n" +
+                "Nhà xuất bản     Nhà Xuất Bản Phụ Nữ\n" +
+                "Loại bìa     Bìa mềm\n" +
+                "Số trang: 64 trang\n" +
+                "\n" +
+                "3. Mê cung phát triển tư duy 3\n" +
+                "\n" +
+                "Công ty phát hành    Pingbooks\n" +
+                "Tác giả     Nhiều Tác Giả\n" +
+                "Ngày xuất bản    10-2017\n" +
+                "Kích thước     21.5 x 25 cm\n" +
+                "Nhà xuất bản     Nhà Xuất Bản Phụ Nữ\n" +
+                "Loại bìa     Bìa mềm\n" +
+                "Số trang: 64 trang\n" +
+                "\n" +
+                "4. Mê cung phát triển tư duy 4\n" +
+                "\n" +
+                "Công ty phát hành    Pingbooks\n" +
+                "Tác giả     Nhiều Tác Giả\n" +
+                "Ngày xuất bản    10-2017\n" +
+                "Kích thước     21.5 x 25 cm\n" +
+                "Nhà xuất bản     Nhà Xuất Bản Phụ Nữ\n" +
+                "Loại bìa     Bìa mềm\n" +
+                "Số trang: 64 trang\n" +
+                "\n" +
+                "5. Mê cung phát triển tư duy - Du hành vũ trụ\n" +
+                "\n" +
+                "Công ty phát hành    Pingbooks\n" +
+                "Tác giả     Nhiều Tác Giả\n" +
+                "Ngày xuất bản    10-2017\n" +
+                "Kích thước     21.5 x 25 cm\n" +
+                "Nhà xuất bản     Nhà Xuất Bản Phụ Nữ\n" +
+                "Loại bìa     Bìa mềm\n" +
+                "Số trang: 64 trang\n" +
+                "\n" +
+                "6. Mê cung phát triển tư duy - Khám phá thế giới\n" +
+                "\n" +
+                "Công ty phát hành    Pingbooks\n" +
+                "Tác giả     Nhiều Tác Giả\n" +
+                "Ngày xuất bản    10-2017\n" +
+                "Kích thước     21.5 x 25 cm\n" +
+                "Nhà xuất bản     Nhà Xuất Bản Phụ Nữ\n" +
+                "Loại bìa     Bìa mềm\n" +
+                "Số trang: 64 trang\n" +
+                "\n" +
+                "Bộ sách Mê Cung Phát Triển Tư Duy đúng như tên gọi của 6 tập sách, giúp trẻ phát triển rất nhiều kĩ năng thông qua việc tìm đường đi trong mê cung:\n" +
+                "\n" +
+                "+ Khả năng quan sát\n" +
+                "+ Khả năng phân tích\n" +
+                "+ Rèn luyện tính kiên trì\n" +
+                "+ Rèn luyện tinh thần trách nhiệm\n" +
+                "\n" +
+                "Ngoài ra, bộ sách Mê Cung Phát Triển Tư Duy còn có một số ưu điểm nổi bật:\n" +
+                "Củng cố kiến thức về màu sắc. Sách được in màu hoàn toàn giúp trẻ nhận diện được màu sách một cách chính xác và đa dạng. Chủ đề mê cung đa dạng. Từ công viên, nông trại, động vật cho tới các vì sao, sân bay…Mở mang kiến thức về đời sống xung quanh cho trẻ.\n" +
+                "\n" +
+                "Là bộ sách tương tác tốt giữa cha mẹ và con cái. Bố mẹ có thể hướng dẫn cách chơi hoặc gợi ý cho trẻ khi trẻ cần sự giúp đỡ. Hỗ trợ tốt cho trẻ nhỏ đang trong giai đoạn “tìm hiểu” về thế giới xung quanh\n" +
+                "Là bộ sách đa năng cho trẻ. Trẻ có thể tự chơi một mình hoặc chơi theo nhóm, những đứa trẻ sẽ học được cách giúp đỡ lẫn nhau. Và rất nhiều ưu điểm nữa, các mẹ hãy mua sách về để khám phá cùng các con nhé!\n" +
+                "\n" +
+                "______ _ _ _ _ ______\n" +
+                "THANH HÀ BOOKS CAM KẾT\n" +
+                "- 100% Sách chuẩn của các NXB, phát hành trong nước. Thanh Hà Books có đầy đủ Giấy tờ chứng minh nguồn gốc xuất xứ, gồm:\n" +
+                "\uF0FC Hợp đồng với Nhà xuất bản, phát hành\n" +
+                "\uF0FC Giấy bảo lãnh, ủy quyền phân phối chính hãng\n" +
+                "\uF0FC Hóa đơn giá trị gia tăng\n" +
+                "\uF0FC Chứng chỉ Phát hành xuất bản phẩm\n" +
+                "- Sách mới 100%\n" +
+                "- Đóng bọc rất cẩn thận bằng Hộp Bìa Carton do Thanh Hà Books sản xuất riêng + Nilon chống thấm nước hoặc Bóng khí chống sốc + Băng keo thương hiệu dán niêm phong\n" +
+                "- Đội ngũ nhân sự > 50 người, tư vấn nhiệt tình, hết lòng phục vụ Quý Khách.\n" +
+                "- Kho hàng có sẵn cực lớn\n" +
+                "- Quy trình đóng gói chuyên nghiệp, xử lý đơn hàng nhanh\n" +
+                "- Đảm bảo chất lượng sản phẩm 100% giống mô tả. \n" +
+                "- Hình ảnh sản phẩm là ảnh thật do hệ thống Thanh Hà Books tự chụp bằng điện thoại Iphone và giữ bản quyền hình ảnh. (Nghiêm cấm các shop khác sao chép hình ảnh)\n" +
+                "- Hoàn tiền nếu sản phẩm không giống với mô tả \n" +
+                "- Chấp nhận đổi hàng khi sách không đúng\n" +
+                "- Giao hàng trên toàn quốc, nhận hàng trả tiền\n" +
+                " \n" +
+                "Hỗ trợ đổi trả theo quy định của Shopee: \n" +
+                "1. Điều kiện áp dụng (trong vòng 07 ngày kể từ khi nhận sản phẩm)\n" +
+                " - Hàng hoá vẫn còn mới, chưa qua sử dụng \n" +
+                "- Hàng hoá bị lỗi hoặc hư hỏng do vận chuyển hoặc do nhà sản xuất\n" +
+                " 2. Trường hợp được chấp nhận:\n" +
+                " - Không đúng sách mà khách hàng đặt\n" +
+                "- Không đủ số lượng, không đủ bộ như trong đơn hàng \n" +
+                "3. Trường hợp không đủ điều kiện áp dụng chính sách:\n" +
+                " - Quá 07 ngày kể từ khi Quý khách nhận hàng\n" +
+                " - Gửi lại hàng không đúng mẫu mã, không phải sản phẩm của THANH HÀ BOOKS\n" +
+                " - Không thích, không hợp, đặt nhầm mã, nhầm sản phẩm,... \n" +
+                "Do màn hình và điều kiện ánh sáng khác nhau, màu sắc thực tế của sản phẩm có thể chênh lệch khoảng 3-5%");
+        createProductInput1.setProduct(productInput);
+        List<ProductVariant> productVariantList = new ArrayList<>();
+        ProductVariant variant_1 = new ProductVariant();
+        variant_1.setImageUrl("https://cf.shopee.vn/file/d8a113e578ff642e30864c494b647997");
+        variant_1.setWeight(360.0);
+        DimensionMeasurement dimensionMeasurement = new DimensionMeasurement();
+        dimensionMeasurement.setWidth(40);
+        dimensionMeasurement.setHeight(10);
+        dimensionMeasurement.setLength(100);
+        variant_1.setDimension(dimensionMeasurement);
+        variant_1.setRequiresShipping(true);
+        variant_1.setPrice(MoneyCalculateUtils.getMoney(650));
+        variant_1.setColor(ColorProduct.BLACK);
+        productVariantList.add(variant_1);
+        createProductInput1.setProductVariants(productVariantList);
+
+        try {
+            productController.createProductVariant(createProductInput1);
+
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

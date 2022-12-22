@@ -37,4 +37,5 @@ public enum ServiceType {
         return BaseEnum.isExist(values(), current);
     }
 
+
 }

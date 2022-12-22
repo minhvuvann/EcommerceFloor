@@ -55,7 +55,7 @@ public class LoginController extends BaseController {
             }
         if (!admin)
             if (null == serviceType ||
-                    !ServiceType.isExist(serviceType.toString())) {
+                    !ServiceType.isExist(serviceType)) {
                 throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
             }
     }
@@ -179,10 +179,12 @@ public class LoginController extends BaseController {
                     UserInput userInput = new UserInput();
                     userInput.setImageUrl(imageUrl);
                     userInput.setEmail(email);
+                    userInput.setServiceType(serviceType);
                     userInput.setFullName(fullName);
 
                     KeyPasswordInput keyPasswordInput = new KeyPasswordInput();
                     keyPasswordInput.setPassword(String.valueOf(System.currentTimeMillis()));
+                    keyPasswordInput.setPasswordStatus(PasswordStatus.NEW);
 
                     RoleInput role = new RoleInput();
                     role.setRoleType(RoleType.PERSONAL);
