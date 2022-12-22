@@ -203,6 +203,8 @@ public class LoginController extends BaseController {
                     Cart cart = new Cart();
                     cart.setUserId(result.getId());
                     createCartController.createCart(cart, null);
+                    return new ResponseBody(BasicStatus.success,
+                            "Đăng nhập thành công", userUpdate);
                 } else {
                     return new ResponseBody(BasicStatus.success,
                             "Đăng nhập thành công", userUpdate);
