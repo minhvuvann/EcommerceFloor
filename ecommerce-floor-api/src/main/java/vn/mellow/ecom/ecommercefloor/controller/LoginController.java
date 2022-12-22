@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.ecommercefloor.base.controller.BaseController;
 import vn.mellow.ecom.ecommercefloor.base.exception.ServiceException;
 import vn.mellow.ecom.ecommercefloor.base.model.ResponseBody;
+import vn.mellow.ecom.ecommercefloor.controller.controller.CreateCartController;
 import vn.mellow.ecom.ecommercefloor.controller.controller.UserCreateController;
 import vn.mellow.ecom.ecommercefloor.enums.*;
 import vn.mellow.ecom.ecommercefloor.manager.UserManager;
+import vn.mellow.ecom.ecommercefloor.model.cart.Cart;
 import vn.mellow.ecom.ecommercefloor.model.input.CreateUserInput;
 import vn.mellow.ecom.ecommercefloor.model.input.KeyPasswordInput;
 import vn.mellow.ecom.ecommercefloor.model.input.RoleInput;
@@ -42,6 +44,8 @@ public class LoginController extends BaseController {
     @Autowired
     private UserCreateController userCreateController;
 
+    @Autowired
+    private CreateCartController createCartController;
 
     private void validateLoginInput(String email, String password, boolean admin, ServiceType serviceType, String fullName) throws ServiceException {
         if (null == email) {
@@ -55,7 +59,7 @@ public class LoginController extends BaseController {
             }
         if (!admin)
             if (null == serviceType ||
-                    !ServiceType.isExist(serviceType)) {
+                    !ServiceType.isExist(serviceType.toString())) {
                 throw new ServiceException("exists_type", "Loại dịch vụ không tồn tại. ( " + ServiceType.getListName() + " )", "service type is not exists");
             }
     }
@@ -192,7 +196,11 @@ public class LoginController extends BaseController {
                     createUserInput.setUser(userInput);
                     createUserInput.setPassword(keyPasswordInput);
                     createUserInput.setRole(role);
-                    userCreateController.createUser(createUserInput);
+                    User result = userCreateController.createUser(createUserInput);
+
+                    Cart cart = new Cart();
+                    cart.setUserId(result.getId());
+                    createCartController.createCart(cart, null);
                 } else {
                     return new ResponseBody(BasicStatus.success,
                             "Đăng nhập thành công", userUpdate);
@@ -225,7 +233,7 @@ public class LoginController extends BaseController {
         filter.setEmail(email);
         filter.setServiceType(serviceType);
         List<User> users = userManager.filterUser(filter).getResultList();
-        if (users.isEmpty()||null==users||users.size()==0) {
+        if (users.isEmpty() || null == users || users.size() == 0) {
             throw new ServiceException("exists_account", "Không tìm thấy tài khoản", "user is not exists");
 
         }
