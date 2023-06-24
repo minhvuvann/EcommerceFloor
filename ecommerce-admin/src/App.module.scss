@@ -1,0 +1,95 @@
+:root {
+  --primary-color: #222;
+  --while-color: #FFFFFF;
+  --text-color: #333;
+  --blue-light-background: #B3E5FC;
+  --blue-light-text: #003C66;
+  --blue-light-kanban-background: #3BACF7;
+  --blue-heavy-background: #4DC2FF;
+  --blue-heavy-text: #0A3566;
+  --blue-heavy-kanban-background: #2D8CCC;
+  --brown-light-background: #FFDAB9;
+  --brown-light-text: #806D5D;
+  --brown-light-kanban-background: #D9B4A5;
+  --brown-heavy-background: #EDC4B3;
+  --brown-heavy-text: #774936;
+  --brown-heavy-kanban-background: #CC9B87;
+  --green-light-background: #57FA9C;
+  --green-light-text: #0A4D08;
+  --green-light-kanban-background: #42db83;
+  --green-heavy-background: #42db83;
+  --green-heavy-text: #07421F;
+  --green-heavy-kanban-background: #36B36A;
+  --purple-background: #D4BAE6;
+  --purple-text: #5D0085;
+  --purple-kanban-background: #8E44AD;
+  --yellow-background: #FBF05C;
+  --yellow-text: #666226;
+  --yellow-kanban-background: #F1C40F;
+  --orange-light-background: #FFDBB0;
+  --orange-light-text: #BF691D;
+  --orange-light-kanban-background: #F39C12;
+  --orange-heavy-background: #FFBF69;
+  --orange-heavy-text: #8A4B15;
+  --orange-heavy-kanban-background: #E67E22;
+  --gray-background: #C3D7D9;
+  --gray-text: #5C7173;
+  --gray-kanban-background: #7F8C8D;
+  --red-background: #FF8888;
+  --red-text: #B32424;
+  --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+  --orange: #fca61f;
+  --black: #242d49;
+  --gray: #788097;
+  --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+  --pink: #FF919D;
+  --glass: rgba(255, 255, 255, 0.54);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  --activeItem: #f799a354;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  background-color: #F5F4F4;
+
+}
+
+body th,
+td {
+  font-size: 1.4rem !important;
+}
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 1.6rem;
+  line-height: 1;
+  text-rendering: optimizeSpeed;
+  font-family: Arial, sans-serif;
+  overflow-y: auto !important;
+  padding-right: 0 !important;
+}
+.App {
+  width: 100%;
+  // padding: 0.5rem 3.5rem; 
+  color: var(--black);
+  background: #F4F0F5;
+  // linear-gradient(
+  //   106.37deg,
+  //   #ffe1bc 29.63%,
+  //   #ffcfd1 51.55%,
+  //   #f3c6f1 90.85%
+  // );
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,23 @@
+.items{
+  border-bottom: 1px solid #dddd;
+  display: flex;
+  justify-content: space-between;
+}
+.item{
+  margin: 2em 0 2em 0;
+  p{
+    line-height: 2em;
+    font-size: 1.2em;
+    color: #aaaa;
+    strong{
+      color: black;
+      font-weight: 400;
+    }
+  }
+  .update{
+    .btn-update{
+background: #1e1e21;
+
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.category-content {
+  width: 100%;
+}
+
+.box-category {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  @media only screen and (max-width: 900px) {
+
+  }
+  &.active .category-item {
+    font-weight: 700;
+    color: var(--primary-color);
+    padding-left: 0;
+
+  }
+
+}
+
+.arrow-icon {
+  font-size: 1.6rem;
+  color: red;
+  display: none;
+
+
+}
+.open-icon .arrow-icon{
+  display: block;
+}
+
+.category-item {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-weight: 400;
+  cursor: pointer;
+  padding-left: 14px;
+
+
+
+
+}

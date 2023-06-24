@@ -1,0 +1,38 @@
+.wrapper{
+  width: 100%;
+  padding: 24px;
+}
+.title{
+  font-size: 1.8rem;
+
+}
+.notify{
+  font-size: 1.4rem;
+  color: #999;
+}
+.shop-profile{
+  width: 100%;
+  //padding: 0 40px;
+}
+.profile-item{
+  display: flex;
+  align-items: center;
+}
+.title{
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+.input{
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  outline: none;
+  font-size: 1.6rem;
+  &:focus{
+    border-color: #929292;
+  }
+
+}

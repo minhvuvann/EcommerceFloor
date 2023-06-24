@@ -1,0 +1,56 @@
+.orders {
+  border: 1px solid #dddd;
+  border-radius: 0.3em;
+  background: white;
+  padding: 0.8em;
+  margin-top: 0.2em;
+
+  p {
+    font-size: 0.9em;
+  }
+
+}
+
+.header {
+  color: black;
+  //height: 2em;
+  border-bottom: 1px solid #dddd;
+}
+
+.header-left {
+  p {
+    margin-top: 0.7em;
+  }
+
+  margin-bottom: 1em;
+
+  .like {
+    margin-top: 0.3em;
+    width: 5em;
+    border: 1px solid #dddd;
+    border-radius: 0.3em;
+    background: #f73378;
+    padding: 0.4em 0 0 0.2em;
+    height: 1.8em;
+    color: white;
+  }
+
+}
+
+.header-right {
+  margin-top: 0.5em;
+}
+
+.status-order {
+  padding-top: 0.7rem;
+  float: right;
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+.label-order-bottom {
+  margin-top: 1.5em;
+  margin-left: 51em;
+}
+
+

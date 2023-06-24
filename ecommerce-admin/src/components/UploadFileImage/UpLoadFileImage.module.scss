@@ -1,0 +1,49 @@
+.upload__image-wrapper{
+  display: flex;
+}
+.box-label{
+  padding-top: 20px;
+}
+.box-input{
+  width: 100%;
+  padding-top: 20px;
+}
+.label{
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-right: 20px;
+  @media only screen and (max-width: 768px) {
+    padding-bottom: 12px;
+
+  }
+}
+.btn-upload{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  line-height: 20px;
+  padding: 4px 6px;
+  cursor: pointer;
+  border: 0;
+  background-color: var(--primary-color);
+  color: var(--while-color);
+  position: relative;
+}
+
+.btn-update{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 4px;
+  border: none;
+  color: var(--while-color);
+  background-color: var(--primary-color);
+}
+.image-product{
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border-width: .25rem;
+  border-color: hsla(0,0%,100%,.4);
+}

@@ -1,0 +1,68 @@
+.wrapper{
+  width: 100%;
+  padding-top: var(--padding-top);
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+.banner-container {
+  margin-top: -1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  border-bottom: 2rem solid  #f5f5f5;
+  background-color: #FFFFFF;
+
+}
+.lg-reverse{
+  float: left;
+  margin-left: 4rem;
+}
+
+.title {
+  margin-left: 17rem;
+  border-left: .0925rem solid var(--primary-color);
+  font-size: 2.25rem;
+  line-height: 5.875rem;
+  height: 3.875rem;
+  padding-left: .9375rem;
+  margin-bottom: .0625rem;
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+.checkout{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 30px;
+}
+.label-price{
+  font-size: 1.6rem;
+  padding-right: 20px;
+}
+.total-price{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  width: 200px;
+  background-color: var(--while-color);
+  margin-right: 20px;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  padding: 6px 12px;
+}
+.btn-purchase{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.15rem 3.5rem;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  color: var(--while-color);
+  opacity: 1;
+  &:hover{
+    opacity: 0.7;
+  }
+}

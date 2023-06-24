@@ -1,0 +1,80 @@
+
+.navbar-right{
+width: 100%;
+display: flex;
+justify-content: flex-end;
+
+}
+
+.logo {
+    margin-top: -40px;
+    margin-left: -7rem;
+    display: flex;
+    font-weight: bold;
+    font-size: 17px;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 4%;
+  }
+  .logo {
+    span  {
+      span {
+
+        color: var(--pink);
+        margin-left: -70px;
+      }
+    }
+  }
+  
+  .logo {
+    img {
+      width: 150px;
+      height: 150px;
+       }
+  }
+.menu {
+    margin-top: 2rem;
+    // margin-left: 1rem;
+    gap: 2rem;
+    width: 100%;
+   
+    ul{
+      display: grid;
+    }
+    span{
+      width: 100%;
+      svg{
+        display: flex;
+        float: left;
+        margin-right: 25px;
+      }
+    }
+    
+  }
+  .menuItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    transition: all 300ms ease;
+    border-radius: 0.7rem;
+    font-size: 17px;
+    &:last-child{
+    margin-left: 1rem;
+
+    }
+  }
+  
+  .menuItem {
+    &:hover {
+      cursor: pointer;
+    }
+    // &:last-child {
+    //   position: absolute;
+    //   bottom: 12rem;
+    //   width: 100%;
+    // }
+  }
+  
+ 

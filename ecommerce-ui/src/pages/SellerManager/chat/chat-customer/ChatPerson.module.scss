@@ -1,0 +1,54 @@
+.ticker {
+  background-color: #F5F6F8;
+}
+
+.li-ps {
+  padding: 0.1rem 0;
+}
+
+.li-ps:hover {
+  background-color: #F5F6F8;
+}
+
+.h2-ps, .h3-ps {
+  margin: 0;
+}
+
+.img-ps {
+  width: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.av-ps {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.3rem;
+}
+
+.h2-ps {
+  font-size: 11px;
+  color: black;
+  font-weight: normal;
+}
+
+.at-ps {
+  font-size: 0.9rem;
+}
+
+.status {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 0.2rem;
+  margin-right: 0.1rem;
+}
+
+.green {
+  background-color: #58b666;
+}
+
+.orange {
+  background-color: #ff725d;
+}

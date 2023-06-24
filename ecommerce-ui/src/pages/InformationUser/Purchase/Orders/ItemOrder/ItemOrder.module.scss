@@ -1,0 +1,41 @@
+.itemOrder {
+  border-bottom: 1px solid #cccccc;
+  h1{
+    width: 90%;
+    font-size:1.1em;
+    font-weight:400;
+    margin-top:1.2em;
+  }
+  p{
+    line-height: 3.5em;
+    font-size:0.9em;
+  }
+}
+
+.itemOrder_avatar{
+  width:10em;
+  height:10em;
+
+}
+
+.img-product-order{
+  border: 1px solid black ;
+  width:7.5em;
+  height:7.5em;
+  margin: 1em 0 0 1em;
+  .avatar-product{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.order-purchase-label-vp{
+  display:flex;
+  justify-content:space-between;
+  .order_purchase_label_variation{
+    color:#cccccc;
+  }
+  .order_purchase_label_price{
+    color:#f73378;
+  }
+}

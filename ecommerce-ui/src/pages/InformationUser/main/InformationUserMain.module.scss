@@ -1,0 +1,32 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  //background-color: #EE4D2D;
+
+}
+
+.btn-collapse {
+  cursor: pointer;
+
+
+  @media only screen and (min-width: 768px) {
+      display: none;
+  }
+}
+.menu-item{
+  font-size: 1.3em;
+}
+.avatar{
+  width: 85%;
+  display: flex;
+  margin-Top: 20px;
+  border-Bottom: 1px solid #ddd;
+  margin-left: 1.7em;
+  .name {
+    margin-bottom: 1em;
+    margin-left: 0.8em;
+    span{
+      color: #cccccc;
+    }
+  }
+}

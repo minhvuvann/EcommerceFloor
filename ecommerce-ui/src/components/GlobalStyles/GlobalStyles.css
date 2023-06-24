@@ -1,0 +1,250 @@
+:root {
+    --primary-color: #ff5588;
+    --while-color: #FFFFFF;
+    --text-color: #333;
+    --blue-light-background: #B3E5FC;
+    --blue-light-text: #003C66;
+    --blue-light-kanban-background: #3BACF7;
+    --blue-heavy-background: #4DC2FF;
+    --blue-heavy-text: #0A3566;
+    --blue-heavy-kanban-background: #2D8CCC;
+    --brown-light-background: #FFDAB9;
+    --brown-light-text: #806D5D;
+    --brown-light-kanban-background: #D9B4A5;
+    --brown-heavy-background: #EDC4B3;
+    --brown-heavy-text: #774936;
+    --brown-heavy-kanban-background: #CC9B87;
+    --green-light-background: #57FA9C;
+    --green-light-text: #0A4D08;
+    --green-light-kanban-background: #42db83;
+    --green-heavy-background: #42db83;
+    --green-heavy-text: #07421F;
+    --green-heavy-kanban-background: #36B36A;
+    --purple-background: #D4BAE6;
+    --purple-text: #5D0085;
+    --purple-kanban-background: #8E44AD;
+    --yellow-background: #FBF05C;
+    --yellow-text: #666226;
+    --yellow-kanban-background: #F1C40F;
+    --orange-light-background: #FFDBB0;
+    --orange-light-text: #BF691D;
+    --orange-light-kanban-background: #F39C12;
+    --orange-heavy-background: #FFBF69;
+    --orange-heavy-text: #8A4B15;
+    --orange-heavy-kanban-background: #E67E22;
+    --gray-background: #C3D7D9;
+    --gray-text: #5C7173;
+    --gray-kanban-background: #7F8C8D;
+    --red-background: #FF8888;
+    --red-text: #B32424;
+    --height-header: 120px;
+    --height-navbar-wrapper: 34px;
+    --padding-top: 130px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body th,
+td {
+    font-size: 1.4rem !important;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1;
+    text-rendering: optimizeSpeed;
+    font-family: Arial, sans-serif;
+    overflow-y: auto !important;
+    padding-right: 0 !important;
+}
+
+/*customer Material ui*/
+
+.css-1oqqzyl-MuiContainer-root {
+    max-width: 1400px !important;
+}
+
+.css-2hzjrb-MuiInputBase-input-MuiFilledInput-input {
+    height: 15px !important;
+    font-size: 1.3rem !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.css-11ks32x-MuiTypography-root {
+    padding: 0 !important;
+}
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+    box-shadow: none !important;
+}
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: #ff5588;
+}
+
+.ps-menu-root {
+    display: block;
+}
+
+button#mui-p-35450-T-1 {
+    font-size: 1.6rem !important;
+}
+
+.css-pdct74-MuiTablePagination-selectLabel {
+    font-size: 1.6rem !important;
+}
+
+p.MuiTablePagination-displayedRows.css-levciy-MuiTablePagination-displayedRows {
+    font-size: 1.6rem;
+}
+
+.css-p2q4lr-MuiTableCell-root.MuiTableCell-head {
+    font-size: 1.6rem !important;
+}
+
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+    font-size: 2.6rem !important;
+}
+
+.css-zylse7-MuiButtonBase-root-MuiIconButton-root:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--while-color) !important;
+}
+
+.MuiBackdrop-root.MuiModal-backdrop.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+    /*background-color: rgba(0,0,0,0.1) !important;*/
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    font-size: 1.4rem !important;
+}
+
+body
+span.MuiBadge-badge.MuiBadge-standard.MuiBadge-anchorOriginTopRight.MuiBadge-anchorOriginTopRightRectangular.MuiBadge-overlapRectangular.MuiBadge-colorWhite.MuiBadge-badge.css-1j1onvx-MuiBadge-badge {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+body .css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+    font-size: 1.6rem;
+
+}
+
+body .MuiPagination-root {
+    display: block;
+}
+
+body
+button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeMedium.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-textPrimary.Mui-selected.MuiPaginationItem-page.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
+    font-size: 1rem;
+}
+
+body button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeMedium.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-textPrimary.MuiPaginationItem-page.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
+    font-size: 1rem;
+}
+
+body button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeMedium.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-textPrimary.Mui-selected.MuiPaginationItem-page.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
+    background-color: var(--primary-color);
+    opacity: 1;
+
+}
+
+body button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeMedium.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-textPrimary.Mui-selected.MuiPaginationItem-page.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root:hover {
+    opacity: 0.7;
+}
+
+body span.MuiBadge-badge.MuiBadge-standard.MuiBadge-anchorOriginTopRight.MuiBadge-anchorOriginTopRightRectangular.MuiBadge-overlapRectangular.MuiBadge-colorSecondary.MuiBadge-badge.css-jcn4dz-MuiBadge-badge {
+    background-color: var(--while-color) !important;
+    font-size: 1.6rem;
+    color: var(--primary-color) !important;
+}
+
+/*customer react-pro-sidebar*/
+
+@media only screen and (min-width: 768px) {
+    body .ps-menu-button {
+        padding-left: 0 !important;
+    }
+}
+
+.css-ewdv3l {
+    padding-left: 6px !important;
+}
+
+.ps-active {
+    color: var(--primary-color) !important;
+}
+
+/*customer in project*/
+.btn-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 14px 12px;
+    border-radius: 6px;
+    color: var(--while-color);
+    font-size: 1.6rem;
+    cursor: pointer;
+    opacity: 1;
+    border: 0;
+}
+
+.btn-search:hover {
+    opacity: 0.8;
+}
+
+.btn-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px 8px;
+    border: 0;
+    background-color: var(--primary-color);
+    color: var(--while-color);
+    border-radius: 4px;
+    opacity: 1;
+}
+
+.btn-add:hover {
+    opacity: 0.7;
+}
+
+/* Scrollbar css */
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* customer react-slick */
+
+.slick-slide {
+    /* height: 200px; */
+}

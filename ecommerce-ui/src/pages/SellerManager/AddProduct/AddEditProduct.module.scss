@@ -1,0 +1,127 @@
+.wrapper {
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 20px;
+  @media only screen and (max-width: 600px) {
+    width: 300px;
+
+  }
+  //background-color: #5767aa;
+}
+
+.form-function {
+  width: 100%;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.form-function {
+  padding: 0 18px;
+}
+
+.box-image {
+  display: flex;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+
+  }
+}
+
+.box-label {
+  padding-top: 20px;
+}
+
+.box-input {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.label {
+  flex-basis: 144px;
+  width: 144px;
+  max-width: 144px;
+  margin-right: 16px;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  text-align: right;
+  padding-top: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 400;
+  @media only screen and (max-width: 768px) {
+    padding-bottom: 12px;
+
+  }
+}
+
+.requirement {
+  color: #EE4D2D;
+}
+
+.form-item {
+  width: 100%;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  @media only screen and (max-width: 768px) {
+    align-items: flex-start;
+    flex-direction: column;
+
+  }
+}
+
+.input-area {
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 8px 8px;
+  border-radius: 4px;
+  height: 200px;
+  flex: 1;
+
+  &:focus {
+    border-color: #929292;
+  }
+}
+
+.input-item {
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 8px 8px;
+  border-radius: 4px;
+  flex: 1;
+  @media only screen and (max-width: 768px) {
+    max-width: 600px;
+    width: 100%;
+
+  }
+
+  &:focus {
+    border-color: #929292;
+  }
+}
+
+.currency-text:focus {
+  color: #b7b7b7;
+
+}

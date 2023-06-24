@@ -1,0 +1,39 @@
+.color-size{
+  display: flex;
+  align-items: center;
+}
+.title{
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #929292;
+  padding-right: 40px;
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+
+  }
+}
+.color-size__item{
+  max-width: 120px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  align-items: center;
+  justify-content: center;
+  padding:  6px 12px;
+  margin:  8px 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: var(--text-color);
+  line-height: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+
+  &.active{
+    border: 1px solid var(--primary-color);
+
+  }
+}
