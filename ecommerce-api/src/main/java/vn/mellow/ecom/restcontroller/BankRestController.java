@@ -4,6 +4,9 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.base.controller.BaseController;
@@ -62,6 +65,9 @@ public class BankRestController extends BaseController {
 
     @ApiOperation(value = "Get list bank")
     @GetMapping("bank/history")
+    @Caching(
+            put = {@CachePut(value = "ecommerce_floor", condition = "#clearCache==@environment.getProperty('app.cache.clearKey')")},
+            cacheable = {@Cacheable(value = "ecommerce_floor", condition = "#clearCache!=@environment.getProperty('app.cache.clearKey')")})
     public ResultHistory getHistoryBank() throws ServiceException {
         BankClient bankClient = null;
         ResultHistory resultHistory = null;
@@ -77,6 +83,9 @@ public class BankRestController extends BaseController {
 
     @ApiOperation(value = "Kiểm tra đã thanh toán chưa")
     @GetMapping("bank/history/check-payment")
+    @Caching(
+            put = {@CachePut(value = "ecommerce_floor", condition = "#clearCache==@environment.getProperty('app.cache.clearKey')")},
+            cacheable = {@Cacheable(value = "ecommerce_floor", condition = "#clearCache!=@environment.getProperty('app.cache.clearKey')")})
     public ResponseResult checkPayment(@RequestParam double amount) throws ServiceException {
         BankClient bankClient = null;
         ResultHistory resultHistory = null;
@@ -103,6 +112,7 @@ public class BankRestController extends BaseController {
 
     @ApiOperation(value = "Get qr code information bank store")
     @PostMapping("qr-code-info/{bank-id}/account-no/{account-no}/template/{template}")
+
     public URL getQrImage(@PathVariable("bank-id") String bankId, @PathVariable("account-no") String accountNo,
                           @PathVariable("template") String template, @RequestParam("amount") double amount,
                           @RequestParam("addInfo") String addInfo, @RequestParam("account-name") String accountName) throws ServiceException {
@@ -111,27 +121,27 @@ public class BankRestController extends BaseController {
 
         try {
             bankClient = new BankClient(qrService);
-            if (null == bankId || bankId.length() == 0 ||
+            if (null == bankId || bankId.isEmpty() ||
                     "String".equalsIgnoreCase(bankId) || "null".equalsIgnoreCase(bankId)) {
                 bankId = this.bankID;
 
             }
-            if (null == accountNo || accountNo.length() == 0 ||
+            if (null == accountNo || accountNo.isEmpty() ||
                     "String".equalsIgnoreCase(accountNo) || "null".equalsIgnoreCase(accountNo)) {
                 accountNo = this.accountNumber;
 
             }
-            if (null == template || template.length() == 0 ||
+            if (null == template || template.isEmpty() ||
                     "String".equalsIgnoreCase(template) || "null".equalsIgnoreCase(template)) {
                 template = this.template;
 
             }
-            if (null == addInfo || addInfo.length() == 0 ||
+            if (null == addInfo || addInfo.isEmpty() ||
                     "String".equalsIgnoreCase(addInfo) || "null".equalsIgnoreCase(addInfo)) {
                 addInfo = this.addInfo;
 
             }
-            if (null == accountName || accountName.length() == 0 ||
+            if (null == accountName || accountName.isEmpty() ||
                     "String".equalsIgnoreCase(accountName) || "null".equalsIgnoreCase(accountName)) {
                 accountName = this.accountName;
 

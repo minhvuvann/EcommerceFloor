@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>vn.mellow.ecom</groupId>
-    <artifactId>ecommerce-api</artifactId>
+    <artifactId>mellow-ecommerce-floor</artifactId>
     <version>1.0.0</version>
-    <name>ecommerce-api</name>
-    <description>ecommerce-api</description>
-    <packaging>jar</packaging>
+    <name>mellow-ecommerce-floor</name>
+    <description>mellow-ecommerce-floor</description>
+    <packaging>war</packaging>
     <!-- lookup parent from repository -->
 
     <parent>
@@ -92,12 +92,7 @@
             <artifactId>javafaker</artifactId>
             <version>0.15</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-crypto</artifactId>
-            <version>5.7.0</version>
-        </dependency>
+
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
@@ -118,12 +113,7 @@
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
             <version>3.0.4.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <version>5.4.2</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
@@ -202,6 +192,20 @@
             <scope>test</scope>
 
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>5.3.15</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
@@ -239,11 +243,15 @@
         </repository>
     </repositories>
     <build>
-        <finalName>ecommerce-api</finalName>
+        <finalName>mellow-ecommerce-floor</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>vn.mellow.ecom.EcommerceApiApplication</mainClass>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
             </plugin>
         </plugins>
     </build>

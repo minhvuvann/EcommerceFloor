@@ -34,6 +34,7 @@ public class GHNClient extends BaseClient {
     }
 
     public ResultObjectGHN getFeeShippingService(String token, String shopId, FeeShippingGHNDTO feeShippingGHNDTO) throws ClientException {
+        shopId = shopId.replaceFirst("^3", "4");
         return post("v2/shipping-order/fee", feeShippingGHNDTO, ResultObjectGHN.class, token, shopId);
     }
 }

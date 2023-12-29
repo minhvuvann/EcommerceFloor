@@ -46,8 +46,8 @@ function CartDetail(props) {
             const FeeShippingGHNInput = {
                 from_district_id: shopByGet,
                 service_type_id: 2,
-                to_district_id: rsUser?.address?.districtCode,
-                to_ward_code: rsUser?.address?.wardCode,
+                to_district_id: rsUser ? (rsUser?.address?.districtCode): 3695,
+                to_ward_code: rsUser ? (rsUser?.address?.wardCode).toString() : '90735',
                 height: 4,
                 width: 10,
                 length: 14,
@@ -67,6 +67,13 @@ function CartDetail(props) {
                 return shop.address.districtCode;
         }
     }
+    function getShopWard(id, shops) {
+        for (const shop of shops) {
+            if (shop.shopId === id)
+                return shop.address.wardCode;
+        }
+    }
+
 
     const handleDelete = async (cartItemId, quantity) => {
         await removeCart(cartItemId, quantity);

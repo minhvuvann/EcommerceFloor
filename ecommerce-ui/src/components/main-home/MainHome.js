@@ -37,7 +37,7 @@ function MainHome(props) {
                     </DialogContentText>
                 </DialogContent>
             </Dialog>
-            <ChatButton setChatOpen={setChatOpen}/>
+            <ChatButton  setChatOpen={setChatOpen}/>
             <BackTop/>
         </div>
     );

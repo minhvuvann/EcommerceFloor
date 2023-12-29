@@ -17,11 +17,11 @@ public class GeoUtils {
 
     public static HashMap<String, String> generateGeo() {
         List<Geo> provinces = geoManager.getGeoType(GeoType.PROVINCE);
-        Geo geoProvince = provinces.get(new Random().nextInt(provinces.size() - 1));
+        Geo geoProvince = provinces.get(new Random().nextInt(provinces.size() > 1 ? provinces.size() - 1 : 1));
         List<Geo> districts = geoManager.getGeoParent(GeoType.DISTRICT, geoProvince.getGhn_id());
-        Geo geoDistrict = districts.get(new Random().nextInt(districts.size() - 1));
+        Geo geoDistrict = districts.get(new Random().nextInt(districts.size() > 1 ? districts.size() - 1 : 1));
         List<Geo> geoWards = geoManager.getGeoParent(GeoType.WARD, geoDistrict.getGhn_id());
-        Geo geoWard = geoWards.get(new Random().nextInt(geoWards.size()-1));
+        Geo geoWard = geoWards.get(new Random().nextInt(geoWards.size() > 1 ? geoWards.size() - 1 : 1));
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("address", geoWard.getName() + ", " + geoDistrict.getName() + ", " + geoProvince.getName());
         map.put("province", String.valueOf(geoProvince.getGhn_id()));

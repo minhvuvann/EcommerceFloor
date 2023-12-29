@@ -3,7 +3,7 @@ package vn.mellow.ecom.base.exception;
 import lombok.Data;
 
 @Data
-public class ServiceException extends Exception{
+public class ServiceException extends Exception {
     protected String errorCode;
     protected String errorMessage;
     protected String errorDetail;
@@ -19,5 +19,10 @@ public class ServiceException extends Exception{
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
         this.errorDetail = errorDetail;
+    }
+
+    public ServiceException(String errorCode, String errorMessage) {
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
     }
 }

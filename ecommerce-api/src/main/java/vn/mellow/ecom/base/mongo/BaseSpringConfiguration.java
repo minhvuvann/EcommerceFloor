@@ -5,8 +5,8 @@ import java.util.Properties;
 
 public class BaseSpringConfiguration {
 
-    public static final String MONGO_DB_NAME = getPropertyName("mongodb.database", "Inventory");
-    public static final String MONGO_DB_URI = getPropertyName("mongodb.uri", "mongodb://localhost");
+    public static final String MONGO_DB_NAME = getPropertyName("spring.data.mongodb.database", "ecommece-floor");
+    public static final String MONGO_DB_URI = getPropertyName("spring.data.mongodb.uri", "mongodb+srv://duanemellow19:gYuX5AIIwNu5N4fb@ecommece-floor.f26wkyl.mongodb.net/?retryWrites=true&w=majority");
 
     public static Properties applicationProperties;
 

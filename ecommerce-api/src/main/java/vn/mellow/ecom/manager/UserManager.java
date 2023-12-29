@@ -51,7 +51,7 @@ public class UserManager extends BaseManager {
 
     @PostConstruct
     public void createTextIndex() {
-        mongoTemplate.indexOps(User.class).ensureIndex(new TextIndexDefinition.TextIndexDefinitionBuilder()
+        mongoTemplate.indexOps("User").ensureIndex(new TextIndexDefinition.TextIndexDefinitionBuilder()
                 .onField("username").onField("fullname").onField("email").onField("_id")
                 .build());
 

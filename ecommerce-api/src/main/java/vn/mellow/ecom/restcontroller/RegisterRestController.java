@@ -52,6 +52,7 @@ public class RegisterRestController extends BaseController {
         try {
             result = userCreateController.createUser(createInput);
         } catch (ServiceException e) {
+            e.printStackTrace();
             return new ResponseResult(0, e.getErrorMessage(), e.getErrorDetail());
         }
         if (null != result) {
@@ -66,6 +67,7 @@ public class RegisterRestController extends BaseController {
                 SendMailUtils.sendMailTo(session, emailEcommerce, storeName, result.getEmail(), subject, messSendMail);
 
             } catch (UnsupportedEncodingException|MessagingException  e) {
+                e.printStackTrace();
                 return new ResponseResult(0, "Email không hợp lệ", e.getStackTrace());
             }
             //Send mail to store
@@ -82,7 +84,6 @@ public class RegisterRestController extends BaseController {
             return new ResponseResult(1,
                     "Đăng ký tài khoản thành công vui lòng nhập mã xác thực để kích hoạt tài khoản", dataRegister);
         } else {
-
             return new ResponseResult(0, "Đăng ký tài khoản không thành công", "Register failed");
         }
     }

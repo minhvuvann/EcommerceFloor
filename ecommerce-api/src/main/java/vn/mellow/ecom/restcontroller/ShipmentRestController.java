@@ -6,6 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.base.controller.BaseController;
@@ -72,6 +75,9 @@ public class ShipmentRestController extends BaseController {
 
     @ApiOperation(value = "Get list shipping service")
     @GetMapping("shipment/shipping-services")
+    @Caching(
+            put = {@CachePut(value = "ecommerce_floor", condition = "#clearCache==@environment.getProperty('app.cache.clearKey')")},
+            cacheable = {@Cacheable(value = "ecommerce_floor", condition = "#clearCache!=@environment.getProperty('app.cache.clearKey')")})
     public List<ShippingService> getShippingServices(
             @RequestParam("shop-id") String shopId, @RequestParam("from-district") int fromDistrict,
             @RequestParam("to-district") int toDistrict) throws ServiceException {
@@ -119,6 +125,9 @@ public class ShipmentRestController extends BaseController {
 
     @ApiOperation(value = "get fee shipping service")
     @PostMapping("shipment/shipping-fee")
+    @Caching(
+            put = {@CachePut(value = "ecommerce_floor", condition = "#clearCache==@environment.getProperty('app.cache.clearKey')")},
+            cacheable = {@Cacheable(value = "ecommerce_floor", condition = "#clearCache!=@environment.getProperty('app.cache.clearKey')")})
     public MoneyV2 getFeeShippingService(@RequestParam("shop-id") String shopId, @RequestBody FeeShippingGHNDTO input) throws ServiceException {
 
         Double feeShipping = 0.0;
@@ -127,6 +136,7 @@ public class ShipmentRestController extends BaseController {
             claims = (LinkedTreeMap) getGHNClient().getFeeShippingService(token, shopId, input).getData();
 
         } catch (ClientException e) {
+            e.printStackTrace();
             throw new ServiceException(e.getErrorCode(), e.getMessage(), e.getErrorDetail());
         }
         feeShipping =(Double) claims.get("total");

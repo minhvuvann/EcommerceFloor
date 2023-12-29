@@ -27,7 +27,7 @@ function ChatService(props) {
                 setHeaderName(res.data[0].name);
                 setHeaderImg(res.data[0].imageUrl);
                 setShopAll(res.data);
-                const socketConnectS = new WebSocket(`ws://localhost:8202/ecommerce-floor/chat/${customer.id}_${res?.data[0]?.shopId}`);
+                const socketConnectS = new WebSocket(`wss://ecommerce-dacn.site:8443/mellow-ecommerce-floor/chat/${customer.id}_${res?.data[0]?.shopId}`);
                 socketConnectS.onopen = () => {
                     socketConnectS.send('MESSAGES_LIST');
                 };
@@ -51,7 +51,7 @@ function ChatService(props) {
         setTicker(id);
         setHeaderImg(img);
         setHeaderName(name);
-        const socketConnect = new WebSocket(`ws://localhost:8202/ecommerce-floor/chat/${customer.id}_${id}`);
+        const socketConnect = new WebSocket(`wss://ecommerce-dacn.site:8443/mellow-ecommerce-floor/chat/${customer.id}_${id}`);
         socketConnect.onopen = () => {
             socketConnect.send('MESSAGES_LIST');
         }
@@ -76,7 +76,7 @@ function ChatService(props) {
     };
 
     function sendMess(id) {
-        const socketConnect = new WebSocket(`ws://localhost:8202/ecommerce-floor/chat/${customer.id}_${id}`);
+        const socketConnect = new WebSocket(`wss://ecommerce-dacn.site:8443/mellow-ecommerce-floor/chat/${customer.id}_${id}`);
         socketConnect.onopen = () => {
             socketConnect.send(sendContent);
         }

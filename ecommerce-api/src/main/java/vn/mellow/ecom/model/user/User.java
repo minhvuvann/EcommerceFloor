@@ -2,6 +2,7 @@ package vn.mellow.ecom.model.user;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import org.springframework.data.annotation.Transient;
 import vn.mellow.ecom.base.logs.ActivityUser;
@@ -15,6 +16,7 @@ import vn.mellow.ecom.model.shop.Shop;
 
 import java.util.Date;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class User extends BaseModel {
     private String username;

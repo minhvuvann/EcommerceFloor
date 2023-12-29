@@ -31,7 +31,7 @@ function Chat(props) {
                 setHeaderName(res.data[0].fullName);
                 setHeaderImg(res.data[0].imageUrl);
                 setCustomerAll(res.data);
-                const socketConnectS = new WebSocket(`ws://localhost:8202/ecommerce-floor/chat/${shopId}_${res?.data[0]?.id}`);
+                const socketConnectS = new WebSocket(`wss://ecommerce-dacn.site:8443/ecommerce-floor/chat/${shopId}_${res?.data[0]?.id}`);
                 socketConnectS.onopen = () => {
                     socketConnectS.send('MESSAGES_LIST');
                 };
@@ -54,7 +54,7 @@ function Chat(props) {
         setTicker(customerId);
         setHeaderImg(img);
         setHeaderName(name);
-        const socketConnect = new WebSocket(`ws://localhost:8202/ecommerce-floor/chat/${shopId}_${customerId}`);
+        const socketConnect = new WebSocket(`wss://ecommerce-dacn.site:8443/ecommerce-floor/chat/${shopId}_${customerId}`);
         socketConnect.onopen = () => {
             socketConnect.send('MESSAGES_LIST');
         }
@@ -73,7 +73,7 @@ function Chat(props) {
     };
 
     function sendMess(customerId) {
-        const socketConnect = new WebSocket(`ws://localhost:8202/ecommerce-floor/chat/${shopId}_${customerId}`);
+        const socketConnect = new WebSocket(`wss://ecommerce-dacn.site:8443/ecommerce-floor/chat/${shopId}_${customerId}`);
         socketConnect.onopen = () => {
             socketConnect.send(sendContent);
         }

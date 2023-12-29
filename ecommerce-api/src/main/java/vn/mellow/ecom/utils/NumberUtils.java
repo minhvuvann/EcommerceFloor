@@ -32,8 +32,12 @@ public class NumberUtils {
         return new Date(ms);
 
     }
-
     public static void main(String[] args) {
-        System.out.println(generateTelePhone());
+        String chuoi = "333232342";
+
+        // Thay thế số 3 ở đầu bằng số 4
+        String chuoiMoi = chuoi.replaceFirst("^3", "4");
+
+        System.out.println("Chuỗi mới: " + chuoiMoi);
     }
 }

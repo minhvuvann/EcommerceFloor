@@ -17,6 +17,7 @@ function UserProvider(props) {
             setCustomer(data?.data);
         }
 
+
     }
 
     useEffect(() => {

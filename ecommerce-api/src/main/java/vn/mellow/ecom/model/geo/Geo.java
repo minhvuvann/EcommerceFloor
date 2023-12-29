@@ -1,10 +1,14 @@
 package vn.mellow.ecom.model.geo;
 
-import lombok.Data;
+import lombok.*;
 import vn.mellow.ecom.base.model.BaseModel;
+import vn.mellow.ecom.model.enums.CountryCode;
 import vn.mellow.ecom.model.enums.GeoType;
 
-@Data
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@Getter
+@Setter
 public class Geo extends BaseModel {
     private String name;
     private int ghn_id;
@@ -12,4 +16,5 @@ public class Geo extends BaseModel {
     private String code;
     private GeoType type;
     private String description;
+    private CountryCode countryCode;
 }

@@ -3,6 +3,9 @@ package vn.mellow.ecom.restcontroller;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import vn.mellow.ecom.base.controller.BaseController;
@@ -20,7 +23,10 @@ public class LanguageRestController extends BaseController {
 
     @ApiOperation(value = "change language")
     @GetMapping("/change")
-    public static LinkedHashMap<String, Object> changeLocale(@RequestParam("locale") String locale) {
+    @Caching(
+            put = {@CachePut(value = "ecommerce_floor", condition = "#clearCache==@environment.getProperty('app.cache.clearKey')")},
+            cacheable = {@Cacheable(value = "ecommerce_floor", condition = "#clearCache!=@environment.getProperty('app.cache.clearKey')")})
+    public  LinkedHashMap<String, Object> changeLocale(@RequestParam("locale") String locale) {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
         ResourceBundle resB = ResourceBundle.getBundle("language" ,new Locale(locale));
         for (String rb : resB.keySet()) {
