@@ -32,7 +32,6 @@ public class UserServices implements UserDetailsService {
                 break;
             }
 
-
         }
         return new org.springframework.security.core.userdetails.User(user.getEmail(), pwd, new ArrayList<>());
     }

@@ -2,7 +2,7 @@ import SockJS from 'sockjs-client';
 import Stomp from 'stompjs';
 const WebSocketService = {
     connect: (userId, onMessageReceived) => {
-        const socket = new SockJS('http://ecommerce-dacn.site:8443/ecommerce-floor/chat');
+        const socket = new SockJS('http://localhost:8202/ecommerce-floor/chat');
         const stompClient = Stomp.over(socket);
 
         stompClient.connect({}, () => {

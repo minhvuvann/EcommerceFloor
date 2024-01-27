@@ -83,4 +83,6 @@ public class SenMailRestController extends BaseController {
         LOGGER.error("Internal server error.", e);
         return error("internal_server_error", "Có lỗi trong quá trình xử lý", e.getMessage());
     }
+
+
 }

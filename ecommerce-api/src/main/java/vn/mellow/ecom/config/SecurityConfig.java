@@ -54,19 +54,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "https://api.vietqr.io", "https://oauth.casso.vn/v2/**",
                         "https://online-gateway.ghn.vn/shiip/public-api/**")
 
-                .permitAll().anyRequest().authenticated()
+                .permitAll().anyRequest().authenticated().and()
+                .formLogin().defaultSuccessUrl("/swagger-ui/#/") // (5)
+                .permitAll()
+                .and()
+                .logout() // (6)
+                .permitAll()
+                .and()
+                .httpBasic()
                 .and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/v2/api-docs",
-                "/configuration/ui",
-                "/swagger-resources/**",
-                "/configuration/security",
-                "/swagger-ui/**",
-                "/webjars/**");
-    }
+
 }

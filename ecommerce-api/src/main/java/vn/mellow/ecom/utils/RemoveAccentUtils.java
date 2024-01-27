@@ -19,7 +19,8 @@ public class RemoveAccentUtils {
         }
         String generateUserName = String.valueOf(System.currentTimeMillis());
         return removeAccent(text).replaceAll(" ", "").trim() +
-                generateUserName.substring(generateUserName.length() - 4);
+               generateUserName.substring(generateUserName.length() - 4);
     }
+
 
 }
